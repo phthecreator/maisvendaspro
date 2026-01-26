@@ -19,13 +19,14 @@ const Navbar: React.FC<NavbarProps> = ({ vagas, maxVagas, turma }) => {
         className="flex items-center gap-2 cursor-pointer group"
         onClick={scrollToTop}
       >
-        <Terminal className="text-primary w-6 h-6 group-hover:scale-110 transition-transform" />
-        <h2 className="text-white text-base font-black tracking-tighter uppercase leading-tight group-hover:text-primary transition-colors">
-          IA LUCRATIVA
+        <Terminal className="text-[#39ff14] w-6 h-6 group-hover:scale-110 transition-transform drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]" />
+        <h2 className="text-white text-base font-black tracking-tighter uppercase leading-tight group-hover:text-[#39ff14] transition-colors drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]">
+          IA <span className="text-[#39ff14]">LUCRATIVA</span>
         </h2>
       </div>
       <div className="flex items-center gap-4">
         <div className="hidden md:flex items-center gap-6 mr-6">
+          <a href="/" className="text-[10px] font-black tracking-widest uppercase text-primary hover:text-white transition-colors">← Voltar ao Início</a>
           <a href="#pricing" className="text-[10px] font-black tracking-widest uppercase text-white/40 hover:text-primary transition-colors">Preço</a>
           <a href="#faq" className="text-[10px] font-black tracking-widest uppercase text-white/40 hover:text-primary transition-colors">Dúvidas</a>
         </div>

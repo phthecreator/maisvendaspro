@@ -1,279 +1,306 @@
+import React from 'react';
+import UnderworldBackground from '../components/lp2/UnderworldBackground';
+import SecretTerminal from '../components/lp2/SecretTerminal';
 
 export default function Portfolio() {
   return (
-    <div className="bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-black relative overflow-x-hidden text-foreground">
+      <UnderworldBackground />
+
       {/* Top Bar */}
-      <header className="sticky top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
-          <a href="#top" className="font-semibold tracking-tight">Pedro • Portfólio</a>
-          <nav className="flex gap-4 text-sm text-zinc-300">
-            <a className="hover:text-white" href="#sobre">Sobre</a>
-            <a className="hover:text-white" href="#o-que-eu-faco">O que eu faço</a>
-            <a className="hover:text-white" href="#stack">Stack</a>
-            <a className="hover:text-white" href="#projetos">Projetos</a>
-            <a className="hover:text-white" href="#contato">Contato</a>
+          <a href="#top" className="font-bold tracking-tight text-white hover:text-primary transition-colors">
+            Pedro <span className="text-primary">•</span> Portfólio
+          </a>
+          <nav className="hidden md:flex gap-6 text-sm font-medium text-white/60">
+            <a className="hover:text-primary transition-colors font-bold text-primary" href="/">← Voltar ao Início</a>
+            <a className="hover:text-primary transition-colors" href="#sobre">Sobre</a>
+            <a className="hover:text-primary transition-colors" href="#o-que-eu-faco">O que eu faço</a>
+            <a className="hover:text-primary transition-colors" href="#stack">Stack</a>
+            <a className="hover:text-primary transition-colors" href="#projetos">Projetos</a>
+            <a className="hover:text-primary transition-colors" href="#contato">Contato</a>
           </nav>
         </div>
       </header>
 
       {/* HERO */}
-      <main id="top" className="mx-auto max-w-6xl px-5">
-        <section className="py-16 md:py-24">
-          <p className="text-zinc-400 text-sm">Goiânia • UTC-3 • Automação + IA aplicada • WhatsApp</p>
-
-          <h1 className="mt-3 text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
-            Automações com IA no WhatsApp que <span className="text-zinc-200">qualificam, agendam e repassam</span> pro humano fechar.
-          </h1>
-
-          <p className="mt-5 text-lg md:text-xl text-zinc-300 max-w-3xl">
-            Eu construo SDRs com IA e fluxos no n8n pra transformar conversa em processo: resposta rápida,
-            filtro de curiosos, qualificação por contexto e handoff sem fricção pro time comercial.
-          </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#projetos" className="inline-flex items-center justify-center rounded-xl bg-white text-zinc-950 px-5 py-3 font-medium hover:opacity-90">
-              Ver projetos
-            </a>
-            <a href="#contato" className="inline-flex items-center justify-center rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-100 hover:border-zinc-500">
-              Falar comigo
-            </a>
+      <main id="top" className="relative z-10 mx-auto max-w-6xl px-5">
+        <section className="py-20 md:py-32">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
+            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+            <span className="text-xs font-bold tracking-wider text-primary uppercase">
+              Disponível para Projetos de Automação & IA
+            </span>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="rounded-2xl border border-zinc-800 p-5">
-              <p className="text-sm text-zinc-400">Foco</p>
-              <p className="mt-2 font-medium">Vendas e operação com IA (sem “robô travado”)</p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 p-5">
-              <p className="text-sm text-zinc-400">Entrega</p>
-              <p className="mt-2 font-medium">Fluxo conversacional + lógica + integrações</p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 p-5">
-              <p className="text-sm text-zinc-400">Estilo</p>
-              <p className="mt-2 font-medium">Direto, mão na massa, voltado a resultado</p>
-            </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tighter mb-8 text-white">
+            Eu construo automações e produtos com IA que <br className="hidden md:block" />
+            <span className="text-primary glow-text italic terminal-cursor">
+              viram vendas, operação e entrega
+            </span> <br />
+            de verdade.
+          </h1>
+
+          <p className="mt-6 text-xl md:text-2xl text-white/70 max-w-4xl leading-relaxed font-medium">
+            De SDR no WhatsApp a funis completos e MVPs rápidos: eu uno estratégia + execução 
+            (n8n, bots, front-end, copy e processos) pra transformar ideia em sistema rodando.
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="#contato" className="glow-primary inline-flex items-center justify-center rounded-xl bg-primary text-background text-lg font-black px-8 py-4 uppercase tracking-wide hover:scale-[1.02] active:scale-95 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+              Falar comigo agora
+            </a>
+            <a href="#projetos" className="inline-flex items-center justify-center rounded-xl border-2 border-primary/30 text-primary hover:border-primary hover:bg-primary/10 px-8 py-4 text-lg font-bold uppercase tracking-wide transition-all">
+              Ver Projetos
+            </a>
           </div>
         </section>
 
         {/* SOBRE MIM */}
-        <section id="sobre" className="py-14 border-t border-zinc-900">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Sobre mim</h2>
+        <section id="sobre" className="py-20 border-t border-white/10">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-8">Sobre mim</h2>
 
-          <p className="mt-4 text-zinc-200 max-w-3xl">
-            <strong>Bio curta:</strong> Eu construo automações com IA (principalmente no WhatsApp) usando n8n + LLMs,
-            com foco em qualificar, agendar e aumentar a eficiência do time comercial.
+          <p className="text-xl text-white/80 max-w-4xl leading-relaxed">
+            <strong className="text-primary">Bio curta:</strong> Sou o Pedro Henrique Silva Ribeiro. Eu trabalho com IA aplicada e automação pra colocar processos no piloto automático (principalmente vendas e atendimento), criar produtos/MVPs e estruturar operação com método. Eu curto resolver problema real: pegar o caos do “tá tudo no WhatsApp e ninguém responde” e transformar em fluxo, sistema e resultado.
           </p>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <p className="text-sm text-zinc-400">Bio completa</p>
-              <p className="mt-3 text-zinc-300 leading-relaxed">
-                Eu trabalho na interseção de <strong>automação</strong>, <strong>IA aplicada</strong> e <strong>vendas</strong>.
-                Na prática, isso vira SDR com IA no WhatsApp, esteiras de atendimento, qualificação e agendamento,
-                com regras claras pra evitar “delírio” do modelo e manter a conversa no objetivo.
-                <br /><br />
-                Também construo <strong>MVPs</strong> e páginas de alta conversão (WordPress/Bootstrap/Tailwind),
-                e desenho o processo comercial (copy, funil, handoff, follow-up) pra tudo funcionar como sistema — não como gambiarra.
+          <div className="mt-12 bg-card border border-white/5 rounded-2xl p-8 md:p-12 hover:border-primary/20 transition-all">
+            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Bio completa</p>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 text-white/70 leading-relaxed text-lg lg:text-xl">
+              <p>
+                Minha trajetória é bem mão na massa: eu misturo marketing, copy, vendas e tecnologia — e isso me permite construir soluções que não ficam só no “bonito no slide”. Eu já atuei criando e vendendo automações (principalmente em WhatsApp), estruturando ofertas e funis, e desenhando a entrega pra rodar sem depender de uma pessoa 24h.
               </p>
-            </div>
-
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <p className="text-sm text-zinc-400">O que você pode esperar</p>
-              <ul className="mt-3 space-y-2 text-zinc-300">
-                <li>• Conversa com IA com tom humano, objetiva e com “guardrails”</li>
-                <li>• Qualificação por contexto (dor, momento, orçamento, urgência)</li>
-                <li>• Agendamento e repasse pro humano com resumo do lead</li>
-                <li>• Integrações e automações no n8n (CRM, planilhas, webhooks, etc.)</li>
-                <li>• Entrega orientada a impacto (com objetivos claros quando não há métricas)</li>
-              </ul>
+              <p>
+                Nos últimos projetos, eu foquei muito em SDR com IA, qualificação de leads, agendamento e integração com ferramentas (tipo n8n, CRMs, Google Sheets, etc.). Também venho construindo presença e ativos como portfólio/site, apresentações, páginas de venda e processos internos — porque eu acredito que produto sem operação vira gambiarra cara.
+              </p>
+              <p>
+                Meu jeito de trabalhar é direto: eu entendo o objetivo, descubro o gargalo real, defino o que é “sucesso” (mesmo que seja estimado no começo), e entrego um sistema simples que funciona — com melhoria incremental.
+              </p>
             </div>
           </div>
         </section>
 
         {/* O QUE EU FAÇO */}
-        <section id="o-que-eu-faco" className="py-14 border-t border-zinc-900">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">O que eu faço</h2>
+        <section id="o-que-eu-faco" className="py-20 border-t border-white/10">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-10">O que eu faço</h2>
 
-          <div className="mt-7 grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="font-semibold">SDR com IA no WhatsApp</h3>
-              <p className="mt-2 text-zinc-300">
-                Fluxos que respondem rápido, perguntam o mínimo necessário, filtram curiosos e
-                entregam lead “pronto” pro vendedor fechar.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/20 transition-all group">
+              <span className="text-3xl mb-4 block">🚀</span>
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Automações de Vendas</h3>
+              <p className="mt-3 text-white/60 leading-relaxed">
+                Crio fluxos que respondem rápido, qualificam, filtram curiosos e encaminham pro humano no momento certo — com linguagem que parece gente, não robô. (WhatsApp / Direct / Funil)
               </p>
             </div>
 
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="font-semibold">Automações com n8n</h3>
-              <p className="mt-2 text-zinc-300">
-                Orquestração de processos (mensageria, CRM, webhooks, planilhas, filas, roteamento),
-                com lógica clara e fácil de manter.
+            <div className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/20 transition-all group">
+              <span className="text-3xl mb-4 block">🤖</span>
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">SDR com IA</h3>
+              <p className="mt-3 text-white/60 leading-relaxed">
+                Desenho o roteiro do agente, regras de qualificação, perguntas certas, objeções e fechamento do próximo passo (call). Foco total em agendamento real.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="font-semibold">IA aplicada (prompts + guardrails)</h3>
-              <p className="mt-2 text-zinc-300">
-                Prompts orientados a tarefa, validação de saída, limites de linguagem e “volta pro foco”
-                quando o usuário sai do trilho.
+            <div className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/20 transition-all group">
+              <span className="text-3xl mb-4 block">🛠️</span>
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">MVP / Produto Rápido</h3>
+              <p className="mt-3 text-white/60 leading-relaxed">
+                Estruturo e tiro do papel MVPs e produtos digitais: landing, proposta, lógica do fluxo, integrações e versão “rodável”.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="font-semibold">Produto / MVP</h3>
-              <p className="mt-2 text-zinc-300">
-                MVP rápido com foco em validação: proposta, fluxo, front, integrações e entrega utilizável.
-                (Lovable quando faz sentido.)
+            <div className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/20 transition-all group">
+              <span className="text-3xl mb-4 block">✍️</span>
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Copy e Posicionamento</h3>
+              <p className="mt-3 text-white/60 leading-relaxed">
+                Escrevo a copy do que você faz do jeito que o cliente entende. Direto, sem clichê. Bom pra página, anúncio, pitch e WhatsApp.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-zinc-800 p-6 md:col-span-2">
-              <h3 className="font-semibold">Funil, copy e operação</h3>
-              <p className="mt-2 text-zinc-300">
-                Eu não vendo “bot”. Eu desenho o sistema: entrada de lead, conversa, qualificação, agendamento,
-                handoff, follow-up e o que o time precisa ver pra fechar.
+            <div className="bg-card border border-white/5 rounded-2xl p-8 md:col-span-2 hover:border-primary/20 transition-all group">
+              <span className="text-3xl mb-4 block">📋</span>
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Operação e Playbooks</h3>
+              <p className="mt-3 text-white/60 leading-relaxed">
+                Crio checklists, scripts, templates e rotinas pra time operar. Eu gosto de botar método (SPIN adaptado, micro-pactos, funil e métricas) para garantir que o processo vença o improviso.
               </p>
             </div>
           </div>
         </section>
 
         {/* STACK */}
-        <section id="stack" className="py-14 border-t border-zinc-900">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Stack</h2>
+        <section id="stack" className="py-20 border-t border-white/10">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-10">Stack & Metodologia</h2>
 
-          <div className="mt-7 grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <p className="text-sm text-zinc-400">Automação</p>
-              <p className="mt-2 text-zinc-200">n8n • Webhooks • Integrações • Fluxos conversacionais</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-card border border-white/5 rounded-2xl p-8">
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Ferramentas (Uso Real)</p>
+              <ul className="space-y-3 text-white/80 font-medium">
+                <li className="flex items-center gap-2"><span className="text-primary">✔</span> n8n (automação e integrações)</li>
+                <li className="flex items-center gap-2"><span className="text-primary">✔</span> WhatsApp (fluxos e qualificação)</li>
+                <li className="flex items-center gap-2"><span className="text-primary">✔</span> HTML + Bootstrap / Tailwind</li>
+                <li className="flex items-center gap-2"><span className="text-primary">✔</span> WordPress (Organização técnica)</li>
+                <li className="flex items-center gap-2"><span className="text-primary">✔</span> Gemini / LLMs / Prompts</li>
+                <li className="flex items-center gap-2"><span className="text-primary">✔</span> Baserow / Planilhas</li>
+                <li className="flex items-center gap-2"><span className="text-primary">✔</span> Canva (Materiais de entrega)</li>
+              </ul>
             </div>
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <p className="text-sm text-zinc-400">IA / Modelos / Voz & Mídia</p>
-              <p className="mt-2 text-zinc-200">Gemini • OpenRouter (ex.: GPT-4.1 mini) • Prompts/Guardrails • ElevenLabs • Kokoro API • Together AI</p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 p-6">
-              <p className="text-sm text-zinc-400">Front / Sites / Deploy</p>
-              <p className="mt-2 text-zinc-200">WordPress • Bootstrap • Tailwind • Vercel • VS Code • Canva • Google AI Studio</p>
+            <div className="bg-card border border-white/5 rounded-2xl p-8">
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Métodos do dia a dia</p>
+              <ul className="space-y-4 text-white/80 font-medium text-lg">
+                <li className="flex items-start gap-3">
+                  <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">01</span>
+                  <span><strong>SPIN Selling adaptado + micro-pactos:</strong> para conduzir call e fechar.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">02</span>
+                  <span><strong>“Simples que roda”:</strong> primeiro funcionar, depois sofisticar.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">03</span>
+                  <span><strong>Foco em gargalo:</strong> qualificação, tempo de resposta e conversão.</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div className="mt-5 rounded-2xl border border-zinc-800 p-6">
-            <p className="text-sm text-zinc-400">Ferramentas e plataformas que já usei em projetos</p>
-            <p className="mt-2 text-zinc-300">
-              Lovable • Baserow • Hotmart • Telegram/WhatsApp • Flux (imagens) • Veo 3 (vídeo) • Fashn.ia / Freepik (modelos virtuais)
-            </p>
-          </div>
+          <SecretTerminal />
         </section>
 
         {/* PROJETOS */}
-        <section id="projetos" className="py-14 border-t border-zinc-900">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Projetos</h2>
-          <p className="mt-3 text-zinc-300 max-w-3xl">
-            Sem inventar número. Quando não existe métrica fechada, eu deixo claro o <strong>objetivo / impacto esperado</strong>.
-          </p>
+        <section id="projetos" className="py-20 border-t border-white/10">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-12">Projetos</h2>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 1 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">Mais Vendas Pro — SDR com IA no WhatsApp</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> lead chega, ninguém responde a tempo e o vendedor perde tempo com curiosos.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> SDR com IA que qualifica, filtra, agenda e repassa pro humano com contexto.</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> desenho do fluxo, prompts/guardrails, lógica de qualificação, handoff e padronização.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> n8n • WhatsApp • LLM (Gemini/GPT via OpenRouter) • Webhooks</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> reduzir perda por demora, aumentar qualidade do lead e organizar o repasse pro comercial.</p>
+            <article className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group flex flex-col">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-4">1) Mais Vendas Pro — SDR com IA no WhatsApp</h3>
+              <div className="space-y-3 text-white/70 flex-grow">
+                <p><strong className="text-white">Problema:</strong> Muito lead chegando e pouca velocidade de resposta; curiosos atrapalhando.</p>
+                <p><strong className="text-white">Solução:</strong> Agente SDR no WhatsApp pra atender, qualificar, filtrar e agendar call.</p>
+                <p><strong className="text-white">O que eu fiz:</strong> Estrutura do SDR (abertura ao handoff), ajustes de tom e foco em agendamento.</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/5">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">n8n</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">WhatsApp</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">LLM</span>
+              </div>
             </article>
 
             {/* 2 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">IMOB.ia — Automação comercial para imobiliárias</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> lead de imóvel chega frio, conversa se perde e o corretor vira “SAC”.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> triagem + qualificação no WhatsApp (perfil, intenção, faixa, urgência) e encaminhamento.</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> estrutura de qualificação, mensagens, roteamento e proposta de fluxo de atendimento.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> WhatsApp • n8n • LLM • (integrações conforme operação)</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> menos conversa inútil, mais visita/reunião agendada e melhor organização do funil.</p>
+            <article className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group flex flex-col">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-4">2) Mora Mídia — Operação de mentoria</h3>
+              <div className="space-y-3 text-white/70 flex-grow">
+                <p><strong className="text-white">Problema:</strong> Donos de lojas travados no limite físico, sem conseguir escalar.</p>
+                <p><strong className="text-white">Solução:</strong> Estrutura high ticket com plano de ação + suporte + venda ativa.</p>
+                <p><strong className="text-white">O que eu fiz:</strong> Modelagem de oferta, estrutura da entrega, scripts e processo de vendas.</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/5">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">WhatsApp</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">Strategy</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">Playbooks</span>
+              </div>
             </article>
 
             {/* 3 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">MVPs com Lovable + n8n (parceria com Murillo)</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> ideias boas morrem por falta de MVP utilizável e integração com operação real.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> MVP rápido + automação do fluxo principal (captação → qualificação → entrega).</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> estrutura do MVP, prompt de construção, integração com n8n e desenho de oferta/funil.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> Lovable • n8n • LLM • Webhooks</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> validação mais rápida e menos “projeto eterno” sem entrega.</p>
+            <article className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group flex flex-col">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-4">3) Doctor Mentors — Script de fechamento</h3>
+              <div className="space-y-3 text-white/70 flex-grow">
+                <p><strong className="text-white">Problema:</strong> Calls longas, cliente indeciso, falta de condução e fechamento.</p>
+                <p><strong className="text-white">Solução:</strong> Script-guia baseado em SPIN adaptado, com micro-pactos de alinhamento.</p>
+                <p><strong className="text-white">O que eu fiz:</strong> Estrutura do roteiro, perguntas-chave e transições de valor.</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/5">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">SPIN</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">Vendas</span>
+              </div>
             </article>
 
             {/* 4 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">Mora Mídia — Operação de marketing & vendas com automação</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> dono de loja trava no físico: responde tudo, decide tudo, apaga incêndio.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> entrega “done with you” com processos + automações simples (SDR no WhatsApp e rotina comercial).</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> estrutura do programa, roteiros, playbooks, automações e organização da esteira.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> WhatsApp • n8n • Docs/Playbooks • Copy/Oferta</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> mais consistência de vendas e menos dependência do dono no operacional.</p>
+            <article className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group flex flex-col">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-4">4) Landing Moda Jeans — Modelos Virtuais</h3>
+              <div className="space-y-3 text-white/70 flex-grow">
+                <p><strong className="text-white">Problema:</strong> Loja com fotos fracas; necessidade de visual profissional sem estúdio caro.</p>
+                <p><strong className="text-white">Solução:</strong> Landing page focada em converter usando imagens geradas por IA.</p>
+                <p><strong className="text-white">O que eu fiz:</strong> Estrutura da página, copy e organização técnica (HTML/Bootstrap).</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/5">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">HTML/Bootstrap</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">IA Imagem</span>
+              </div>
             </article>
 
             {/* 5 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">Doctor Mentors — Script SPIN adaptado + micro-pactos</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> reunião vira conversa longa, objeção tarde e fechamento fraco.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> roteiro de call com SPIN + checkpoints (micro-pactos) pra guiar até decisão.</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> estrutura do script, perguntas-chave, e checkpoints de alinhamento antes do valor.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> Framework SPIN • Playbooks • Copy de vendas</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> call mais objetiva, mais clareza de valor e fechamento mais previsível.</p>
+            <article className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group flex flex-col">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-4">5) Hayk Energia Solar — Estratégia 1:1</h3>
+              <div className="space-y-3 text-white/70 flex-grow">
+                <p><strong className="text-white">Problema:</strong> Leads no direct sem processo; perda de timing e dificuldade de fechar.</p>
+                <p><strong className="text-white">Solução:</strong> Fluxo de conversa estabelecido + call estruturada em 2 etapas.</p>
+                <p><strong className="text-white">O que eu fiz:</strong> Sequência do atendimento, proposta de operação e fechamento.</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/5">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">Instagram</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">Processos</span>
+              </div>
             </article>
 
             {/* 6 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">Moda Jeans — landing + produção de fotos com modelos virtuais</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> foto amadora derruba percepção de valor e conversão no e-commerce.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> pipeline de imagens profissionais com modelos virtuais + landing page de venda.</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> estrutura da página, proposta de oferta, integração com ferramentas de geração e fluxo.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> WordPress • Bootstrap • HTML/CSS • Fashn.ia/Freepik (modelos virtuais)</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> elevar percepção de marca e melhorar performance de anúncios/catálogo.</p>
+            <article className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group flex flex-col">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-4">6) Canal Dark + Automação (n8n)</h3>
+              <div className="space-y-3 text-white/70 flex-grow">
+                <p><strong className="text-white">Problema:</strong> Produzir conteúdo em escala sem virar escravo da edição manual.</p>
+                <p><strong className="text-white">Solução:</strong> Workflow de geração de ideias diárias com LLM + pipeline automatizado.</p>
+                <p><strong className="text-white">O que eu fiz:</strong> Estrutura do fluxo, prompts e organização da base no Baserow.</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/5">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">n8n</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">Baserow</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">LLM</span>
+              </div>
             </article>
 
-            {/* 7 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">Conteúdo Dark — automação de ideias/roteiro/thumbnail</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> produção manual é lenta e inconsistente; a pessoa desiste no meio.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> esteira automatizada: ideias → roteiro → assets → organização pra publicar.</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> fluxo no n8n, prompts, variação de ideias e estrutura de produção escalável.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> n8n • Gemini/LLMs • Baserow • Ferramentas de imagem/vídeo</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> cadência de produção e menos fricção pra escalar conteúdo.</p>
-            </article>
-
-            {/* 8 */}
-            <article className="rounded-2xl border border-zinc-800 p-6">
-              <h3 className="text-lg font-semibold">Hayk Energia Solar — estratégia de venda 1:1 via Instagram + WhatsApp</h3>
-              <p className="mt-3 text-zinc-300"><strong>Problema:</strong> lead entra no direct, some, e a venda não chega na proposta.</p>
-              <p className="mt-2 text-zinc-300"><strong>Solução:</strong> mensagens pré-definidas + qualificação + estrutura de 1–2 calls pra fechar.</p>
-              <p className="mt-2 text-zinc-300"><strong>O que eu fiz:</strong> desenho da jornada comercial, script de conversa e organização do processo.</p>
-              <p className="mt-2 text-zinc-300"><strong>Stack:</strong> Processo comercial • WhatsApp/Instagram • Playbooks</p>
-              <p className="mt-2 text-zinc-300"><strong>Impacto esperado:</strong> menos perda de lead e mais conversas que viram reunião/proposta.</p>
+             {/* 7 */}
+             <article className="bg-card border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group flex flex-col md:col-span-2">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-4">7) Projeto Imobiliário (MVP/Automação)</h3>
+              <div className="space-y-3 text-white/70 flex-grow">
+                <p><strong className="text-white">Problema:</strong> Atendimento e triagem desorganizados no mercado imobiliário.</p>
+                <p><strong className="text-white">Solução:</strong> Ferramenta/fluxo para qualificar e encaminhar leads de forma transparente.</p>
+                <p><strong className="text-white">O que eu fiz:</strong> Estrutura de proposta, comunicação e validação do MVP rodando.</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/5">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">MVP</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">Real Estate</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">WhatsApp</span>
+              </div>
             </article>
           </div>
         </section>
 
         {/* CONTATO */}
-        <section id="contato" className="py-14 border-t border-zinc-900">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Contato</h2>
-          <p className="mt-3 text-zinc-300 max-w-3xl">
-            Se você quer colocar um SDR com IA pra rodar no WhatsApp (sem enrolação), me chama.
-            Eu te respondo com perguntas curtas e objetivas — e já proponho o fluxo.
+        <section id="contato" className="py-24 border-t border-white/10 text-center">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-6">Vamos acabar com o caos?</h2>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10">
+            Se você quer mais vendas, menos caos e um sistema rodando, me chama.
+            Eu consigo te dizer rápido se faz sentido automatizar ou só arrumar o processo.
           </p>
 
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="https://wa.me/5562999999999" className="inline-flex items-center justify-center rounded-xl bg-white text-zinc-950 px-5 py-3 font-medium hover:opacity-90">
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 max-w-xl mx-auto mb-10">
+            <p className="text-primary font-bold text-lg italic mb-2">"Qual teu gargalo hoje?"</p>
+            <p className="text-white/60 text-sm">Me manda essa mensagem e eu te respondo com o caminho mais direto.</p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/556191185635" className="glow-primary inline-flex items-center justify-center rounded-xl bg-primary text-background text-lg font-black px-8 py-4 uppercase tracking-wide hover:scale-[1.02] active:scale-95 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]">
               Chamar no WhatsApp
             </a>
-            <a href="mailto:pedro@example.com" className="inline-flex items-center justify-center rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-100 hover:border-zinc-500">
+            <a href="mailto:pedro@example.com" className="inline-flex items-center justify-center rounded-xl border-2 border-primary/30 text-primary hover:border-primary hover:bg-primary/10 px-8 py-4 text-lg font-bold uppercase tracking-wide transition-all">
               Enviar e-mail
             </a>
           </div>
         </section>
 
-        <footer className="py-10 text-sm text-zinc-500 border-t border-zinc-900">
-          <p>© {new Date().getFullYear()} Pedro • Portfólio</p>
+        <footer className="py-10 text-center text-sm text-white/40 border-t border-white/10">
+          <p>© {new Date().getFullYear()} Pedro • Sistema & Operação com IA</p>
         </footer>
       </main>
     </div>

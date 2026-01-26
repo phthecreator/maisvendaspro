@@ -46,9 +46,9 @@ const Pricing: React.FC<PricingProps> = ({ vagas, maxVagas, turma }) => {
           </div>
         </div>
 
-        <button className="glow-primary flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl h-16 md:h-20 bg-primary text-background-dark text-xl md:text-2xl font-black leading-normal tracking-wide uppercase transition-all hover:scale-[1.02] active:scale-95">
+        <a href="https://wa.me/556191185635" className="btn-neon-3d flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-16 md:h-20 text-xl md:text-2xl">
           QUERO MINHA VAGA AGORA
-        </button>
+        </a>
         
         <p className="mt-6 text-center text-white/30 text-[9px] uppercase tracking-widest font-medium">
           Sistema de Vagas Auditado • Atualizado em Tempo Real

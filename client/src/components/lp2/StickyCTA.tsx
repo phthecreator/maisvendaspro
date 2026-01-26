@@ -21,14 +21,14 @@ const StickyCTA: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background-dark via-background-dark/95 to-transparent z-40 animate-in fade-in slide-in-from-bottom-5 duration-300">
+    <div className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/95 to-transparent z-40 animate-in fade-in slide-in-from-bottom-5 duration-300">
       <div className="max-w-xl mx-auto">
-        <button 
-          onClick={scrollToPricing}
-          className="glow-primary flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-16 bg-primary text-background-dark text-base md:text-lg font-black tracking-widest uppercase transition-all active:scale-95 shadow-2xl"
+        <a 
+          href="https://wa.me/556191185635"
+          className="btn-neon-3d flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-16 text-base md:text-lg shadow-2xl"
         >
           QUERO MINHA VAGA
-        </button>
+        </a>
       </div>
     </div>
   );
