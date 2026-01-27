@@ -54,7 +54,7 @@ export default function Home() {
             <button onClick={() => scrollTo('top')} className="hover:text-white transition-colors">Início</button>
             <button onClick={() => scrollTo('niveis')} className="hover:text-white transition-colors">Soluções</button>
             <a href="/portfolio" className="hover:text-white transition-colors">Portfólio</a>
-            <a href="/lp2" className="text-[#00ff88] hover:text-[#00ff88]/80 transition-colors">IA Lucrativa</a>
+            <a href="/lp2" className="text-[#00ff88] hover:text-[#00ff88]/80 transition-colors">Ia_lucrativa_1</a>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -84,7 +84,7 @@ export default function Home() {
                   </SheetClose>
                   <SheetClose asChild>
                     <a href="/lp2" className="rounded-xl border border-[#00ff88]/30 bg-[#00ff88]/10 px-4 py-3 text-sm font-semibold text-[#00ff88]">
-                      IA Lucrativa
+                      Ia_lucrativa_1
                     </a>
                   </SheetClose>
                 </div>
