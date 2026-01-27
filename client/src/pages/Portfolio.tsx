@@ -18,10 +18,10 @@ export default function Portfolio() {
           <nav className="hidden md:flex gap-6 text-sm font-medium text-white/60">
             <a className="hover:text-primary transition-colors font-bold text-primary" href="/">← Voltar ao Início</a>
             <a className="hover:text-primary transition-colors" href="#sobre">Sobre</a>
-            <a className="hover:text-primary transition-colors" href="#galeria">Galeria</a>
             <a className="hover:text-primary transition-colors" href="#o-que-eu-faco">O que eu faço</a>
             <a className="hover:text-primary transition-colors" href="#stack">Stack</a>
             <a className="hover:text-primary transition-colors" href="#projetos">Projetos</a>
+            <a className="hover:text-primary transition-colors" href="#vale-do-silicio">Vale do Silício</a>
             <a className="hover:text-primary transition-colors" href="#contato">Contato</a>
           </nav>
           <Sheet>
@@ -44,11 +44,6 @@ export default function Portfolio() {
                   </a>
                 </SheetClose>
                 <SheetClose asChild>
-                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#galeria">
-                    Galeria
-                  </a>
-                </SheetClose>
-                <SheetClose asChild>
                   <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#o-que-eu-faco">
                     O que eu faço
                   </a>
@@ -61,6 +56,11 @@ export default function Portfolio() {
                 <SheetClose asChild>
                   <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#projetos">
                     Projetos
+                  </a>
+                </SheetClose>
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#vale-do-silicio">
+                    Vale do Silício
                   </a>
                 </SheetClose>
                 <SheetClose asChild>
@@ -105,53 +105,11 @@ export default function Portfolio() {
               Ver Projetos
             </a>
           </div>
-        </section>
 
-        {/* GALERIA */}
-        <section id="galeria" className="py-16 md:py-20 border-t border-white/10">
-          <div className="flex flex-col gap-6">
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary/70">Bastidores</p>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white">
-              Presenca, processo e execucao
-            </h2>
-            <p className="text-white/70 text-lg max-w-3xl">
-              Uma sequencia visual para mostrar contexto, foco e consistencia. Mistura retrato,
-              bastidor real e ambiente de trabalho para criar confianca rapida.
-            </p>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-              <img
-                src="/portfolio/pedro-studio.jpg"
-                alt="Pedro em ensaio com fundo neutro"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="grid grid-rows-2 gap-6">
-              <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                <img
-                  src="/portfolio/pedro-hoodie.jpg"
-                  alt="Pedro em vista aberta"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                <img
-                  src="/portfolio/pedro-desk.jpg"
-                  alt="Pedro trabalhando no escritorio"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+          <div className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/5">
             <img
-              src="/portfolio/pedro-skyline.jpg"
-              alt="Vista panoramica da cidade"
+              src="/portfolio/02-studio.jpg"
+              alt="Pedro em ensaio com fundo neutro"
               className="h-full w-full object-cover"
               loading="lazy"
             />
@@ -162,9 +120,36 @@ export default function Portfolio() {
         <section id="sobre" className="py-20 border-t border-white/10">
           <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-8">Sobre mim</h2>
 
-          <p className="text-xl text-white/80 max-w-4xl leading-relaxed">
-            <strong className="text-primary">Bio curta:</strong> Sou o Pedro Henrique Silva Ribeiro. Eu trabalho com IA aplicada e automação pra colocar processos no piloto automático (principalmente vendas e atendimento), criar produtos/MVPs e estruturar operação com método. Eu curto resolver problema real: pegar o caos do “tá tudo no WhatsApp e ninguém responde” e transformar em fluxo, sistema e resultado.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-8 items-start">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <img
+                src="/portfolio/03-hoodie.jpg"
+                alt="Pedro em um mirante com vista da cidade"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="text-xl text-white/80 leading-relaxed flex flex-col gap-4">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-primary/70">Bio curta</p>
+              <p>
+                Sou o Pedro Henrique Silva Ribeiro. Trabalho com IA aplicada e automação para colocar processos no
+                piloto automático (principalmente vendas e atendimento), criar produtos/MVPs e estruturar operação
+                com método. Gosto de resolver problema real: pegar o caos do “tá tudo no WhatsApp e ninguém responde”
+                e transformar em fluxo, sistema e resultado.
+              </p>
+              <p className="text-white/60 text-base">
+                Minha abordagem é direta: entendo o objetivo, defino o caminho e executo até virar rotina rodando.
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <img
+                src="/portfolio/04-desk.jpg"
+                alt="Pedro trabalhando no escritorio"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
           <div className="mt-12 bg-card border border-white/5 rounded-2xl p-8 md:p-12 hover:border-primary/20 transition-all">
             <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Bio completa</p>
@@ -374,6 +359,33 @@ export default function Portfolio() {
                 <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full">WhatsApp</span>
               </div>
             </article>
+          </div>
+        </section>
+
+        <section id="vale-do-silicio" className="py-24 border-t border-white/10">
+          <div className="flex flex-col gap-6 max-w-4xl">
+            <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary/70">Vale do Silício</p>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white">
+              Dois anos vivendo onde o futuro vira rotina
+            </h2>
+            <p className="text-lg text-white/80 leading-relaxed">
+              Entre 2023 e 2025 eu vivi no Vale do Silício, perto de empresas gigantes que moldam o mercado todos os dias.
+              Essa imersão me deu visão prática de escala, produto e execução: como times pensam, como decisões são tomadas
+              e por que clareza de processo vence improviso.
+            </p>
+            <p className="text-white/60 leading-relaxed">
+              Voltei com mais repertório e foco no que importa: criar sistemas que rodam, gerar resultado e manter o padrão
+              alto — não só no discurso, mas na entrega.
+            </p>
+          </div>
+
+          <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+            <img
+              src="/portfolio/01-skyline.jpg"
+              alt="Vista panoramica do Vale do Silicio"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
           </div>
         </section>
 

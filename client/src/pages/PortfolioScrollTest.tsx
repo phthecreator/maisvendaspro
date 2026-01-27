@@ -2,10 +2,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 const images = {
-  skyline: "/portfolio/pedro-skyline.jpg",
-  hoodie: "/portfolio/pedro-hoodie.jpg",
-  studio: "/portfolio/pedro-studio.jpg",
-  desk: "/portfolio/pedro-desk.jpg",
+  skyline: "/portfolio/01-skyline.jpg",
+  studio: "/portfolio/02-studio.jpg",
+  hoodie: "/portfolio/03-hoodie.jpg",
+  desk: "/portfolio/04-desk.jpg",
 };
 
 const steps = [
