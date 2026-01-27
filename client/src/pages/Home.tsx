@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import UnderworldBackground from '../components/lp2/UnderworldBackground';
-import { Bot, MessageSquare, Zap, Terminal, Cpu, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Bot, MessageSquare, Zap, Terminal, Cpu, ArrowRight, CheckCircle2, Menu } from 'lucide-react';
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 export default function Home() {
   const scrollRef = useRef(null);
@@ -36,7 +37,7 @@ export default function Home() {
 
       {/* --- HEADER --- */}
       <header className="fixed top-0 w-full z-50 border-b border-white/[0.05] bg-[#020617]/80 backdrop-blur-xl">
-        <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 h-20 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden bg-white/[0.03] border border-white/10 rounded-lg group-hover:border-[#00ff88]/50 transition-colors duration-500">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-[#00ff88] transform group-hover:rotate-12 transition-transform duration-500">
@@ -56,20 +57,65 @@ export default function Home() {
             <a href="/lp2" className="text-[#00ff88] hover:text-[#00ff88]/80 transition-colors">IA Lucrativa</a>
           </nav>
 
-          <a 
-            href="https://wa.me/556191185635"
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-[#00ff88] border border-white/10 hover:border-[#00ff88] rounded-full text-xs font-bold uppercase tracking-wide text-white hover:text-black transition-all duration-300"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] group-hover:bg-black animate-pulse"></span>
-            Diagnóstico
-          </a>
+          <div className="flex items-center gap-3">
+            <Sheet>
+              <SheetTrigger className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:text-white hover:border-[#00ff88]/60">
+                <Menu className="h-5 w-5" />
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-[#020617] border-white/10 text-white">
+                <SheetHeader>
+                  <SheetTitle className="text-xs uppercase tracking-[0.3em] text-white/60">Menu</SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col gap-2 px-4 pb-6">
+                  <SheetClose asChild>
+                    <button onClick={() => scrollTo('top')} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-white/80 hover:text-white">
+                      Início
+                    </button>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <button onClick={() => scrollTo('niveis')} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-white/80 hover:text-white">
+                      Soluções
+                    </button>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a href="/portfolio" className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white">
+                      Portfólio
+                    </a>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a href="/lp2" className="rounded-xl border border-[#00ff88]/30 bg-[#00ff88]/10 px-4 py-3 text-sm font-semibold text-[#00ff88]">
+                      IA Lucrativa
+                    </a>
+                  </SheetClose>
+                </div>
+                <div className="mt-auto px-4 pb-6">
+                  <SheetClose asChild>
+                    <a
+                      href="https://wa.me/556191185635"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#00ff88] px-5 py-3 text-xs font-bold uppercase tracking-wide text-[#020617]"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-black animate-pulse"></span>
+                      Diagnóstico
+                    </a>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
+            <a 
+              href="https://wa.me/556191185635"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-[#00ff88] border border-white/10 hover:border-[#00ff88] rounded-full text-xs font-bold uppercase tracking-wide text-white hover:text-black transition-all duration-300"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] group-hover:bg-black animate-pulse"></span>
+              Diagnóstico
+            </a>
+          </div>
         </div>
       </header>
 
       {/* --- HERO SECTION --- */}
       <motion.section 
         id="top" 
-        className="relative z-10 min-h-screen flex flex-col justify-center px-6 pt-20"
+        className="relative z-10 min-h-screen flex flex-col justify-center px-4 sm:px-6 pt-28 sm:pt-24 md:pt-20"
         style={{ y: yHero, opacity: opacityHero }}
       >
         <div className="mx-auto max-w-5xl text-center">
@@ -89,7 +135,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-8xl font-medium tracking-tighter leading-[0.9] text-white mb-8"
+            className="text-4xl sm:text-5xl md:text-8xl font-medium tracking-tighter leading-[0.95] text-white mb-8"
           >
             IA no WhatsApp <br />
             <span className="font-serif italic text-white/40">que responde,</span> <br />

@@ -1,6 +1,8 @@
 import React from 'react';
 import UnderworldBackground from '../components/lp2/UnderworldBackground';
 import SecretTerminal from '../components/lp2/SecretTerminal';
+import { Menu } from 'lucide-react';
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 export default function Portfolio() {
   return (
@@ -9,7 +11,7 @@ export default function Portfolio() {
 
       {/* Top Bar */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-xl">
-        <div className="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
+        <div className="mx-auto max-w-6xl px-4 sm:px-5 py-4 flex items-center justify-between">
           <a href="#top" className="font-bold tracking-tight text-white hover:text-primary transition-colors">
             Pedro <span className="text-primary">•</span> Portfólio
           </a>
@@ -21,6 +23,48 @@ export default function Portfolio() {
             <a className="hover:text-primary transition-colors" href="#projetos">Projetos</a>
             <a className="hover:text-primary transition-colors" href="#contato">Contato</a>
           </nav>
+          <Sheet>
+            <SheetTrigger className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:text-white hover:border-primary/60">
+              <Menu className="h-5 w-5" />
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-background border-white/10 text-white">
+              <SheetHeader>
+                <SheetTitle className="text-xs uppercase tracking-[0.3em] text-white/60">Menu</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col gap-2 px-4 pb-6">
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="/">
+                    ← Voltar ao Início
+                  </a>
+                </SheetClose>
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#sobre">
+                    Sobre
+                  </a>
+                </SheetClose>
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#o-que-eu-faco">
+                    O que eu faço
+                  </a>
+                </SheetClose>
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#stack">
+                    Stack
+                  </a>
+                </SheetClose>
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#projetos">
+                    Projetos
+                  </a>
+                </SheetClose>
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#contato">
+                    Contato
+                  </a>
+                </SheetClose>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 

@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
+import PortfolioScrollTest from "./pages/PortfolioScrollTest";
 import LP2 from "./pages/lp2";
 
 
@@ -14,6 +15,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/portfolio"} component={Portfolio} />
+      <Route path={"/portfolio-scroll-test"} component={PortfolioScrollTest} />
       <Route path={"/lp2"} component={LP2} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
