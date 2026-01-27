@@ -18,6 +18,7 @@ export default function Portfolio() {
           <nav className="hidden md:flex gap-6 text-sm font-medium text-white/60">
             <a className="hover:text-primary transition-colors font-bold text-primary" href="/">← Voltar ao Início</a>
             <a className="hover:text-primary transition-colors" href="#sobre">Sobre</a>
+            <a className="hover:text-primary transition-colors" href="#galeria">Galeria</a>
             <a className="hover:text-primary transition-colors" href="#o-que-eu-faco">O que eu faço</a>
             <a className="hover:text-primary transition-colors" href="#stack">Stack</a>
             <a className="hover:text-primary transition-colors" href="#projetos">Projetos</a>
@@ -40,6 +41,11 @@ export default function Portfolio() {
                 <SheetClose asChild>
                   <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#sobre">
                     Sobre
+                  </a>
+                </SheetClose>
+                <SheetClose asChild>
+                  <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#galeria">
+                    Galeria
                   </a>
                 </SheetClose>
                 <SheetClose asChild>
@@ -98,6 +104,57 @@ export default function Portfolio() {
             <a href="#projetos" className="inline-flex items-center justify-center rounded-xl border-2 border-primary/30 text-primary hover:border-primary hover:bg-primary/10 px-8 py-4 text-lg font-bold uppercase tracking-wide transition-all">
               Ver Projetos
             </a>
+          </div>
+        </section>
+
+        {/* GALERIA */}
+        <section id="galeria" className="py-16 md:py-20 border-t border-white/10">
+          <div className="flex flex-col gap-6">
+            <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary/70">Bastidores</p>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white">
+              Presenca, processo e execucao
+            </h2>
+            <p className="text-white/70 text-lg max-w-3xl">
+              Uma sequencia visual para mostrar contexto, foco e consistencia. Mistura retrato,
+              bastidor real e ambiente de trabalho para criar confianca rapida.
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <img
+                src="/portfolio/pedro-studio.jpg"
+                alt="Pedro em ensaio com fundo neutro"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="grid grid-rows-2 gap-6">
+              <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                <img
+                  src="/portfolio/pedro-hoodie.jpg"
+                  alt="Pedro em vista aberta"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                <img
+                  src="/portfolio/pedro-desk.jpg"
+                  alt="Pedro trabalhando no escritorio"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+            <img
+              src="/portfolio/pedro-skyline.jpg"
+              alt="Vista panoramica da cidade"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
           </div>
         </section>
 
