@@ -16,7 +16,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/portfolio"} component={Portfolio} />
       <Route path={"/portfolio-scroll-test"} component={PortfolioScrollTest} />
-      <Route path={"/lp2"} component={LP2} />
+      <Route path={"/ia_lucrativa"} component={LP2} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -7,11 +7,11 @@ const Footer: React.FC = () => {
     <footer className="py-20 px-6 border-t border-white/5 text-center bg-black/40">
       <div className="flex items-center justify-center gap-2 mb-8 opacity-50 grayscale hover:grayscale-0 transition-all">
         <Terminal className="w-4 h-4 text-primary" />
-        <h2 className="text-white text-[10px] font-black tracking-[0.5em] uppercase">IA_LUCRATIVA_1</h2>
+        <h2 className="text-white text-[10px] font-black tracking-[0.5em] uppercase">IA LUCRATIVA</h2>
       </div>
       
       <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] mb-4 font-bold">
-        © 2024 IA_LUCRATIVA_1 Mentoria • Todos os direitos reservados
+        © 2024 IA Lucrativa Mentoria • Todos os direitos reservados
       </p>
       
       <p className="text-white/20 text-[9px] max-w-sm mx-auto leading-relaxed font-medium">

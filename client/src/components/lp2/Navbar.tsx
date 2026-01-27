@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ vagas, maxVagas, turma }) => {
       >
         <Terminal className="text-[#39ff14] w-6 h-6 group-hover:scale-110 transition-transform drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]" />
         <h2 className="text-white text-base font-black tracking-tighter uppercase leading-tight group-hover:text-[#39ff14] transition-colors drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]">
-          Ia_<span className="text-[#39ff14]">lucrativa_1</span>
+          IA <span className="text-[#39ff14]">LUCRATIVA</span>
         </h2>
       </div>
       <div className="flex items-center gap-3">
