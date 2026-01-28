@@ -3,68 +3,80 @@ import React, { useState, useEffect, useRef } from 'react';
 const FULL_CONTENT = `
 1️⃣ Código puro não paga boleto. Sistema rodando, sim.
 
-Durante muito tempo eu foquei em escrever código “bonito”.
+Durante muito tempo eu foquei em escrever código "bonito".
 O ponto de virada foi entender que o mercado paga por solução rodando, não por elegância técnica.
 
 Quando eu passei a pensar em:
 > problema real
 > tempo de entrega
-> impacto direto no negócio
+> impacto direto no caixa do cliente
 
 ...meu código começou a gerar dinheiro, não só aprendizado.
 
 ------------------------------------------------
 
-2️⃣ IA + código no VS Code = velocidade absurda
+2️⃣ IA + VS Code = vantagem injusta de velocidade
 
-O maior diferencial que eu tenho hoje (e que eu e meu time usamos todo dia) é simples:
-IA + código no VS Code.
+O maior diferencial que eu (e meu time) usamos todo dia é simples:
+IA como copiloto no VS Code.
 
 Pra landing page, MVP, automação ou protótipo:
 ✓ o que eu levava dias → virou horas
 ✓ o que era travado → virou iterável
-✓ o que era “depois eu faço” → virou entrega
+✓ o que era "depois eu faço" → virou entrega
 
 Ser 10x ou 20x mais rápido não é exagero.
 É a diferença entre estudar e cobrar.
+
+E quem não usa IA assim em 2025 tá competindo de mãos atadas.
 
 ------------------------------------------------
 
 3️⃣ Quem entrega rápido testa mais — e ganha mais
 
 Velocidade não é só conforto. É vantagem competitiva.
-Quando você entrega rápido:
 
+Quando você entrega rápido:
 - você testa ideias sem medo
 - erra barato
 - ajusta na mesma semana
-- fecha antes do outro dev terminar o setup
+- fecha projeto antes do outro dev terminar o setup
 
 Foi isso que me permitiu sair do zero e começar a monetizar habilidade.
+
+Enquanto tem gente escolhendo framework há 3 semanas,
+eu já entreguei, testei e ajustei 2 vezes.
 
 ------------------------------------------------
 
 4️⃣ Dev que sabe vender solução nunca fica sem trampo
 
-O salto real não foi aprender mais framework.
+O salto real não foi aprender mais tecnologia.
 Foi aprender a:
-> entender dor do cliente
+> entender a dor real do cliente (não o que ele acha que é)
 > transformar isso em fluxo, página ou automação
-> explicar valor em linguagem simples
+> explicar o valor em linguagem simples (sem "tecniquês")
 
-Código é a ferramenta.
+Código é ferramenta.
 Resolver problema é o produto.
+
+Empresário não paga por "React bem escrito".
+Ele paga por sistema que vende, qualifica e escala.
 
 ------------------------------------------------
 
-5️⃣ Se você é dev iniciante, isso muda tudo
+5️⃣ Se você é dev, isso muda tudo
 
 Se eu tivesse ouvido isso antes, teria economizado anos:
-Não espere “ficar bom” pra ganhar dinheiro.
+
+Não espere "ficar bom" pra ganhar dinheiro.
 Fique útil, depois fique bom.
 
 IA não te substitui.
-Ela te acelera — se você usar com critério.
+Ela te acelera — se você souber usar com critério.
+
+A era do dev que "só executa" acabou.
+Quem entende de negócio, processo e resultado vai dominar os próximos 10 anos.
 `;
 
 const SecretTerminal: React.FC = () => {
@@ -180,7 +192,7 @@ const SecretTerminal: React.FC = () => {
                    onClick={() => setIsOpen(false)}
                    className="text-white/30 hover:text-white hover:underline text-xs uppercase tracking-widest"
                  >
-                   [ Close Terminal ]
+                   [ CLOSE TERMINAL ]
                  </button>
               </div>
             )}
