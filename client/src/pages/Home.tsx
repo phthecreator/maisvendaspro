@@ -12,9 +12,10 @@ import {
   XCircle,
 } from 'lucide-react';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import antesDepoisImg from '@/assets/cases/antes-depois.svg';
-import printBotImg from '@/assets/cases/print-bot.svg';
-import avatarProfissionalImg from '@/assets/cases/avatar-profissional.svg';
+import beforeRoupasImg from '@/assets/cases/before-roupa.jpg';
+import afterRoupasImg from '@/assets/cases/after-roupa.jpg';
+import printBotImg from '@/assets/cases/print-bot.jpg';
+import instagramProfileImg from '@/assets/cases/instagram-profile.jpg';
 
 export default function Home() {
   const scrollRef = useRef(null);
@@ -104,8 +105,10 @@ export default function Home() {
       solution: 'Fotos com IA + modelo virtual personalizado',
       results: ['Custo: R$ 200/mês', 'Tempo: 2 horas pra catálogo completo', 'Economia anual: R$ 57.600'],
       cta: 'Quero economizar assim também',
-      image: antesDepoisImg,
-      imageLabel: 'Antes / Depois',
+      images: [
+        { src: beforeRoupasImg, label: 'Antes' },
+        { src: afterRoupasImg, label: 'Depois' },
+      ],
     },
     {
       title: 'EMPRESA B2B DE SOFTWARE',
@@ -114,8 +117,7 @@ export default function Home() {
       solution: 'SDR com IA + qualificação automática 24/7',
       results: ['Tempo de resposta: 30 segundos', 'Reuniões agendadas: 4x mais', 'Taxa de conversão: +180%'],
       cta: 'Quero parar de perder lead',
-      image: printBotImg,
-      imageLabel: 'Print do Bot',
+      images: [{ src: printBotImg, label: 'Print do Bot' }],
     },
     {
       title: 'PSICÓLOGO CLÍNICO',
@@ -124,8 +126,7 @@ export default function Home() {
       solution: 'Avatar profissional + disparo segmentado + cronograma de posts',
       results: ['15 novos pacientes/mês', 'R$ 18k de faturamento adicional', 'ROI de 30x em 90 dias'],
       cta: 'Quero atrair mais clientes',
-      image: avatarProfissionalImg,
-      imageLabel: 'Avatar Profissional',
+      images: [{ src: instagramProfileImg, label: 'Perfil Instagram' }],
     },
   ];
 
@@ -618,10 +619,27 @@ export default function Home() {
             {cases.map((item, i) => (
               <div key={i} className="border border-white/10 bg-[#050a1f] p-6 flex flex-col">
                 <div className="mb-5 rounded-lg bg-white/[0.04] border border-white/10 aspect-video overflow-hidden relative">
-                  <img src={item.image} alt={item.imageLabel} className="h-full w-full object-cover" />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-3">
-                    <span className="text-[10px] uppercase tracking-widest text-white/70">{item.imageLabel}</span>
-                  </div>
+                  {item.images?.length === 2 ? (
+                    <div className="grid h-full w-full grid-cols-2">
+                      {item.images.map((img) => (
+                        <div key={img.label} className="relative h-full">
+                          <img src={img.src} alt={img.label} className="h-full w-full object-cover" />
+                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-2">
+                            <span className="text-[9px] uppercase tracking-widest text-white/70">{img.label}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <>
+                      <img src={item.images?.[0]?.src} alt={item.images?.[0]?.label} className="h-full w-full object-cover" />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-3">
+                        <span className="text-[10px] uppercase tracking-widest text-white/70">
+                          {item.images?.[0]?.label}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
                 <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-3">{item.title}</h3>
                 <p className="text-white/50 text-sm mb-4">{item.problem}</p>
