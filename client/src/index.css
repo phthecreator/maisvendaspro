@@ -6,8 +6,17 @@
 @theme inline {
   --color-background: #000000;
   --color-foreground: #ffffff;
-  --color-primary: #39ff14;
+  --color-primary: #00ff88;
+  --color-secondary: #ff0066;
+  --color-secondary-foreground: #ffffff;
+  --color-urgency: #ff4400;
   --color-card: #0a0a0a;
+  --color-background-dark: #0a0a0a;
+  --color-card-dark: #111111;
+  --color-accent-yellow: #ffd700;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -15,12 +24,12 @@
 }
 
 :root {
-  --primary: #39ff14;
+  --primary: #00ff88;
 }
 
 @layer base {
   * {
-    @apply border-white/10 outline-[#39ff14]/50;
+    @apply border-white/10 outline-[#00ff88]/50;
   }
   html {
     scroll-behavior: smooth;
@@ -28,10 +37,11 @@
   body {
     @apply bg-black text-white;
     font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
   }
   
   ::selection {
-    background-color: #39ff14;
+    background-color: #00ff88;
     color: #000000;
   }
 
@@ -44,14 +54,62 @@
     border: 1px solid #000000;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #39ff14;
+    background-color: #00ff88;
   }
 }
 
 @layer components {
+  .neon-glow,
+  .glow-text {
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+  }
+
+  .neon-border {
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+  }
+
+  .pulse-neon {
+    animation: pulse-neon-anim 2s infinite;
+  }
+
+  .terminal-cursor::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    perspective: 1000px;
+  }
+
+  .scrolling-content {
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  }
+
+  @keyframes pulse-neon-anim {
+    0%,
+    100% {
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
   /* BOTÃO 3D TÁTICO */
   .btn-neon-3d {
-    @apply relative bg-[#39ff14] text-black font-black uppercase tracking-[0.15em] transition-all duration-100;
+    @apply relative bg-[#00ff88] text-black font-black uppercase tracking-[0.15em] transition-all duration-100;
     /* Borda escura para definição */
     border: 1px solid #2eb312;
     /* Sombra Sólida para efeito 3D (o "bloco" embaixo do botão) + Glow suave */

@@ -11,7 +11,7 @@ const SocialProof: React.FC = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 p-6 bg-card border border-white/5 rounded-2xl group cursor-pointer overflow-hidden">
+        <div className="md:col-span-2 p-6 bg-card-dark border border-white/5 rounded-2xl group cursor-pointer overflow-hidden">
           <div className="relative w-full aspect-video rounded-xl mb-6 bg-zinc-800 flex items-center justify-center overflow-hidden">
             <img 
               alt="Rafael Testimonial" 
@@ -31,7 +31,7 @@ const SocialProof: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 gap-6">
-          <div className="bg-card rounded-2xl p-4 border border-white/5 flex flex-col items-center">
+          <div className="bg-card-dark rounded-2xl p-4 border border-white/5 flex flex-col items-center">
             <div className="w-full aspect-square rounded-xl overflow-hidden mb-3 border border-white/10">
               <img 
                 alt="Payment proof" 
@@ -42,7 +42,7 @@ const SocialProof: React.FC = () => {
             <p className="text-[10px] font-black text-primary text-center uppercase tracking-[0.2em]">Recebido via Pix</p>
           </div>
           
-          <div className="bg-card rounded-2xl p-4 border border-white/5 flex flex-col items-center">
+          <div className="bg-card-dark rounded-2xl p-4 border border-white/5 flex flex-col items-center">
             <div className="w-full aspect-square rounded-xl overflow-hidden mb-3 border border-white/10">
               <img 
                 alt="Dashboard proof" 

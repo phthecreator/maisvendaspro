@@ -1,69 +1,76 @@
+
 import React from 'react';
+import { Check } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const scrollToPricing = () => {
-    const el = document.getElementById('pricing');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <header className="relative overflow-hidden pt-16 pb-24 min-h-[85vh] flex flex-col justify-center bg-black">
-      {/* Background Sutil (apenas grid distante, sem fumaça excessiva) */}
-      <div className="absolute inset-0 pointer-events-none">
-         <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
-         <div className="absolute bottom-0 left-0 w-full h-[40vh] bg-[linear-gradient(to_bottom,transparent_0%,#000000_100%),linear-gradient(rgba(57,255,20,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.05)_1px,transparent_1px)] bg-[size:3rem_3rem] [transform:perspective(1000px)_rotateX(60deg)] origin-bottom"></div>
-      </div>
-
-      <div className="px-6 flex flex-col items-center text-center relative z-10">
+    <header className="relative pt-24 pb-16 md:pt-48 md:pb-32 overflow-hidden px-4">
+      {/* Background Terminal Effect */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none grid-bg"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10 text-center">
+        <p className="text-secondary font-black text-xs md:text-base uppercase tracking-[0.2em] mb-4">
+          🚨 O FIM do programador que só sabe escrever código.<br/>
+          ✨ O INÍCIO do Solucionador que fica rico.
+        </p>
         
-        {/* Badge Minimalista */}
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 border border-[#39ff14]/30 rounded-full mb-12 bg-[#39ff14]/5">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#39ff14] animate-pulse"></span>
-          <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-[#39ff14] uppercase">
-            System_Ready_v2.0
-          </span>
-        </div>
-        
-        {/* TÍTULO PRINCIPAL (Efeito Terminal Clean) */}
-        <h1 className="text-white text-5xl md:text-[6rem] lg:text-[7.5rem] font-black leading-[0.9] tracking-tighter mb-10 max-w-6xl select-text">
-          PARE DE CODAR <br />
-          <span className="text-[#39ff14] drop-shadow-[0_0_15px_rgba(57,255,20,0.6)] selection:bg-white selection:text-black">
-            DE GRAÇA
-          </span>
-          {/* Cursor Piscante */}
-          <span className="inline-block w-2 md:w-4 h-[0.8em] bg-[#39ff14] align-middle ml-1 md:ml-4 animate-[pulse_1s_steps(2)_infinite] shadow-[0_0_10px_#39ff14]"></span>
+        <h1 className="font-mono text-white text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-black leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 px-2">
+          TRANSFORME-SE EM UMA<br/>
+          <span className="text-primary neon-glow italic">SOFTWARE HOUSE</span><br/>
+          DE UMA PESSOA SÓ
         </h1>
         
-        <p className="text-white/60 text-lg md:text-2xl font-light leading-tight max-w-2xl mb-14 font-sans">
-          Especializado em <span className="text-[#39ff14] font-medium">Inteligência Artificial</span> e automações que geram lucro real.
-          Sem hype. Apenas código que paga boleto.
-        </p>
+        <div className="max-w-2xl mx-auto mb-10 px-2">
+          <p className="text-accent-yellow text-lg md:text-2xl font-bold leading-tight mb-4 uppercase">
+            Domine IA, Ferramentas "Hacker" e Automação para construir e vender soluções de R$ 3k a R$ 15k/mês...
+          </p>
+          <p className="text-white/80 text-sm md:text-xl font-medium">
+            ...mesmo que você nunca tenha escrito uma linha de código na vida.
+          </p>
+        </div>
 
-        {/* Tech Stack Pills - Estilo Terminal */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16 max-w-2xl font-mono text-[10px] md:text-xs">
-          {['> IA_GENERATIVA', '> PYTHON', '> N8N', '> AGENTS', '> OPENAI_API'].map((tech) => (
-            <span key={tech} className="px-3 py-1.5 text-[#39ff14]/70 border border-[#39ff14]/20 bg-[#39ff14]/5 tracking-widest uppercase hover:bg-[#39ff14] hover:text-black transition-colors cursor-default">
-              {tech}
-            </span>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 mb-12">
+          {[
+            'Sem depender de API oficial',
+            'Sem precisar de dev sênior',
+            'Sem levar meses'
+          ].map((text, i) => (
+            <div key={i} className="flex items-center gap-2 text-white/90 font-bold uppercase text-[10px] md:text-sm">
+              <div className="bg-primary/20 p-1 rounded-full">
+                <Check className="w-3 h-3 md:w-4 md:h-4 text-primary" />
+              </div>
+              {text}
+            </div>
           ))}
         </div>
-        
-        {/* Botões */}
-        <div className="flex flex-col md:flex-row gap-5 w-full max-w-md">
-          <a 
-            href="https://wa.me/556191185635"
-            className="group btn-neon-3d flex-1 cursor-pointer flex items-center justify-center overflow-hidden rounded-md h-16 text-base md:text-lg"
-          >
-            <span className="relative z-10">Faturar com IA</span>
-          </a>
+
+        <div className="flex flex-col items-center gap-4 px-2">
           <button 
-            onClick={() => window.location.hash = 'faq'}
-            className="flex-1 border border-white/20 hover:border-white text-white/70 hover:text-white cursor-pointer items-center justify-center h-16 bg-transparent text-sm font-bold tracking-[0.2em] uppercase transition-all hover:bg-white/5 active:scale-95"
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            className="pulse-neon w-full max-w-lg bg-primary text-black font-black text-base md:text-2xl py-5 md:py-6 rounded-xl uppercase tracking-wider hover:scale-105 transition-all active:scale-95"
           >
-            Ver Detalhes
+            GARANTIR MINHA VAGA AGORA<br/>
+            <span className="text-[10px] md:text-xs opacity-70">TURMA FECHA EM 3 DIAS</span>
           </button>
+          <div className="text-center">
+            <p className="text-white/60 text-xs md:text-sm font-bold">↓ Apenas R$ 297 à vista (ou 12x de R$ 29,90)</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mt-4 text-[9px] md:text-[10px] text-white/40 uppercase font-bold">
+              <span>🔒 Compra Segura</span>
+              <span className="hidden sm:inline">|</span>
+              <span>✓ 7 Dias de Garantia</span>
+              <span className="hidden sm:inline">|</span>
+              <span>🎁 Acesso imediato</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 pt-10 border-t border-white/5 overflow-hidden">
+          <p className="text-white/30 text-[9px] md:text-[10px] uppercase font-black tracking-widest mb-6">Método usado por alunos que atendem:</p>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 md:gap-16 opacity-30 grayscale contrast-125">
+             {['Imobiliárias', 'Clínicas', 'Advocacia', 'E-commerce', 'Agências'].map((item) => (
+               <span key={item} className="font-black text-sm sm:text-base md:text-xl italic uppercase whitespace-nowrap">{item}</span>
+             ))}
+          </div>
         </div>
       </div>
     </header>

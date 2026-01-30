@@ -1,60 +1,56 @@
 
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
-
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="bg-card border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/20">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full p-5 text-left transition-colors hover:bg-white/[0.02]"
-      >
-        <span className="text-base md:text-lg font-black text-white pr-6 uppercase tracking-tight">{question}</span>
-        <ChevronDown className={`text-primary w-6 h-6 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
-      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
-        <div className="px-5 pb-6 text-base text-white/50 leading-relaxed">
-          {answer}
-        </div>
-      </div>
-    </div>
-  );
-};
+const faqItems = [
+  { q: "Eu não sei NADA de programação. Vai funcionar pra mim?", a: "Sim. 60% dos nossos alunos nunca escreveram uma linha de código antes. O método é baseado em IA (ela escreve o código) e ferramentas no-code/low-code (você monta como Lego)." },
+  { q: "Quanto tempo até eu ter resultado?", a: "Primeira automação funcionando: 3-7 dias. Primeiro contrato fechado: 15-45 dias (média real dos alunos é 28 dias)." },
+  { q: "Preciso investir em ferramentas caras?", a: "Não. N8N e Evolution são gratuitos. VPS custa R$ 20/mês. Inicialmente você gasta menos de R$ 100/mês." },
+  { q: "E se eu não conseguir vender?", a: "O Módulo 5 é inteiramente sobre vendas. Ensinamos diagnósticos e prospecção em nichos que imploram por automação." },
+  { q: "Isso funciona no meu nicho?", a: "Se o nicho tem leads, processos repetitivos e dinheiro para investir, funciona. Nichos testados: Imobiliária, Saúde, Direito, etc." },
+  { q: "Vocês dão suporte? E se eu travar?", a: "Sim. Comunidade ativa com resposta em 24h, mentorias semanais e base de conhecimento robusta." },
+  { q: "O conteúdo fica desatualizado?", a: "Não. O acesso é vitalício e as atualizações são gratuitas conforme a IA e as ferramentas evoluem." },
+  { q: "Por que tão barato? É pegadinha?", a: "Estratégia de validação em escala. Queremos 500 alunos faturando alto para consolidar o método antes de subir o preço." },
+  { q: "Ensina a vender ou só parte técnica?", a: "Os dois. Tech sem vendas é hobby. Vendas sem tech é commodity. Unimos os dois." },
+  { q: "E se a IA evoluir e isso ficar obsoleto?", a: "Quanto mais a IA evolui, mais poderoso você fica. IA substitui quem tenta competir com ela, não quem manda nela." },
+  { q: "Consigo fazer isso trabalhando CLT?", a: "Sim. Muitos alunos começaram com 1-2h por dia e escalaram até poderem sair do emprego." },
+  { q: "Tem garantia?", a: "7 dias incondicional. Se não gostar, um email e devolvemos 100% sem perguntas." },
+  { q: "Diferença pros outros cursos de IA?", a: "Foco total em FECHAR CONTRATOS e usar ferramentas 'hack' BR, não apenas teoria de ChatGPT." },
+  { q: "Posso revender as automações prontas?", a: "SIM! Os templates são seus. Muitos alunos pagam o curso só revendendo o CRM imobiliário pronto." },
+  { q: "Já sei programar, é pra mim?", a: "Sim, talvez mais ainda. Você vai acelerar 10x sua entrega e aprender a vender valor em vez de horas." }
+];
 
 const FAQ: React.FC = () => {
-  const faqs = [
-    {
-      question: "Preciso saber programar muito?",
-      answer: "Não. Se você sabe o básico de lógica e quer faturar, a IA faz a parte pesada da codificação por você. Nosso método ensina você a orquestrar modelos para criar soluções robustas."
-    },
-    {
-      question: "Quanto tempo demora pra ter retorno?",
-      answer: "Temos alunos que fecharam o primeiro contrato em menos de 10 dias seguindo o método exato de prospecção ativa que ensinamos logo no primeiro módulo."
-    },
-    {
-      question: "As aulas são gravadas ou ao vivo?",
-      answer: "Você recebe acesso imediato a mais de 40 aulas gravadas. Além disso, temos encontros ao vivo quinzenais para análise de projetos reais e networking avançado."
-    },
-    {
-      question: "Tenho suporte para tirar dúvidas?",
-      answer: "Sim! Temos uma comunidade exclusiva no Discord e suporte individual via plataforma para garantir que você nunca fique travado em nenhum projeto."
-    }
-  ];
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-6 max-w-3xl mx-auto scroll-mt-20">
-      <h2 className="text-white text-3xl font-black mb-12 text-center uppercase tracking-tighter">Dúvidas Frequentes</h2>
-      <div className="space-y-4">
-        {faqs.map((faq, i) => (
-          <FAQItem key={i} question={faq.question} answer={faq.answer} />
-        ))}
+    <section className="py-24 px-6 bg-black" id="faq">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-white text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+            ❓ PERGUNTAS QUE VOCÊ TEM (E RESPOSTAS HONESTAS)
+          </h2>
+        </div>
+
+        <div className="space-y-4">
+          {faqItems.map((item, i) => (
+            <div key={i} className="bg-card-dark border border-white/5 rounded-2xl overflow-hidden transition-all hover:border-primary/20">
+              <button 
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full p-6 text-left flex justify-between items-center gap-4 group"
+              >
+                <span className="text-white font-bold text-sm md:text-base uppercase tracking-tight group-hover:text-primary transition-colors">{item.q}</span>
+                <ChevronDown className={`text-primary w-5 h-5 shrink-0 transition-transform ${openIndex === i ? 'rotate-180' : ''}`} />
+              </button>
+              {openIndex === i && (
+                <div className="px-6 pb-6 text-white/50 text-sm md:text-base leading-relaxed border-t border-white/5 pt-4">
+                   <p className="font-mono text-primary text-[10px] uppercase font-black mb-2 tracking-widest">Resposta:</p>
+                   {item.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
