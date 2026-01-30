@@ -220,6 +220,12 @@ export default function Home() {
             <button onClick={() => scrollTo('faq')} className="hover:text-white transition-colors">
               FAQ
             </button>
+            <a href="/portfolio" className="hover:text-white transition-colors">
+              Portfólio
+            </a>
+            <a href="/vibe-coding-pro" className="hover:text-white transition-colors">
+              Vibe Coding Pro
+            </a>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -271,6 +277,22 @@ export default function Home() {
                     >
                       FAQ
                     </button>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a
+                      href="/portfolio"
+                      className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-white/80 hover:text-white"
+                    >
+                      Portfólio
+                    </a>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a
+                      href="/vibe-coding-pro"
+                      className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-white/80 hover:text-white"
+                    >
+                      Vibe Coding Pro
+                    </a>
                   </SheetClose>
                 </div>
                 <div className="mt-auto px-4 pb-6">
