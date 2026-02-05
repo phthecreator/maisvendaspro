@@ -1,0 +1,47 @@
+name: marketing-brand
+title: Marketing & Personal Branding Squad
+description: Squad specialized in internet research, social media content, personal branding, and traffic strategy.
+version: 1.0.0
+author: Antigravity
+
+agents:
+  - name: Scout
+    id: marketing-scout
+    role: Researcher/Scraper
+    description: Monitors Google Trends, LinkedIn, and competitors for hype and trends.
+    file: agents/scout.md
+
+  - name: Creator
+    id: marketing-creator
+    role: Social Media Creator
+    description: Generates daily content for LinkedIn and Meta based on trends.
+    file: agents/creator.md
+
+  - name: Style
+    id: personal-stylist
+    role: Personal Branding Advisor
+    description: Personal image advisor and LinkedIn visual/authority optimizer.
+    file: agents/style.md
+
+  - name: Strategist
+    id: traffic-strategist
+    role: Traffic & Strategy Manager
+    description: Manages Meta Ads strategy, timing, and analytics.
+    file: agents/strategist.md
+
+tasks:
+  - name: research-trends
+    file: tasks/research-trends.md
+  - name: generate-content
+    file: tasks/generate-content.md
+  - name: audit-branding
+    file: tasks/audit-branding.md
+  - name: optimize-traffic
+    file: tasks/optimize-traffic.md
+
+config:
+  standards: config/marketing-standards.md
+  social_channels:
+    - linkedin
+    - meta
+    - instagram

@@ -132,3 +132,30 @@ Desktop.ini
 # Project Specific
 .vite/
 /server/dist/
+.worktrees/
+legacy_root_backup/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment & Secrets (AIOS)
+!.env.example
+*.key
+*.pem
+
+# Build & Logs (AIOS)
+build/
+logs/
+
+# AIOS Local (AIOS)
+.aios-core/
+.agent/
+.antigravity/
+.aios-core/local/
+.claude/settings.local.json
+.aios/install-log.txt
+
+# Supabase generated metadata (contains connection secrets)
+supabase/.temp/
