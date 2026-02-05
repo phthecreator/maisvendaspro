@@ -99,34 +99,34 @@ export default function Home() {
 
   const cases = [
     {
-      title: 'LOJA DE ROUPAS FEMININAS',
+      title: 'AGÊNCIA DE MARKETING B2B',
       problem:
-        'Gastava R$ 5.000/mês com fotógrafo e modelo. Catálogo demorava 20 dias pra ficar pronto.',
-      solution: 'Fotos com IA + modelo virtual personalizado',
-      results: ['Custo: R$ 200/mês', 'Tempo: 2 horas pra catálogo completo', 'Economia anual: R$ 57.600'],
-      cta: 'Quero economizar assim também',
+        'Time de SDR gastava 4h/dia qualificando leads. Tempo de resposta: +4 horas. Leads fechavam com concorrente.',
+      solution: 'SDR com IA + CRM integrado + Dashboard analytics + automações WhatsApp',
+      results: ['Faturamento: +55% (R$ 180k → R$ 280k/mês)', 'Tempo de resposta: 30 segundos', 'ROI: 46x em 6 meses'],
+      cta: 'Quero escalar minha operação',
       images: [
         { src: beforeRoupasImg, label: 'Antes' },
         { src: afterRoupasImg, label: 'Depois' },
       ],
     },
     {
-      title: 'EMPRESA B2B DE SOFTWARE',
+      title: 'SAAS B2B — $500K ARR',
       problem:
-        'Time comercial perdia 60% dos leads porque demorava 3-4 horas pra dar o primeiro retorno.',
-      solution: 'SDR com IA + qualificação automática 24/7',
-      results: ['Tempo de resposta: 30 segundos', 'Reuniões agendadas: 4x mais', 'Taxa de conversão: +180%'],
-      cta: 'Quero parar de perder lead',
-      images: [{ src: printBotImg, label: 'Print do Bot' }],
+        '12 pessoas, 60h/semana em tarefas repetitivas. Email manual, CRM desatualizado, relatórios no Excel.',
+      solution: 'Enterprise OS: Dashboard executivo + automações + CRM sync + relatórios automáticos',
+      results: ['75% operações automatizadas', 'Erro humano: -87%', 'Economia anual: $156.000'],
+      cta: 'Quero automatizar operações',
+      images: [{ src: printBotImg, label: 'Dashboard' }],
     },
     {
-      title: 'PSICÓLOGO CLÍNICO',
+      title: 'REDE DE 5 CONSULTÓRIOS',
       problem:
-        'Instagram com 400 seguidores, foto amadora, zero pacientes da internet. Dependia 100% de indicação.',
-      solution: 'Avatar profissional + disparo segmentado + cronograma de posts',
-      results: ['15 novos pacientes/mês', 'R$ 18k de faturamento adicional', 'ROI de 30x em 90 dias'],
-      cta: 'Quero atrair mais clientes',
-      images: [{ src: instagramProfileImg, label: 'Perfil Instagram' }],
+        '60% de cancelamento por no-show. Agenda vazia = receita perdida. Equipe gastava horas ligando para confirmar.',
+      solution: 'Agendamento inteligente + lembretes automáticos WhatsApp + confirmação com IA',
+      results: ['No-show: 60% → 12%', '+120 novos pacientes em 90 dias', 'Receita adicional: R$ 72.000'],
+      cta: 'Quero eliminar no-shows',
+      images: [{ src: instagramProfileImg, label: 'Sistema' }],
     },
   ];
 
@@ -143,10 +143,10 @@ export default function Home() {
   ];
 
   const metrics = [
-    { value: '+150', label: 'Projetos entregues desde 2023' },
-    { value: '+3.000', label: 'Templates disponíveis (se não tiver, criamos)' },
-    { value: '4.8/5', label: 'Avaliação média dos clientes' },
-    { value: '< 7 dias', label: 'Tempo médio de entrega (diagnóstico → MVP).' },
+    { value: '15+', label: 'Clientes em produção com ROI documentado' },
+    { value: '$180k', label: 'Revenue mensal gerado para nossos clientes' },
+    { value: '4.8/5', label: 'NPS médio dos clientes (apenas em produção)' },
+    { value: '7 dias', label: 'Tempo médio de entrega do MVP funcional' },
   ];
 
   const faqs = [

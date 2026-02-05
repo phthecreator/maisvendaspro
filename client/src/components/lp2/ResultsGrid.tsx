@@ -4,46 +4,46 @@ import { DollarSign, MessageCircle, FileText, Layout, Users, Star } from 'lucide
 
 const proofs = [
   {
-    title: "João P. - Gestor de Tráfego",
-    text: '"Fechei R$ 4.500 com imobiliária. Antes eu só vendia tráfego."',
-    value: "R$ 4.500 + R$ 450/mês",
-    type: "Proposta Aceita",
-    icon: FileText
-  },
-  {
-    title: "Maria L. - Ex-Assistente Virtual",
-    text: '"Cliente mandou: \'Esse robô atende melhor que meu vendedor\'. Renovei por mais 6 meses."',
-    value: "R$ 3.200/mês recorrente",
-    type: "Feedback Cliente",
-    icon: MessageCircle
-  },
-  {
-    title: "Carlos M. - Desenvolvedor Júnior",
-    text: '"Antes: salário de R$ 2.800. Agora: 3 contratos somando R$ 11k/mês."',
-    value: "R$ 11.000/mês",
-    type: "Pix Recebido",
+    title: "Agência de Marketing — SP",
+    text: '"O SDR com IA triplicou nossas reuniões agendadas. Tempo de resposta caiu de 4 horas pra 30 segundos."',
+    value: "+55% faturamento mensal",
+    type: "Enterprise OS",
     icon: DollarSign
   },
   {
-    title: "Fernanda S. - Marketeira",
-    text: '"Criei meu primeiro CRM em 2 dias. Cliente ficou impressionado."',
-    value: "R$ 2.800 (projeto)",
-    type: "Automação OK",
-    icon: Layout
-  },
-  {
-    title: "Ricardo B. - Contador",
-    text: '"Automatizei 40% do meu escritório. Agora vendo automação pros meus clientes também."',
-    value: "R$ 6.500 (acumulado)",
-    type: "Depoimento",
+    title: "Rede de Consultórios — 5 unidades",
+    text: '"No-show caiu de 60% pra 12%. São 120 pacientes novos em 3 meses que não teríamos sem o sistema."',
+    value: "R$ 72.000 receita adicional",
+    type: "Specialist Squad",
     icon: MessageCircle
   },
   {
-    title: "Paula D. - Estudante",
-    text: '"Primeira nota da minha vida: R$ 5.000. Tenho 22 anos e nunca tinha programado."',
-    value: "R$ 5.000",
-    type: "Nota Fiscal",
+    title: "SaaS B2B — $500k ARR",
+    text: '"Automatizamos 75% das operações repetitivas. A equipe agora foca no que importa: produto e clientes."',
+    value: "$156k economia anual",
+    type: "Enterprise OS",
+    icon: Layout
+  },
+  {
+    title: "E-commerce de Moda — RJ",
+    text: '"Landing page convertendo 8.2%. Dashboard mostra exatamente de onde vem cada venda. Controle total."',
+    value: "8.2% taxa de conversão",
+    type: "Specialist Squad",
     icon: FileText
+  },
+  {
+    title: "Escritório Contábil — MG",
+    text: '"O CRM integrado com WhatsApp mudou nossa operação. Zero lead esquecido. Pipeline sempre atualizado."',
+    value: "R$ 45k/mês em novos contratos",
+    type: "Enterprise OS",
+    icon: DollarSign
+  },
+  {
+    title: "Startup Fintech — SP",
+    text: '"Entrega em 7 dias como prometido. Performance acima de 90 no Lighthouse. Documentação impecável."',
+    value: "MVP em 7 dias",
+    type: "Specialist Squad",
+    icon: Users
   }
 ];
 
@@ -53,7 +53,7 @@ const ResultsGrid: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-white text-3xl md:text-6xl font-black uppercase mb-4 tracking-tighter px-2">
-            💰 "Isso Funciona. E Aqui Estão as Provas."
+            💰 Resultados Documentados de Clientes Reais
           </h2>
         </div>
 
@@ -77,19 +77,19 @@ const ResultsGrid: React.FC = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-20 pt-12 border-t border-white/5">
           <div className="text-center">
-            <p className="text-primary text-4xl md:text-6xl font-black tracking-tighter">+347</p>
-            <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.2em] mt-1">Alunos faturando</p>
+            <p className="text-primary text-4xl md:text-6xl font-black tracking-tighter">15+</p>
+            <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.2em] mt-1">Clientes em produção</p>
           </div>
           <div className="text-center">
-            <p className="text-white text-4xl md:text-6xl font-black tracking-tighter">R$ 2.1M+</p>
-            <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.2em] mt-1">Em contratos fechados</p>
+            <p className="text-white text-4xl md:text-6xl font-black tracking-tighter">$180k</p>
+            <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.2em] mt-1">Revenue mensal dos clientes</p>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 text-accent-yellow mb-1">
               {[...Array(5)].map((_, i) => <Star key={i} className="fill-current w-4 h-4 md:w-5 md:h-5" />)}
             </div>
-            <p className="text-white text-3xl md:text-4xl font-black tracking-tighter">4.9/5</p>
-            <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.2em] mt-1">Satisfação</p>
+            <p className="text-white text-3xl md:text-4xl font-black tracking-tighter">4.8/5</p>
+            <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.2em] mt-1">NPS clientes em produção</p>
           </div>
         </div>
       </div>

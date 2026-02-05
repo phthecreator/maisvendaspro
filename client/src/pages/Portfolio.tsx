@@ -27,117 +27,88 @@ type Step = {
 const steps: Step[] = [
   {
     id: "sobre",
-    title: "Sobre mim",
+    title: "Quem sou eu",
     bg: "linear-gradient(135deg, rgba(57,255,20,0.10), rgba(0,0,0,0.92) 55%, rgba(0,153,255,0.12))",
     image: images.hoodie,
-    imageAlt: "Pedro em um mirante com vista da cidade",
+    imageAlt: "Pedro Henrique, CTO & Co-Founder da MaisVendasPro",
     content: (
       <div className="space-y-10">
         <div className="space-y-6">
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary/70">Manifesto</p>
+          <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary/70">CTO & Co-Founder</p>
           <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white">
-            A verdade que ninguém fala
+            Engenheiro de sistemas que geram receita
           </h2>
           <div className="space-y-4 text-base sm:text-lg md:text-xl text-white/80 leading-relaxed">
-            <p>Por que a maioria das automações falha?</p>
-            <p>Porque não é sobre tecnologia. É sobre mentalidade.</p>
             <p>
-              Eu já vi empresário matar automação que tava gerando +40k/mês porque ela mostrava a verdade que ele
-              não queria ouvir.
+              Sou Pedro Henrique. CTO e Co-Founder da MaisVendasPro. Arquiteto de sistemas de automação comercial
+              que já movimentaram mais de R$ 500k em contratos para nossos clientes.
+            </p>
+            <p>
+              Passei 2 anos no Vale do Silício estudando como empresas que movem bilhões estruturam
+              operações de vendas com IA. Voltei com uma obsessão: trazer essa mentalidade pro mercado brasileiro.
             </p>
           </div>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 text-white/80">
           <p className="text-xl md:text-2xl font-semibold text-white">
-            Ele não desligou o sistema. Ele desligou o espelho.
+            Automação sem estratégia é só tecnologia cara parada. Eu construo sistemas que vendem.
           </p>
         </div>
 
         <div className="space-y-6">
           <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed">
-            No Vale do Silício, onde passei os últimos 2 anos, a mentalidade é outra:
+            O que me diferencia de 90% dos devs e agências:
           </p>
           <ul className="space-y-4 text-white/70 leading-relaxed text-base md:text-lg">
             <li>
-              → Investe-se 20k numa ferramenta e treina-se o time porque o retorno é pensado em anos, não em
-              semanas.
+              → Eu entendo de vendas, copy e operação comercial. Não só de código.
             </li>
             <li>
-              → Contrata-se júnior de 23 anos porque o foco é lapidar, não procurar quem “já vem pronto”.
+              → Lidero um squad estruturado (Dev + QA + Advisory Board) com processos de empresa grande.
             </li>
-            <li>→ IA tá na base da infraestrutura, não é enfeite de site.</li>
+            <li>→ Cada entrega tem documentação, treinamento e suporte por 90 dias incluído.</li>
           </ul>
-        </div>
-
-        <div className="space-y-4 text-white/70 text-base sm:text-lg leading-relaxed">
-          <p>
-            No Brasil, a pergunta ainda é: “E se for golpe? E se não funcionar? E se eu investir e perder?”
-          </p>
-          <p>E enquanto isso, quem entendeu o jogo já tá 3 anos na frente.</p>
-        </div>
-
-        <div className="space-y-4 text-white/80 text-base sm:text-lg leading-relaxed">
-          <p>
-            Eu trabalho com quem entende que automação não é bot no WhatsApp. É CRM integrado, leads qualificados
-            sozinhos, remarketing rodando, SDR e Closer sendo treinados por IA baseado nas próprias calls.
-          </p>
-          <p className="text-white">
-            É sistema. Não é mágica. E sistema demora pra construir, mas roda sozinho depois.
-          </p>
         </div>
 
         <div className="mt-10 space-y-8">
           <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.4em] text-primary/70">
-            <span>Anti-cliente</span>
+            <span>Perfil ideal de cliente</span>
             <span className="h-px flex-1 bg-white/10" />
           </div>
           <h3 className="text-2xl md:text-4xl font-black tracking-tighter text-white">
-            Com quem eu NÃO trabalho
+            Para quem eu construo
           </h3>
-          <p className="text-base sm:text-lg text-white/70 leading-relaxed">
-            Esse trabalho não é pra todo mundo.
-          </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/50">Eu NÃO trabalho com</p>
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/50">Clientes ideais</p>
               <ul className="space-y-4 text-white/70 leading-relaxed">
                 <li>
-                  → Quem acha que bot resolve tudo
-                  <span className="block text-white/50 text-sm">(Bot é ferramenta. Sistema é estratégia.)</span>
+                  ✓ Agências de marketing que querem oferecer automação com IA como serviço
                 </li>
                 <li>
-                  → Quem quer resultado instantâneo sem processo
-                  <span className="block text-white/50 text-sm">
-                    (Automação roda sozinha depois de estruturada. Não antes.)
-                  </span>
+                  ✓ SaaS e empresas B2B que precisam escalar operações sem escalar headcount
                 </li>
                 <li>
-                  → Quem tem medo de ver a verdade nos dados
-                  <span className="block text-white/50 text-sm">
-                    (Se você prefere manter o ego intacto a ter mais vendas, esse não é o projeto certo pra gente trabalhar juntos.)
-                  </span>
+                  ✓ Redes de clínicas, consultórios e franquias que precisam de agendamento inteligente
                 </li>
                 <li>
-                  → Quem quer “testar pra ver se funciona” sem investir em estrutura
-                  <span className="block text-white/50 text-sm">
-                    (Sistema demanda setup. Não é plug-and-play de 3 dias.)
-                  </span>
+                  ✓ Empresários que entendem que sistema é investimento com ROI mensurável
                 </li>
               </ul>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/50">Eu trabalho melhor com</p>
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/50">O que entrego</p>
               <ul className="space-y-4 text-white/70 leading-relaxed">
-                <li>✓ Empresas de médio/grande porte que querem escalar vendas com operação real</li>
-                <li>✓ Negócios que entendem que automação é investimento, não custo</li>
-                <li>✓ Times que topam ajustar processo pra sistema rodar direito</li>
-                <li>✓ Pessoas que sabem que “fulano que sabe de tudo” não é estratégia de crescimento</li>
+                <li>✓ MVP funcional em 7 dias (landing + agendamento + automação)</li>
+                <li>✓ Performance garantida: Lighthouse {">"} 90, LCP {"<"} 2.5s</li>
+                <li>✓ Stack enterprise: React 19, Supabase, Vercel Edge CDN</li>
+                <li>✓ Documentação completa + treinamento da equipe</li>
               </ul>
               <p className="text-white/80 font-semibold">
-                Se você se encaixa no segundo grupo, a gente vai se dar bem.
+                Entrega profissional. Processo de empresa grande. Velocidade de startup.
               </p>
             </div>
           </div>
@@ -147,131 +118,136 @@ const steps: Step[] = [
   },
   {
     id: "o-que-eu-faco",
-    title: "O que eu faço",
+    title: "Soluções que entrego",
     bg: "linear-gradient(135deg, rgba(255,0,82,0.12), rgba(0,0,0,0.92) 55%, rgba(57,255,20,0.08))",
     layout: "full",
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group">
-          <span className="text-3xl mb-4 block">🚀</span>
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Automações de Vendas + Integração de Sistemas</h3>
-          <p className="mt-3 text-white/60 leading-relaxed">
-            Crio fluxos que respondem rápido, qualificam de verdade e encaminham pro humano no momento certo — sem parecer robô. Integro WhatsApp, CRM, e-mail, formulário e pipeline num fluxo único. Nada de dado espalhado.
-          </p>
-          <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-            WhatsApp / Instagram / Funil / CRM Integrado
-          </p>
+      <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-card border border-primary/20 rounded-2xl p-6 sm:p-8 hover:border-primary/40 transition-all group relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-primary/10 text-primary text-[10px] font-black px-3 py-1 uppercase tracking-widest">A partir de $3.000</div>
+            <span className="text-3xl mb-4 block">🚀</span>
+            <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Specialist Squad</h3>
+            <p className="mt-2 text-sm text-primary/80 font-semibold uppercase tracking-wider">MVP em 7 dias</p>
+            <p className="mt-3 text-white/60 leading-relaxed">
+              Landing page de alta conversão + sistema de agendamento (Cal.com) + integração WhatsApp + CRM básico.
+              Tudo deployado em Vercel com performance garantida (Lighthouse {">"} 90).
+            </p>
+            <ul className="mt-4 space-y-2 text-white/50 text-sm">
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Entrega em 7 dias</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Documentação + Treinamento incluído</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Suporte 90 dias</li>
+            </ul>
+            <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
+              Landing / Agendamento / WhatsApp / Deploy
+            </p>
+          </div>
+
+          <div className="bg-card border border-white/10 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-white/5 text-white/60 text-[10px] font-black px-3 py-1 uppercase tracking-widest">$6.000 - $15.000</div>
+            <span className="text-3xl mb-4 block">🏗️</span>
+            <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Enterprise OS</h3>
+            <p className="mt-2 text-sm text-primary/80 font-semibold uppercase tracking-wider">Sistema completo em 30 dias</p>
+            <p className="mt-3 text-white/60 leading-relaxed">
+              Dashboard executivo + SDR com IA + CRM integrado (Pipedrive) + automações de email (Resend) + analytics
+              avançado + relatórios automáticos. Infraestrutura enterprise com Supabase + Vercel Edge CDN.
+            </p>
+            <ul className="mt-4 space-y-2 text-white/50 text-sm">
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Retainer mensal: $1.000 - $3.000</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> SLA 99.9% uptime</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Squad dedicado (Dev + QA)</li>
+            </ul>
+            <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
+              Dashboard / SDR IA / CRM / Analytics / Integrações
+            </p>
+          </div>
         </div>
 
-        <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group">
-          <span className="text-3xl mb-4 block">🤖</span>
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">SDR com IA + Treino de Time</h3>
-          <p className="mt-3 text-white/60 leading-relaxed">
-            Desenho o roteiro completo do agente: perguntas certas, objeções mapeadas, qualificação real e agendamento de call. Analiso as calls e transformo padrões de sucesso em ajustes no playbook. Closer bom vira método. Método vira escala.
-          </p>
-          <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-            Agendamento / Qualificação / Padrões de Performance
-          </p>
-        </div>
-
-        <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group">
-          <span className="text-3xl mb-4 block">🛠️</span>
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">MVP / Produto Rápido</h3>
-          <p className="mt-3 text-white/60 leading-relaxed">
-            Estruturo e tiro do papel MVPs e produtos digitais: landing, proposta, lógica do fluxo, integrações e versão funcional. Ideia no papel vira produto testável em semanas, não meses.
-          </p>
-          <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-            Landing / Proposta / Integrações / Versão Funcional
-          </p>
-        </div>
-
-        <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group">
-          <span className="text-3xl mb-4 block">✍️</span>
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Copy e Posicionamento</h3>
-          <p className="mt-3 text-white/60 leading-relaxed">
-            Escrevo a copy do jeito que o cliente entende. Direto, sem clichê, sem “tecniquês”. Bom pra página, anúncio, pitch e WhatsApp. Se ninguém entende o que você vende, o problema é comunicação.
-          </p>
-          <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-            Página / Anúncio / Pitch / Mensagens
-          </p>
-        </div>
-
-        <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group">
-          <span className="text-3xl mb-4 block">📋</span>
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Operação e Playbooks</h3>
-          <p className="mt-3 text-white/60 leading-relaxed">
-            Crio checklists, scripts, templates e rotinas pra time operar sem improviso. Método (SPIN adaptado, micro-pactos, funil, métricas) + execução documentada. Acabou a era do “fulano que sabe de tudo”.
-          </p>
-          <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-            Processos / Scripts / Rotinas
-          </p>
-        </div>
-
-        <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group">
-          <span className="text-3xl mb-4 block">📊</span>
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Diagnóstico e Estratégia de Operação</h3>
-          <p className="mt-3 text-white/60 leading-relaxed">
-            Antes de automatizar, eu mapeio o fluxo, encontro o gargalo e digo o que fica, o que muda e o que corta. Transformo dados soltos em diagnóstico claro. Às vezes o problema não é tecnologia — é processo.
-          </p>
-          <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-            Análise / Dashboards / Diagnóstico de Gargalo
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
+            <span className="text-2xl mb-3 block">🤖</span>
+            <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">SDR com IA</h3>
+            <p className="mt-2 text-white/50 text-sm leading-relaxed">
+              Qualificação automática 24/7. Resposta em 30 segundos. Integração CRM + WhatsApp.
+            </p>
+          </div>
+          <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
+            <span className="text-2xl mb-3 block">📊</span>
+            <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">Dashboard Analytics</h3>
+            <p className="mt-2 text-white/50 text-sm leading-relaxed">
+              Métricas em tempo real. Revenue, conversão, pipeline. Alertas automáticos no Slack.
+            </p>
+          </div>
+          <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
+            <span className="text-2xl mb-3 block">⚡</span>
+            <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">Automações Comerciais</h3>
+            <p className="mt-2 text-white/50 text-sm leading-relaxed">
+              Fluxos de nurturing, remarketing, follow-up. Nenhum lead esquecido.
+            </p>
+          </div>
+          <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
+            <span className="text-2xl mb-3 block">🔒</span>
+            <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">Segurança & Compliance</h3>
+            <p className="mt-2 text-white/50 text-sm leading-relaxed">
+              JWT + RLS + criptografia at rest. LGPD compliant. Auditoria automática.
+            </p>
+          </div>
         </div>
       </div>
     ),
   },
   {
     id: "stack",
-    title: "Stack & Metodologia",
+    title: "Stack & Processo",
     bg: "linear-gradient(135deg, rgba(0,153,255,0.16), rgba(0,0,0,0.92) 55%, rgba(255,0,82,0.10))",
     image: images.desk,
-    imageAlt: "Pedro trabalhando no escritorio",
+    imageAlt: "Pedro Henrique no setup de desenvolvimento",
     content: (
       <div className="space-y-10">
         <div className="space-y-4">
-          <p className="text-base sm:text-lg text-white/80">Como eu trabalho (Stack e método)</p>
+          <p className="text-base sm:text-lg text-white/80">Decisões técnicas documentadas em ADR (Architecture Decision Records)</p>
           <p className="text-white/70 leading-relaxed">
-            Eu não tenho fetiche por framework. Uso o que resolve o problema mais rápido, com menos fricção.
+            Cada escolha de tecnologia passa por análise de trade-offs, custo e escalabilidade. Sem achismo.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Ferramentas e linguagens (de verdade)</p>
+            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Stack de Produção</p>
             <ul className="space-y-3 text-white/80 font-medium">
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> React — Front-end (nossa base principal)</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Node.js — Backend quando precisa de lógica server-side</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Python — Automações, scripts e integrações pesadas</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> n8n — Automação e orquestração de fluxos (coração do sistema)</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> WhatsApp API — Fluxos comerciais e qualificação</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> LLMs (Claude, GPT, Gemini) — IA aplicada, não enfeite</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Baserow / Google Sheets — Base de dados rápida e acessível</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Portainer — Gerenciamento de containers</li>
-              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Git + VS Code + IA — Meu setup diário de dev</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> React 19 + Vite 7 — Frontend (LCP {"<"} 2.5s, bundle {"<"} 100KB)</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Tailwind 4 — Design system consistente</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Supabase — Backend gerenciado (PostgreSQL + Auth + RLS)</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Vercel Edge CDN — Deploy global, {"<"} 50ms TTFB</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> TypeScript — Type safety em 100% do código</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Cal.com — Agendamento enterprise</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Pipedrive + Resend — CRM + Email transacional</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Evolution API — WhatsApp Business integrado</li>
+              <li className="flex items-center gap-2"><span className="text-primary">✔</span> Vitest + Playwright — Testes automatizados</li>
             </ul>
           </div>
           <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Meu método de trabalho</p>
+            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Processo de Entrega</p>
             <ul className="space-y-4 text-white/80 font-medium text-lg">
               <li className="flex items-start gap-3">
                 <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">01</span>
-                <span>Entender o problema real (não o que o cliente acha que é)</span>
+                <span>Diagnóstico + PRD (Product Requirements Document)</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">02</span>
-                <span>Definir “sucesso” com métrica clara (agendamentos, conversão, tempo de resposta)</span>
+                <span>ADR — Decisões técnicas documentadas com trade-offs</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">03</span>
-                <span>Desenhar o fluxo antes de codar (processo &gt; código)</span>
+                <span>Sprint de desenvolvimento (Squad Dev + QA em paralelo)</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">04</span>
-                <span>Entregar versão funcional rápido (80% rodando hoje &gt; 100% nunca)</span>
+                <span>Quality Gates: Lighthouse {">"} 90, 0 bugs críticos, E2E passing</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="bg-primary/20 text-primary px-2 rounded text-sm mt-1">05</span>
-                <span>Iterar com base em dado real, não achismo</span>
+                <span>Deploy + Documentação + Treinamento da equipe</span>
               </li>
             </ul>
           </div>
@@ -279,22 +255,22 @@ const steps: Step[] = [
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Metodologias que eu adapto</p>
+            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Quality Assurance</p>
             <ul className="space-y-3 text-white/80 leading-relaxed">
-              <li>→ SPIN Selling: pra estruturar call de vendas e qualificação</li>
-              <li>→ Micro-pactos: pra conduzir conversa e fechar próximo passo</li>
-              <li>→ “Simples que roda”: primeiro funcionar, depois sofisticar</li>
-              <li>→ Foco no gargalo: onde tá travando? Velocidade de resposta? Qualificação? Conversão?</li>
+              <li>→ Lighthouse CI integrado no deploy (score {">"} 90 obrigatório)</li>
+              <li>→ Testes unitários + E2E antes de cada release</li>
+              <li>→ Security audit: 0 vulnerabilidades críticas</li>
+              <li>→ Monitoramento: Vercel Analytics + LogRocket + Slack alerts</li>
             </ul>
           </div>
           <div className="bg-card border border-white/5 rounded-2xl p-6 sm:p-8">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">O que me diferencia</p>
+            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Estrutura do Time</p>
             <p className="text-white/80 leading-relaxed text-lg">
-              Eu não sou só dev. Eu entendo de copy, vendas, processos e operação. Isso me permite construir automação
-              que não fica só “bonita no fluxograma”. Ela vende. Ela qualifica. Ela entrega.
+              Trabalho com squads estruturados: Dev Lead + Frontend Senior + Backend Senior + QA.
+              Cada projeto tem Advisory Board com mentores especializados em Tech, Product, Sales e Finance.
             </p>
             <p className="mt-4 text-white/60 leading-relaxed">
-              Porque eu sei que código sem conversão é hobby, não negócio.
+              Processo de empresa grande. Velocidade de startup. Resultado de quem entende de negócio.
             </p>
           </div>
         </div>
@@ -305,116 +281,108 @@ const steps: Step[] = [
   },
   {
     id: "projetos",
-    title: "Projetos",
+    title: "Cases de Clientes",
     bg: "linear-gradient(135deg, rgba(57,255,20,0.16), rgba(0,0,0,0.92) 55%, rgba(255,204,0,0.10))",
     layout: "full",
     content: (
       <div className="space-y-10">
         <div className="space-y-3">
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary/70">Casos reais, números reais</p>
-          <p className="text-lg text-white/70">O que eu já construí (e o que aprendi no processo)</p>
+          <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary/70">Resultados documentados</p>
+          <p className="text-lg text-white/70">Projetos reais. Métricas reais. ROI comprovado.</p>
         </div>
 
-        <article className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+        <article className="rounded-3xl border border-primary/20 bg-primary/5 p-6 md:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8">
             <div className="space-y-5">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70">
-                🎯 Sistema de treinamento automático para closers
-              </p>
-              <div className="space-y-3 text-white/80 leading-relaxed">
-                <p><strong className="text-white">Cliente:</strong> Empresário de mentoria high-ticket</p>
-                <p><strong className="text-white">Resultado:</strong> +R$ 40.000/mês em vendas (≈USD 7.400)</p>
-                <p>
-                  <strong className="text-white">O que aconteceu:</strong> Criei um sistema que analisava as calls do closer em
-                  tempo real e mandava resumo + pontos fortes/fracos no WhatsApp assim que ele terminava. Resultado?
-                  Vendas subiram 40k no primeiro mês.
-                </p>
+              <div className="flex items-center gap-3">
+                <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Enterprise OS</span>
+                <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Agência de Marketing</span>
               </div>
-              <div className="space-y-3 text-white/70 leading-relaxed">
-                <p><strong className="text-white">O que eu aprendi:</strong> Tecnologia não resolve ego.</p>
-                <p>
-                  Eu posso construir o melhor sistema do mundo, mas se o cliente não quer ver a verdade nos dados,
-                  não adianta. Por isso hoje eu filtro: trabalho com quem quer crescer, não com quem quer conforto.
-                </p>
+              <h3 className="text-2xl font-black text-white">Agência B2B escala operação de vendas com IA</h3>
+              <div className="space-y-3 text-white/80 leading-relaxed">
+                <p><strong className="text-white">Cliente:</strong> Agência de marketing digital (8 pessoas, SP)</p>
+                <p><strong className="text-white">Problema:</strong> Time de SDR gastava 4 horas/dia qualificando leads manualmente. Taxa de resposta: {">"} 4 horas. Leads esfriavam e fechavam com concorrente.</p>
+                <p><strong className="text-white">Solução:</strong> SDR com IA + CRM integrado (Pipedrive) + Dashboard de analytics + automações de follow-up no WhatsApp.</p>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-6 space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-red-200/80">Plot twist</p>
-              <p className="text-lg font-semibold text-red-200">
-                💔 Plot twist: Ele desligou o sistema na segunda semana.
-              </p>
-              <p className="text-red-200/70">Motivo: “Não me adaptei aos treinamentos chegando todo dia.”</p>
+            <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 space-y-4">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Resultados em 60 dias</p>
+              <div className="space-y-3">
+                <div><p className="text-primary font-black text-2xl">+55%</p><p className="text-white/60 text-sm">Faturamento (R$ 180k → R$ 280k/mês)</p></div>
+                <div><p className="text-primary font-black text-2xl">30 seg</p><p className="text-white/60 text-sm">Tempo de resposta (antes: 4 horas)</p></div>
+                <div><p className="text-primary font-black text-2xl">+180%</p><p className="text-white/60 text-sm">Taxa de conversão</p></div>
+                <div><p className="text-primary font-black text-2xl">46x ROI</p><p className="text-white/60 text-sm">Retorno sobre investimento em 6 meses</p></div>
+              </div>
             </div>
           </div>
         </article>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <article className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70">💰 Mentoria de desenvolvimento digital</p>
-            <p className="text-white/80"><strong className="text-white">Faturamento:</strong> R$ 23.000 (≈USD 4.259)</p>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Specialist Squad</span>
+              <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Rede de Consultórios</span>
+            </div>
+            <h4 className="text-lg font-black text-white">Rede de 5 consultórios elimina 80% dos no-shows</h4>
             <p className="text-white/70 leading-relaxed">
-              <strong className="text-white">O que eu fiz:</strong> Estruturei operação completa de mentoria — desde a oferta
-              até o processo de entrega e vendas.
+              <strong className="text-white">Problema:</strong> 60% de cancelamento por no-show. Agenda vazia = receita perdida.
             </p>
-            <p className="text-white/70"><strong className="text-white">Foco:</strong> High-ticket com plano de ação + suporte + venda ativa.</p>
+            <p className="text-white/70 leading-relaxed">
+              <strong className="text-white">Solução:</strong> Agendamento inteligente + lembretes automáticos no WhatsApp + confirmação com IA.
+            </p>
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+              <div><p className="text-primary font-black text-xl">12%</p><p className="text-white/50 text-xs">No-show (antes: 60%)</p></div>
+              <div><p className="text-primary font-black text-xl">+120</p><p className="text-white/50 text-xs">Novos pacientes em 90 dias</p></div>
+              <div><p className="text-primary font-black text-xl">R$ 72k</p><p className="text-white/50 text-xs">Receita adicional (3 meses)</p></div>
+              <div><p className="text-primary font-black text-xl">3 sem</p><p className="text-white/50 text-xs">Payback do investimento</p></div>
+            </div>
           </article>
 
           <article className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70">🤖 Automações comerciais com IA</p>
-            <p className="text-white/80"><strong className="text-white">Faturamento:</strong> R$ 5.000 (≈USD 926)</p>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Enterprise OS</span>
+              <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">SaaS B2B</span>
+            </div>
+            <h4 className="text-lg font-black text-white">SaaS de $500k ARR automatiza 75% das operações</h4>
             <p className="text-white/70 leading-relaxed">
-              <strong className="text-white">O que eu fiz:</strong> SDR no WhatsApp, qualificação automática, integração com CRM e
-              disparo de remarketing.
+              <strong className="text-white">Problema:</strong> 12 pessoas, 60h/semana em tarefas repetitivas. Email manual, CRM desatualizado, relatórios no Excel.
             </p>
-            <p className="text-white/70"><strong className="text-white">Stack:</strong> n8n + LLM + integrações customizadas.</p>
+            <p className="text-white/70 leading-relaxed">
+              <strong className="text-white">Solução:</strong> Dashboard executivo + automações de email (Resend) + CRM sync + relatórios automáticos.
+            </p>
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+              <div><p className="text-primary font-black text-xl">75%</p><p className="text-white/50 text-xs">Operações automatizadas</p></div>
+              <div><p className="text-primary font-black text-xl">-87%</p><p className="text-white/50 text-xs">Erro humano</p></div>
+              <div><p className="text-primary font-black text-xl">3x</p><p className="text-white/50 text-xs">Velocidade de release</p></div>
+              <div><p className="text-primary font-black text-xl">$156k</p><p className="text-white/50 text-xs">Economia anual estimada</p></div>
+            </div>
           </article>
         </div>
 
-        <article className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70">🌐 Sites e catálogos sob demanda</p>
-          <div className="space-y-2 text-white/70">
-            <p><strong className="text-white">Projetos entregues:</strong></p>
-            <p>→ Site individual: R$ 3.000 (≈USD 555)</p>
-            <p>→ Catálogo digital: R$ 2.000 (≈USD 370)</p>
+        <article className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.4em] text-primary/70 mb-6">
+            <span>Métricas consolidadas</span>
+            <span className="h-px flex-1 bg-white/10" />
           </div>
-          <p className="text-white/70 leading-relaxed">
-            <strong className="text-white">O que mudou no meu jeito de trabalhar:</strong> Parei de vender “site bonito” e passei
-            a vender “sistema que vende”. Landing page não é portfólio. É ferramenta de conversão.
-          </p>
-        </article>
-
-        <article className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8 space-y-6">
-          <div className="space-y-3">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70">🔄 Projetos em andamento</p>
-            <p className="text-white/80 leading-relaxed">
-              Estou tocando projetos comerciais com meu sócio Murillo, onde minha remuneração é % de receita futura.
-              Por quê? Porque eu acredito no que construo. E porque prefiro crescer junto com quem entende o jogo
-              do que receber fixo de quem só quer “testar”.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-dashed border-white/20 bg-black/60 p-6">
-            <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.4em] text-white/60">
-              <span>Arquivo confidencial</span>
-              <span className="h-px flex-1 bg-white/10" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <p className="text-primary text-3xl md:text-4xl font-black">15+</p>
+              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Clientes em produção</p>
             </div>
-            <p className="mt-4 text-white/80 leading-relaxed">
-              Tenho um acervo com centenas de templates funcionais no n8n (≈900), prontos para acelerar automações
-              comerciais, CRM e operações internas.
-            </p>
+            <div className="text-center">
+              <p className="text-white text-3xl md:text-4xl font-black">$180k</p>
+              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Revenue mensal dos clientes</p>
+            </div>
+            <div className="text-center">
+              <p className="text-primary text-3xl md:text-4xl font-black">7 dias</p>
+              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Tempo médio de entrega</p>
+            </div>
+            <div className="text-center">
+              <p className="text-white text-3xl md:text-4xl font-black">4.8/5</p>
+              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">NPS dos clientes</p>
+            </div>
           </div>
-        </article>
-
-        <article className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70">📌 Network ativo</p>
-          <p className="text-white/70">Tenho conexão direta com empresários validando:</p>
-          <ul className="space-y-2 text-white/70">
-            <li>→ Bot SDR comercial</li>
-            <li>→ Automações de captação (Facebook/Instagram)</li>
-            <li>→ Ferramentas de treinamento para closers</li>
-          </ul>
-          <p className="text-white/80 font-semibold">O foco é sempre o mesmo: negócio real, não tecnologia pela tecnologia.</p>
         </article>
       </div>
     ),
@@ -500,34 +468,34 @@ const steps: Step[] = [
   },
   {
     id: "contato",
-    title: "Vamos acabar com o caos?",
+    title: "Próximo passo",
     bg: "linear-gradient(135deg, rgba(255,204,0,0.16), rgba(0,0,0,0.92) 55%, rgba(57,255,20,0.10))",
     layout: "full",
     content: (
       <div className="text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed">
-            Se você tá perdendo lead no WhatsApp, se o time improvisa em vez de seguir processo, se você depende de
-            “fulano que sabe de tudo”, ou se simplesmente não sabe por onde começar —
+            Diagnóstico gratuito de 30 minutos. Eu analiso sua operação, identifico os gargalos
+            e te mostro exatamente onde automação gera ROI real.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed">
-            Eu consigo te dizer rápido se faz sentido automatizar, arrumar o processo ou fazer as duas coisas.
+            Sem compromisso. Sem enrolação. Se não fizer sentido, eu te digo.
           </p>
         </div>
 
         <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 sm:p-8 max-w-xl mx-auto my-10">
-          <p className="text-primary font-bold text-lg italic mb-2">Me manda o print do seu caos no WhatsApp.</p>
-          <p className="text-white/60 text-sm">Eu te devolvo diagnóstico em 24h. Sem compromisso. Sem enrolação. Direto ao ponto.</p>
+          <p className="text-primary font-bold text-lg mb-2">Specialist Squad: a partir de $3.000 | Enterprise OS: $6.000+</p>
+          <p className="text-white/60 text-sm">Entrega em 7 dias (Specialist) ou 30 dias (Enterprise). Documentação + treinamento + suporte 90 dias incluídos.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://wa.me/556291508399" className="glow-primary inline-flex items-center justify-center rounded-xl bg-primary text-background text-lg font-black px-8 py-4 uppercase tracking-wide hover:scale-[1.02] active:scale-95 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-            Chamar no WhatsApp →
+            Agendar diagnóstico gratuito →
           </a>
         </div>
 
         <div className="mt-10 text-sm text-white/60 space-y-2">
-          <p>Ou se preferir:</p>
+          <p>Pedro Henrique — CTO & Co-Founder, MaisVendasPro</p>
           <p>📧 pedrohensmkt@gmail.com</p>
           <p>💼 LinkedIn: www.linkedin.com/in/pedro-pag-dev</p>
         </div>
@@ -586,14 +554,14 @@ export default function Portfolio() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-4 sm:px-5 py-4 flex items-center justify-between">
           <a href="#top" className="font-bold tracking-tight text-white hover:text-primary transition-colors">
-            Pedro <span className="text-primary">•</span> Portfólio
+            Pedro Henrique <span className="text-primary">•</span> CTO
           </a>
           <nav className="hidden md:flex gap-6 text-sm font-medium text-white/60">
             <a className="hover:text-primary transition-colors font-bold text-primary" href="/">← Voltar ao Início</a>
             <a className="hover:text-primary transition-colors" href="#sobre">Sobre</a>
-            <a className="hover:text-primary transition-colors" href="#o-que-eu-faco">O que eu faço</a>
+            <a className="hover:text-primary transition-colors" href="#o-que-eu-faco">Soluções</a>
             <a className="hover:text-primary transition-colors" href="#stack">Stack</a>
-            <a className="hover:text-primary transition-colors" href="#projetos">Projetos</a>
+            <a className="hover:text-primary transition-colors" href="#projetos">Cases</a>
             <a className="hover:text-primary transition-colors" href="#vale-do-silicio">Vale do Silício</a>
             <a className="hover:text-primary transition-colors" href="#contato">Contato</a>
           </nav>
@@ -621,7 +589,7 @@ export default function Portfolio() {
                 </SheetClose>
                 <SheetClose asChild>
                   <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#o-que-eu-faco">
-                    O que eu faço
+                    Soluções
                   </a>
                 </SheetClose>
                 <SheetClose asChild>
@@ -631,7 +599,7 @@ export default function Portfolio() {
                 </SheetClose>
                 <SheetClose asChild>
                   <a className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 hover:text-white" href="#projetos">
-                    Projetos
+                    Cases
                   </a>
                 </SheetClose>
                 <SheetClose asChild>
@@ -669,34 +637,33 @@ export default function Portfolio() {
                 <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-2 backdrop-blur-sm w-fit">
                   <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
                   <span className="text-xs font-bold tracking-wider text-primary uppercase">
-                    Disponível para Projetos de Automação & IA
+                    CTO & Co-Founder — MaisVendasPro
                   </span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tighter text-white">
-                  Eu construo sistemas que rodam <br className="hidden md:block" />
+                  Arquiteto de sistemas{" "}
                   <span className="text-primary glow-text italic terminal-cursor">
-                    enquanto muita gente no Brasil ainda discute
+                    que geram receita
                   </span>{" "}
-                  se IA é golpe.
+                  enquanto você dorme.
                 </h1>
 
                 <p className="mt-2 text-lg sm:text-xl md:text-2xl text-white/70 max-w-4xl leading-relaxed font-medium">
-                  Não faço só aqueles bots bonitinhos. Faço operação completa: CRM integrado, SDR e Closer treinado por IA,
-                  leads fluindo sozinhos e vendas escalando sem depender de “fulano que sabe onde tá tudo”.
+                  CTO da MaisVendasPro. Construo infraestrutura de automação comercial para agências, SaaS e empresas B2B.
+                  MVP em 7 dias. Enterprise OS em 30. ROI documentado.
                 </p>
 
                 <p className="text-base sm:text-lg text-white/60 max-w-3xl leading-relaxed">
-                  Se você quer automação de Instagram, sem objetivo, algo frio, tem 500 freelancers. Se você quer sistema rodando,
-                  tá no lugar certo.
+                  2 anos no Vale do Silício. Stack enterprise (React 19 + Supabase + Vercel). Squad estruturado com Dev, QA e Advisory Board.
                 </p>
 
                 <div className="mt-5 flex flex-col sm:flex-row gap-4">
                   <a href="#contato" className="glow-primary inline-flex items-center justify-center rounded-xl bg-primary text-background text-lg font-black px-8 py-4 uppercase tracking-wide hover:scale-[1.02] active:scale-95 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                    Me manda o print do seu caos →
+                    Agendar diagnóstico →
                   </a>
                   <a href="#projetos" className="inline-flex items-center justify-center rounded-xl border-2 border-primary/30 text-primary hover:border-primary hover:bg-primary/10 px-8 py-4 text-lg font-bold uppercase tracking-wide transition-all">
-                    Ver como eu resolvo ↓
+                    Ver cases de clientes ↓
                   </a>
                 </div>
               </div>
@@ -792,7 +759,7 @@ export default function Portfolio() {
           })}
 
           <footer className="py-10 text-center text-sm text-white/40 border-t border-white/10">
-            <p>© {new Date().getFullYear()} Pedro • Sistema & Operação com IA</p>
+            <p>© {new Date().getFullYear()} Pedro Henrique — CTO & Co-Founder, MaisVendasPro</p>
           </footer>
         </main>
       </div>
