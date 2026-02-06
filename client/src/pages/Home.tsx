@@ -175,18 +175,18 @@ export default function Home() {
   return (
     <div
       ref={scrollRef}
-      className="min-h-screen bg-[#020617] font-sans selection:bg-[#00ff88] selection:text-black text-white overflow-x-hidden"
+      className="min-h-screen bg-[#000000] font-sans selection:bg-[#00ff88] selection:text-black text-white overflow-x-hidden"
     >
       {/* --- BACKGROUND LAYERS --- */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
         <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-[#00ff88] rounded-full blur-[180px] opacity-[0.08]" />
         <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-[#00ff88] rounded-full blur-[200px] opacity-[0.05]" />
-        <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-[linear-gradient(to_bottom,transparent_0%,#020617_100%),linear-gradient(rgba(0,255,136,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,136,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [transform:perspective(1000px)_rotateX(60deg)] origin-bottom opacity-20" />
+        <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-[linear-gradient(to_bottom,transparent_0%,#000000_100%),linear-gradient(rgba(0,255,136,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,136,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [transform:perspective(1000px)_rotateX(60deg)] origin-bottom opacity-20" />
       </div>
 
       {/* --- HEADER --- */}
-      <header className="fixed top-0 w-full z-50 border-b border-white/[0.05] bg-[#020617]/80 backdrop-blur-xl">
+      <header className="fixed top-0 w-full z-50 border-b border-white/[0.05] bg-[#000000]/80 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 h-20 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden bg-white/[0.03] border border-white/10 rounded-lg group-hover:border-[#00ff88]/50 transition-colors duration-500">
@@ -243,7 +243,7 @@ export default function Home() {
               <SheetTrigger className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:text-white hover:border-[#00ff88]/60">
                 <Menu className="h-5 w-5" />
               </SheetTrigger>
-              <SheetContent side="right" className="bg-[#020617] border-white/10 text-white">
+              <SheetContent side="right" className="bg-black border-white/10 text-white">
                 <SheetHeader>
                   <SheetTitle className="text-xs uppercase tracking-[0.3em] text-white/60">Menu</SheetTitle>
                 </SheetHeader>
@@ -309,7 +309,7 @@ export default function Home() {
                   <SheetClose asChild>
                     <a
                       href="https://wa.me/556191185635"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#00ff88] px-5 py-3 text-xs font-bold uppercase tracking-wide text-[#020617]"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#00ff88] px-5 py-3 text-xs font-bold uppercase tracking-wide text-[#000000]"
                     >
                       <span className="h-1.5 w-1.5 rounded-full bg-black animate-pulse" />
                       Diagnóstico
@@ -378,7 +378,7 @@ export default function Home() {
           >
             <a
               href="https://wa.me/556191185635"
-              className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#00ff88] text-[#020617] text-xs sm:text-sm font-bold uppercase tracking-widest overflow-hidden transition-all hover:pr-12"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#00ff88] text-[#000000] text-xs sm:text-sm font-bold uppercase tracking-widest overflow-hidden transition-all hover:pr-12"
             >
               <span className="relative z-10">Qual seu maior problema hoje?</span>
               <div className="absolute right-0 top-0 h-full w-12 bg-black/10 flex items-center justify-center translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
@@ -396,7 +396,7 @@ export default function Home() {
       </motion.section>
 
       {/* --- SECTION 2: COMO FUNCIONA --- */}
-      <section id="como-funciona" className="relative z-20 py-32 border-t border-white/5 bg-[#020617]">
+      <section id="como-funciona" className="relative z-20 py-32 border-t border-white/5 bg-[#000000]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// PROCESSO</span>
@@ -423,7 +423,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 3: GRAFICO TEMPO --- */}
-      <section id="tempo" className="relative z-20 py-28 px-6 bg-[#01040f] border-t border-white/5">
+      <section id="tempo" className="relative z-20 py-28 px-6 bg-[#000000] border-t border-white/5">
         <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white">
@@ -474,7 +474,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 4: DORES --- */}
-      <section id="dores" className="relative z-20 py-32 px-6 bg-[#020617]">
+      <section id="dores" className="relative z-20 py-32 px-6 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// DORES</span>
@@ -499,7 +499,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 5: COMPARATIVO --- */}
-      <section id="comparativo" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#01040f]">
+      <section id="comparativo" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// DIFERENCIAL</span>
@@ -508,7 +508,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="border border-white/10 bg-[#050a1f]">
+          <div className="border border-white/10 bg-[#000000]">
             <div className="grid grid-cols-3 text-xs uppercase tracking-widest text-white/40 border-b border-white/10">
               <div className="p-4">Critério</div>
               <div className="p-4">Agência Tradicional</div>
@@ -540,7 +540,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 6: ROI --- */}
-      <section id="roi" className="relative z-20 py-32 px-6 bg-[#020617]">
+      <section id="roi" className="relative z-20 py-32 px-6 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// ROI</span>
@@ -548,7 +548,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="border border-white/10 bg-[#050a1f] p-6 rounded-lg">
+            <div className="border border-white/10 bg-[#000000] p-6 rounded-lg">
               <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-white/40 mb-6">
                 <BarChart3 className="w-4 h-4 text-[#00ff88]" />
                 Custo acumulado em 6 meses
@@ -608,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 7: CASES --- */}
-      <section id="cases" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#01040f]">
+      <section id="cases" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// CASES</span>
@@ -617,7 +617,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {cases.map((item, i) => (
-              <div key={i} className="border border-white/10 bg-[#050a1f] p-6 flex flex-col">
+              <div key={i} className="border border-white/10 bg-[#000000] p-6 flex flex-col">
                 <div className="mb-5 rounded-lg bg-white/[0.04] border border-white/10 aspect-video overflow-hidden relative">
                   {item.images?.length === 2 ? (
                     <div className="grid h-full w-full grid-cols-2">
@@ -668,10 +668,10 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 8: DIFERENCIAL VIDEO --- */}
-      <section id="diferencial" className="relative z-20 py-32 px-6 bg-[#020617]">
+      <section id="diferencial" className="relative z-20 py-32 px-6 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="border border-white/10 bg-[#050a1f] rounded-xl overflow-hidden">
+            <div className="border border-white/10 bg-[#000000] rounded-xl overflow-hidden">
               <div className="aspect-video bg-black/60 flex items-center justify-center">
                 <button className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm uppercase tracking-widest text-white/70 hover:text-white hover:border-[#00ff88]/60">
                   <PlayCircle className="w-5 h-5 text-[#00ff88]" />
@@ -729,7 +729,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 9: SERVICOS --- */}
-      <section id="servicos" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#01040f]">
+      <section id="servicos" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// SERVIÇOS</span>
@@ -767,7 +767,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 10: NUMEROS --- */}
-      <section id="numeros" className="relative z-20 py-32 px-6 bg-[#020617]">
+      <section id="numeros" className="relative z-20 py-32 px-6 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// EM NÚMEROS</span>
@@ -785,7 +785,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 11: FAQ --- */}
-      <section id="faq" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#01040f]">
+      <section id="faq" className="relative z-20 py-32 px-6 border-t border-white/5 bg-[#000000]">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center">
             <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// FAQ</span>
@@ -807,7 +807,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION 12: CTA FINAL --- */}
-      <section id="cta" className="relative z-20 py-36 px-6 bg-[#020617] overflow-hidden text-center">
+      <section id="cta" className="relative z-20 py-36 px-6 bg-[#000000] overflow-hidden text-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,136,0.05)_0%,transparent_70%)]" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 tracking-tighter">
@@ -846,7 +846,7 @@ export default function Home() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="py-16 border-t border-white/5 bg-[#010203] px-6" id="footer">
+      <footer className="py-16 border-t border-white/5 bg-[#000000] px-6" id="footer">
         <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-10 text-sm text-white/60">
           <div>
             <div className="flex items-center gap-2 mb-4 text-white/80">

@@ -12,7 +12,7 @@ const SocialProof: React.FC = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2 p-6 bg-card-dark border border-white/5 rounded-2xl group cursor-pointer overflow-hidden">
-          <div className="relative w-full aspect-video rounded-xl mb-6 bg-zinc-800 flex items-center justify-center overflow-hidden">
+          <div className="relative w-full aspect-video rounded-xl mb-6 bg-card-dark flex items-center justify-center overflow-hidden">
             <img 
               alt="Rafael Testimonial" 
               className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" 

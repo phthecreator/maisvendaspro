@@ -4,7 +4,7 @@ import { TrendingUp, Quote } from 'lucide-react';
 
 const CaseStudy: React.FC = () => {
   return (
-    <section className="py-24 px-6 bg-blue-900/10">
+    <section className="py-24 px-6 bg-primary/[0.02]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-white text-3xl md:text-6xl font-black uppercase mb-4 tracking-tighter">

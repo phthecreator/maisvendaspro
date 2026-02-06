@@ -64,7 +64,7 @@ const ResultsGrid: React.FC = () => {
                 <span className="bg-primary/10 text-primary text-[9px] font-black px-2 py-1 rounded uppercase tracking-widest">{p.type}</span>
                 <p.icon className="text-white/20 w-4 h-4 group-hover:text-primary transition-colors" />
               </div>
-              <div className="w-full aspect-[4/3] bg-zinc-900 rounded-xl mb-4 md:mb-6 overflow-hidden relative">
+              <div className="w-full aspect-[4/3] bg-card-dark rounded-xl mb-4 md:mb-6 overflow-hidden relative">
                 <img loading="lazy" src={`https://picsum.photos/seed/vibe-${i}/400/300`} className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" alt="Proof" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>

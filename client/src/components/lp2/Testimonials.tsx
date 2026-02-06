@@ -36,7 +36,7 @@ const Testimonials: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
            {videoTestimonials.map((t, i) => (
              <div key={i} className="bg-card-dark border border-white/5 rounded-3xl overflow-hidden flex flex-col group">
-                <div className="relative aspect-[9/16] bg-zinc-900 overflow-hidden">
+                <div className="relative aspect-[9/16] bg-card-dark overflow-hidden">
                    <img src={`https://picsum.photos/seed/testi-${i}/400/700`} className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" />
                    <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,255,136,0.4)] transition-transform group-hover:scale-110">

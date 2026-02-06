@@ -6,7 +6,7 @@ const VideoSection: React.FC = () => {
   return (
     <section className="px-6 -mt-10 relative z-20 max-w-4xl mx-auto">
       <div className="p-1 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md shadow-2xl">
-        <div className="relative flex items-center justify-center bg-zinc-900 aspect-video rounded-xl overflow-hidden group">
+        <div className="relative flex items-center justify-center bg-card-dark aspect-video rounded-xl overflow-hidden group">
           <img 
             alt="Video Background" 
             className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105" 
