@@ -16,12 +16,12 @@ const StickyCTA: React.FC = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 p-4 z-[90] md:hidden bg-gradient-to-t from-black via-black/80 to-transparent">
-      <button 
-        onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-        className="w-full bg-primary text-black font-black py-5 rounded-xl uppercase tracking-widest shadow-2xl pulse-neon text-base"
+      <a
+        href="https://wa.me/556291508399?text=Quero%20entrar%20no%20grupo%20Vibe%20Coding%20Pro"
+        className="w-full inline-flex items-center justify-center bg-primary text-black font-black py-5 rounded-xl uppercase tracking-widest shadow-2xl text-base"
       >
-        QUERO MINHA VAGA AGORA
-      </button>
+        ENTRAR NO GRUPO GRATUITO
+      </a>
     </div>
   );
 };

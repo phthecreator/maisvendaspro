@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="font-mono text-white text-xl font-black uppercase tracking-[0.5em] mb-10">VIBE CODING PRO</h2>
         
-        <p className="text-white/30 text-[10px] uppercase font-black tracking-widest mb-6">© 2024 Vibe Coding Pro • Todos os direitos reservados</p>
+        <p className="text-white/30 text-[10px] uppercase font-black tracking-widest mb-6">© 2026 Vibe Coding Pro • MaisVendasPro • Todos os direitos reservados</p>
         
         <div className="max-w-xl mx-auto space-y-4 opacity-20 text-[9px] uppercase font-bold tracking-widest mb-10">
           <p>Este site não possui vínculo oficial com o Google LLC, Meta Platforms, Inc. ou suas subsidiárias. Os resultados financeiros variam de acordo com o empenho individual, nicho escolhido e condições de mercado.</p>

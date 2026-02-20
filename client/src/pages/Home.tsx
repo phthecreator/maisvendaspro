@@ -12,10 +12,10 @@ import {
   XCircle,
 } from 'lucide-react';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import beforeRoupasImg from '@/assets/cases/before-roupa.jpg';
-import afterRoupasImg from '@/assets/cases/after-roupa.jpg';
-import printBotImg from '@/assets/cases/print-bot.jpg';
-import instagramProfileImg from '@/assets/cases/instagram-profile.jpg';
+import cafeIndustryImg from '@/assets/cases/cafe-industry.jpg';
+import realEstateImg from '@/assets/cases/real-estate.jpg';
+import autoPartsImg from '@/assets/cases/auto-parts.jpg';
+import solarEnergyImg from '@/assets/cases/solar-energy.jpg';
 
 export default function Home() {
   const scrollRef = useRef(null);
@@ -99,34 +99,44 @@ export default function Home() {
 
   const cases = [
     {
-      title: 'AGÊNCIA DE MARKETING B2B',
+      title: 'INDÚSTRIA DE CAFÉ — PATROCÍNIO/MG',
       problem:
-        'Time de SDR gastava 4h/dia qualificando leads. Tempo de resposta: +4 horas. Leads fechavam com concorrente.',
-      solution: 'SDR com IA + CRM integrado + Dashboard analytics + automações WhatsApp',
-      results: ['Faturamento: +55% (R$ 180k → R$ 280k/mês)', 'Tempo de resposta: 30 segundos', 'ROI: 46x em 6 meses'],
-      cta: 'Quero escalar minha operação',
+        'Dono era o gargalo da própria empresa. WhatsApp só dizia "Oi, como posso ajudar?". Pedidos B2B e B2C ficavam perdidos no chat.',
+      solution: 'Bot WhatsApp com IA (Gemini) que qualifica leads, coleta pedidos B2C, capta leads B2B e escala para humano quando precisa. Integração com Google Sheets e Z-API.',
+      results: ['Atendimento 24/7 automatizado', 'Captação de leads B2B white-label', 'Revenue share: parceria de longo prazo'],
+      cta: 'Quero automatizar meu atendimento',
       images: [
-        { src: beforeRoupasImg, label: 'Antes' },
-        { src: afterRoupasImg, label: 'Depois' },
+        { src: cafeIndustryImg, label: 'Patrocínio Café' },
       ],
     },
     {
-      title: 'SAAS B2B — $500K ARR',
+      title: 'IMOBILIÁRIA — CNR IMÓVEIS',
       problem:
-        '12 pessoas, 60h/semana em tarefas repetitivas. Email manual, CRM desatualizado, relatórios no Excel.',
-      solution: 'Enterprise OS: Dashboard executivo + automações + CRM sync + relatórios automáticos',
-      results: ['75% operações automatizadas', 'Erro humano: -87%', 'Economia anual: $156.000'],
-      cta: 'Quero automatizar operações',
-      images: [{ src: printBotImg, label: 'Dashboard' }],
+        'Leads chegavam no WhatsApp e ninguém respondia rápido. Qualificação manual. Informações espalhadas entre Digisac, planilhas e cabeça do corretor.',
+      solution: 'SDR com IA no WhatsApp + RAG com base de 122 FAQs extraídas de 100 conversas reais + Inbox unificado + Supabase com RLS',
+      results: ['100 conversas reais processadas por IA', '122 padrões de FAQ extraídos automaticamente', 'Inbox unificado multi-provedor (Digisac + Evolution)'],
+      cta: 'Quero um SDR com IA',
+      images: [
+        { src: realEstateImg, label: 'CNR Imóveis' },
+      ],
     },
     {
-      title: 'REDE DE 5 CONSULTÓRIOS',
+      title: 'AMÉRICA RECONDICIONADORA — GOIÂNIA',
       problem:
-        '60% de cancelamento por no-show. Agenda vazia = receita perdida. Equipe gastava horas ligando para confirmar.',
-      solution: 'Agendamento inteligente + lembretes automáticos WhatsApp + confirmação com IA',
-      results: ['No-show: 60% → 12%', '+120 novos pacientes em 90 dias', 'Receita adicional: R$ 72.000'],
-      cta: 'Quero eliminar no-shows',
-      images: [{ src: instagramProfileImg, label: 'Sistema' }],
+        'Catálogo de peças automotivas era um PDF estático. Clientes não encontravam produtos. Site inexistente. Empresa com 30+ anos sem presença digital.',
+      solution: 'Site profissional com catálogo digital interativo, busca de produtos, viewer de PDF integrado e WhatsApp CTA. Deploy automatizado no Hostinger.',
+      results: ['Site em produção com catálogo 2026', 'Busca de produtos integrada', 'De 0 a presença digital profissional'],
+      cta: 'Quero meu site profissional',
+      images: [{ src: autoPartsImg, label: 'América Recondicionadora' }],
+    },
+    {
+      title: 'EMPRESA DE ENERGIA SOLAR',
+      problem:
+        'Vendedores com lista vazia. Prospectar manualmente era lento, caro e ineficiente. Não tinham leads qualificados pra trabalhar.',
+      solution: 'Web scraping automatizado que captura leads frios de fontes públicas e entrega lista pronta pros vendedores toda semana.',
+      results: ['Lista de leads preenchida automaticamente', 'Vendedores pararam de prospectar no frio', 'Pipeline comercial nunca mais ficou vazio'],
+      cta: 'Quero leads automatizados',
+      images: [{ src: solarEnergyImg, label: 'Energia Solar' }],
     },
   ];
 
@@ -143,9 +153,9 @@ export default function Home() {
   ];
 
   const metrics = [
-    { value: '15+', label: 'Clientes em produção com ROI documentado' },
-    { value: '$180k', label: 'Revenue mensal gerado para nossos clientes' },
-    { value: '4.8/5', label: 'NPS médio dos clientes (apenas em produção)' },
+    { value: '6+', label: 'Projetos entregues com código em produção' },
+    { value: '4', label: 'Verticais: Café, Imobiliária, Indústria, Energia' },
+    { value: '12', label: 'Agentes de IA no framework AIOS' },
     { value: '7 dias', label: 'Tempo médio de entrega do MVP funcional' },
   ];
 
@@ -354,7 +364,7 @@ export default function Home() {
             className="text-4xl sm:text-5xl md:text-7xl font-medium tracking-tighter leading-[0.98] text-white mb-8"
           >
             Transformamos problemas <br />
-            <span className="font-serif italic text-white/40">em linhas de código.</span>
+            <span className="text-white/40">em linhas de código.</span>
           </motion.h1>
 
           <motion.p
@@ -477,8 +487,8 @@ export default function Home() {
       <section id="dores" className="relative z-20 py-32 px-6 bg-[#000000]">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
-            <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// DORES</span>
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tighter text-white">Qual dessas dores é sua?</h2>
+            <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">/// DESAFIOS</span>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tighter text-white">Isso soa familiar?</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -679,7 +689,7 @@ export default function Home() {
                 </button>
               </div>
               <div className="p-6 text-sm text-white/60 leading-relaxed">
-                Opa, eu sou o Murillo, CTO da Mais Vendas Pro. Aqui a gente não te vende ferramenta. A gente te
+                Opa, eu sou o Murillo, Co-Founder da Mais Vendas Pro. Aqui a gente não te vende ferramenta. A gente te
                 ensina a pescar. Todo projeto vem com documentação completa, treinamento da equipe e suporte por
                 90 dias.
               </div>
@@ -886,7 +896,7 @@ export default function Home() {
         </div>
 
         <div className="mt-12 text-center text-xs text-white/30">
-          (c) 2026 Mais Vendas Pro. CNPJ XX.XXX.XXX/0001-XX
+          (c) 2026 Mais Vendas Pro. Todos os direitos reservados.
         </div>
       </footer>
     </div>

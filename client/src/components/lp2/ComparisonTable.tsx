@@ -25,7 +25,7 @@ const ComparisonTable: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter mb-4">
-            🆚 "VIBE CODING vs ALTERNATIVAS"
+            VIBE CODING vs ALTERNATIVAS
           </h2>
           <div className="md:hidden flex items-center justify-center gap-2 text-white/30 text-[10px] font-bold uppercase tracking-widest animate-pulse">
             <MoveHorizontal className="w-3 h-3" /> deslize para o lado
@@ -61,7 +61,7 @@ const ComparisonTable: React.FC = () => {
 
         <div className="mt-16 text-center px-2">
            <h3 className="text-white text-xl md:text-3xl font-black uppercase italic mb-2 leading-none">
-             💡 "A verdadeira pergunta não é 'Vale a pena?'"
+             "A verdadeira pergunta não é 'Vale a pena?'"
            </h3>
            <p className="text-primary text-xl md:text-4xl font-black uppercase tracking-tighter">
              "É: 'Quanto custa NÃO fazer isso agora?'"

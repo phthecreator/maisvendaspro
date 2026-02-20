@@ -1,92 +1,113 @@
 
 import React from 'react';
-import { Hammer, Brain, Gem, Check } from 'lucide-react';
+import { Users, Zap, Target, TrendingUp } from 'lucide-react';
+
+const pillars = [
+  {
+    icon: Users,
+    title: 'SQUAD CREATION',
+    subtitle: 'Monte seu time de IA',
+    description: 'Aprenda a estruturar e coordenar squads de agentes especializados para cada tipo de projeto.',
+    points: [
+      'Definir papéis e responsabilidades',
+      'Criar workflows de comunicação',
+      'Coordenar trabalho paralelo',
+      'Escalar sem contratar'
+    ]
+  },
+  {
+    icon: Zap,
+    title: 'WORKFLOW AUTOMATION',
+    subtitle: 'Automatize tudo que é repetitivo',
+    description: 'Domine a arte de automatizar processos complexos usando AIOS e Claude para trabalhar enquanto você dorme.',
+    points: [
+      'Design de workflows inteligentes',
+      'Integração entre ferramentas',
+      'Testing e deployment automático',
+      'Monitoramento contínuo'
+    ]
+  },
+  {
+    icon: Target,
+    title: 'OFFER SCULPTING',
+    subtitle: 'Esculpa ofertas valiosas',
+    description: 'Transforme capacidade técnica em ofertas de alto valor que resolvem problemas reais de negócio.',
+    points: [
+      'Identificar dores de alto valor',
+      'Estruturar propostas irresistíveis',
+      'Precificar baseado em resultado',
+      'Criar contratos recorrentes'
+    ]
+  },
+  {
+    icon: TrendingUp,
+    title: 'AUDIENCE BUILDING',
+    subtitle: 'Construa autoridade',
+    description: 'Posicione-se como especialista no mercado e atraia clientes de alto valor organicamente.',
+    points: [
+      'Content marketing estratégico',
+      'Case studies documentados',
+      'Network com decisores',
+      'Personal branding técnico'
+    ]
+  }
+];
 
 const Pillars: React.FC = () => {
   return (
-    <section className="py-24 px-6 bg-[#0a0a0a]">
+    <section className="py-24 px-6 bg-black border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter mb-4">
-            ⚙️ "O MÉTODO QUE TRANSFORMA VOCÊ EM UM SOLUCIONADOR TECH"
+          <span className="font-mono text-primary text-xs tracking-widest mb-4 block uppercase">Os 4 Fundamentos</span>
+          <h2 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6">
+            O que você vai dominar<br/>
+            <span className="text-primary">de verdade</span>
           </h2>
+          <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto">
+            Não é sobre aprender mais uma ferramenta. É sobre dominar um sistema completo de orquestração.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Pilar 1 */}
-          <div className="space-y-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
-              <Hammer className="text-primary w-8 h-8" />
-            </div>
-            <h3 className="text-white text-2xl font-black uppercase">PILAR 1: 🔧 ARSENAL TÉCNICO</h3>
-            <div className="space-y-4">
-              <p className="text-primary text-xs font-black uppercase tracking-widest">O que você domina:</p>
-              <ul className="text-white/60 space-y-2 text-sm">
-                <li className="flex gap-2"><Check className="text-primary w-4 h-4 shrink-0" /> Claude Code + Cursor: IA real</li>
-                <li className="flex gap-2"><Check className="text-primary w-4 h-4 shrink-0" /> N8N: O cérebro que conecta tudo</li>
-                <li className="flex gap-2"><Check className="text-primary w-4 h-4 shrink-0" /> Evolution API: WhatsApp sem limites</li>
-                <li className="flex gap-2"><Check className="text-primary w-4 h-4 shrink-0" /> Web Scraping: Dados de qualquer lugar</li>
-                <li className="flex gap-2"><Check className="text-primary w-4 h-4 shrink-0" /> Automação de Browser: Robôs humanos</li>
-              </ul>
-            </div>
-            <div className="bg-white/5 p-4 rounded-xl text-xs space-y-2">
-              <p className="text-urgency font-bold uppercase">🚫 Por que importa:</p>
-              <p className="text-white/40 italic">Você resolve o que 99% dos devs não consegue e vira insubstituível.</p>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {pillars.map((pillar, i) => (
+            <div key={i} className="bg-white/[0.02] border border-white/5 p-8 md:p-10 rounded-2xl hover:border-primary/20 transition-all">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                  <pillar.icon className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-white text-xl font-black uppercase mb-1">{pillar.title}</h3>
+                  <p className="text-primary text-xs font-bold uppercase tracking-wider">{pillar.subtitle}</p>
+                </div>
+              </div>
 
-          {/* Pilar 2 */}
-          <div className="space-y-6">
-            <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-8">
-              <Brain className="text-secondary w-8 h-8" />
-            </div>
-            <h3 className="text-white text-2xl font-black uppercase">PILAR 2: 📊 MENTE DE GESTÃO</h3>
-            <div className="space-y-4">
-              <p className="text-secondary text-xs font-black uppercase tracking-widest">O que você entrega:</p>
-              <ul className="text-white/60 space-y-2 text-sm">
-                <li className="flex gap-2"><Check className="text-secondary w-4 h-4 shrink-0" /> Departamento Comercial Automatizado</li>
-                <li className="flex gap-2"><Check className="text-secondary w-4 h-4 shrink-0" /> CRM visual de faturamento</li>
-                <li className="flex gap-2"><Check className="text-secondary w-4 h-4 shrink-0" /> Gestão de filas inteligente</li>
-                <li className="flex gap-2"><Check className="text-secondary w-4 h-4 shrink-0" /> Transbordo IA → Humano</li>
-                <li className="flex gap-2"><Check className="text-secondary w-4 h-4 shrink-0" /> Qualificação automática de leads</li>
-              </ul>
-            </div>
-            <div className="bg-white/5 p-4 rounded-xl text-xs space-y-2">
-              <p className="text-secondary font-bold uppercase">💰 O resultado:</p>
-              <p className="text-white/40 italic">Você resolve a dor real: "leads não viram venda". Cliente nunca te demite.</p>
-            </div>
-          </div>
+              <p className="text-white/70 text-base mb-6 leading-relaxed">
+                {pillar.description}
+              </p>
 
-          {/* Pilar 3 */}
-          <div className="space-y-6">
-            <div className="w-16 h-16 bg-accent-yellow/10 rounded-2xl flex items-center justify-center mb-8">
-              <Gem className="text-accent-yellow w-8 h-8" />
+              <div className="space-y-3">
+                <p className="text-white/40 text-xs uppercase font-bold tracking-wider">Você vai aprender:</p>
+                {pillar.points.map((point, j) => (
+                  <div key={j} className="flex items-start gap-3">
+                    <span className="text-primary mt-1 text-sm">→</span>
+                    <span className="text-white/60 text-sm">{point}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h3 className="text-white text-2xl font-black uppercase">PILAR 3: 💎 VENDAS HIGH-TICKET</h3>
-            <div className="space-y-4">
-              <p className="text-accent-yellow text-xs font-black uppercase tracking-widest">Como sair do "tiro curto":</p>
-              <ul className="text-white/60 space-y-2 text-sm">
-                <li className="flex gap-2"><Check className="text-accent-yellow w-4 h-4 shrink-0" /> Ancoragem de Preço (Setup + MRR)</li>
-                <li className="flex gap-2"><Check className="text-accent-yellow w-4 h-4 shrink-0" /> Consultoria Diagnóstica estratégica</li>
-                <li className="flex gap-2"><Check className="text-accent-yellow w-4 h-4 shrink-0" /> Scripts de Fechamento Irrecusáveis</li>
-                <li className="flex gap-2"><Check className="text-accent-yellow w-4 h-4 shrink-0" /> Domínio de Nichos Quentes (Saúde, Legal)</li>
-                <li className="flex gap-2"><Check className="text-accent-yellow w-4 h-4 shrink-0" /> De "menino do PC" a "Parceiro Estratégico"</li>
-              </ul>
-            </div>
-            <div className="bg-white/5 p-4 rounded-xl text-xs space-y-2">
-              <p className="text-accent-yellow font-bold uppercase">🚀 Por que isso muda tudo:</p>
-              <p className="text-white/40 italic">Você cobra R$ 5k+ pelo valor gerado e não por hora trabalhada.</p>
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div className="mt-24 text-center">
-          <div className="inline-block bg-primary/10 border border-primary/20 p-8 rounded-3xl">
-            <h3 className="text-white text-2xl md:text-4xl font-black uppercase mb-4 leading-none">
-              ⚡ "Tech sem Vendas = Hobby. Vendas sem Tech = Commodity."
-            </h3>
-            <p className="text-primary text-2xl md:text-5xl font-black uppercase italic italic">
-              "Vibe Coding = Os 2 juntos. Por isso você DOMINA o mercado."
+        <div className="bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 p-8 md:p-12 rounded-2xl">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-white text-xl md:text-3xl font-black uppercase leading-tight mb-4">
+              Não vendemos curso de programação.
+            </p>
+            <p className="text-primary text-2xl md:text-4xl font-black uppercase leading-tight">
+              Vendemos metodologia de orquestração.
+            </p>
+            <p className="text-white/60 text-base md:text-lg mt-6">
+              Porque no futuro, quem sabe orquestrar sistemas inteligentes vai dominar o mercado.
             </p>
           </div>
         </div>

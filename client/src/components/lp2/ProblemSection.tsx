@@ -20,17 +20,17 @@ const ProblemSection: React.FC = () => {
               <UserX className="text-urgency w-8 h-8" />
             </div>
             <div className="flex-1 space-y-4 mb-8">
-              <p className="text-urgency font-bold text-sm">😰 Problema:</p>
+              <p className="text-urgency font-bold text-sm uppercase tracking-wider">Problema:</p>
               <ul className="text-white/60 space-y-2 text-sm md:text-base">
-                <li>• Demora 3 meses pra entregar um MVP</li>
-                <li>• Cobra R$ 15.000 (que você não tem)</li>
-                <li>• Usa termos técnicos que você não entende</li>
-                <li>• Some quando o bug aparece</li>
+                <li>- Demora 3 meses pra entregar um MVP</li>
+                <li>- Cobra R$ 15.000 (que você não tem)</li>
+                <li>- Usa termos técnicos que você não entende</li>
+                <li>- Some quando o bug aparece</li>
               </ul>
             </div>
             <div className="bg-urgency/10 p-4 rounded-xl border border-urgency/20">
               <p className="text-white text-sm">
-                <span className="text-urgency font-black">💸 Resultado:</span> Você fica refém, quebra ou desiste.
+                <span className="text-urgency font-black">Resultado:</span> Você fica refém, quebra ou desiste.
               </p>
             </div>
           </div>
@@ -42,17 +42,17 @@ const ProblemSection: React.FC = () => {
               <Clock className="text-urgency w-8 h-8" />
             </div>
             <div className="flex-1 space-y-4 mb-8">
-              <p className="text-urgency font-bold text-sm">😤 Problema:</p>
+              <p className="text-urgency font-bold text-sm uppercase tracking-wider">Problema:</p>
               <ul className="text-white/60 space-y-2 text-sm md:text-base">
-                <li>• Gera leads, mas cliente não atende</li>
-                <li>• Reclama que "o lead é frio"</li>
-                <li>• Perde conta porque não entrega resultado</li>
-                <li>• Vive de tiro curto (R$ 300, R$ 500)</li>
+                <li>- Gera leads, mas cliente não atende</li>
+                <li>- Reclama que "o lead é frio"</li>
+                <li>- Perde conta porque não entrega resultado</li>
+                <li>- Vive de tiro curto (R$ 300, R$ 500)</li>
               </ul>
             </div>
             <div className="bg-urgency/10 p-4 rounded-xl border border-urgency/20">
               <p className="text-white text-sm">
-                <span className="text-urgency font-black">💸 Resultado:</span> Você vira commoditizado. Todo mundo faz tráfego.
+                <span className="text-urgency font-black">Resultado:</span> Você vira commoditizado. Todo mundo faz tráfego.
               </p>
             </div>
           </div>
@@ -64,32 +64,32 @@ const ProblemSection: React.FC = () => {
               <Ban className="text-urgency w-8 h-8" />
             </div>
             <div className="flex-1 space-y-4 mb-8">
-              <p className="text-urgency font-bold text-sm">😫 Problema:</p>
+              <p className="text-urgency font-bold text-sm uppercase tracking-wider">Problema:</p>
               <ul className="text-white/60 space-y-2 text-sm md:text-base">
-                <li>• Tem a ideia do SaaS, mas não sabe executar</li>
-                <li>• Trava na hora de integrar WhatsApp com banco de dados</li>
-                <li>• Assiste curso atrás de curso, mas nunca faz</li>
-                <li>• Fica esperando "o momento certo"</li>
+                <li>- Tem a ideia do SaaS, mas não sabe executar</li>
+                <li>- Trava na hora de integrar WhatsApp com banco de dados</li>
+                <li>- Assiste curso atrás de curso, mas nunca faz</li>
+                <li>- Fica esperando "o momento certo"</li>
               </ul>
             </div>
             <div className="bg-urgency/10 p-4 rounded-xl border border-urgency/20">
               <p className="text-white text-sm">
-                <span className="text-urgency font-black">💸 Resultado:</span> 6 meses se passam. Concorrente já lançou. Você continua na mesma.
+                <span className="text-urgency font-black">Resultado:</span> 6 meses se passam. Concorrente já lançou. Você continua na mesma.
               </p>
             </div>
           </div>
         </div>
 
         <div className="text-center max-w-4xl mx-auto">
-          <h3 className="text-accent-yellow text-2xl md:text-4xl font-black uppercase mb-6 italic">
-            🔥 Mas e se existisse um caminho completamente diferente?
+          <h3 className="text-accent-yellow text-2xl md:text-4xl font-black uppercase mb-6">
+            Mas e se existisse um caminho completamente diferente?
           </h3>
           <p className="text-white/80 text-lg md:text-2xl font-medium leading-relaxed">
             "Um caminho onde você NÃO precisa saber sintaxe...<br/>
             ...onde a IA faz o trabalho pesado...<br/>
             ...e você se torna a PONTE entre o problema do empresário e a solução tecnológica?"
           </p>
-          <p className="text-primary text-3xl md:text-5xl font-black uppercase mt-8 tracking-widest neon-glow">
+          <p className="text-primary text-3xl md:text-5xl font-black uppercase mt-8 tracking-widest">
             Bem-vindo ao Vibe Coding.
           </p>
         </div>

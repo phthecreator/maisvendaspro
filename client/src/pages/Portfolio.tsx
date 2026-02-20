@@ -41,7 +41,7 @@ const steps: Step[] = [
           <div className="space-y-4 text-base sm:text-lg md:text-xl text-white/80 leading-relaxed">
             <p>
               Sou Pedro Henrique. CTO e Co-Founder da MaisVendasPro. Arquiteto de sistemas de automação comercial
-              que já movimentaram mais de R$ 500k em contratos para nossos clientes.
+              com projetos em produção em 3 verticais diferentes: café, imobiliário e indústria.
             </p>
             <p>
               Passei 2 anos no Vale do Silício estudando como empresas que movem bilhões estruturam
@@ -126,7 +126,11 @@ const steps: Step[] = [
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-card border border-primary/20 rounded-2xl p-6 sm:p-8 hover:border-primary/40 transition-all group relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-primary/10 text-primary text-[10px] font-black px-3 py-1 uppercase tracking-widest">A partir de $3.000</div>
-            <span className="text-3xl mb-4 block">🚀</span>
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
             <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Specialist Squad</h3>
             <p className="mt-2 text-sm text-primary/80 font-semibold uppercase tracking-wider">MVP em 7 dias</p>
             <p className="mt-3 text-white/60 leading-relaxed">
@@ -145,7 +149,11 @@ const steps: Step[] = [
 
           <div className="bg-card border border-white/10 rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-all group relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-white/5 text-white/60 text-[10px] font-black px-3 py-1 uppercase tracking-widest">$6.000 - $15.000</div>
-            <span className="text-3xl mb-4 block">🏗️</span>
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+              <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
             <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">Enterprise OS</h3>
             <p className="mt-2 text-sm text-primary/80 font-semibold uppercase tracking-wider">Sistema completo em 30 dias</p>
             <p className="mt-3 text-white/60 leading-relaxed">
@@ -165,28 +173,44 @@ const steps: Step[] = [
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
-            <span className="text-2xl mb-3 block">🤖</span>
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 border border-primary/10">
+              <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
             <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">SDR com IA</h3>
             <p className="mt-2 text-white/50 text-sm leading-relaxed">
               Qualificação automática 24/7. Resposta em 30 segundos. Integração CRM + WhatsApp.
             </p>
           </div>
           <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
-            <span className="text-2xl mb-3 block">📊</span>
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 border border-primary/10">
+              <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
             <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">Dashboard Analytics</h3>
             <p className="mt-2 text-white/50 text-sm leading-relaxed">
               Métricas em tempo real. Revenue, conversão, pipeline. Alertas automáticos no Slack.
             </p>
           </div>
           <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
-            <span className="text-2xl mb-3 block">⚡</span>
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 border border-primary/10">
+              <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
             <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">Automações Comerciais</h3>
             <p className="mt-2 text-white/50 text-sm leading-relaxed">
               Fluxos de nurturing, remarketing, follow-up. Nenhum lead esquecido.
             </p>
           </div>
           <div className="bg-card border border-white/5 rounded-2xl p-6 hover:border-primary/20 transition-all group">
-            <span className="text-2xl mb-3 block">🔒</span>
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 border border-primary/10">
+              <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
             <h3 className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-wider">Segurança & Compliance</h3>
             <p className="mt-2 text-white/50 text-sm leading-relaxed">
               JWT + RLS + criptografia at rest. LGPD compliant. Auditoria automática.
@@ -295,24 +319,24 @@ const steps: Step[] = [
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8">
             <div className="space-y-5">
               <div className="flex items-center gap-3">
-                <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Enterprise OS</span>
-                <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Agência de Marketing</span>
+                <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Automação com IA</span>
+                <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Indústria de Café</span>
               </div>
-              <h3 className="text-2xl font-black text-white">Agência B2B escala operação de vendas com IA</h3>
+              <h3 className="text-2xl font-black text-white">Patrocínio Café: Bot WhatsApp com IA para indústria de café</h3>
               <div className="space-y-3 text-white/80 leading-relaxed">
-                <p><strong className="text-white">Cliente:</strong> Agência de marketing digital (8 pessoas, SP)</p>
-                <p><strong className="text-white">Problema:</strong> Time de SDR gastava 4 horas/dia qualificando leads manualmente. Taxa de resposta: {">"} 4 horas. Leads esfriavam e fechavam com concorrente.</p>
-                <p><strong className="text-white">Solução:</strong> SDR com IA + CRM integrado (Pipedrive) + Dashboard de analytics + automações de follow-up no WhatsApp.</p>
+                <p><strong className="text-white">Cliente:</strong> Judson Gabriell Martins — Indústria de café em Patrocínio/MG. Marca própria (Café Vida) + white-label B2B para marcas como Virginia, Perdomo, Box da Crise.</p>
+                <p><strong className="text-white">Problema:</strong> Dono era o gargalo da empresa. WhatsApp só respondia "Oi, como posso ajudar?". Pedidos B2B e B2C se perdiam no chat. Crescimento travado.</p>
+                <p><strong className="text-white">Solução:</strong> Bot "Bela 2.0" com Gemini Flash + Z-API + Google Sheets. 5 fluxos automatizados: pedido B2C, captação B2B, catálogo, dúvidas e escalação para humano.</p>
               </div>
             </div>
 
             <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 space-y-4">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Resultados em 60 dias</p>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Entregáveis</p>
               <div className="space-y-3">
-                <div><p className="text-primary font-black text-2xl">+55%</p><p className="text-white/60 text-sm">Faturamento (R$ 180k → R$ 280k/mês)</p></div>
-                <div><p className="text-primary font-black text-2xl">30 seg</p><p className="text-white/60 text-sm">Tempo de resposta (antes: 4 horas)</p></div>
-                <div><p className="text-primary font-black text-2xl">+180%</p><p className="text-white/60 text-sm">Taxa de conversão</p></div>
-                <div><p className="text-primary font-black text-2xl">46x ROI</p><p className="text-white/60 text-sm">Retorno sobre investimento em 6 meses</p></div>
+                <div><p className="text-primary font-black text-2xl">5</p><p className="text-white/60 text-sm">Fluxos de conversa automatizados</p></div>
+                <div><p className="text-primary font-black text-2xl">24/7</p><p className="text-white/60 text-sm">Atendimento sem intervenção humana</p></div>
+                <div><p className="text-primary font-black text-2xl">B2B + B2C</p><p className="text-white/60 text-sm">Captação de leads e pedidos unificada</p></div>
+                <div><p className="text-primary font-black text-2xl">8%</p><p className="text-white/60 text-sm">Revenue share — parceria de longo prazo</p></div>
               </div>
             </div>
           </div>
@@ -321,66 +345,66 @@ const steps: Step[] = [
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <article className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
             <div className="flex items-center gap-3 mb-2">
-              <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Specialist Squad</span>
-              <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Rede de Consultórios</span>
+              <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">SDR com IA</span>
+              <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Imobiliária</span>
             </div>
-            <h4 className="text-lg font-black text-white">Rede de 5 consultórios elimina 80% dos no-shows</h4>
+            <h4 className="text-lg font-black text-white">CNR Imóveis: SDR com IA e RAG no WhatsApp</h4>
             <p className="text-white/70 leading-relaxed">
-              <strong className="text-white">Problema:</strong> 60% de cancelamento por no-show. Agenda vazia = receita perdida.
+              <strong className="text-white">Problema:</strong> Leads chegavam no WhatsApp e ninguém respondia rápido. Qualificação manual. Informações espalhadas entre Digisac e planilhas.
             </p>
             <p className="text-white/70 leading-relaxed">
-              <strong className="text-white">Solução:</strong> Agendamento inteligente + lembretes automáticos no WhatsApp + confirmação com IA.
+              <strong className="text-white">Solução:</strong> SDR com IA + RAG com base de conhecimento extraída de conversas reais + Inbox unificado multi-provedor + Supabase com RLS.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
-              <div><p className="text-primary font-black text-xl">12%</p><p className="text-white/50 text-xs">No-show (antes: 60%)</p></div>
-              <div><p className="text-primary font-black text-xl">+120</p><p className="text-white/50 text-xs">Novos pacientes em 90 dias</p></div>
-              <div><p className="text-primary font-black text-xl">R$ 72k</p><p className="text-white/50 text-xs">Receita adicional (3 meses)</p></div>
-              <div><p className="text-primary font-black text-xl">3 sem</p><p className="text-white/50 text-xs">Payback do investimento</p></div>
+              <div><p className="text-primary font-black text-xl">100</p><p className="text-white/50 text-xs">Conversas reais processadas</p></div>
+              <div><p className="text-primary font-black text-xl">122</p><p className="text-white/50 text-xs">FAQs extraídas por IA</p></div>
+              <div><p className="text-primary font-black text-xl">RAG</p><p className="text-white/50 text-xs">Base de conhecimento híbrida</p></div>
+              <div><p className="text-primary font-black text-xl">Multi</p><p className="text-white/50 text-xs">Digisac + Evolution API</p></div>
             </div>
           </article>
 
           <article className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
             <div className="flex items-center gap-3 mb-2">
-              <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Enterprise OS</span>
-              <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">SaaS B2B</span>
+              <span className="bg-primary/20 text-primary text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Site + Catálogo</span>
+              <span className="bg-white/5 text-white/50 text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Indústria Automotiva</span>
             </div>
-            <h4 className="text-lg font-black text-white">SaaS de $500k ARR automatiza 75% das operações</h4>
+            <h4 className="text-lg font-black text-white">América Recondicionadora: do zero à presença digital</h4>
             <p className="text-white/70 leading-relaxed">
-              <strong className="text-white">Problema:</strong> 12 pessoas, 60h/semana em tarefas repetitivas. Email manual, CRM desatualizado, relatórios no Excel.
+              <strong className="text-white">Problema:</strong> Empresa com 30+ anos em Goiânia sem presença digital. Catálogo de peças era PDF estático enviado por WhatsApp.
             </p>
             <p className="text-white/70 leading-relaxed">
-              <strong className="text-white">Solução:</strong> Dashboard executivo + automações de email (Resend) + CRM sync + relatórios automáticos.
+              <strong className="text-white">Solução:</strong> Site profissional com catálogo digital 2026, viewer PDF integrado, busca de produtos e WhatsApp CTA. Deploy automatizado no Hostinger.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
-              <div><p className="text-primary font-black text-xl">75%</p><p className="text-white/50 text-xs">Operações automatizadas</p></div>
-              <div><p className="text-primary font-black text-xl">-87%</p><p className="text-white/50 text-xs">Erro humano</p></div>
-              <div><p className="text-primary font-black text-xl">3x</p><p className="text-white/50 text-xs">Velocidade de release</p></div>
-              <div><p className="text-primary font-black text-xl">$156k</p><p className="text-white/50 text-xs">Economia anual estimada</p></div>
+              <div><p className="text-primary font-black text-xl">30+</p><p className="text-white/50 text-xs">Anos de empresa, primeiro site</p></div>
+              <div><p className="text-primary font-black text-xl">2026</p><p className="text-white/50 text-xs">Catálogo digital atualizado</p></div>
+              <div><p className="text-primary font-black text-xl">Live</p><p className="text-white/50 text-xs">Em produção no Hostinger</p></div>
+              <div><p className="text-primary font-black text-xl">AIOS</p><p className="text-white/50 text-xs">Squad de 4 agentes na entrega</p></div>
             </div>
           </article>
         </div>
 
         <article className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
           <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.4em] text-primary/70 mb-6">
-            <span>Métricas consolidadas</span>
+            <span>Nossos números reais</span>
             <span className="h-px flex-1 bg-white/10" />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <p className="text-primary text-3xl md:text-4xl font-black">15+</p>
-              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Clientes em produção</p>
+              <p className="text-primary text-3xl md:text-4xl font-black">5+</p>
+              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Projetos em produção</p>
             </div>
             <div className="text-center">
-              <p className="text-white text-3xl md:text-4xl font-black">$180k</p>
-              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Revenue mensal dos clientes</p>
+              <p className="text-white text-3xl md:text-4xl font-black">3</p>
+              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Verticais atendidas</p>
             </div>
             <div className="text-center">
-              <p className="text-primary text-3xl md:text-4xl font-black">7 dias</p>
+              <p className="text-primary text-3xl md:text-4xl font-black">12</p>
+              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Agentes IA no AIOS</p>
+            </div>
+            <div className="text-center">
+              <p className="text-white text-3xl md:text-4xl font-black">7 dias</p>
               <p className="text-white/50 text-xs uppercase tracking-wider mt-1">Tempo médio de entrega</p>
-            </div>
-            <div className="text-center">
-              <p className="text-white text-3xl md:text-4xl font-black">4.8/5</p>
-              <p className="text-white/50 text-xs uppercase tracking-wider mt-1">NPS dos clientes</p>
             </div>
           </div>
         </article>
@@ -409,7 +433,10 @@ const steps: Step[] = [
 
           <div className="space-y-6">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-              <p className="text-white font-semibold">1️⃣ Mentalidade de abundância vs mentalidade de escassez</p>
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-primary font-black text-sm">01</span>
+                <p className="text-white font-semibold">Mentalidade de abundância vs mentalidade de escassez</p>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white/70">
                 <div className="rounded-xl border border-white/10 bg-black/40 p-4">
                   <p className="text-xs uppercase tracking-[0.3em] text-white/50">No Vale</p>
@@ -427,7 +454,10 @@ const steps: Step[] = [
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-              <p className="text-white font-semibold">2️⃣ Contratar pelo potencial, não pelo currículo</p>
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-primary font-black text-sm">02</span>
+                <p className="text-white font-semibold">Contratar pelo potencial, não pelo currículo</p>
+              </div>
               <p className="text-white/70">
                 No Vale, empresa contrata júnior de 23 anos porque o foco é lapidar talento, não achar quem “já vem
                 pronto”. No Brasil, a exigência é: “5 anos de experiência + sênior + que aceite salário de júnior.”
@@ -436,7 +466,10 @@ const steps: Step[] = [
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
-              <p className="text-white font-semibold">3️⃣ IA como infraestrutura, não como enfeite</p>
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-primary font-black text-sm">03</span>
+                <p className="text-white font-semibold">IA como infraestrutura, não como enfeite</p>
+              </div>
               <p className="text-white/70">
                 Lá, IA tá na base do sistema desde 2020. Não é “chatbot no site pra parecer moderno”. É automação
                 rodando em CRM, qualificação, treinamento, análise de dados, predição de churn, otimização de funil —
@@ -496,8 +529,19 @@ const steps: Step[] = [
 
         <div className="mt-10 text-sm text-white/60 space-y-2">
           <p>Pedro Henrique — CTO & Co-Founder, MaisVendasPro</p>
-          <p>📧 pedrohensmkt@gmail.com</p>
-          <p>💼 LinkedIn: www.linkedin.com/in/pedro-pag-dev</p>
+          <p className="flex items-center justify-center gap-2">
+            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            pedrohensmkt@gmail.com
+          </p>
+          <p className="flex items-center justify-center gap-2">
+            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+            www.linkedin.com/in/pedro-pag-dev
+          </p>
         </div>
       </div>
     ),
@@ -671,8 +715,8 @@ export default function Portfolio() {
               <div className="flex items-center justify-center">
                 <div className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/5 w-full max-w-[520px]">
                   <img
-                    src={images.studio}
-                    alt="Pedro em ensaio com fundo neutro"
+                    src={images.desk}
+                    alt="Pedro Henrique no setup de desenvolvimento"
                     className="h-[260px] sm:h-[320px] md:h-full w-full object-cover"
                     loading="lazy"
                   />

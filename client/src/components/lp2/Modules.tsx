@@ -1,113 +1,139 @@
 
 import React from 'react';
-import { ChevronRight, Box, BrainCircuit, ShieldAlert, Workflow, Headphones, Target, Rocket } from 'lucide-react';
+import { Layers, Users, Workflow, Target, TrendingUp, BookOpen } from 'lucide-react';
 
 const modules = [
   {
-    icon: Box,
-    title: "MÓDULO 0: ⚙️ SETUP DE GUERRA",
-    result: "Ambiente pronto para trabalhar como Vibe Coder",
-    items: ["Configurar VS Code + extensões", "VPS barata (sem gastar R$ 500/mês)", "Docker para iniciantes", "Git básico: nunca perca código"],
-    time: "3-5 horas",
-    bonus: "Checklist de ferramentas (90% gratuitas)"
+    icon: BookOpen,
+    title: "MÓDULO 1: FUNDAMENTOS DE ORQUESTRAÇÃO",
+    result: "Entender o mindset de orquestrador vs programador",
+    items: [
+      "O que é Methodology as a System (MaaS)",
+      "AIOS Framework: arquitetura e agentes",
+      "Claude + AIOS: a dupla perfeita",
+      "Setup completo do ambiente"
+    ]
   },
   {
-    icon: BrainCircuit,
-    title: "MÓDULO 1: 🤖 VIBE CODING NA PRÁTICA",
-    result: "Criar seu primeiro app funcional em 2 horas",
-    items: ["Conversar com Claude e Cursor", "Prompts que geram código profissional", "Debug com IA: a IA conserta ela mesma", "Do zero ao deploy real"],
-    time: "8 horas",
-    bonus: "50 prompts prontos para acelerar tudo"
-  },
-  {
-    icon: ShieldAlert,
-    title: "MÓDULO 2: 🕵️ O \"HACKER\" DO BEM",
-    result: "Extrair dados e integrar sistemas \"impossíveis\"",
-    items: ["Web Scraping de qualquer site", "Automação de Browser (robôs humanos)", "APIs reversas (conexões sem API)", "Ferramentas underground éticas"],
-    time: "10 horas",
-    bonus: "Scripts prontos de scraping"
+    icon: Users,
+    title: "MÓDULO 2: SQUAD CREATION",
+    result: "Montar e coordenar squads de agentes especializados",
+    items: [
+      "Definir papéis e responsabilidades",
+      "Criar workflows de comunicação",
+      "Orquestrar trabalho em paralelo",
+      "Casos práticos de squad composition"
+    ]
   },
   {
     icon: Workflow,
-    title: "MÓDULO 3: 🧠 DOMINANDO O N8N",
-    result: "Criar CRMs e automações complexas sem código",
-    items: ["Lógica de workflows: como pensar", "WhatsApp, Email, Notion, Sheets", "Criando seu primeiro CRM automatizado", "Templates prontos: adapte e venda"],
-    time: "12 horas",
-    bonus: "10 workflows prontos para vender"
+    title: "MÓDULO 3: WORKFLOW AUTOMATION",
+    result: "Automatizar processos de desenvolvimento end-to-end",
+    items: [
+      "Design de workflows inteligentes",
+      "Story-driven development na prática",
+      "CI/CD automatizado com agentes",
+      "Testing e deployment hands-free"
+    ]
   },
   {
-    icon: Headphones,
-    title: "MÓDULO 4: 💼 ATENDIMENTO & GESTÃO",
-    result: "Entregar soluções que geram ROI real",
-    items: ["Arquitetura de atendimento convertida", "Gestão de filas e transbordo", "Qualificação automática de leads", "Dashboards que impressionam o cliente"],
-    time: "8 horas",
-    bonus: "Template de Dashboard para clientes"
+    icon: Layers,
+    title: "MÓDULO 4: PROJETOS REAIS",
+    result: "Entregar 3 projetos completos do zero",
+    items: [
+      "Projeto 1: Bot WhatsApp com IA (case Patrocínio Café)",
+      "Projeto 2: SDR inteligente para imobiliária (case CNR)",
+      "Projeto 3: Site + catálogo digital (case América)",
+      "Documentação e handoff profissional"
+    ]
   },
   {
     icon: Target,
-    title: "MÓDULO 5: 🎯 VENDAS HIGH-TICKET",
-    result: "Fechar contratos de R$ 3k-15k",
-    items: ["Prospecção em nichos quentes", "Consultoria diagnóstica poderosa", "Proposta irrecusável estruturada", "Scripts reais de fechamento"],
-    time: "6 horas",
-    bonus: "Gravações reais de calls de fechamento"
+    title: "MÓDULO 5: OFFER SCULPTING",
+    result: "Estruturar ofertas de alto valor",
+    items: [
+      "Identificar dores de negócio de alto valor",
+      "Estruturar propostas baseadas em resultado",
+      "Precificação estratégica (setup + MRR)",
+      "Templates de proposta e contrato"
+    ]
+  },
+  {
+    icon: TrendingUp,
+    title: "MÓDULO 6: GO-TO-MARKET",
+    result: "Posicionar-se e atrair clientes",
+    items: [
+      "Content marketing para tech",
+      "Case studies que vendem",
+      "Network estratégico",
+      "Personal branding de orquestrador"
+    ]
   }
 ];
 
 const Modules: React.FC = () => {
   return (
-    <section className="py-24 px-6 bg-[#080808] border-y border-white/5">
+    <section className="py-24 px-6 bg-[#0a0a0a] border-y border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter mb-4">
-            📚 "O QUE ESTÁ DENTRO DO VIBE CODING PRO"
+          <span className="font-mono text-primary text-xs tracking-widest mb-4 block uppercase">Currículo Completo</span>
+          <h2 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6">
+            O que você vai aprender<br/>
+            <span className="text-primary">do zero ao profissional</span>
           </h2>
+          <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto">
+            6 módulos práticos focados em fazer você entregar projetos reais usando AIOS + Claude.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {modules.map((m, i) => (
-            <div key={i} className="bg-card-dark border border-white/5 p-8 rounded-2xl flex flex-col h-full hover:border-primary/20 transition-all">
-              <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6">
+            <div key={i} className="bg-white/[0.02] border border-white/5 p-6 md:p-8 rounded-2xl flex flex-col h-full hover:border-primary/20 transition-all">
+              <div className="w-12 h-12 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center mb-6">
                 <m.icon className="text-primary w-6 h-6" />
               </div>
-              <h3 className="text-white text-lg font-black uppercase mb-2 leading-tight">{m.title}</h3>
-              <p className="text-primary text-[10px] font-black uppercase tracking-widest mb-6">🏁 Resultado: {m.result}</p>
-              
-              <ul className="flex-1 space-y-3 mb-8">
+
+              <h3 className="text-white text-base md:text-lg font-black uppercase mb-3 leading-tight">{m.title}</h3>
+              <p className="text-primary text-xs font-bold mb-6">Resultado: {m.result}</p>
+
+              <ul className="flex-1 space-y-2 mb-6">
                 {m.items.map((item, j) => (
-                  <li key={j} className="text-white/50 text-xs flex items-center gap-2">
-                    <ChevronRight className="w-3 h-3 text-primary shrink-0" />
-                    {item}
+                  <li key={j} className="text-white/60 text-sm flex items-start gap-2">
+                    <span className="text-primary mt-1 shrink-0">→</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
-
-              <div className="pt-6 border-t border-white/5 space-y-2">
-                <p className="text-white/30 text-[10px] font-black uppercase tracking-widest">⏱️ Tempo: {m.time}</p>
-                <p className="text-accent-yellow text-[10px] font-black uppercase tracking-widest">🎁 Bônus: {m.bonus}</p>
-              </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-primary p-8 md:p-12 rounded-3xl text-black">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 p-8 md:p-12 rounded-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
              <div>
-               <p className="text-4xl font-black leading-none">6</p>
-               <p className="text-[10px] font-black uppercase tracking-widest mt-2">Módulos Completos</p>
+               <p className="text-4xl md:text-5xl font-black leading-none text-white mb-2">6</p>
+               <p className="text-xs text-white/60 uppercase font-bold tracking-wider">Módulos práticos</p>
              </div>
              <div>
-               <p className="text-4xl font-black leading-none">50h+</p>
-               <p className="text-[10px] font-black uppercase tracking-widest mt-2">Conteúdo Prático</p>
+               <p className="text-4xl md:text-5xl font-black leading-none text-white mb-2">3</p>
+               <p className="text-xs text-white/60 uppercase font-bold tracking-wider">Projetos completos</p>
              </div>
              <div>
-               <p className="text-4xl font-black leading-none">Vitalício</p>
-               <p className="text-[10px] font-black uppercase tracking-widest mt-2">Acesso Garantido</p>
+               <p className="text-4xl md:text-5xl font-black leading-none text-primary mb-2">∞</p>
+               <p className="text-xs text-white/60 uppercase font-bold tracking-wider">Acesso vitalício</p>
              </div>
              <div>
-               <p className="text-4xl font-black leading-none">Suporte</p>
-               <p className="text-[10px] font-black uppercase tracking-widest mt-2">Comunidade Ativa</p>
+               <p className="text-4xl md:text-5xl font-black leading-none text-white mb-2">+</p>
+               <p className="text-xs text-white/60 uppercase font-bold tracking-wider">Atualizações incluídas</p>
              </div>
           </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-white/40 text-sm uppercase font-bold tracking-widest mb-4">Garantia de resultado</p>
+          <p className="text-white text-xl md:text-3xl font-black uppercase max-w-3xl mx-auto leading-tight">
+            Se você não entregar seu primeiro projeto em <span className="text-primary">30 dias</span>, devolvemos seu dinheiro.
+          </p>
         </div>
       </div>
     </section>
