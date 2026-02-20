@@ -1,0 +1,39 @@
+name: Daily Optimization Routine
+description: "Daily check of campaign performance and optimization actions."
+id: daily-optimization
+version: 1.0.0
+
+inputs:
+  lookback_window:
+    type: string
+    default: "last_3d"
+  roas_target:
+    type: number
+    default: 2.0
+
+steps:
+  - id: 1
+    name: "Performance Data Fetch"
+    agent: "meta-ads-traffic:DataAnalyst"
+    instruction: |
+      Fetch account insights for the {{lookback_window}}.
+      Identify campaigns/adsets with ROAS < {{roas_target}} and Spend > 2x CPA.
+      Identify campaigns/adsets with ROAS > {{roas_target}} ready for scaling.
+
+  - id: 2
+    name: "Optimization Actions"
+    agent: "meta-ads-traffic:TrafficManager"
+    instruction: |
+      Based on DataAnalyst's report:
+      1. PAUSE adsets/ads with low ROAS and high spend (Kill).
+      2. INCREASE budget by 20% for adsets with high ROAS (Scale).
+      3. DUPLICATE winning ads to new adsets if frequency > 2.5.
+      
+      Log all actions taken.
+
+  - id: 3
+    name: "Creative Refresh Check"
+    agent: "meta-ads-traffic:CreativeStrategist"
+    instruction: |
+      Check for ads with "Ad Fatigue" (CTR dropped > 30% in last 3 days).
+      If fatigue detected, queue new creative production.

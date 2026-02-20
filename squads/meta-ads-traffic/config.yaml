@@ -1,0 +1,18 @@
+name: meta-ads-traffic
+version: 1.0.0
+short-title: Meta Ads Squad
+description: >-
+  Squad especializado em gestão de tráfego pago no Meta Ads (Facebook/Instagram).
+  Automatiza criação, otimização e análise de campanhas via Marketing API.
+author: Synkra AIOS
+slashPrefix: metaAds
+
+settings:
+  activation:
+    show_ecosystem_report: false
+    show_greeting: true
+    show_quick_commands: true
+
+  # Dependencies
+  dependencies:
+    - facebook-nodejs-business-sdk

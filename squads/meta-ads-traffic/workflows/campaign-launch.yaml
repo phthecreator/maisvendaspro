@@ -1,0 +1,54 @@
+name: Launch Meta Ads Campaign
+description: "End-to-end workflow for launching a new traffic campaign on Meta Ads."
+id: campaign-launch
+version: 1.0.0
+
+inputs:
+  objective:
+    type: string
+    description: "Campaign objective (e.g., OUTCOME_TRAFFIC, OUTCOME_SALES)"
+    default: "OUTCOME_TRAFFIC"
+  budget:
+    type: number
+    description: "Daily budget in account currency"
+  product_url:
+    type: string
+    description: "URL to promote"
+
+steps:
+  - id: 1
+    name: "Strategy & Creative Brief"
+    agent: "meta-ads-traffic:CreativeStrategist"
+    instruction: |
+      Analyze the product URL: {{product_url}}
+      Develop 3 distinct angles/hooks for the campaign.
+      Draft ad copy for each angle.
+      Output the creative strategy in a structured format.
+
+  - id: 2
+    name: "Campaign Structure Setup"
+    agent: "meta-ads-traffic:TrafficManager"
+    instruction: |
+      Review the creative strategy from step 1.
+      Open the campaign wizard using `*launch-campaign`.
+      Configure the campaign with:
+      - Objective: {{objective}}
+      - Budget: {{budget}}
+      - Structure: 1 Campaign -> 3 AdSets (Broad, Interest, Lookalike) -> 3 Ads each.
+      USE THE META API SKILL (mock or real) to stage the campaign.
+
+  - id: 3
+    name: "Creative Implementation"
+    agent: "meta-ads-traffic:TrafficManager"
+    instruction: |
+      Take the ad copy from step 1.
+      Create ad creatives in the staged campaign.
+      Ensure all tracking parameters (UTM) are correctly set.
+
+  - id: 4
+    name: "Final Review & Publish"
+    agent: "meta-ads-traffic:DataAnalyst"
+    instruction: |
+      Audit the staged campaign structure.
+      Verify budget allocation and targeting overlap.
+      If all checks pass, approve for publishing.

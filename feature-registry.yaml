@@ -1,0 +1,50 @@
+squads:
+  - id: squads
+    name: AI Squads
+    module: squads
+    description: Organize agents into collaborative squads
+memory:
+  - id: memory
+    name: Persistent Memory
+    module: memory
+    description: Long-term memory and context retention
+metrics:
+  - id: metrics
+    name: Quality Metrics
+    module: metrics
+    description: Track and analyze agent performance
+integrations:
+  - id: integrations
+    name: External Integrations
+    module: integrations
+    description: Connect with external APIs and services
+flow:
+  - id: flow
+    name: Agent Flow
+    module: flow
+    description: Visual workflow builder
+knowledge:
+  - id: knowledge
+    name: Knowledge Base
+    module: knowledge
+    description: RAG and vector database integration
+api:
+  - id: api
+    name: API Access
+    module: api
+    description: Programmatic access to AIOS features
+web:
+  - id: web
+    name: Web Access
+    module: web
+    description: Web browsing and scraping capabilities
+voice:
+  - id: voice
+    name: Voice Interface
+    module: voice
+    description: Text-to-speech and speech-to-text
+vision:
+  - id: vision
+    name: Computer Vision
+    module: vision
+    description: Image analysis and generation
