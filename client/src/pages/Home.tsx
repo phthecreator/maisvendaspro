@@ -318,7 +318,7 @@ export default function Home() {
                 <div className="mt-auto px-4 pb-6">
                   <SheetClose asChild>
                     <a
-                      href="https://wa.me/556291508399"
+                      href="https://forms.gle/ZovcwkspqJefcLxX8"
                       className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#00ff88] px-5 py-3 text-xs font-bold uppercase tracking-wide text-[#000000]"
                     >
                       <span className="h-1.5 w-1.5 rounded-full bg-black animate-pulse" />
@@ -329,7 +329,7 @@ export default function Home() {
               </SheetContent>
             </Sheet>
             <a
-              href="https://wa.me/556291508399"
+              href="https://forms.gle/ZovcwkspqJefcLxX8"
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-[#00ff88] border border-white/10 hover:border-[#00ff88] rounded-full text-xs font-bold uppercase tracking-wide text-white hover:text-black transition-all duration-300"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] group-hover:bg-black animate-pulse" />
@@ -387,7 +387,7 @@ export default function Home() {
             className="flex flex-col items-center gap-6"
           >
             <a
-              href="https://wa.me/556291508399"
+              href="https://forms.gle/ZovcwkspqJefcLxX8"
               className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#00ff88] text-[#000000] text-xs sm:text-sm font-bold uppercase tracking-widest overflow-hidden transition-all hover:pr-12"
             >
               <span className="relative z-10">Qual seu maior problema hoje?</span>
@@ -473,7 +473,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <p className="text-white/50">A gente já tem o time. Você só precisa do resultado.</p>
             <a
-              href="https://wa.me/556291508399"
+              href="https://forms.gle/ZovcwkspqJefcLxX8"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-[#00ff88]/40 px-6 py-2 text-xs font-bold uppercase tracking-widest text-[#00ff88] hover:bg-[#00ff88] hover:text-black transition-colors"
             >
               Agendar diagnóstico
@@ -665,7 +665,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/556291508399"
+                  href="https://forms.gle/ZovcwkspqJefcLxX8"
                   className="mt-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#00ff88]/40 px-5 py-2 text-[11px] font-bold uppercase tracking-widest text-[#00ff88] hover:bg-[#00ff88] hover:text-black transition-colors"
                 >
                   {item.cta}
@@ -682,14 +682,18 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="border border-white/10 bg-[#000000] rounded-xl overflow-hidden">
-              <div className="aspect-video bg-black/60 flex items-center justify-center">
-                <button className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm uppercase tracking-widest text-white/70 hover:text-white hover:border-[#00ff88]/60">
-                  <PlayCircle className="w-5 h-5 text-[#00ff88]" />
-                  Play
-                </button>
+              <div className="aspect-video w-full bg-black/60 flex items-center justify-center relative">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/SB34t8J_xKU?rel=0"
+                  title="Apresentação Mais Vendas Pro"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
               </div>
               <div className="p-6 text-sm text-white/60 leading-relaxed">
-                Opa, eu sou o Murillo, Co-Founder da Mais Vendas Pro. Aqui a gente não te vende ferramenta. A gente te
+                Opa, eu sou o Pedro, Co-Founder da Mais Vendas Pro. Aqui a gente não te vende ferramenta. A gente te
                 ensina a pescar. Todo projeto vem com documentação completa, treinamento da equipe e suporte por
                 90 dias.
               </div>
@@ -766,7 +770,7 @@ export default function Home() {
             </p>
             <p className="text-white/50">Mais de 30 soluções no catálogo. Se não tiver ali, a gente cria.</p>
             <a
-              href="https://wa.me/556291508399"
+              href="https://forms.gle/ZovcwkspqJefcLxX8"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-[#00ff88]/40 px-6 py-2 text-[11px] font-bold uppercase tracking-widest text-[#00ff88] hover:bg-[#00ff88] hover:text-black transition-colors"
             >
               Ver catálogo completo
@@ -827,7 +831,7 @@ export default function Home() {
           <p className="text-white/50 text-lg mb-10">Diagnóstico gratuito. Sem compromisso. Sem enrolação.</p>
 
           <a
-            href="https://wa.me/556291508399"
+            href="https://forms.gle/ZovcwkspqJefcLxX8"
             className="inline-flex items-center justify-center px-10 py-5 bg-[#00ff88] hover:bg-[#00cc6a] text-black text-sm font-bold uppercase tracking-widest transition-all hover:scale-105"
           >
             Agendar diagnóstico gratuito
@@ -841,7 +845,7 @@ export default function Home() {
               Chamar no WhatsApp
             </a>
             <a
-              href="https://wa.me/556291508399"
+              href="https://forms.gle/ZovcwkspqJefcLxX8"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-6 py-2 text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white hover:border-white/40 transition-colors"
             >
               Preencher formulário
