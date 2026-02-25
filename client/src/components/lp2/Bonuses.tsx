@@ -104,8 +104,8 @@ const Bonuses: React.FC<Props> = ({ timeLeft }) => {
            </div>
            <div className="h-px bg-white/10 mb-8"></div>
            <p className="text-white text-xl font-black uppercase line-through mb-2">TOTAL: R$ 4.367</p>
-           <p className="text-primary text-5xl md:text-7xl font-black tracking-tighter glow-text">R$ 297</p>
-           <p className="text-white/60 font-black uppercase text-[10px] tracking-[0.3em] mt-4">🎯 Desconto de 93% OFF</p>
+           <p className="text-primary text-5xl md:text-7xl font-black tracking-tighter glow-text">R$ 250</p>
+           <p className="text-white/60 font-black uppercase text-[10px] tracking-[0.3em] mt-4">🎯 Desconto de 94% OFF</p>
         </div>
       </div>
     </section>

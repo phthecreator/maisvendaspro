@@ -8,7 +8,7 @@ const ProblemSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-urgency text-3xl md:text-6xl font-black uppercase tracking-tighter mb-4">
-            "Você já viu esse filme (e ele SEMPRE acaba mal)..."
+            "Se você se reconhecer em algum desses... esse cohort foi feito pra você."
           </h2>
         </div>
 
@@ -16,21 +16,21 @@ const ProblemSection: React.FC = () => {
           {/* Card 1 */}
           <div className="bg-card-dark border-2 border-urgency/30 p-8 rounded-2xl flex flex-col h-full">
             <div className="mb-6 flex justify-between items-start">
-              <h3 className="text-white text-2xl font-black uppercase">O Dev Tradicional</h3>
+              <h3 className="text-white text-2xl font-black uppercase">O Iniciante Sem Rumo</h3>
               <UserX className="text-urgency w-8 h-8" />
             </div>
             <div className="flex-1 space-y-4 mb-8">
               <p className="text-urgency font-bold text-sm uppercase tracking-wider">Problema:</p>
               <ul className="text-white/60 space-y-2 text-sm md:text-base">
-                <li>- Demora 3 meses pra entregar um MVP</li>
-                <li>- Cobra R$ 15.000 (que você não tem)</li>
-                <li>- Usa termos técnicos que você não entende</li>
-                <li>- Some quando o bug aparece</li>
+                <li>- Assiste tutorial de React, depois Python, depois Node...</li>
+                <li>- Nunca sabe por onde começar de verdade</li>
+                <li>- Portfólio? Zero projetos em produção</li>
+                <li>- "Quando eu aprender X, aí começo"</li>
               </ul>
             </div>
             <div className="bg-urgency/10 p-4 rounded-xl border border-urgency/20">
               <p className="text-white text-sm">
-                <span className="text-urgency font-black">Resultado:</span> Você fica refém, quebra ou desiste.
+                <span className="text-urgency font-black">Resultado:</span> 6 meses se passam. Teoria acumulou. Projetos entregues? Zero.
               </p>
             </div>
           </div>
@@ -38,21 +38,21 @@ const ProblemSection: React.FC = () => {
           {/* Card 2 */}
           <div className="bg-card-dark border-2 border-urgency/30 p-8 rounded-2xl flex flex-col h-full">
             <div className="mb-6 flex justify-between items-start">
-              <h3 className="text-white text-2xl font-black uppercase">O Gestor de Tráfego Limitado</h3>
+              <h3 className="text-white text-2xl font-black uppercase">O Dev Raiz Travado</h3>
               <Clock className="text-urgency w-8 h-8" />
             </div>
             <div className="flex-1 space-y-4 mb-8">
               <p className="text-urgency font-bold text-sm uppercase tracking-wider">Problema:</p>
               <ul className="text-white/60 space-y-2 text-sm md:text-base">
-                <li>- Gera leads, mas cliente não atende</li>
-                <li>- Reclama que "o lead é frio"</li>
-                <li>- Perde conta porque não entrega resultado</li>
-                <li>- Vive de tiro curto (R$ 300, R$ 500)</li>
+                <li>- Sabe escrever código mas demora semanas pra entregar</li>
+                <li>- Nunca trabalhou com cliente real</li>
+                <li>- Acha que vibe coding é "coisa de preguiçoso"</li>
+                <li>- Enquanto discute sintaxe, o mercado mudou</li>
               </ul>
             </div>
             <div className="bg-urgency/10 p-4 rounded-xl border border-urgency/20">
               <p className="text-white text-sm">
-                <span className="text-urgency font-black">Resultado:</span> Você vira commoditizado. Todo mundo faz tráfego.
+                <span className="text-urgency font-black">Resultado:</span> Dev raiz está sendo substituído. Quem não se adapta, fica pra trás.
               </p>
             </div>
           </div>
@@ -60,21 +60,21 @@ const ProblemSection: React.FC = () => {
           {/* Card 3 */}
           <div className="bg-card-dark border-2 border-urgency/30 p-8 rounded-2xl flex flex-col h-full">
             <div className="mb-6 flex justify-between items-start">
-              <h3 className="text-white text-2xl font-black uppercase">O Empreendedor Travado</h3>
+              <h3 className="text-white text-2xl font-black uppercase">O Curioso que Não Cobra</h3>
               <Ban className="text-urgency w-8 h-8" />
             </div>
             <div className="flex-1 space-y-4 mb-8">
               <p className="text-urgency font-bold text-sm uppercase tracking-wider">Problema:</p>
               <ul className="text-white/60 space-y-2 text-sm md:text-base">
-                <li>- Tem a ideia do SaaS, mas não sabe executar</li>
-                <li>- Trava na hora de integrar WhatsApp com banco de dados</li>
-                <li>- Assiste curso atrás de curso, mas nunca faz</li>
-                <li>- Fica esperando "o momento certo"</li>
+                <li>- Já brincou com Claude e Cursor, mas sem estrutura</li>
+                <li>- Constrói coisa interessante mas não sabe vender</li>
+                <li>- Trava na hora de falar com cliente e dizer o preço</li>
+                <li>- Faz projeto por R$ 300 que deveria ser R$ 5k</li>
               </ul>
             </div>
             <div className="bg-urgency/10 p-4 rounded-xl border border-urgency/20">
               <p className="text-white text-sm">
-                <span className="text-urgency font-black">Resultado:</span> 6 meses se passam. Concorrente já lançou. Você continua na mesma.
+                <span className="text-urgency font-black">Resultado:</span> Sabe construir, mas não transforma em dinheiro. Frustrante demais.
               </p>
             </div>
           </div>
@@ -82,15 +82,15 @@ const ProblemSection: React.FC = () => {
 
         <div className="text-center max-w-4xl mx-auto">
           <h3 className="text-accent-yellow text-2xl md:text-4xl font-black uppercase mb-6">
-            Mas e se existisse um caminho completamente diferente?
+            E se em 4 aulas ao vivo você saísse com projeto pronto E soubesse exatamente quanto cobrar?
           </h3>
           <p className="text-white/80 text-lg md:text-2xl font-medium leading-relaxed">
-            "Um caminho onde você NÃO precisa saber sintaxe...<br/>
-            ...onde a IA faz o trabalho pesado...<br/>
-            ...e você se torna a PONTE entre o problema do empresário e a solução tecnológica?"
+            "4 aulas. Ao vivo. Sem corte. Você faz junto.<br/>
+            Projeto funcional em produção. Precificação real.<br/>
+            Num grupo onde todo mundo quer a mesma coisa que você."
           </p>
           <p className="text-primary text-3xl md:text-5xl font-black uppercase mt-8 tracking-widest">
-            Bem-vindo ao Vibe Coding.
+            Bem-vindo ao Vibe Coding Pro.
           </p>
         </div>
       </div>

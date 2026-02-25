@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '@/components/lp2/Hero';
+import Navbar from '@/components/lp2/Navbar';
 import ProblemSection from '@/components/lp2/ProblemSection';
 import MaaSMethodology from '@/components/lp2/MaaSMethodology';
 import AIOSShowcase from '@/components/lp2/AIOSShowcase';
@@ -16,6 +17,7 @@ import StickyCTA from '@/components/lp2/StickyCTA';
 const LP2: React.FC = () => {
   return (
     <div className="min-h-screen bg-black font-sans selection:bg-primary selection:text-black">
+      <Navbar vagas={3} maxVagas={100} turma={1} />
       <main>
         <Hero />
         <ProblemSection />

@@ -10,11 +10,11 @@ const Pricing: React.FC = () => {
           <span className="font-mono text-primary text-xs tracking-widest mb-4 block uppercase">Oferta</span>
           <h2 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6 px-2">
             Tudo que você precisa pra<br/>
-            <span className="text-primary">faturar com IA em 30 dias</span>
+            <span className="text-primary">entregar o primeiro projeto e cobrar por ele</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto">
-            Não estamos vendendo curso. Estamos vendendo um atalho de 6 meses de tentativa e erro
-            comprimido em 30 dias com acompanhamento.
+            Não é curso gravado. É um cohort ao vivo onde você aprende fazendo,
+            com dois caras que vivem do que vão te ensinar.
           </p>
         </div>
 
@@ -26,43 +26,43 @@ const Pricing: React.FC = () => {
               <div className="flex items-start gap-3 text-white/80 text-sm md:text-base">
                 <span className="text-primary mt-1 font-black">01</span>
                 <div>
-                  <p className="text-white font-bold">6 módulos completos (AIOS + Claude + Vendas)</p>
-                  <p className="text-white/40 text-xs">Se vendesse separado: R$ 997</p>
+                  <p className="text-white font-bold">4 aulas ao vivo por mês (gravadas no grupo)</p>
+                  <p className="text-white/40 text-xs">Se vendesse separado: R$ 400</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-white/80 text-sm md:text-base">
                 <span className="text-primary mt-1 font-black">02</span>
                 <div>
-                  <p className="text-white font-bold">3 projetos reais do zero ao deploy</p>
-                  <p className="text-white/40 text-xs">Bot WhatsApp, SDR com IA, Site profissional — valor: R$ 1.500</p>
+                  <p className="text-white font-bold">Projetos reais do zero ao deploy</p>
+                  <p className="text-white/40 text-xs">Bot WhatsApp, SDR com IA, Site profissional — valor: R$ 800</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-white/80 text-sm md:text-base">
                 <span className="text-primary mt-1 font-black">03</span>
                 <div>
-                  <p className="text-white font-bold">Templates de squad, workflow e proposta comercial</p>
-                  <p className="text-white/40 text-xs">Prontos pra usar com clientes — valor: R$ 500</p>
+                  <p className="text-white font-bold">Setup completo das ferramentas (gratuitas + pagas)</p>
+                  <p className="text-white/40 text-xs">Claude Code, AIOS, n8n, Cursor — valor: R$ 200</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-white/80 text-sm md:text-base">
                 <span className="text-primary mt-1 font-black">04</span>
                 <div>
-                  <p className="text-white font-bold">Acesso ao grupo de networking (lives semanais)</p>
-                  <p className="text-white/40 text-xs">Troca de experiência, parcerias, indicações — valor: R$ 97/mês</p>
+                  <p className="text-white font-bold">Como cobrar, vender e fechar o contrato</p>
+                  <p className="text-white/40 text-xs">Ligação, proposta, precificação — valor: R$ 300</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-white/80 text-sm md:text-base">
                 <span className="text-primary mt-1 font-black">05</span>
                 <div>
-                  <p className="text-white font-bold">Framework AIOS Pro (12 agentes configurados)</p>
-                  <p className="text-white/40 text-xs">O mesmo que usamos nos nossos projetos — valor: R$ 2.000</p>
+                  <p className="text-white font-bold">Acesso ao grupo de cohort no WhatsApp</p>
+                  <p className="text-white/40 text-xs">Só quem pagou. Todos com o mesmo objetivo. — valor: R$ 97/mês</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-white/80 text-sm md:text-base">
                 <span className="text-primary mt-1 font-black">06</span>
                 <div>
-                  <p className="text-white font-bold">Acesso vitalício + atualizações</p>
-                  <p className="text-white/40 text-xs">IA evolui, o curso evolui junto — valor: inestimável</p>
+                  <p className="text-white font-bold">Templates de proposta comercial prontos pra usar</p>
+                  <p className="text-white/40 text-xs">Manda pro cliente e fecha — valor: R$ 200</p>
                 </div>
               </div>
             </div>
@@ -70,18 +70,19 @@ const Pricing: React.FC = () => {
             <div className="bg-white/[0.02] border border-primary/20 p-6 rounded-xl mt-8">
               <div className="flex items-center gap-2 mb-3">
                 <Gift className="w-5 h-5 text-primary" />
-                <p className="text-primary text-xs uppercase font-black tracking-wider">Bônus: mentoria em grupo</p>
+                <p className="text-primary text-xs uppercase font-black tracking-wider">Quem ensina</p>
               </div>
               <p className="text-white/70 text-sm leading-relaxed">
-                Aulas ao vivo semanais onde tiramos dúvidas, revisamos projetos e mostramos
-                como fechar contratos. Gravadas e disponíveis pra sempre.
+                Pedro e Murillo. Full stack + prompt engineering + automações.
+                Geramos R$ 20k/mês usando exatamente o que vamos te ensinar por R$ 250.
+                Não é teoria — é o que a gente faz todo dia.
               </p>
             </div>
 
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-xl">
               <p className="text-white/40 text-xs uppercase font-bold tracking-wider mb-3">Valor total se comprasse separado</p>
-              <p className="text-white/50 text-2xl font-black line-through">R$ 5.094</p>
-              <p className="text-white/40 text-xs mt-2">Você paga uma fração disso. E ainda tem garantia.</p>
+              <p className="text-white/50 text-2xl font-black line-through">R$ 1.997</p>
+              <p className="text-white/40 text-xs mt-2">Você investe R$ 250 pra aprender a fechar projetos de R$ 3k a R$ 10k.</p>
             </div>
           </div>
 
@@ -90,27 +91,29 @@ const Pricing: React.FC = () => {
             <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-6">Investimento único</p>
 
             <div className="mb-8">
-              <p className="text-white/50 text-lg line-through mb-1">De R$ 997</p>
+              <p className="text-white/50 text-lg line-through mb-1">De R$ 1.200</p>
               <div className="text-center">
-                <h2 className="text-primary text-6xl md:text-8xl font-black tracking-tighter leading-none mb-2">R$ 297</h2>
-                <p className="text-white/80 text-base md:text-lg font-medium">ou 12x de R$ 29,90</p>
+                <h2 className="text-primary text-6xl md:text-8xl font-black tracking-tighter leading-none mb-2">R$ 250</h2>
+                <p className="text-white/80 text-base md:text-lg font-medium">ou parcelado — opções no checkout</p>
               </div>
             </div>
 
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 mb-8 text-center">
-              <p className="text-primary font-black text-sm uppercase">Preço de lançamento</p>
-              <p className="text-white/60 text-xs">Vai subir quando atingirmos 100 alunos</p>
+              <p className="text-primary font-black text-sm uppercase">Preço de lançamento — Turma 1</p>
+              <p className="text-white/60 text-xs">Próximas turmas sem desconto garantido</p>
             </div>
 
             <div className="space-y-4 mb-10">
               <a
-                href="https://wa.me/556291508399?text=Quero%20o%20Vibe%20Coding%20Pro"
+                href="https://pay.cakto.com.br/3hjpqk6_784210"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 bg-primary text-black font-black text-base md:text-xl py-5 md:py-6 rounded-xl uppercase tracking-wide transition-transform hover:scale-105 active:scale-95"
               >
-                Quero começar agora
+                Quero entrar na Turma 1
                 <ArrowRight className="w-5 h-5" />
               </a>
-              <p className="text-center text-white/40 text-xs uppercase tracking-wider">Acesso liberado imediatamente</p>
+              <p className="text-center text-white/40 text-xs uppercase tracking-wider">Pagamento seguro • Grupo liberado após confirmação</p>
             </div>
 
             <div className="grid grid-cols-3 gap-4 text-center border-t border-white/5 pt-8">
@@ -143,7 +146,8 @@ const Pricing: React.FC = () => {
             Um único projeto de bot WhatsApp cobra <span className="text-primary">R$ 3.000+</span> no mercado.
           </p>
           <p className="text-white/60 text-base mt-4">
-            Você aprende a construir quantos quiser por R$ 297. O ROI se paga no primeiro cliente.
+            Você aprende a construir e vender por R$ 250. Se fechar um cliente no mês,
+            você já está ganhando mais que a maioria. O ROI se paga na primeira ligação.
           </p>
         </div>
       </div>

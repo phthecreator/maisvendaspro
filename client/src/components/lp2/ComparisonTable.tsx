@@ -4,7 +4,7 @@ import { Check, X, MoveHorizontal } from 'lucide-react';
 
 const ComparisonTable: React.FC = () => {
   const rows = [
-    { label: "Custo", vibe: "R$ 297", dev: "R$ 15.000+", traditional: "R$ 2.000+", solo: "R$ 0" },
+    { label: "Custo", vibe: "R$ 250", dev: "R$ 15.000+", traditional: "R$ 2.000+", solo: "R$ 0" },
     { label: "Tempo até resultado", vibe: "7-30 dias", dev: "3-6 meses", traditional: "6-12 meses", solo: "???" },
     { label: "Aprende a vender", vibe: true, dev: false, traditional: false, solo: false },
     { label: "Ferramentas \"hack\"", vibe: true, dev: false, traditional: false, solo: "talvez" },

@@ -17,10 +17,12 @@ const StickyCTA: React.FC = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 p-4 z-[90] md:hidden bg-gradient-to-t from-black via-black/80 to-transparent">
       <a
-        href="https://wa.me/556291508399?text=Quero%20entrar%20no%20grupo%20Vibe%20Coding%20Pro"
+        href="https://pay.cakto.com.br/3hjpqk6_784210"
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-full inline-flex items-center justify-center bg-primary text-black font-black py-5 rounded-xl uppercase tracking-widest shadow-2xl text-base"
       >
-        ENTRAR NO GRUPO GRATUITO
+        ENTRAR NA TURMA 1 — R$ 250
       </a>
     </div>
   );

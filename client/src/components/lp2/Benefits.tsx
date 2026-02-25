@@ -4,20 +4,20 @@ import { CheckCircle2 } from 'lucide-react';
 
 const benefits = [
   {
-    title: "Venda Automações",
-    desc: "Como encontrar clientes dispostos a pagar R$5k+ por um robô simples."
+    title: "4 Aulas Ao Vivo Por Mês",
+    desc: "Pedro e Murillo ensinam sem script, sem cortes. Você acompanha em tempo real e faz junto. Gravadas no grupo caso não possa ao vivo."
   },
   {
-    title: "Portfólio em 7 Dias",
-    desc: "Saia do zero com 3 projetos de IA prontos para o mercado."
+    title: "Do Zero ao Deploy",
+    desc: "Saia de cada aula com projeto funcional em produção. Não teoria — código rodando, cliente podendo usar."
   },
   {
-    title: "Precificação de Elite",
-    desc: "Como cobrar pelo valor gerado e não por hora/homem."
+    title: "Pra Quem Não Tem Grana",
+    desc: "Ferramentas 100% gratuitas no cardápio. Cursor free, Claude free tier, n8n self-hosted. Sem desculpa pra não começar."
   },
   {
-    title: "Networking Secreto",
-    desc: "Acesso ao grupo onde os maiores negócios de IA do Brasil acontecem."
+    title: "Aprenda a Cobrar de Verdade",
+    desc: "Como falar na ligação com o cliente. Como montar proposta. Como assinar contrato. Quanto cobrar por bot, site, automação."
   }
 ];
 
@@ -26,8 +26,8 @@ const Benefits: React.FC = () => {
     <section className="py-24 px-6 bg-primary/[0.02] border-y border-white/5">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight mb-12">
-          A Mentoria de R$15 Mil <br className="md:hidden" />
-          Que Virou <span className="text-primary italic">Trampolim</span>
+          O que muda depois das <br className="md:hidden" />
+          <span className="text-primary italic">4 aulas</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           {benefits.map((benefit, i) => (

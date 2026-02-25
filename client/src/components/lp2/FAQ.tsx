@@ -16,7 +16,7 @@ const faqItems = [
   { q: "Consigo fazer isso trabalhando CLT?", a: "Sim. Muitos alunos começaram com 1-2h por dia e escalaram até poderem sair do emprego." },
   { q: "Tem garantia?", a: "7 dias incondicional. Se não sentir que vale, manda um email e devolvemos 100%. Sem perguntas, sem burocracia." },
   { q: "Diferença pros outros cursos de IA?", a: "Foco total em FECHAR CONTRATOS e usar ferramentas 'hack' BR, não apenas teoria de ChatGPT." },
-  { q: "Posso revender as automações prontas?", a: "SIM! Os templates são seus. Muitos alunos pagam o curso só revendendo o CRM imobiliário pronto." },
+  { q: "Posso revender as automações prontas?", a: "SIM! Os templates são seus. Muitos alunos pagam o curso só revendendo o bot SDR imobiliário pronto para outros corretores." },
   { q: "Já sei programar, é pra mim?", a: "Sim, talvez mais ainda. Você vai acelerar 10x sua entrega e aprender a vender valor em vez de horas." }
 ];
 

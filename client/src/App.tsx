@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import PortfolioScrollTest from "./pages/PortfolioScrollTest";
 import LP2 from "./pages/lp2";
+import Mentoria100X from "./pages/mentoria100x";
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/portfolio"} component={Portfolio} />
       <Route path={"/portfolio-scroll-test"} component={PortfolioScrollTest} />
       <Route path={"/vibe-coding-pro"} component={LP2} />
+      <Route path={"/mentoria100x"} component={Mentoria100X} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

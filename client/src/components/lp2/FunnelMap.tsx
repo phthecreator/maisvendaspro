@@ -36,7 +36,7 @@ const steps = [
   {
     icon: BookOpen,
     label: 'VIBE CODING PRO',
-    channel: 'Método completo — R$ 297',
+    channel: 'Método completo — R$ 250',
     description: '6 módulos, 3 projetos reais, templates prontos, framework AIOS Pro com 12 agentes. Acesso vitalício.',
     color: 'text-primary',
     borderColor: 'border-primary/30',

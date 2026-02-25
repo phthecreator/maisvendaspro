@@ -132,7 +132,7 @@ const Modules: React.FC = () => {
         <div className="mt-16 text-center">
           <p className="text-white/40 text-sm uppercase font-bold tracking-widest mb-4">Garantia de resultado</p>
           <p className="text-white text-xl md:text-3xl font-black uppercase max-w-3xl mx-auto leading-tight">
-            Se você não entregar seu primeiro projeto em <span className="text-primary">30 dias</span>, devolvemos seu dinheiro.
+            Não ficou satisfeito nos primeiros <span className="text-primary">7 dias</span>? Devolvemos 100% do seu dinheiro, sem perguntas.
           </p>
         </div>
       </div>
