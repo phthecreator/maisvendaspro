@@ -23,7 +23,7 @@ const CaseStudy: React.FC = () => {
                 className="w-full aspect-video object-cover"
               />
               <div className="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md p-6 rounded-xl border border-primary/30 max-w-xs">
-                <p className="text-primary font-black text-3xl">+R$ 100k/mês</p>
+                <p className="text-primary font-black text-3xl">+55% faturamento</p>
                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest">Receita adicional gerada</p>
               </div>
             </div>
@@ -51,7 +51,7 @@ const CaseStudy: React.FC = () => {
               <div className="flex gap-4 items-start">
                 <Quote className="text-primary w-12 h-12 opacity-50 shrink-0" />
                 <p className="text-white text-lg font-medium italic leading-snug">
-                  "Em 60 dias, nosso faturamento foi de R$ 180k pra R$ 280k. O sistema qualifica, agenda e acompanha sozinho. Nosso time agora foca em fechar."
+                  "Em 60 dias o sistema já qualificava, agendava e acompanhava sozinho. Nosso time parou de perder lead pra concorrente e voltou a focar em fechar."
                 </p>
               </div>
               <p className="text-primary font-black text-right mt-4 uppercase text-sm">— Head of Sales, Agência B2B (SP)</p>

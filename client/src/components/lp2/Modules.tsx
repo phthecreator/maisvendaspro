@@ -120,7 +120,7 @@ const Modules: React.FC = () => {
              </div>
              <div>
                <p className="text-4xl md:text-5xl font-black leading-none text-primary mb-2">∞</p>
-               <p className="text-xs text-white/60 uppercase font-bold tracking-wider">Acesso vitalício</p>
+               <p className="text-xs text-white/60 uppercase font-bold tracking-wider">Gravações inclusas</p>
              </div>
              <div>
                <p className="text-4xl md:text-5xl font-black leading-none text-white mb-2">+</p>

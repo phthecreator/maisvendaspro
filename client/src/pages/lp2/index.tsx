@@ -17,7 +17,7 @@ import StickyCTA from '@/components/lp2/StickyCTA';
 const LP2: React.FC = () => {
   return (
     <div className="min-h-screen bg-black font-sans selection:bg-primary selection:text-black">
-      <Navbar vagas={3} maxVagas={100} turma={1} />
+      <Navbar vagas={97} turma={1} />
       <main>
         <Hero />
         <ProblemSection />

@@ -25,7 +25,7 @@ const bonuses = [
   {
     title: "BÔNUS 4: 🔐 ACESSO À COMUNIDADE",
     value: "R$ 1.182",
-    desc: "6 meses de acesso ao Discord exclusivo, mentorias semanais ao vivo e networking para parcerias."
+    desc: "6 meses de acesso ao grupo exclusivo no WhatsApp, mentorias semanais ao vivo e networking para parcerias."
   }
 ];
 
@@ -86,7 +86,7 @@ const Bonuses: React.FC<Props> = ({ timeLeft }) => {
             </div>
 
             <div className="bg-black/40 p-6 rounded-2xl border border-secondary/30 inline-flex flex-col gap-2">
-              <p className="text-secondary font-black uppercase text-sm">⚠️ ATENÇÃO: Restam apenas 3 vagas</p>
+              <p className="text-secondary font-black uppercase text-sm">⚠️ ATENÇÃO: Restam apenas 10 vagas com esse bônus</p>
               <p className="text-white/60 text-[10px] font-black uppercase tracking-widest">Expira em: [{formatTime(timeLeft)}]</p>
             </div>
           </div>
@@ -95,7 +95,7 @@ const Bonuses: React.FC<Props> = ({ timeLeft }) => {
         <div className="mt-20 max-w-xl mx-auto bg-card-dark border border-white/10 p-10 rounded-3xl text-center">
            <p className="text-white/40 text-[10px] font-black uppercase tracking-widest mb-4">VALOR TOTAL SE COMPRADO SEPARADO:</p>
            <div className="space-y-1 mb-8 opacity-40 font-mono text-xs">
-             <p>Curso: R$ 997</p>
+             <p>Curso: R$ 1.200</p>
              <p>Bônus 1: R$ 497</p>
              <p>Bônus 2: R$ 397</p>
              <p>Bônus 3: R$ 297</p>
@@ -103,7 +103,7 @@ const Bonuses: React.FC<Props> = ({ timeLeft }) => {
              <p>Bônus 5: R$ 997</p>
            </div>
            <div className="h-px bg-white/10 mb-8"></div>
-           <p className="text-white text-xl font-black uppercase line-through mb-2">TOTAL: R$ 4.367</p>
+           <p className="text-white text-xl font-black uppercase line-through mb-2">TOTAL: R$ 4.570</p>
            <p className="text-primary text-5xl md:text-7xl font-black tracking-tighter glow-text">R$ 250</p>
            <p className="text-white/60 font-black uppercase text-[10px] tracking-[0.3em] mt-4">🎯 Desconto de 94% OFF</p>
         </div>

@@ -13,7 +13,7 @@ const Manifesto: React.FC = () => {
         <div className="space-y-8 text-white/70 text-lg md:text-xl font-medium leading-relaxed mb-16">
           <p>Deixa eu ser direto com você:</p>
           <p>
-            <span className="text-primary font-black uppercase">Pedro</span> trabalhou com lançamento, morou nos EUA,
+            <span className="text-primary font-black uppercase">Pedro</span> trabalhou com lançamento, passou 2 anos no Vale do Silício,
             ficou 3 anos mergulhado em IA quando ninguém ainda falava nisso.
             Hoje tem um time de agentes que vai do zero ao deploy — e ele só orquestra.
           </p>

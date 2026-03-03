@@ -4,11 +4,10 @@ import { Terminal, ArrowLeft } from 'lucide-react';
 
 interface NavbarProps {
   vagas: number;
-  maxVagas: number;
   turma: number;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ vagas, maxVagas, turma }) => {
+const Navbar: React.FC<NavbarProps> = ({ vagas, turma }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -52,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ vagas, maxVagas, turma }) => {
         <div className="bg-primary/10 px-3 py-1 rounded-full border border-primary/20 flex items-center gap-2">
           <span className="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
           <p className="text-primary text-[10px] font-bold tracking-widest uppercase">
-            T{turma}: {maxVagas - vagas} vagas
+            T{turma}: {vagas} vagas
           </p>
         </div>
       </div>

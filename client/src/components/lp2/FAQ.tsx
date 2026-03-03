@@ -10,7 +10,7 @@ const faqItems = [
   { q: "Isso funciona no meu nicho?", a: "Se o nicho tem leads, processos repetitivos e dinheiro para investir, funciona. Nichos testados: Imobiliária, Saúde, Direito, etc." },
   { q: "Vocês dão suporte? E se eu travar?", a: "Sim. Comunidade ativa com resposta em 24h, mentorias semanais e base de conhecimento robusta." },
   { q: "O conteúdo fica desatualizado?", a: "Não. O acesso é vitalício e as atualizações são gratuitas conforme a IA e as ferramentas evoluem." },
-  { q: "Por que tão barato? É pegadinha?", a: "Preço de lançamento. Estamos construindo os primeiros cases e depoimentos. Quando atingirmos 100 alunos, o preço sobe. Quem entrar agora paga menos e tem mais acesso direto a nós." },
+  { q: "Por que tão barato? É pegadinha?", a: "Preço de lançamento da Turma 1. Quando chegarmos a 100 alunos, o preço sobe sem aviso. Quem entrar agora paga menos, tem acesso direto a Pedro e Murillo e entra numa turma menor — o que significa mais atenção individual." },
   { q: "Ensina a vender ou só parte técnica?", a: "Os dois. Tech sem vendas é hobby. Vendas sem tech é commodity. Unimos os dois." },
   { q: "E se a IA evoluir e isso ficar obsoleto?", a: "Quanto mais a IA evolui, mais poderoso você fica. IA substitui quem tenta competir com ela, não quem manda nela." },
   { q: "Consigo fazer isso trabalhando CLT?", a: "Sim. Muitos alunos começaram com 1-2h por dia e escalaram até poderem sair do emprego." },
