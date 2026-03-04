@@ -159,3 +159,7 @@ logs/
 
 # Supabase generated metadata (contains connection secrets)
 supabase/.temp/
+node_modules/*
+/node_modules
+projetos/maisvendaspro/node_modules
+node_modules/.pnpm/*

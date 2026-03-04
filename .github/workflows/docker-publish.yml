@@ -43,3 +43,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Trigger Easypanel Deploy Webhook
+        run: curl -X GET "https://ep.maisvendaspro.com.br/api/deploy/a139e846d0971b75db8e16d5afc7aaf472511c6a41c98ff6"
+
