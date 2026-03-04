@@ -1,0 +1,17 @@
+node_modules
+.git
+.github
+.env
+.env.*
+dist
+.claude
+.aios
+.aios-core
+.antigravity
+.manus-logs
+.synapse
+*.md
+docs/
+squads/
+scripts/
+squad.sh
