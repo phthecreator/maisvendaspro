@@ -35,8 +35,8 @@ COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/node_modules ./node_modules
 
 # Expose the port the app runs on. 
-# You can customize this based on what the express server uses (usually 5000 in Vite setups if not overriden)
-EXPOSE 5000
+# You can customize this based on what the express server uses (usually 80 in Easypanel)
+EXPOSE 80
 
 # Run the app
 CMD ["npm", "run", "start"]
