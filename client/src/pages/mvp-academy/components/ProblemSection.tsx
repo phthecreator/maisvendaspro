@@ -4,24 +4,24 @@ import { AlertTriangle, Terminal } from 'lucide-react';
 
 const diagnosticLogs = [
   {
-    code: 'ERR_HIGH_CONSUMPTION',
-    title: 'Você consome muito. Implementa pouco.',
-    detail: 'Cada novo vídeo é mais teoria sem aplicação. O projeto que você quer construir continua preso em arquivos temporários na sua mente.',
+    code: 'ERR_AMATEUR_TAX',
+    title: 'Pagando o "Imposto do Amador".',
+    detail: 'Você trabalha muito e ganha pouco porque ainda faz manualmente o que um agente de IA resolveria em segundos. A falta de um sistema custa o seu tempo livre.',
   },
   {
-    code: 'ERR_ZERO_SUPPORT',
-    title: 'Não há ninguém quando o código quebra.',
-    detail: 'Cursos gravam conteúdo. Você assiste sozinho. No primeiro erro real de API ou Deploy, o seu progresso é interrompido.',
+    code: 'ERR_ILLUSION_OF_KNOWLEDGE',
+    title: 'A Ilusão do Conhecimento.',
+    detail: '50 vídeos assistidos. Dezenas de prompts de "Vibe Coding" salvos no Notion. Zero projetos no ar. Você tem a teoria, mas paralisa na hora da execução.',
   },
   {
-    code: 'ERR_TECH_INFERIORITY',
-    title: 'A sensação de não ser "técnico o suficiente".',
-    detail: 'Meses de estudo, zero projetos rodando. A culpa parece sua — mas o problema é o modelo de ensino passivo.',
+    code: 'ERR_DEPLOY_LONELINESS',
+    title: 'A Solidão do Erro no Terminal.',
+    detail: 'Quando o sistema quebra ou a API falha, não há ninguém para ajudar. O tutorial não responde suas dúvidas. Você trava, desanima e volta para a estaca zero.',
   },
   {
-    code: 'ERR_MARKET_MISALIGNMENT',
-    title: 'Perdido em promessas de "dinheiro fácil".',
-    detail: 'Dropshipping, PLR, Afiliados. Nada funcionou. Você sabe que IA é o motor real — mas não tem o mapa da implementação.',
+    code: 'ERR_FALSE_PROMISES',
+    title: 'Exaustão de Fórmulas Mágicas.',
+    detail: 'Você já tentou PLR, Dropshipping e falhou. Sabe que IA é o motor real da nova economia, mas não quer mais um curso teórico. Quer alguém construindo junto.',
   },
 ];
 

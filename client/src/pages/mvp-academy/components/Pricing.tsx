@@ -54,12 +54,19 @@ const Pricing: React.FC = () => {
               <span className="text-white/20 text-2xl font-bold mb-4 tracking-tight">/ano</span>
             </div>
             <p className="text-white/40 text-sm mt-4 font-medium italic">
-              "O preço de um jantar para transformar sua carreira em IA."
+              "Você gasta mais de R$50 num lanche. Por R$20/mês, entregamos nossa infraestrutura de IA para você faturar."
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-            {included.map((item, i) => (
+            {[
+              'Acesso aos Encontros (Terças 19h)',
+              'Boilerplates de Código (Copie e Cole)',
+              'Biblioteca de Prompts Validados',
+              'Comunidade e Network Privado',
+              'Indicações de Trabalho para Membros',
+              'Passaporte para a Mentoria 100x',
+            ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 p-3 rounded-xl border border-white/5 bg-white/[0.01]">
                 <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5 text-primary" />
@@ -73,13 +80,12 @@ const Pricing: React.FC = () => {
             href={CHECKOUT_URL}
             className="group w-full inline-flex items-center justify-center gap-4 bg-primary text-black font-black px-10 py-6 rounded-2xl hover:bg-primary/90 transition-all duration-500 hover:scale-[1.02] text-xl md:text-2xl shadow-[0_20px_40px_rgba(0,255,136,0.2)]"
           >
-            Entrar na MVP Academy agora
+            Garantir Vaga no Cohort
             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
           </a>
 
-          <div className="mt-8 flex items-center justify-center gap-6 text-[10px] md:text-xs font-mono text-white/20 uppercase tracking-widest">
-            <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-pulse" /> 7_Day_Guarantee</span>
-            <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-pulse" /> Instant_Access</span>
+          <div className="mt-8 flex items-center justify-center gap-6 text-[10px] md:text-xs font-mono text-white/20 uppercase tracking-widest text-center">
+            <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-pulse" /> Entre, roube os templates. Se não gostar em 7 dias, devolvemos 100%.</span>
           </div>
         </motion.div>
 
