@@ -1,121 +1,184 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Settings, Play, FastForward, Layers, Info, Check, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const MVPAcademyV3: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#121212] font-sans antialiased text-white selection:bg-[#FFD700] selection:text-black overflow-x-hidden p-4 md:p-8">
-      <main className="max-w-5xl mx-auto border-[4px] border-white bg-black relative">
-        {/* Header - Brutalist */}
-        <header className="border-b-[4px] border-white p-6 md:p-12">
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-          >
-            <h1 className="text-6xl md:text-9xl font-black uppercase leading-[0.85] tracking-tighter mb-8">
-              CHEGA DE <br/>
-              CONSTRUIR <br/>
-              O SONHO <br/>
-              DOS OUTROS.
-            </h1>
-            <div className="bg-[#FFD700] text-black inline-block px-4 py-2 text-2xl font-black uppercase mb-8">
-              ESTÁ NA HORA DE PLUGAR O SEU.
-            </div>
-            <p className="text-xl md:text-2xl font-bold max-w-xl leading-tight text-gray-400">
-              Pare de aprender. <span className="text-white underline decoration-[4px]">Comece a plugar.</span>
-            </p>
-          </motion.div>
-        </header>
-
-        {/* CTA Section */}
-        <div className="p-6 md:p-12 border-b-[4px] border-white">
-          <motion.button
-            whileHover={{ x: 8, y: -8, boxShadow: "-8px 8px 0px #FFD700" }}
-            className="w-full md:w-auto bg-white text-black text-3xl font-black uppercase py-6 px-12 border-[4px] border-black transition-all"
-          >
-            QUERO ACESSO AO BUNKER
-          </motion.button>
+    <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
+      {/* Top Bar - Technical Info */}
+      <div className="bg-zinc-100 border-b border-zinc-200 px-6 py-2 flex justify-between items-center text-[10px] font-bold tracking-widest text-zinc-500 uppercase">
+        <div className="flex gap-6">
+          <span>System: MVP_ACADEMY_ENGINE</span>
+          <span>Version: 3.0.4</span>
         </div>
+        <div className="flex gap-6">
+          <span>Server: BR-EAST-1</span>
+          <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-500 rounded-full" /> Operational</span>
+        </div>
+      </div>
 
-        {/* The Wall - Brutalist */}
-        <section className="grid grid-cols-1 md:grid-cols-2 border-b-[4px] border-white">
-          <div className="p-12 border-b-[4px] md:border-b-0 md:border-r-[4px] border-white bg-[#1a1a1a]">
-            <h2 className="text-4xl font-black uppercase mb-8 leading-none">ESTE LUGAR <br/> NÃO É PARA <br/> VOCÊ (AINDA).</h2>
-            <p className="text-lg font-bold text-gray-400 leading-tight">
-              O MVP Academy é um ambiente de alta tensão. Buscamos resultados, não certificados.
+      <main>
+        {/* DOBRA 1: HERO - THE ENGINE */}
+        <section className="pt-24 pb-32 border-b border-zinc-200">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+              <div className="lg:col-span-7">
+                <h1 className="text-7xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] mb-12">
+                  Plugar <br/> 
+                  <span className="text-zinc-300">Não é</span> <br/> 
+                  Aprender.
+                </h1>
+                <p className="text-2xl font-bold leading-tight max-w-xl mb-12">
+                  Chega de construir o sonho dos outros. O MVP Academy é a tecnologia que transforma seu conhecimento em lucro real em 7 dias.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-black text-white px-10 py-5 text-xl font-black uppercase tracking-tighter hover:bg-zinc-800 transition-all flex items-center gap-2">
+                    ATIVAR CONEXÃO <ArrowRight size={20} />
+                  </button>
+                  <div className="p-4 border-2 border-black flex items-center gap-4">
+                    <div className="bg-zinc-100 p-2 font-mono text-xs">ID: 168H</div>
+                    <span className="text-xs font-black uppercase tracking-widest">Tempo para Vitória</span>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-5 flex flex-col justify-end">
+                <div className="p-8 bg-zinc-50 border border-zinc-200 rounded-2xl">
+                  <div className="flex items-center gap-2 text-zinc-400 mb-6 font-mono text-[10px] font-bold uppercase tracking-widest">
+                    <Info size={14} /> Abstract_System_Summary
+                  </div>
+                  <p className="text-zinc-600 leading-relaxed italic mb-0">
+                    "A era da informação acabou. Você não precisa de mais um curso. Você precisa de uma tecnologia de execução. 
+                    Deletamos 90% da gordura teórica. O que sobra é a física pura do lucro."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DOBRA 2 & 3: THE WALL & THE VOID */}
+        <section className="grid grid-cols-1 md:grid-cols-2 border-b border-zinc-200">
+          <div className="p-12 md:p-24 border-b md:border-b-0 md:border-r border-zinc-200 bg-zinc-50">
+            <span className="text-[10px] font-black tracking-[0.3em] text-zinc-400 uppercase mb-8 block">Warning: Restricted_Area</span>
+            <h2 className="text-5xl font-black uppercase tracking-tighter mb-8 leading-none">Este lugar não é para você (Ainda).</h2>
+            <p className="text-lg font-bold text-zinc-500 mb-12 leading-tight">
+              O MVP Academy é um ambiente de alta tensão. Buscamos resultados, não certificados. Se você se identifica com os perfis abaixo, encerre a conexão agora.
             </p>
+            <div className="space-y-4">
+              {['Turista Digital', 'Caçador de Hacks', 'Teórico Confortável', 'Info-Obeso'].map((item, i) => (
+                <div key={i} className="flex items-center gap-4 text-sm font-black uppercase tracking-widest">
+                  <div className="w-5 h-5 border border-zinc-300 flex items-center justify-center text-zinc-300">X</div> {item}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="p-12 space-y-4 flex flex-col justify-center">
-            {['TURISTA DIGITAL', 'CAÇADOR DE HACKS', 'TEÓRICO CONFORTÁVEL', 'INFO-OBESO'].map((item, i) => (
-              <div key={i} className="flex items-center gap-4 group">
-                <div className="w-8 h-8 bg-white text-black flex items-center justify-center font-black group-hover:bg-[#FFD700] transition-colors">X</div>
-                <span className="text-xl font-black tracking-tighter opacity-50 group-hover:opacity-100">{item}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Problem Section - The Void */}
-        <section className="p-12 border-b-[4px] border-white bg-white text-black">
-          <h2 className="text-5xl md:text-7xl font-black uppercase leading-none mb-12">POR QUE VOCÊ AINDA NÃO CHEGOU LÁ.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <p className="text-2xl font-black leading-none">VÍTIMA DA INDÚSTRIA DO ENTRETENIMENTO EDUCACIONAL.</p>
-            <p className="text-lg font-bold leading-tight">
-              Eles vendem dopamina, não dividendos. Seu cérebro adora a sensação de "aprender", mas isso é apenas uma substituição cognitiva para a execução real.
+          <div className="p-12 md:p-24 flex flex-col justify-center bg-black text-white">
+            <h2 className="text-5xl font-black uppercase tracking-tighter mb-12 leading-none italic">Por que você ainda não chegou lá?</h2>
+            <p className="text-2xl font-bold mb-12 leading-tight opacity-60">
+              Vítima da Indústria do Entretenimento Educacional. Eles vendem dopamina, não dividendos.
             </p>
-          </div>
-        </section>
-
-        {/* Roadmap - Grid Step */}
-        <section className="border-b-[4px] border-white">
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            {[
-              { num: "01", title: "QUESTION & DELETE", desc: "Foco em uma única oferta." },
-              { num: "02", title: "SIMPLIFY & PLUGIN", desc: "Plugar modelos prontos." },
-              { num: "03", title: "ACCELERATE", desc: "Dados reais no dashboard." }
-            ].map((step, i) => (
-              <div key={i} className="p-12 border-b-[4px] md:border-b-0 md:border-r-[4px] border-white last:border-0 hover:bg-[#FFD700] hover:text-black transition-all">
-                <div className="text-6xl font-black mb-4">#{step.num}</div>
-                <h3 className="text-2xl font-black mb-4 leading-none">{step.title}</h3>
-                <p className="font-bold text-sm uppercase opacity-70">{step.desc}</p>
+            <div className="space-y-8">
+              <div className="flex gap-6">
+                <div className="text-zinc-600 font-black text-4xl leading-none">01.</div>
+                <div>
+                  <h4 className="font-black uppercase mb-2">O Paradoxo da Informação</h4>
+                  <p className="text-sm text-zinc-500">Seu cérebro substitui a execução pelo "aprender". É um vício em progresso falso.</p>
+                </div>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Value Stack - Big & Loud */}
-        <section className="p-12 bg-[#FFD700] text-black border-b-[4px] border-white">
-          <h2 className="text-6xl font-black uppercase leading-none mb-12 italic">O EMPILHAMENTO DE VALOR.</h2>
-          <div className="space-y-6 mb-12">
-            {[
-              "MVP PLUGIN [TECNOLOGIA]",
-              "ACADEMY EXECUTION [MÉTODO]",
-              "DESAFIO VITÓRIA 7 DIAS",
-              "THE BUNKER [COMUNIDADE]"
-            ].map((item, i) => (
-              <div key={i} className="text-3xl font-black border-b-[4px] border-black flex justify-between">
-                <span>{item}</span>
-                <span>[X]</span>
+              <div className="flex gap-6">
+                <div className="text-zinc-600 font-black text-4xl leading-none">02.</div>
+                <div>
+                  <h4 className="font-black uppercase mb-2">O Custo da Inércia</h4>
+                  <p className="text-sm text-zinc-500">Cada hora gasta em teoria é uma hora de lucro que você nunca vai recuperar.</p>
+                </div>
               </div>
-            ))}
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-            <div className="text-2xl font-black">ANCORAGEM: R$ 10.988,00</div>
-            <div className="text-8xl md:text-[12rem] font-black leading-[0.8] tracking-tighter">R$ 250</div>
+            </div>
           </div>
         </section>
 
-        {/* Guarantee - The Pact */}
-        <section className="p-12 bg-black text-white text-center">
-          <h2 className="text-4xl md:text-6xl font-black uppercase mb-8">OU VOCÊ VENCE, <br/> OU EU TE PAGO <br/> PELO SEU TEMPO.</h2>
-          <p className="text-xl font-bold text-gray-500 max-w-2xl mx-auto mb-12">
-            7 DIAS. PRIMEIRA VITÓRIA. OU DEVOLVEMOS TUDO + R$ 100 VIA PIX.
-          </p>
-          <div className="text-2xl font-black bg-white text-black inline-block px-6 py-2 uppercase">ISSO É UMA OFERTA GRAND SLAM.</div>
+        {/* DOBRA 4, 5 & 6: ROADMAP & METHOD */}
+        <section className="py-32 border-b border-zinc-200">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-24">
+              <div className="max-w-2xl">
+                <span className="text-[10px] font-black tracking-[0.3em] text-zinc-400 uppercase mb-4 block">Execution_Logic</span>
+                <h2 className="text-6xl font-black uppercase tracking-tighter leading-none">O Algoritmo de 7 Dias.</h2>
+              </div>
+              <p className="text-zinc-500 font-bold uppercase text-right leading-none">
+                Lucro = (Valor Real x Velocidade) / Atrito
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {[
+                { icon: <Settings size={32} />, step: '01', title: 'Question & Delete', desc: 'Foco em uma única oferta. Deletamos 90% da gordura processual.' },
+                { icon: <Layers size={32} />, step: '02', title: 'Simplify & Plugin', desc: 'Plugar modelos prontos de copy e funil. Não optimize o que deve ser automatizado.' },
+                { icon: <FastForward size={32} />, step: '03', title: 'Accelerate', desc: 'Ignição e dados reais no dashboard. Métrica: tempo até o real < 168h.' }
+              ].map((item, i) => (
+                <div key={i} className="group">
+                  <div className="mb-8 group-hover:rotate-12 transition-transform">{item.icon}</div>
+                  <div className="text-xs font-black mb-4 opacity-30">SEQUÊNCIA_{item.step}</div>
+                  <h3 className="text-2xl font-black uppercase mb-4 leading-none">{item.title}</h3>
+                  <p className="text-zinc-500 text-sm font-bold uppercase leading-tight">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DOBRA 7: VALUE STACK */}
+        <section className="py-32 bg-zinc-50 border-b border-zinc-200">
+          <div className="max-w-5xl mx-auto px-6">
+            <h2 className="text-4xl font-black uppercase mb-16 text-center">O Empilhamento de Valor</h2>
+            <div className="border-4 border-black bg-white">
+              {[
+                { item: 'MVP Plugin [Tecnologia]', price: 'R$ 4.997' },
+                { item: 'Academy Execution [Método]', price: 'R$ 1.997' },
+                { item: 'Desafio Vitória 7 Dias', price: 'R$ 997' },
+                { item: 'The Bunker [Comunidade]', price: 'R$ 2.997' }
+              ].map((row, i) => (
+                <div key={i} className="flex justify-between items-center p-8 border-b-2 border-zinc-100 last:border-0">
+                  <div className="flex items-center gap-4">
+                    <Check size={20} className="text-zinc-300" />
+                    <span className="font-black uppercase tracking-tight">{row.item}</span>
+                  </div>
+                  <span className="font-mono text-sm font-bold text-zinc-400">{row.price}</span>
+                </div>
+              ))}
+              <div className="p-12 bg-black text-white flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                  <div className="text-[10px] font-black tracking-widest uppercase opacity-40 mb-2">Total Estimated Value</div>
+                  <div className="text-3xl font-bold line-through opacity-30 italic">R$ 10.988,00</div>
+                </div>
+                <div className="text-center md:text-right">
+                  <div className="text-[10px] font-black tracking-widest uppercase mb-2 text-zinc-400">Your Initial Investment</div>
+                  <div className="text-8xl font-black leading-none tracking-tighter">R$ 250</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DOBRA 8: GUARANTEE */}
+        <section className="py-40 text-center">
+          <div className="max-w-4xl mx-auto px-6">
+            <ShieldCheck size={80} className="mx-auto mb-12" />
+            <h2 className="text-6xl md:text-8xl font-black uppercase mb-12 leading-[0.85] tracking-tighter">
+              Ou você vence, ou eu te pago pelo seu tempo.
+            </h2>
+            <p className="text-xl font-bold text-zinc-500 mb-16 leading-tight max-w-xl mx-auto">
+              Se em 7 dias você não tiver sua vitória, devolvemos tudo + R$ 100 via PIX. Isso é uma Oferta Grand Slam.
+            </p>
+            <button className="bg-black text-white px-20 py-8 text-3xl font-black uppercase tracking-tighter hover:bg-zinc-800 transition-all shadow-2xl">
+              CONECTAR AO BUNKER
+            </button>
+          </div>
         </section>
       </main>
 
-      {/* Background Text Decor */}
-      <div className="fixed -bottom-20 -left-20 text-[20rem] font-black text-white opacity-[0.02] pointer-events-none select-none uppercase">Bunker</div>
+      <footer className="py-20 bg-zinc-50 border-t border-zinc-200 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 text-center">
+        MVP_ACADEMY_SYSTEM_PROTOCOL // 2026 // NO_MORE_EXCUSES
+      </footer>
     </div>
   );
 };
