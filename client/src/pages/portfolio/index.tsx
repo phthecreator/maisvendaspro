@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import SecretTerminal from "../components/lp2/SecretTerminal";
 import { Menu } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
@@ -299,7 +298,6 @@ const steps: Step[] = [
           </div>
         </div>
 
-        <SecretTerminal />
       </div>
     ),
   },
