@@ -47,7 +47,10 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+      - name: Wait for Registry sync
+        run: sleep 15
+
       - name: Trigger Easypanel Deploy Webhook
         if: github.ref == 'refs/heads/deploy'
-        run: curl -X GET "https://ep.maisvendaspro.com.br/api/deploy/a139e846d0971b75db8e16d5afc7aaf472511c6a41c98ff6"
+        run: curl -X GET --max-time 30 --retry 3 "https://ep.maisvendaspro.com.br/api/deploy/a139e846d0971b75db8e16d5afc7aaf472511c6a41c98ff6"
 
