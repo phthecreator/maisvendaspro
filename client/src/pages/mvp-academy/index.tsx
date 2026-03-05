@@ -16,8 +16,13 @@ const SectionDivider = () => (
 );
 
 const MVPAcademy: React.FC = () => {
+  console.log("MVPAcademy: Rendering component...");
   return (
-    <div className="min-h-screen bg-black font-sans antialiased">
+    <div className="min-h-screen bg-black font-sans antialiased text-white">
+      {/* Test tag to verify rendering */}
+      <div className="bg-primary text-black font-black p-4 text-center sticky top-0 z-[100]">
+        Página MVP Academy Renderizada com Sucesso!
+      </div>
       <main>
         <Hero />
         <SectionDivider />
