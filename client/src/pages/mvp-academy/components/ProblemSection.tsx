@@ -20,8 +20,8 @@ const diagnosticLogs = [
   },
   {
     code: 'ERR_FALSE_PROMISES',
-    title: 'Exaustão de Fórmulas Mágicas.',
-    detail: 'Você já tentou PLR, Dropshipping e falhou. Sabe que IA é o motor real da nova economia, mas não quer mais um curso teórico. Quer alguém construindo junto.',
+    title: 'Exaustão de "Oportunidades do Momento".',
+    detail: 'Você já pulou de galho em galho testando várias promessas do mercado digital e saiu frustrado. Sabe que IA é o motor real da nova economia, mas não quer mais teoria. Quer alguém construindo junto.',
   },
 ];
 
