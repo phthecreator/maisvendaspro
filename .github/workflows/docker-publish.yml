@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - deploy
 
 env:
   REGISTRY: ghcr.io
@@ -33,8 +34,9 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch
             type=sha,format=long
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/deploy' }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -45,5 +47,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Trigger Easypanel Deploy Webhook
+        if: github.ref == 'refs/heads/deploy'
         run: curl -X GET "https://ep.maisvendaspro.com.br/api/deploy/a139e846d0971b75db8e16d5afc7aaf472511c6a41c98ff6"
 
