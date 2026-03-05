@@ -10,6 +10,9 @@ import PortfolioScrollTest from "./pages/portfolio/PortfolioScrollTest";
 import LP2 from "./pages/vibe-coding-pro";
 import Mentoria100X from "./pages/mentoria100x";
 import MVPAcademy from "./pages/mvp-academy";
+import MVPAcademyV1 from "./pages/mvp-academy-v1";
+import MVPAcademyV2 from "./pages/mvp-academy-v2";
+import MVPAcademyV3 from "./pages/mvp-academy-v3";
 
 
 function Router() {
@@ -21,6 +24,9 @@ function Router() {
       <Route path={"/vibe-coding-pro"} component={LP2} />
       <Route path={"/mentoria100x"} component={Mentoria100X} />
       <Route path={"/mvp-academy"} component={MVPAcademy} />
+      <Route path={"/mvp-academy-v1"} component={MVPAcademyV1} />
+      <Route path={"/mvp-academy-v2"} component={MVPAcademyV2} />
+      <Route path={"/mvp-academy-v3"} component={MVPAcademyV3} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
