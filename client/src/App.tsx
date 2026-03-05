@@ -1,14 +1,15 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
+import NotFound from "@/pages/not-found";
 import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorBoundary from "./components/shared/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
-import PortfolioScrollTest from "./pages/PortfolioScrollTest";
-import LP2 from "./pages/lp2";
+import Home from "./pages/home";
+import Portfolio from "./pages/portfolio";
+import PortfolioScrollTest from "./pages/portfolio/PortfolioScrollTest";
+import LP2 from "./pages/vibe-coding-pro";
 import Mentoria100X from "./pages/mentoria100x";
+import MVPAcademy from "./pages/mvp-academy";
 
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path={"/portfolio-scroll-test"} component={PortfolioScrollTest} />
       <Route path={"/vibe-coding-pro"} component={LP2} />
       <Route path={"/mentoria100x"} component={Mentoria100X} />
+      <Route path={"/mvp-academy"} component={MVPAcademy} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
