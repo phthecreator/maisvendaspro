@@ -119,7 +119,18 @@ Eles vendem dopamina, não dividendos. Seu cérebro adora a sensação de 'apren
 - **Visual:** Imagens de alto contraste, elementos modulares (Atomic Design), estética minimalista e autoritária.
 
 ---
-**CÓDICE FINALIZADO.** Pronto para execução técnica.
+
+## 🚀 IMPLEMENTAÇÃO TÉCNICA (VARIANTES V1, V2, V3)
+*Status: Operacional e Commitado*
+
+Para garantir a melhor performance de conversão, foram criadas 3 experiências distintas no repositório:
+
+1.  **Variante V1 - THE ARCHITECT (`/mvp-academy-v1`)**: Estilo "SaaS Moderno" (Linear/Vercel). Foco em clareza técnica e sofisticação.
+2.  **Variante V2 - THE ELITE (`/mvp-academy-v2`)**: Estilo "Executive Luxury" (Apple/Stripe). Foco em status e autoridade.
+3.  **Variante V3 - THE ENGINE (`/mvp-academy-v3`)**: Estilo "Technical Blueprint" (SpaceX). Foco em lógica pura e engenharia.
+
+**CÓDICE FINALIZADO.** Pronto para tráfego e testes A/B.
+
 
 
 
