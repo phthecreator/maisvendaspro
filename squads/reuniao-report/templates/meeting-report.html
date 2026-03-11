@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{MEETING_TITLE}} — MVP Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #020617;
+      --bg-card:     #0f172a;
+      --bg-glass:    rgba(15, 23, 42, 0.7);
+      --amber:       #f59e0b;
+      --amber-dim:   rgba(245, 158, 11, 0.12);
+      --amber-glow:  rgba(245, 158, 11, 0.25);
+      --white:       #ffffff;
+      --slate-300:   #cbd5e1;
+      --slate-400:   #94a3b8;
+      --slate-500:   #64748b;
+      --slate-600:   #475569;
+      --slate-700:   #334155;
+      --slate-800:   #1e293b;
+      --slate-900:   #0f172a;
+      --border-sub:  rgba(255,255,255,0.05);
+      --border-med:  rgba(255,255,255,0.1);
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 1rem;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── Animations ────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--amber); }
+      50%       { opacity: 0.5; box-shadow: 0 0 2px var(--amber); }
+    }
+    @keyframes shimmer {
+      from { background-position: -200% center; }
+      to   { background-position: 200% center; }
+    }
+
+    .fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .fade-up-delay-1 { animation-delay: 0.1s; }
+    .fade-up-delay-2 { animation-delay: 0.2s; }
+    .fade-up-delay-3 { animation-delay: 0.3s; }
+    .fade-up-delay-4 { animation-delay: 0.4s; }
+
+    /* ─── Layout ────────────────────────────────────────────── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .container-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { position: relative; }
+
+    /* ─── Hero / Header ─────────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border-sub);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(245,158,11,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Vertical decorative line */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 1px; height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--border-sub), transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(15,23,42,0.6);
+      border: 1px solid var(--border-sub);
+      backdrop-filter: blur(12px);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-label .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--amber);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-sub);
+    }
+
+    .meta-item { display: flex; flex-direction: column; gap: 4px; }
+
+    .meta-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+    }
+
+    .meta-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--slate-300);
+    }
+
+    .meta-value.amber { color: var(--amber); }
+
+    /* ─── Summary Banner ────────────────────────────────────── */
+    .summary-banner {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+
+    .summary-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-left: 4px solid var(--amber);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 200px; height: 200px;
+      background: radial-gradient(ellipse, var(--amber-dim) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .summary-headline {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .summary-overview {
+      font-size: 1rem;
+      color: var(--slate-400);
+      line-height: 1.8;
+    }
+
+    /* ─── Section Template ──────────────────────────────────── */
+    .report-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+
+    .report-section:last-child { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .section-divider {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--amber-dim), transparent);
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--slate-500);
+    }
+
+    /* ─── Topics ────────────────────────────────────────────── */
+    .topics-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .topic-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      padding: 2rem 2.5rem;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .topic-card:hover {
+      border-color: var(--border-med);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .topic-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .topic-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      opacity: 0.7;
+      padding-top: 3px;
+      min-width: 24px;
+    }
+
+    .topic-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .topic-content {
+      font-size: 0.95rem;
+      color: var(--slate-400);
+      line-height: 1.8;
+      padding-left: 2rem;
+    }
+
+    .topic-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 1rem;
+      padding-left: 2rem;
+    }
+
+    .tag {
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-sub);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate-500);
+    }
+
+    /* ─── Decisions ─────────────────────────────────────────── */
+    .decisions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .decision-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem 2rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+    }
+
+    .decision-card.impact-high {
+      border-left: 3px solid var(--amber);
+      background: rgba(245, 158, 11, 0.04);
+    }
+
+    .decision-card.impact-medium {
+      border-left: 3px solid var(--slate-600);
+    }
+
+    .decision-icon {
+      font-size: 1.2rem;
+      margin-top: 2px;
+    }
+
+    .decision-body { flex: 1; }
+
+    .decision-text {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .decision-footer {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .decision-owner {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate-500);
+    }
+
+    .impact-badge {
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .impact-badge.high { background: var(--amber-dim); color: var(--amber); }
+    .impact-badge.medium { background: rgba(71,85,105,0.3); color: var(--slate-400); }
+    .impact-badge.low { background: transparent; color: var(--slate-600); border: 1px solid var(--border-sub); }
+
+    /* ─── Action Items ──────────────────────────────────────── */
+    .actions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .action-item {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.25rem 1.75rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+      transition: border-color 0.2s ease;
+    }
+
+    .action-item:hover { border-color: var(--border-med); }
+
+    .action-item.priority-urgente {
+      border-left: 3px solid var(--amber);
+      background: rgba(245, 158, 11, 0.04);
+    }
+
+    .action-item.priority-alta {
+      border-left: 3px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .action-task {
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .action-owner {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--slate-500);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .action-deadline {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--slate-600);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .priority-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .priority-dot.urgente { background: var(--amber); box-shadow: 0 0 8px var(--amber-glow); }
+    .priority-dot.alta    { background: rgba(245,158,11,0.5); }
+    .priority-dot.media   { background: var(--slate-600); }
+    .priority-dot.baixa   { background: var(--slate-700); }
+
+    /* ─── Key Quotes ────────────────────────────────────────── */
+    .quotes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .quote-card {
+      padding: 2.5rem 3rem;
+      position: relative;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 1.5rem; left: 2rem;
+      font-size: 4rem;
+      font-family: Georgia, serif;
+      color: var(--amber);
+      opacity: 0.2;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .quote-text {
+      font-size: 1.15rem;
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--slate-300);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-author {
+      margin-top: 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    /* ─── Blockers ──────────────────────────────────────────── */
+    .blockers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .blocker-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem 1.75rem;
+      background: rgba(239, 68, 68, 0.04);
+      border: 1px solid rgba(239, 68, 68, 0.15);
+      border-left: 3px solid rgba(239, 68, 68, 0.5);
+      border-radius: var(--radius-sm);
+    }
+
+    .blocker-icon {
+      font-size: 1rem;
+      margin-top: 2px;
+      opacity: 0.7;
+    }
+
+    .blocker-text {
+      font-size: 0.95rem;
+      color: var(--slate-300);
+      line-height: 1.6;
+    }
+
+    /* ─── Participants ──────────────────────────────────────── */
+    .participants-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .participant-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: 100px;
+      backdrop-filter: blur(12px);
+    }
+
+    .participant-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--amber-dim), rgba(15,23,42,0.8));
+      border: 1px solid rgba(245,158,11,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--amber);
+      text-transform: uppercase;
+    }
+
+    .participant-info { display: flex; flex-direction: column; gap: 1px; }
+
+    .participant-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .participant-role {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--slate-500);
+      text-transform: uppercase;
+    }
+
+    /* ─── Next Meeting ──────────────────────────────────────── */
+    .next-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .next-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    .next-date {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .next-agenda {
+      font-size: 0.9rem;
+      color: var(--slate-400);
+      margin-top: 0.5rem;
+      max-width: 400px;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────── */
+    .footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-sub);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-logo {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .footer-sep {
+      width: 1px; height: 16px;
+      background: var(--border-med);
+    }
+
+    .footer-text {
+      font-size: 0.75rem;
+      color: var(--slate-600);
+    }
+
+    .footer-generated {
+      font-size: 0.75rem;
+      color: var(--slate-700);
+    }
+
+    /* ─── Print ─────────────────────────────────────────────── */
+    @media print {
+      body { background: white; color: black; }
+      .hero::before, .hero::after { display: none; }
+      .topic-card, .decision-card, .action-item, .quote-card, .summary-card, .next-card {
+        break-inside: avoid;
+        border: 1px solid #e2e8f0;
+        background: white;
+      }
+      .section-label, .meta-label, .topic-num, .quote-author { color: #f59e0b; }
+      .hero-title, .section-title, .topic-title, .decision-text, .action-task { color: #0f172a; }
+      .summary-overview, .topic-content, .action-owner, .participant-role { color: #475569; }
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .container, .container-wide { padding: 0 1.25rem; }
+      .hero { padding: 3.5rem 0 2.5rem; }
+      .hero-title { font-size: 2rem; }
+      .summary-card, .quote-card { padding: 1.75rem; }
+      .action-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .next-card { flex-direction: column; gap: 1rem; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <div class="hero-label fade-up">
+          <span class="dot"></span>
+          {{MEETING_TYPE}} &nbsp;·&nbsp; MVP System
+        </div>
+
+        <h1 class="hero-title fade-up fade-up-delay-1">
+          {{MEETING_TITLE_PART_1}} <em>{{MEETING_TITLE_PART_2}}</em>
+        </h1>
+
+        <div class="hero-meta fade-up fade-up-delay-2">
+          <div class="meta-item">
+            <span class="meta-label">Data</span>
+            <span class="meta-value">{{MEETING_DATE}}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Duracao</span>
+            <span class="meta-value">{{MEETING_DURATION}}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value amber">{{MEETING_STATUS}}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Participantes</span>
+            <span class="meta-value">{{PARTICIPANT_COUNT}}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Decisoes</span>
+            <span class="meta-value">{{DECISION_COUNT}}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Action Items</span>
+            <span class="meta-value">{{ACTION_COUNT}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SUMMARY ──────────────────────────────────────────── -->
+  <section class="summary-banner">
+    <div class="container">
+      <div class="summary-card fade-up">
+        <p class="summary-headline">{{SUMMARY_HEADLINE}}</p>
+        <p class="summary-overview">{{SUMMARY_OVERVIEW}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PARTICIPANTS ─────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Participantes</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="participants-row fade-up fade-up-delay-1">
+        <!-- REPEAT FOR EACH PARTICIPANT:
+        <div class="participant-chip">
+          <div class="participant-avatar">{{INITIALS}}</div>
+          <div class="participant-info">
+            <span class="participant-name">{{NAME}}</span>
+            <span class="participant-role">{{ROLE}}</span>
+          </div>
+        </div>
+        -->
+        {{PARTICIPANTS_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TOPICS ───────────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Pauta Discutida</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="topics-grid">
+        <!-- REPEAT FOR EACH TOPIC:
+        <div class="topic-card fade-up">
+          <div class="topic-header">
+            <span class="topic-num">0{{INDEX}}</span>
+            <span class="topic-title">{{TOPIC_TITLE}}</span>
+          </div>
+          <p class="topic-content">{{TOPIC_CONTENT}}</p>
+          <div class="topic-tags">
+            <span class="tag">{{TAG}}</span>
+          </div>
+        </div>
+        -->
+        {{TOPICS_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DECISIONS ────────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Decisoes Tomadas</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="decisions-list">
+        <!-- REPEAT FOR EACH DECISION:
+        <div class="decision-card impact-{{IMPACT}} fade-up">
+          <span class="decision-icon">&#9654;</span>
+          <div class="decision-body">
+            <p class="decision-text">{{DESCRIPTION}}</p>
+            <div class="decision-footer">
+              <span class="decision-owner">Responsavel: {{OWNER}}</span>
+              <span class="impact-badge {{IMPACT}}">{{IMPACT}}</span>
+            </div>
+          </div>
+        </div>
+        -->
+        {{DECISIONS_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ACTION ITEMS ─────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Proximos Passos</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="actions-list">
+        <!-- REPEAT FOR EACH ACTION:
+        <div class="action-item priority-{{PRIORITY}} fade-up">
+          <span class="action-task">
+            <span class="priority-dot {{PRIORITY}}"></span>
+            {{TASK}}
+          </span>
+          <span class="action-owner">{{OWNER}}</span>
+          <span class="action-deadline">{{DEADLINE}}</span>
+        </div>
+        -->
+        {{ACTIONS_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── KEY QUOTES (condicional) ─────────────────────────── -->
+  {{#if HAS_QUOTES}}
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Frases-Chave</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="quotes-grid">
+        <!-- REPEAT FOR EACH QUOTE:
+        <div class="quote-card fade-up">
+          <span class="quote-mark">&ldquo;</span>
+          <p class="quote-text">{{QUOTE}}</p>
+          <p class="quote-author">&#8212; {{AUTHOR}}</p>
+        </div>
+        -->
+        {{QUOTES_HTML}}
+      </div>
+    </div>
+  </section>
+  {{/if HAS_QUOTES}}
+
+  <!-- ─── BLOCKERS (condicional) ───────────────────────────── -->
+  {{#if HAS_BLOCKERS}}
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Pontos em Aberto</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="blockers-list">
+        <!-- REPEAT FOR EACH BLOCKER:
+        <div class="blocker-item fade-up">
+          <span class="blocker-icon">&#9888;</span>
+          <p class="blocker-text">{{DESCRIPTION}}</p>
+        </div>
+        -->
+        {{BLOCKERS_HTML}}
+      </div>
+    </div>
+  </section>
+  {{/if HAS_BLOCKERS}}
+
+  <!-- ─── NEXT MEETING ──────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Proxima Reuniao</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="next-card fade-up fade-up-delay-1">
+        <div>
+          <p class="next-label">Agendada para</p>
+          <p class="next-date">{{NEXT_DATE}}</p>
+          <p class="next-agenda">{{NEXT_AGENDA}}</p>
+        </div>
+        <div style="width:48px; height:2px; background:var(--amber);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <div class="footer-brand">
+          <span class="footer-logo">MVP System</span>
+          <div class="footer-sep"></div>
+          <span class="footer-text">Meeting Report</span>
+        </div>
+        <span class="footer-generated">Gerado em {{GENERATED_DATE}} &nbsp;·&nbsp; Claude + AIOS</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

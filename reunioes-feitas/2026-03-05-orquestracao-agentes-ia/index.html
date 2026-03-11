@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orquestração de Agentes de IA &amp; Vibecoding — MVP Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #020617;
+      --bg-card:     #0f172a;
+      --bg-glass:    rgba(15, 23, 42, 0.7);
+      --amber:       #f59e0b;
+      --amber-dim:   rgba(245, 158, 11, 0.12);
+      --amber-glow:  rgba(245, 158, 11, 0.25);
+      --green:       #10b981;
+      --green-dim:   rgba(16, 185, 129, 0.12);
+      --blue:        #3b82f6;
+      --blue-dim:    rgba(59, 130, 246, 0.12);
+      --purple:      #8b5cf6;
+      --purple-dim:  rgba(139, 92, 246, 0.12);
+      --white:       #ffffff;
+      --slate-300:   #cbd5e1;
+      --slate-400:   #94a3b8;
+      --slate-500:   #64748b;
+      --slate-600:   #475569;
+      --slate-700:   #334155;
+      --slate-800:   #1e293b;
+      --slate-900:   #0f172a;
+      --border-sub:  rgba(255,255,255,0.05);
+      --border-med:  rgba(255,255,255,0.1);
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 1rem;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── Animations ────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--amber); }
+      50%       { opacity: 0.5; box-shadow: 0 0 2px var(--amber); }
+    }
+    @keyframes bar-fill {
+      from { width: 0%; }
+      to   { width: var(--target-width); }
+    }
+    @keyframes counter-glow {
+      0%, 100% { text-shadow: 0 0 20px rgba(245,158,11,0.4); }
+      50%       { text-shadow: 0 0 40px rgba(245,158,11,0.8); }
+    }
+
+    .fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .fade-up-delay-1 { animation-delay: 0.1s; }
+    .fade-up-delay-2 { animation-delay: 0.2s; }
+    .fade-up-delay-3 { animation-delay: 0.3s; }
+    .fade-up-delay-4 { animation-delay: 0.4s; }
+
+    /* ─── Layout ────────────────────────────────────────────── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .container-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { position: relative; }
+
+    /* ─── Hero / Header ─────────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border-sub);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 350px;
+      background: radial-gradient(ellipse, rgba(245,158,11,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 1px; height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--border-sub), transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(15,23,42,0.6);
+      border: 1px solid var(--border-sub);
+      backdrop-filter: blur(12px);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-label .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--amber);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-sub);
+    }
+
+    .meta-item { display: flex; flex-direction: column; gap: 4px; }
+
+    .meta-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+    }
+
+    .meta-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--slate-300);
+    }
+
+    .meta-value.amber { color: var(--amber); }
+
+    /* ─── Summary Banner ────────────────────────────────────── */
+    .summary-banner {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+
+    .summary-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-left: 4px solid var(--amber);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 200px; height: 200px;
+      background: radial-gradient(ellipse, var(--amber-dim) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .summary-headline {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .summary-overview {
+      font-size: 1rem;
+      color: var(--slate-400);
+      line-height: 1.8;
+    }
+
+    /* ─── Section Template ──────────────────────────────────── */
+    .report-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+
+    .report-section:last-child { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      white-space: nowrap;
+    }
+
+    .section-divider {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--amber-dim), transparent);
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--slate-500);
+    }
+
+    /* ─── Participants ──────────────────────────────────────── */
+    .hosts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-sub);
+    }
+
+    .participants-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .participant-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: 100px;
+      backdrop-filter: blur(12px);
+    }
+
+    .participant-chip.host {
+      border-color: rgba(245,158,11,0.3);
+      background: rgba(245,158,11,0.05);
+    }
+
+    .participant-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--amber-dim), rgba(15,23,42,0.8));
+      border: 1px solid rgba(245,158,11,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--amber);
+      text-transform: uppercase;
+    }
+
+    .participant-info { display: flex; flex-direction: column; gap: 1px; }
+
+    .participant-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .participant-role {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--slate-500);
+      text-transform: uppercase;
+    }
+
+    .participant-role.amber { color: var(--amber); }
+
+    .hosts-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ─── Topics ────────────────────────────────────────────── */
+    .topics-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .topic-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      padding: 2rem 2.5rem;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .topic-card:hover {
+      border-color: var(--border-med);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .topic-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .topic-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      opacity: 0.7;
+      padding-top: 3px;
+      min-width: 24px;
+    }
+
+    .topic-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .topic-content {
+      font-size: 0.95rem;
+      color: var(--slate-400);
+      line-height: 1.8;
+      padding-left: 2rem;
+    }
+
+    .topic-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      padding-left: 2rem;
+    }
+
+    .topic-author {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      opacity: 0.8;
+    }
+
+    .tag {
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-sub);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate-500);
+    }
+
+    /* ─── Decisions ─────────────────────────────────────────── */
+    .decisions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .decision-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem 2rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+    }
+
+    .decision-card.impact-high {
+      border-left: 3px solid var(--amber);
+      background: rgba(245, 158, 11, 0.04);
+    }
+
+    .decision-card.impact-medium {
+      border-left: 3px solid var(--slate-600);
+    }
+
+    .decision-icon {
+      font-size: 1.2rem;
+      margin-top: 2px;
+    }
+
+    .decision-body { flex: 1; }
+
+    .decision-text {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .decision-footer {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .decision-owner {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate-500);
+    }
+
+    .impact-badge {
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .impact-badge.high { background: var(--amber-dim); color: var(--amber); }
+    .impact-badge.medium { background: rgba(71,85,105,0.3); color: var(--slate-400); }
+    .impact-badge.low { background: transparent; color: var(--slate-600); border: 1px solid var(--border-sub); }
+
+    /* ─── Action Items ──────────────────────────────────────── */
+    .actions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .action-item {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.25rem 1.75rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+      transition: border-color 0.2s ease;
+    }
+
+    .action-item:hover { border-color: var(--border-med); }
+
+    .action-item.priority-urgente {
+      border-left: 3px solid var(--amber);
+      background: rgba(245, 158, 11, 0.04);
+    }
+
+    .action-item.priority-alta {
+      border-left: 3px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .action-task {
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .action-owner {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--slate-500);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .action-deadline {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--slate-600);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .priority-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .priority-dot.urgente { background: var(--amber); box-shadow: 0 0 8px var(--amber-glow); }
+    .priority-dot.alta    { background: rgba(245,158,11,0.5); }
+    .priority-dot.media   { background: var(--slate-600); }
+    .priority-dot.baixa   { background: var(--slate-700); }
+
+    /* ─── Key Quotes ────────────────────────────────────────── */
+    .quotes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .quote-card {
+      padding: 2.5rem 3rem;
+      position: relative;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 1.5rem; left: 2rem;
+      font-size: 4rem;
+      font-family: Georgia, serif;
+      color: var(--amber);
+      opacity: 0.2;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .quote-text {
+      font-size: 1.15rem;
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--slate-300);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-author {
+      margin-top: 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    /* ─── RANKING SYSTEM ────────────────────────────────────── */
+
+    /* Scoring Legend */
+    .scoring-legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+    }
+
+    .legend-icon {
+      font-size: 1rem;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .legend-label {
+      flex: 1;
+      font-size: 0.8rem;
+      color: var(--slate-400);
+    }
+
+    .legend-pts {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--amber);
+      white-space: nowrap;
+    }
+
+    /* Hosts Banner */
+    .hosts-banner {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding: 1.5rem 2rem;
+      background: rgba(245,158,11,0.04);
+      border: 1px solid rgba(245,158,11,0.15);
+      border-radius: var(--radius);
+    }
+
+    .hosts-banner-icon {
+      font-size: 1.5rem;
+      margin-top: 2px;
+    }
+
+    .hosts-banner-body { flex: 1; }
+
+    .hosts-banner-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    .hosts-banner-names {
+      font-size: 0.95rem;
+      color: var(--slate-300);
+      font-weight: 500;
+    }
+
+    .hosts-banner-note {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin-top: 0.25rem;
+    }
+
+    /* Ranking Cards */
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ranking-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.3s ease;
+    }
+
+    .ranking-card:hover { border-color: var(--border-med); }
+
+    .ranking-card.gold {
+      border-color: rgba(245,158,11,0.35);
+      background: rgba(245,158,11,0.04);
+    }
+
+    .ranking-card.silver {
+      border-color: rgba(203,213,225,0.2);
+    }
+
+    .ranking-card.bronze {
+      border-color: rgba(180,140,90,0.2);
+    }
+
+    .ranking-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .ranking-position {
+      font-size: 1.4rem;
+      min-width: 36px;
+      text-align: center;
+    }
+
+    .ranking-name-block { flex: 1; }
+
+    .ranking-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .ranking-desc {
+      font-size: 0.75rem;
+      color: var(--slate-500);
+      margin-top: 2px;
+    }
+
+    .ranking-score {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1;
+    }
+
+    .ranking-score.gold-score {
+      animation: counter-glow 3s ease-in-out infinite;
+    }
+
+    .ranking-score-label {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+      text-align: right;
+    }
+
+    .ranking-score-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    /* Progress bar */
+    .ranking-bar-track {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 100px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .ranking-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(to right, var(--amber-dim), var(--amber));
+      animation: bar-fill 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 0.3s;
+    }
+
+    /* Contribution badges */
+    .ranking-contributions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .contrib-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--border-sub);
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 0.65rem;
+      color: var(--slate-400);
+      font-weight: 500;
+    }
+
+    .contrib-badge .badge-icon { font-size: 0.75rem; }
+    .contrib-badge .badge-pts {
+      font-weight: 700;
+      color: var(--amber);
+    }
+
+    /* ─── Oportunidades ─────────────────────────────────────── */
+    .opportunities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .opportunity-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.3s ease;
+    }
+
+    .opportunity-card:hover { border-color: var(--border-med); }
+
+    .opp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .opp-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .opp-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-end;
+    }
+
+    .opp-badge {
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .opp-badge.potential-alto { background: var(--amber-dim); color: var(--amber); }
+    .opp-badge.potential-medio { background: rgba(59,130,246,0.12); color: var(--blue); }
+    .opp-badge.potential-baixo { background: rgba(71,85,105,0.2); color: var(--slate-400); }
+    .opp-badge.viab-alta { background: var(--green-dim); color: var(--green); }
+    .opp-badge.viab-media { background: rgba(59,130,246,0.12); color: var(--blue); }
+
+    .opp-desc {
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      line-height: 1.6;
+    }
+
+    .opp-source {
+      margin-top: 0.75rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+    }
+
+    /* ─── Catalogo de Acoes ──────────────────────────────────── */
+    .catalog-intro {
+      padding: 1.5rem 2rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .catalog-intro-text {
+      font-size: 0.95rem;
+      color: var(--slate-400);
+      line-height: 1.7;
+    }
+
+    .catalog-intro-text strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .catalog-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .catalog-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+      transition: border-color 0.2s ease;
+    }
+
+    .catalog-item:hover { border-color: var(--border-med); }
+
+    .catalog-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--slate-600);
+      min-width: 28px;
+      padding-top: 3px;
+    }
+
+    .catalog-body { flex: 1; }
+
+    .catalog-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .catalog-desc {
+      font-size: 0.85rem;
+      color: var(--slate-500);
+      line-height: 1.6;
+    }
+
+    .catalog-meta {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .catalog-tag {
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .cat-imediato { background: var(--amber-dim); color: var(--amber); }
+    .cat-curto { background: var(--green-dim); color: var(--green); }
+    .cat-medio { background: var(--blue-dim); color: var(--blue); }
+    .cat-estrategico { background: var(--purple-dim); color: var(--purple); }
+    .cat-tipo {
+      background: rgba(71,85,105,0.2);
+      color: var(--slate-400);
+      border: 1px solid var(--border-sub);
+    }
+
+    .catalog-icon {
+      font-size: 1.25rem;
+      min-width: 32px;
+      text-align: center;
+    }
+
+    /* ─── Momentos Apex ──────────────────────────────────────── */
+    .apex-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .apex-card {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .apex-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(to right, var(--amber), transparent);
+    }
+
+    .apex-timestamp {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--amber);
+      font-family: 'Courier New', monospace;
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    .apex-body { flex: 1; }
+
+    .apex-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .apex-desc {
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      line-height: 1.6;
+    }
+
+    /* ─── Next Meeting ──────────────────────────────────────── */
+    .next-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .next-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    .next-date {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .next-agenda {
+      font-size: 0.9rem;
+      color: var(--slate-400);
+      margin-top: 0.5rem;
+      max-width: 400px;
+    }
+
+    /* ─── Blockers ──────────────────────────────────────────── */
+    .blockers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .blocker-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem 1.75rem;
+      background: rgba(239, 68, 68, 0.04);
+      border: 1px solid rgba(239, 68, 68, 0.15);
+      border-left: 3px solid rgba(239, 68, 68, 0.5);
+      border-radius: var(--radius-sm);
+    }
+
+    .blocker-icon { font-size: 1rem; margin-top: 2px; opacity: 0.7; }
+
+    .blocker-text {
+      font-size: 0.95rem;
+      color: var(--slate-300);
+      line-height: 1.6;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────── */
+    .footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-sub);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-logo {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .footer-sep {
+      width: 1px; height: 16px;
+      background: var(--border-med);
+    }
+
+    .footer-text {
+      font-size: 0.75rem;
+      color: var(--slate-600);
+    }
+
+    .footer-generated {
+      font-size: 0.75rem;
+      color: var(--slate-700);
+    }
+
+    /* ─── Print ─────────────────────────────────────────────── */
+    @media print {
+      body { background: white; color: black; }
+      .hero::before, .hero::after { display: none; }
+      .topic-card, .decision-card, .action-item, .quote-card, .summary-card, .next-card,
+      .ranking-card, .opportunity-card, .catalog-item, .apex-card {
+        break-inside: avoid;
+        border: 1px solid #e2e8f0;
+        background: white;
+      }
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .container, .container-wide { padding: 0 1.25rem; }
+      .hero { padding: 3.5rem 0 2.5rem; }
+      .hero-title { font-size: 2rem; }
+      .summary-card, .quote-card { padding: 1.75rem; }
+      .action-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .next-card { flex-direction: column; gap: 1rem; }
+      .footer { flex-direction: column; align-items: flex-start; }
+      .scoring-legend { grid-template-columns: 1fr; }
+      .opportunities-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <div class="hero-label fade-up">
+          <span class="dot"></span>
+          Reuniao Estrategica &nbsp;&middot;&nbsp; MVP System Network
+        </div>
+
+        <h1 class="hero-title fade-up fade-up-delay-1">
+          Orquestracao de Agentes de IA &amp; <em>Vibecoding</em>
+        </h1>
+
+        <div class="hero-meta fade-up fade-up-delay-2">
+          <div class="meta-item">
+            <span class="meta-label">Data</span>
+            <span class="meta-value">05 de Marco de 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Duracao</span>
+            <span class="meta-value">+2h 40min</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value amber">Concluida</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Participantes</span>
+            <span class="meta-value">10+</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Insights</span>
+            <span class="meta-value">8</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Oportunidades</span>
+            <span class="meta-value">3</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SUMMARY ──────────────────────────────────────────── -->
+  <section class="summary-banner">
+    <div class="container">
+      <div class="summary-card fade-up">
+        <p class="summary-headline">A era do "Diretor de IA" chegou: quem dominar Orquestracao de Agentes tera a produtividade de 50 pessoas sozinho.</p>
+        <p class="summary-overview">
+          A call reuniu uma comunidade diversificada — de desenvolvedores seniors a gestores de projetos — liderada pelos hosts Murillo Fagundes e Pedro Henrique Ribeiro. O objetivo foi validar a migracao do paradigma n8n/Make para desenvolvimento dirigido por IA (AIOS/Antigravity) e estruturar um ecossistema de "build in public" com monetizacao rapida via Stripe e AbacatePay. O resultado foi o alinhamento de uma mentalidade focada em resultados financeiros reais, construida sobre "Squads de Agentes" especializados e playbooks documentados que transformam qualquer processo em inteligencia automatizavel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PARTICIPANTS ─────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Participantes</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="hosts-label fade-up">Hosts da Sessao</div>
+      <div class="hosts-row fade-up fade-up-delay-1">
+        <div class="participant-chip host">
+          <div class="participant-avatar">MF</div>
+          <div class="participant-info">
+            <span class="participant-name">Murillo Fagundes</span>
+            <span class="participant-role amber">Host &middot; Facilitador</span>
+          </div>
+        </div>
+        <div class="participant-chip host">
+          <div class="participant-avatar">PH</div>
+          <div class="participant-info">
+            <span class="participant-name">Pedro Henrique Ribeiro</span>
+            <span class="participant-role amber">Host &middot; Co-Facilitador</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hosts-label fade-up">Participantes (Ranking Ativo)</div>
+      <div class="participants-row fade-up fade-up-delay-1">
+        <div class="participant-chip">
+          <div class="participant-avatar">MZ</div>
+          <div class="participant-info">
+            <span class="participant-name">Marcio Zimermann</span>
+            <span class="participant-role">Especialista Comercial</span>
+          </div>
+        </div>
+        <div class="participant-chip">
+          <div class="participant-avatar">HM</div>
+          <div class="participant-info">
+            <span class="participant-name">Hianto Mateus</span>
+            <span class="participant-role">Desenvolvedor / IA</span>
+          </div>
+        </div>
+        <div class="participant-chip">
+          <div class="participant-avatar">CV</div>
+          <div class="participant-info">
+            <span class="participant-name">Christopher Valadares</span>
+            <span class="participant-role">Engenheiro de Prompts</span>
+          </div>
+        </div>
+        <div class="participant-chip">
+          <div class="participant-avatar">NT</div>
+          <div class="participant-info">
+            <span class="participant-name">Natan Telles</span>
+            <span class="participant-role">Prospeccao / Growth</span>
+          </div>
+        </div>
+        <div class="participant-chip">
+          <div class="participant-avatar">MI</div>
+          <div class="participant-info">
+            <span class="participant-name">Michelle</span>
+            <span class="participant-role">Gestora de Projetos</span>
+          </div>
+        </div>
+        <div class="participant-chip">
+          <div class="participant-avatar">JE</div>
+          <div class="participant-info">
+            <span class="participant-name">Jesaias</span>
+            <span class="participant-role">Dev Senior (17 anos)</span>
+          </div>
+        </div>
+        <div class="participant-chip">
+          <div class="participant-avatar">ML</div>
+          <div class="participant-info">
+            <span class="participant-name">Marlon Lima</span>
+            <span class="participant-role">CRM / Automacoes</span>
+          </div>
+        </div>
+        <div class="participant-chip">
+          <div class="participant-avatar">MM</div>
+          <div class="participant-info">
+            <span class="participant-name">Michele Marangoni</span>
+            <span class="participant-role">Participante</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INSIGHTS / TOPICS ─────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">8 Insights Poderosos</span>
+        <div class="section-divider"></div>
+      </div>
+      <p class="section-subtitle fade-up" style="margin-bottom: 2rem;">Os insights que moveram a call — extraidos com autoria.</p>
+
+      <div class="topics-grid">
+
+        <div class="topic-card fade-up">
+          <div class="topic-header">
+            <span class="topic-num">01</span>
+            <span class="topic-title">O n8n tornou-se "legado" para projetos complexos</span>
+          </div>
+          <p class="topic-content">Fluxos visuais com "bloquinhos" consomem mais tempo de ajuste do que resolver o problema diretamente via script assistido por IA. A rigidez estrutural do n8n se torna um gargalo quando o projeto escala ou exige logica condicional complexa. Migrar automacoes criticas para scripts Python orquestrados por agentes (AIOS) e o caminho natural para quem busca velocidade e controle real.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Murillo Fagundes (Host)</span>
+            <span class="tag">automacao</span>
+            <span class="tag">n8n</span>
+            <span class="tag">AIOS</span>
+          </div>
+        </div>
+
+        <div class="topic-card fade-up fade-up-delay-1">
+          <div class="topic-header">
+            <span class="topic-num">02</span>
+            <span class="topic-title">O verdadeiro ativo e o Playbook, nao a ferramenta</span>
+          </div>
+          <p class="topic-content">Ao gerir 200 empresas simultaneamente, o que garante consistencia nao e a IA em si, mas o "Lor" — a identidade e as regras documentadas do processo. Se o playbook e solido, o agente executa sem desvios. O conhecimento do processo precisa vir antes do codigo. Empresas que documentam antes de automatizar entregam resultados previsıveis e escalaveis.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Marcio Zimermann</span>
+            <span class="tag">playbook</span>
+            <span class="tag">processo</span>
+            <span class="tag">escala</span>
+          </div>
+        </div>
+
+        <div class="topic-card fade-up fade-up-delay-2">
+          <div class="topic-header">
+            <span class="topic-num">03</span>
+            <span class="topic-title">Sparring Intelectual com IA — combatendo o vies de confirmacao</span>
+          </div>
+          <p class="topic-content">Um prompt estruturado para desafiar ideias transforma a IA de uma assistente "sim senhor" em uma cacadora de falhas logicas. A IA assume o papel de advogado do diabo e destroi pressupostos frageis antes que o mercado faca isso. Aplicar esse método em todas as fases de ideacao de novos SaaS evita erros caros de direcao estrategica.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Christopher Valadares (Chat)</span>
+            <span class="tag">prompt engineering</span>
+            <span class="tag">ideacao</span>
+            <span class="tag">SaaS</span>
+          </div>
+        </div>
+
+        <div class="topic-card fade-up">
+          <div class="topic-header">
+            <span class="topic-num">04</span>
+            <span class="topic-title">NotebookLM como o novo "Professor de Elite"</span>
+          </div>
+          <p class="topic-content">Documentacoes de 4 horas podem ser absorvidas em minutos atraves de conversas com o NotebookLM. Um leigo consegue aprender arquitetura de microsservicos em uma semana "conversando" com a documentacao. A proposta pratica: subir transcrıcoes das calls semanais no NotebookLM para criar um oraculo da comunidade — inteligencia acumulada acessıvel via pergunta.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Murillo Fagundes (Host) &amp; Hianto Mateus</span>
+            <span class="tag">notebooklm</span>
+            <span class="tag">aprendizado</span>
+            <span class="tag">documentacao</span>
+          </div>
+        </div>
+
+        <div class="topic-card fade-up fade-up-delay-1">
+          <div class="topic-header">
+            <span class="topic-num">05</span>
+            <span class="topic-title">A "Sindrome da Ejaculacao Precoce" no Digital</span>
+          </div>
+          <p class="topic-content">O mercado esta saturado de "vendedores de atalhos". O lucro real esta na solucao de dores estruturais — como garantir 15 reunioes por semana para um cliente. Vender a "ferramenta" (IA de atendimento) e commoditizado. Vender o "Resultado Final" (reunioes agendadas, receita gerada) cria proposta de valor indefensavel e barreiras de saıda altas para o cliente.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Marcio Zimermann</span>
+            <span class="tag">vendas</span>
+            <span class="tag">posicionamento</span>
+            <span class="tag">resultado</span>
+          </div>
+        </div>
+
+        <div class="topic-card fade-up fade-up-delay-2">
+          <div class="topic-header">
+            <span class="topic-num">06</span>
+            <span class="topic-title">Vibecoding — Dirigir a IA em vez de escrever codigo</span>
+          </div>
+          <p class="topic-content">O programador do futuro nao e quem sabe mais sintaxe — e quem sabe melhor o que e como perguntar. O valor migrou da digitacao para a direcao logica. Usar o terminal (CLI) diretamente, sem interfaces graficas intermediarias, e o que separa o "Diretor de IA" do usuario casual. Quem dominar essa habilidade ganha velocidade e escala exponencial.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Murillo Fagundes (Host)</span>
+            <span class="tag">vibecoding</span>
+            <span class="tag">CLI</span>
+            <span class="tag">produtividade</span>
+          </div>
+        </div>
+
+        <div class="topic-card fade-up">
+          <div class="topic-header">
+            <span class="topic-num">07</span>
+            <span class="topic-title">Janela de Contexto vs. Precisao de Codigo — Gemini ou Claude?</span>
+          </div>
+          <p class="topic-content">O Gemini e imbativel para processar projetos inteiros (contexto enorme) mas o Claude — via Antigravity — ainda supera na execucao logica e qualidade do codigo gerado. A estrategia otima e hibrida: usar o Gemini para planejar arquitetura e ler codebases extensas, e o Claude para escrever as funcoes criticas. Ferramentas certas para tarefas certas.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Hianto Mateus (Chat)</span>
+            <span class="tag">gemini</span>
+            <span class="tag">claude</span>
+            <span class="tag">arquitetura</span>
+          </div>
+        </div>
+
+        <div class="topic-card fade-up fade-up-delay-1">
+          <div class="topic-header">
+            <span class="topic-num">08</span>
+            <span class="topic-title">Prospeccao Cirurgica via Google Maps + IA</span>
+          </div>
+          <p class="topic-content">Extrair dados de CNPJ via Google Maps e usar agentes para analisar o site do prospect — identificando falhas, oportunidades e pontos de dor — permite enviar um pitch personalizado "desarmante" no primeiro contato. O diferencial: o prospect recebe um "presente" (analise gratuita de falha no site) antes de qualquer proposta comercial. Isso inverte a dinamica da prospeccao fria.</p>
+          <div class="topic-footer">
+            <span class="topic-author">Natan Telles &amp; Marcio Zimermann</span>
+            <span class="tag">prospeccao</span>
+            <span class="tag">B2B</span>
+            <span class="tag">automacao</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MOMENTOS APEX ─────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Momentos Apex da Call</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="apex-list">
+        <div class="apex-card fade-up">
+          <span class="apex-timestamp">[01:28:46]</span>
+          <div class="apex-body">
+            <p class="apex-title">Demonstracao do Time de Especialistas</p>
+            <p class="apex-desc">Murillo mostra ao vivo como criou "funcionarios digitais" autonomos — ETL specialist, Especialista em YouTube — que operam sem intervencao humana. O momento concretizou o conceito abstrato de agentes em algo palpavel e imediatamente replicavel pelos participantes.</p>
+          </div>
+        </div>
+        <div class="apex-card fade-up fade-up-delay-1">
+          <span class="apex-timestamp">[02:23:37]</span>
+          <div class="apex-body">
+            <p class="apex-title">O "Leak" do MegaBrain de Thiago Finch</p>
+            <p class="apex-desc">Murillo compartilha a estrutura interna do projeto MegaBrain, revelando como grandes players estao processando dados de cursos para criar inteligencia competitiva proprietaria. Demonstrou o abismo entre quem usa IA superficialmente e quem constroi sistemas de conhecimento estrategico.</p>
+          </div>
+        </div>
+        <div class="apex-card fade-up fade-up-delay-2">
+          <span class="apex-timestamp">[02:36:12]</span>
+          <div class="apex-body">
+            <p class="apex-title">Explosao Mental da Michelle — O Momento de Virada</p>
+            <p class="apex-desc">Michelle (Gestora) percebe em tempo real que suas dores de trabalho — reunioes excessivas, processos repetitivos, gestao de projetos — podem ser inteiramente resolvidas com squads de agentes. O momento gerou engajamento imediato de todos os participantes e validou a proposta de valor da comunidade para perfis nao-tecnicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── RANKING DE PARTICIPACAO ───────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Ranking de Participacao</span>
+        <div class="section-divider"></div>
+      </div>
+      <p class="section-subtitle fade-up" style="margin-bottom: 2rem;">Sistema de pontuacao baseado em contribuicoes verificaveis. Hosts excluidos do ranking.</p>
+
+      <!-- Scoring Legend -->
+      <div class="scoring-legend fade-up">
+        <div class="legend-item">
+          <span class="legend-icon">&#128142;</span>
+          <span class="legend-label">Insight Original</span>
+          <span class="legend-pts">+3 pts</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-icon">&#129309;</span>
+          <span class="legend-label">Insight Co-Criado</span>
+          <span class="legend-pts">+2 pts</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-icon">&#128176;</span>
+          <span class="legend-label">Oportunidade de Mercado</span>
+          <span class="legend-pts">+2 pts</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-icon">&#128640;</span>
+          <span class="legend-label">Projeto / Ideia Acionavel</span>
+          <span class="legend-pts">+2 pts</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-icon">&#128293;</span>
+          <span class="legend-label">Momento de Impacto Gerado</span>
+          <span class="legend-pts">+3 pts</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-icon">&#128172;</span>
+          <span class="legend-label">Contribuicao do Chat (Prompt/Tool/Link)</span>
+          <span class="legend-pts">+2 pts</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-icon">&#128736;</span>
+          <span class="legend-label">Validacao Tecnica / Experiencia</span>
+          <span class="legend-pts">+2 pts</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-icon">&#128075;</span>
+          <span class="legend-label">Participacao Ativa Relevante</span>
+          <span class="legend-pts">+1 pt</span>
+        </div>
+      </div>
+
+      <!-- Hosts Banner -->
+      <div class="hosts-banner fade-up">
+        <span class="hosts-banner-icon">&#127936;</span>
+        <div class="hosts-banner-body">
+          <p class="hosts-banner-title">Hosts — Excluidos do Ranking</p>
+          <p class="hosts-banner-names">Murillo Fagundes &nbsp;&middot;&nbsp; Pedro Henrique Ribeiro</p>
+          <p class="hosts-banner-note">Os hosts facilitaram e contribuiram com a maioria dos insights da sessao, mas como organizadores da call sao contabilizados separadamente.</p>
+        </div>
+      </div>
+
+      <!-- Ranking -->
+      <div class="ranking-list">
+
+        <!-- 1. Marcio Zimermann — 12 pts -->
+        <div class="ranking-card gold fade-up">
+          <div class="ranking-header">
+            <span class="ranking-position">&#129351;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Marcio Zimermann</p>
+              <p class="ranking-desc">Especialista Comercial &middot; Maior contribuidor da sessao</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score gold-score">12</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 100%; width: 100%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#128142;</span> Playbook como Ativo <span class="badge-pts">+3</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#128142;</span> Sindrome Ejaculacao Precoce <span class="badge-pts">+3</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#129309;</span> Prospeccao Google Maps (co) <span class="badge-pts">+2</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#128176;</span> Oportunidade Leads B2B CNAE <span class="badge-pts">+2</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#128075;</span> Participacao ativa multipla <span class="badge-pts">+2</span></span>
+          </div>
+        </div>
+
+        <!-- 2. Hianto Mateus — 6 pts -->
+        <div class="ranking-card silver fade-up fade-up-delay-1">
+          <div class="ranking-header">
+            <span class="ranking-position">&#129352;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Hianto Mateus</p>
+              <p class="ranking-desc">Dev / IA &middot; Contribuicoes tecnicas e de ferramentas</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score">6</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 50%; width: 50%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#128142;</span> Janela de Contexto Gemini vs Claude <span class="badge-pts">+3</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#129309;</span> NotebookLM Professor de Elite (co) <span class="badge-pts">+2</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#128075;</span> Contribuicao do chat <span class="badge-pts">+1</span></span>
+          </div>
+        </div>
+
+        <!-- 3. Christopher Valadares — 5 pts -->
+        <div class="ranking-card bronze fade-up fade-up-delay-2">
+          <div class="ranking-header">
+            <span class="ranking-position">&#129353;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Christopher Valadares</p>
+              <p class="ranking-desc">Engenheiro de Prompts &middot; Prompt de Sparring postado no chat</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score">5</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 41.7%; width: 41.7%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#128142;</span> Sparring Intelectual com IA <span class="badge-pts">+3</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#128172;</span> Prompt estruturado publicado no chat <span class="badge-pts">+2</span></span>
+          </div>
+        </div>
+
+        <!-- 4. Natan Telles — 3 pts -->
+        <div class="ranking-card fade-up">
+          <div class="ranking-header">
+            <span class="ranking-position" style="color:var(--slate-500); font-size:1.1rem;">4&#xFE0F;&#x20E3;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Natan Telles</p>
+              <p class="ranking-desc">Prospeccao / Growth &middot; Co-criador da estrategia de leads B2B</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score" style="font-size:1.5rem; color:var(--slate-300);">3</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 25%; width: 25%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#129309;</span> Prospeccao Google Maps (co) <span class="badge-pts">+2</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#128075;</span> Participacao ativa <span class="badge-pts">+1</span></span>
+          </div>
+        </div>
+
+        <!-- 5. Michelle — 3 pts -->
+        <div class="ranking-card fade-up fade-up-delay-1">
+          <div class="ranking-header">
+            <span class="ranking-position" style="color:var(--slate-500); font-size:1.1rem;">5&#xFE0F;&#x20E3;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Michelle</p>
+              <p class="ranking-desc">Gestora &middot; Gerou o maior momento de engajamento coletivo da call</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score" style="font-size:1.5rem; color:var(--slate-300);">3</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 25%; width: 25%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#128176;</span> Oportunidade INPI via IA <span class="badge-pts">+2</span></span>
+            <span class="contrib-badge"><span class="badge-icon">&#128075;</span> Momento de virada (engajamento) <span class="badge-pts">+1</span></span>
+          </div>
+        </div>
+
+        <!-- 6. Jesaias — 2 pts -->
+        <div class="ranking-card fade-up">
+          <div class="ranking-header">
+            <span class="ranking-position" style="color:var(--slate-500); font-size:1.1rem;">6&#xFE0F;&#x20E3;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Jesaias</p>
+              <p class="ranking-desc">Dev Senior &middot; 17 anos de experiencia — validou solidez tecnica das ferramentas</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score" style="font-size:1.5rem; color:var(--slate-300);">2</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 16.7%; width: 16.7%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#128736;</span> Validacao tecnica senior <span class="badge-pts">+2</span></span>
+          </div>
+        </div>
+
+        <!-- 7. Marlon Lima — 2 pts -->
+        <div class="ranking-card fade-up fade-up-delay-1">
+          <div class="ranking-header">
+            <span class="ranking-position" style="color:var(--slate-500); font-size:1.1rem;">7&#xFE0F;&#x20E3;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Marlon Lima</p>
+              <p class="ranking-desc">CRM / Automacoes &middot; Validou demanda de mercado para CRM com WhatsApp</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score" style="font-size:1.5rem; color:var(--slate-300);">2</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 16.7%; width: 16.7%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#128172;</span> CRM auto-cadastro leads WhatsApp <span class="badge-pts">+2</span></span>
+          </div>
+        </div>
+
+        <!-- 8. Michele Marangoni — 1 pt -->
+        <div class="ranking-card fade-up fade-up-delay-2">
+          <div class="ranking-header">
+            <span class="ranking-position" style="color:var(--slate-500); font-size:1.1rem;">8&#xFE0F;&#x20E3;</span>
+            <div class="ranking-name-block">
+              <p class="ranking-name">Michele Marangoni</p>
+              <p class="ranking-desc">Participante &middot; Catalisador moral do grupo — presenca com dedicacao</p>
+            </div>
+            <div class="ranking-score-block">
+              <span class="ranking-score" style="font-size:1.5rem; color:var(--slate-300);">1</span>
+              <span class="ranking-score-label">pontos</span>
+            </div>
+          </div>
+          <div class="ranking-bar-track">
+            <div class="ranking-bar-fill" style="--target-width: 8.3%; width: 8.3%;"></div>
+          </div>
+          <div class="ranking-contributions">
+            <span class="contrib-badge"><span class="badge-icon">&#128075;</span> Participacao com dedicacao exemplar <span class="badge-pts">+1</span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CATALOGO DE ACOES POSSIVEIS ──────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Catalogo de Acoes Possiveis</span>
+        <div class="section-divider"></div>
+      </div>
+      <p class="section-subtitle fade-up" style="margin-bottom: 2rem;">17 tipos de acao que podem ser disparadas apos uma reuniao de network como esta.</p>
+
+      <div class="catalog-intro fade-up">
+        <p class="catalog-intro-text">
+          Uma reuniao de network de alto nivel como esta nao e apenas um evento — e um <strong>banco de ativos relacionais e de conhecimento</strong>. Cada participante, insight, oportunidade e momento de conexao e materia-prima para acoes concretas. Abaixo, o catalogo completo de acoes possiveis, categorizadas por horizonte de execucao e tipo de impacto.
+        </p>
+      </div>
+
+      <div class="catalog-grid">
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#128241;</span>
+          <div class="catalog-num">01</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Conexao 1:1 Pos-Call</p>
+            <p class="catalog-desc">Enviar mensagem direta para 1-3 participantes que mais geraram valor. Personalizar com referencia especifica ao insight deles. Janela de 24h — memoria emocional ainda fresca.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-imediato">Imediato</span>
+              <span class="catalog-tag cat-tipo">Relacionamento</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#129309;</span>
+          <div class="catalog-num">02</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Proposta de Parceria Tecnica</p>
+            <p class="catalog-desc">Identificar participantes com habilidades complementares e propor co-desenvolvimento de produto ou squad. Ex: Jesaias (backend) + Michelle (gestao) + Marcio (vendas) = agencia de IA completa.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-curto">Curto Prazo</span>
+              <span class="catalog-tag cat-tipo">Negocio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#127979;</span>
+          <div class="catalog-num">03</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Sessao de Mentoria Estruturada</p>
+            <p class="catalog-desc">Solicitar ou oferecer mentoria com quem tem expertise especifica. Ex: agendar com Marcio Zimermann a sessao sobre "Leads Infinitos" — conforme sugerido na call. Formato: 45min, objetivo definido.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-curto">Curto Prazo</span>
+              <span class="catalog-tag cat-tipo">Aprendizado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#128200;</span>
+          <div class="catalog-num">04</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Joint Venture Comercial</p>
+            <p class="catalog-desc">Proposta formal de divisao de receita em um projeto conjunto. Definir escopo, splits percentuais e metricas de sucesso. Ideal para quem tem produto mas nao tem canal de vendas, ou vice-versa.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-medio">Medio Prazo</span>
+              <span class="catalog-tag cat-tipo">Negocio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#128247;</span>
+          <div class="catalog-num">05</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Validacao de Hipotese de Negocio (Sparring)</p>
+            <p class="catalog-desc">Usar o prompt de Christopher Valadares para "destruir" e reconstruir seu projeto atual. Compartilhar o resultado com o grupo como validacao coletiva. A IA atua como primeiro filtro; o grupo como segundo.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-imediato">Imediato</span>
+              <span class="catalog-tag cat-tipo">Estrategia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#128273;</span>
+          <div class="catalog-num">06</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Troca de Acesso a Ferramentas e Frameworks</p>
+            <p class="catalog-desc">Compartilhar licencas, frameworks proprietarios (AIOS, BiDcap, MegaBrain) ou acesso a APIs com membros selecionados. Criar um "pool de ferramentas" da comunidade para reduzir custos individuais.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-curto">Curto Prazo</span>
+              <span class="catalog-tag cat-tipo">Recursos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#127919;</span>
+          <div class="catalog-num">07</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Prospeccao de Cliente Dentro do Grupo</p>
+            <p class="catalog-desc">Identificar participantes cujo perfil se encaixa como cliente potencial — especialmente gestores como Michelle que verbalizaram dores. Abordagem natural: oferecer a solucao discutida na call como piloto gratuito.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-imediato">Imediato</span>
+              <span class="catalog-tag cat-tipo">Vendas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#128101;</span>
+          <div class="catalog-num">08</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Recrutamento para Squad de Agentes</p>
+            <p class="catalog-desc">Identificar talentos no grupo para completar um time. Um squad de IA precisa de: dev (Jesaias), vendas (Marcio), gestao (Michelle), prompts (Christopher). A call ja mapeou quem tem qual habilidade.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-curto">Curto Prazo</span>
+              <span class="catalog-tag cat-tipo">Time</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#9999;&#65039;</span>
+          <div class="catalog-num">09</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Criacao de Conteudo Conjunto</p>
+            <p class="catalog-desc">Transformar os insights da call em post, video, artigo ou thread. Creditar os autores dos insights aumenta o engajamento e fortalece o branding de todos. Ex: "8 Insights Sobre IA que Aprendi em uma Call de 2h".</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-curto">Curto Prazo</span>
+              <span class="catalog-tag cat-tipo">Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#128064;</span>
+          <div class="catalog-num">10</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Build in Public — Declaracao Publica de Projeto</p>
+            <p class="catalog-desc">Usar o grupo como audiencia para declarar um projeto e committar publicamente. O desafio semanal proposto na call (criar um agente ate quinta) e o modelo perfeito. Visibilidade + accountability + feedback rapido.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-imediato">Imediato</span>
+              <span class="catalog-tag cat-tipo">Execucao</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#9881;&#65039;</span>
+          <div class="catalog-num">11</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Piloto Beta Interno com o Grupo</p>
+            <p class="catalog-desc">Lançar MVP de produto para os membros antes do mercado. O grupo tem perfis diversos (dev, gestor, vendedor, marketer) — e um laboratorio de validacao multivertical gratuito. Feedbacks de alta qualidade sem custo de aquisicao.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-curto">Curto Prazo</span>
+              <span class="catalog-tag cat-tipo">Produto</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#9989;</span>
+          <div class="catalog-num">12</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Accountability Semanal em Par ou Trio</p>
+            <p class="catalog-desc">Criar par de responsabilidade com 1-2 membros do grupo para metas semanais. Check-in de 15 minutos toda semana: o que voce entregou? O que trava? Aumenta em 65% a probabilidade de conclusao de metas (pesquisa American Society of Training and Development).</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-curto">Curto Prazo</span>
+              <span class="catalog-tag cat-tipo">Execucao</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#9889;</span>
+          <div class="catalog-num">13</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Desafio Coletivo com Prazo Definido</p>
+            <p class="catalog-desc">Propor ou aderir a um desafio com entrega em data especifica — como o "agente ate quinta". O compromisso publico no grupo cria pressao social positiva. Resultados compartilhados geram aprendizado coletivo rapido.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-imediato">Imediato</span>
+              <span class="catalog-tag cat-tipo">Execucao</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#128260;</span>
+          <div class="catalog-num">14</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Replicacao de Playbook Validado</p>
+            <p class="catalog-desc">Pegar um processo que funcionou para um membro — como o sistema de 200 empresas do Marcio — e adaptar ao proprio negocio. Solicitar o playbook, documentar o processo de adaptacao e compartilhar o resultado com o grupo.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-medio">Medio Prazo</span>
+              <span class="catalog-tag cat-tipo">Processo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#129504;</span>
+          <div class="catalog-num">15</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Oraculo Coletivo — NotebookLM com Acervo das Calls</p>
+            <p class="catalog-desc">Subir transcricoes de todas as calls no NotebookLM para criar uma base de conhecimento consultavel da comunidade. Qualquer membro pode perguntar "o que foi dito sobre prospeccao nas ultimas 10 calls?" e obter resposta contextualizada.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-estrategico">Estrategico</span>
+              <span class="catalog-tag cat-tipo">Conhecimento</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up fade-up-delay-1">
+          <span class="catalog-icon">&#128444;&#65039;</span>
+          <div class="catalog-num">16</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Documentacao de Case de Sucesso</p>
+            <p class="catalog-desc">Quando um membro executar e obtiver resultado, documentar o caso: problema, abordagem, ferramentas usadas, resultado. Cases reais da comunidade sao o melhor ativo de marketing e recrutamento. Publicar no grupo e em canais publicos.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-medio">Medio Prazo</span>
+              <span class="catalog-tag cat-tipo">Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-item fade-up">
+          <span class="catalog-icon">&#128185;</span>
+          <div class="catalog-num">17</div>
+          <div class="catalog-body">
+            <p class="catalog-title">Sindicato de Apostas em Projetos da Comunidade</p>
+            <p class="catalog-desc">Criar um mecanismo informal de "apostas" — membros alocam pequenas quantias ou horas de trabalho em projetos promissores de outros membros em troca de participacao nos resultados. Transforma o grupo em acelerador mutualista.</p>
+            <div class="catalog-meta">
+              <span class="catalog-tag cat-estrategico">Estrategico</span>
+              <span class="catalog-tag cat-tipo">Investimento</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── OPORTUNIDADES DE MERCADO ──────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Oportunidades de Mercado Identificadas</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="opportunities-grid">
+
+        <div class="opportunity-card fade-up">
+          <div class="opp-header">
+            <p class="opp-title">SaaS de Analise de Closers (Spin Selling por IA)</p>
+            <div class="opp-badges">
+              <span class="opp-badge potential-alto">Potencial Alto</span>
+              <span class="opp-badge viab-alta">Viab. Alta</span>
+            </div>
+          </div>
+          <p class="opp-desc">Agente que le transcricoes de reunioes de vendas e atribui notas com base em metodologia Spin Selling. Feedback automatizado para closers — escalavel para agencias e times comerciais.</p>
+          <p class="opp-source">Identificado na call principal</p>
+        </div>
+
+        <div class="opportunity-card fade-up fade-up-delay-1">
+          <div class="opp-header">
+            <p class="opp-title">Extracao de Leads B2B por CNAE + Pitch Personalizado</p>
+            <div class="opp-badges">
+              <span class="opp-badge potential-alto">Potencial Alto</span>
+              <span class="opp-badge viab-alta">Viab. Alta</span>
+            </div>
+          </div>
+          <p class="opp-desc">Ferramenta que identifica donos de empresas via Google Maps/CNPJ, analisa o site do prospect com IA e automatiza o primeiro contato com um "presente" (analise gratuita de falhas). Inversao da prospeccao fria.</p>
+          <p class="opp-source">Natan Telles &amp; Marcio Zimermann</p>
+        </div>
+
+        <div class="opportunity-card fade-up fade-up-delay-2">
+          <div class="opp-header">
+            <p class="opp-title">Registro e Monitoramento de Marcas (INPI) via IA</p>
+            <div class="opp-badges">
+              <span class="opp-badge potential-medio">Potencial Medio</span>
+              <span class="opp-badge viab-media">Viab. Media</span>
+            </div>
+          </div>
+          <p class="opp-desc">Automatizar o processo burocrático de registro de marcas no INPI e monitoramento de conflitos. Dor clara, mercado amplo de PMEs, processo repetitivo e passiıvel de automacao total com agentes.</p>
+          <p class="opp-source">Michelle (Gestora)</p>
+        </div>
+
+        <div class="opportunity-card fade-up">
+          <div class="opp-header">
+            <p class="opp-title">Squad de Trafego Pago com Framework BiDcap</p>
+            <div class="opp-badges">
+              <span class="opp-badge potential-alto">Potencial Alto</span>
+              <span class="opp-badge viab-media">Viab. Media</span>
+            </div>
+          </div>
+          <p class="opp-desc">Agente que toma decisoes de lances e estrategias de leilao em plataformas de anuncios baseado em dados de performance em tempo real. Retorno altissimo para quem ja gerencia alto volume de verba.</p>
+          <p class="opp-source">Framework BiDcap (discussao geral)</p>
+        </div>
+
+        <div class="opportunity-card fade-up fade-up-delay-1">
+          <div class="opp-header">
+            <p class="opp-title">Dashboard Visual de Logs de Agentes (UX para Clientes)</p>
+            <div class="opp-badges">
+              <span class="opp-badge potential-medio">Potencial Medio</span>
+              <span class="opp-badge viab-alta">Viab. Alta</span>
+            </div>
+          </div>
+          <p class="opp-desc">Interface visual que mostra o raciocinio dos agentes em tempo real para o cliente final. Nao e funcional — e UX de confianca. Clientes que "veem" o agente trabalhando percebem muito mais valor no servico.</p>
+          <p class="opp-source">Proposta de projeto acionavel da call</p>
+        </div>
+
+        <div class="opportunity-card fade-up fade-up-delay-2">
+          <div class="opp-header">
+            <p class="opp-title">Extensao Chrome para Otimizacao de Google Meu Negocio</p>
+            <div class="opp-badges">
+              <span class="opp-badge potential-medio">Potencial Medio</span>
+              <span class="opp-badge viab-alta">Viab. Alta</span>
+            </div>
+          </div>
+          <p class="opp-desc">Automatizar otimizacao de fichas no Google Meu Negocio sem depender de APIs complexas. Baixa complexidade tecnica, mercado enorme de pequenas empresas que nao sabem otimizar sua presenca no Google.</p>
+          <p class="opp-source">Ideia acionavel de baixo esforco</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DECISOES TOMADAS ───────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Decisoes Tomadas</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="decisions-list">
+
+        <div class="decision-card impact-high fade-up">
+          <span class="decision-icon">&#9654;</span>
+          <div class="decision-body">
+            <p class="decision-text">Migracao estrategica do n8n para scripts Python orquestrados por agentes IA (AIOS) como padrao da comunidade para novos projetos complexos.</p>
+            <div class="decision-footer">
+              <span class="decision-owner">Responsavel: Comunidade</span>
+              <span class="impact-badge high">Alto Impacto</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision-card impact-high fade-up fade-up-delay-1">
+          <span class="decision-icon">&#9654;</span>
+          <div class="decision-body">
+            <p class="decision-text">Instalar Antigravity e entrar no grupo do WhatsApp sao os dois primeiros passos obrigatorios para qualquer novo membro da comunidade.</p>
+            <div class="decision-footer">
+              <span class="decision-owner">Responsavel: Cada Participante</span>
+              <span class="impact-badge high">Alto Impacto</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision-card impact-high fade-up">
+          <span class="decision-icon">&#9654;</span>
+          <div class="decision-body">
+            <p class="decision-text">Encontro fixo semanal confirmado: toda quinta-feira as 19h, conforme enquete sugerida por Pedro Henrique.</p>
+            <div class="decision-footer">
+              <span class="decision-owner">Responsavel: Pedro Henrique &amp; Murillo</span>
+              <span class="impact-badge high">Alto Impacto</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision-card impact-medium fade-up fade-up-delay-1">
+          <span class="decision-icon">&#9654;</span>
+          <div class="decision-body">
+            <p class="decision-text">Desafio semanal: cada participante deve criar um agente simples que resolva uma dor pessoal e apresentar na proxima call.</p>
+            <div class="decision-footer">
+              <span class="decision-owner">Responsavel: Todos os Participantes</span>
+              <span class="impact-badge medium">Medio Impacto</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision-card impact-medium fade-up">
+          <span class="decision-icon">&#9654;</span>
+          <div class="decision-body">
+            <p class="decision-text">Adotar o Prompt de Sparring Intelectual do Christopher Valadares como ferramenta padrao de ideacao antes de iniciar qualquer projeto novo.</p>
+            <div class="decision-footer">
+              <span class="decision-owner">Responsavel: Christopher Valadares (share)</span>
+              <span class="impact-badge medium">Medio Impacto</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ACTION ITEMS ─────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Action Items — Proximos Passos</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="actions-list">
+
+        <div class="action-item priority-urgente fade-up">
+          <span class="action-task">
+            <span class="priority-dot urgente"></span>
+            Entrar no grupo de WhatsApp da comunidade
+          </span>
+          <span class="action-owner">Todos os participantes</span>
+          <span class="action-deadline">Hoje</span>
+        </div>
+
+        <div class="action-item priority-urgente fade-up fade-up-delay-1">
+          <span class="action-task">
+            <span class="priority-dot urgente"></span>
+            Instalar Antigravity (ferramenta base para Vibecoding)
+          </span>
+          <span class="action-owner">Todos os participantes</span>
+          <span class="action-deadline">Hoje</span>
+        </div>
+
+        <div class="action-item priority-urgente fade-up">
+          <span class="action-task">
+            <span class="priority-dot urgente"></span>
+            Aplicar Prompt de Sparring no projeto atual — destruir e reconstruir a ideia
+          </span>
+          <span class="action-owner">Cada participante</span>
+          <span class="action-deadline">Esta semana</span>
+        </div>
+
+        <div class="action-item priority-alta fade-up fade-up-delay-1">
+          <span class="action-task">
+            <span class="priority-dot alta"></span>
+            Criar um agente simples que resolva uma dor pessoal real
+          </span>
+          <span class="action-owner">Desafio Semanal</span>
+          <span class="action-deadline">Quinta-feira 19h</span>
+        </div>
+
+        <div class="action-item priority-alta fade-up">
+          <span class="action-task">
+            <span class="priority-dot alta"></span>
+            Agendar sessao de Mentoria "Leads Infinitos" com Marcio Zimermann
+          </span>
+          <span class="action-owner">Interessados</span>
+          <span class="action-deadline">Proxima semana</span>
+        </div>
+
+        <div class="action-item priority-alta fade-up fade-up-delay-1">
+          <span class="action-task">
+            <span class="priority-dot alta"></span>
+            Subir transcricoes das calls no NotebookLM para criar o Oraculo da Comunidade
+          </span>
+          <span class="action-owner">Pedro Henrique / Murillo</span>
+          <span class="action-deadline">Ate 12/03/2026</span>
+        </div>
+
+        <div class="action-item priority-alta fade-up">
+          <span class="action-task">
+            <span class="priority-dot alta"></span>
+            Mapear processo atual e transformar em Playbook antes de codar qualquer automacao
+          </span>
+          <span class="action-owner">Cada participante</span>
+          <span class="action-deadline">Antes do proximo projeto</span>
+        </div>
+
+        <div class="action-item priority-media fade-up fade-up-delay-1">
+          <span class="action-task">
+            <span class="priority-dot media"></span>
+            Explorar estrategia hibrida Gemini (arquitetura) + Claude (codigo) nos projetos em andamento
+          </span>
+          <span class="action-owner">Devs do grupo</span>
+          <span class="action-deadline">Sem prazo fixo</span>
+        </div>
+
+        <div class="action-item priority-media fade-up">
+          <span class="action-task">
+            <span class="priority-dot media"></span>
+            Testar Squad de Prospeccao: Google Maps + CNPJ + pitch personalizado por IA
+          </span>
+          <span class="action-owner">Natan Telles &amp; Marcio</span>
+          <span class="action-deadline">Proximo mes</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── KEY QUOTES ─────────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Frases-Chave da Sessao</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="quotes-grid">
+
+        <div class="quote-card fade-up">
+          <span class="quote-mark">&ldquo;</span>
+          <p class="quote-text">O verdadeiro ativo nao e a ferramenta. E o playbook. Se o processo e bom, o agente e infalivel.</p>
+          <p class="quote-author">&#8212; Marcio Zimermann</p>
+        </div>
+
+        <div class="quote-card fade-up fade-up-delay-1">
+          <span class="quote-mark">&ldquo;</span>
+          <p class="quote-text">O programador do futuro nao e quem sabe mais sintaxe. E quem sabe melhor o que e como perguntar. Vibecoding e dirigir a IA, nao escrever codigo.</p>
+          <p class="quote-author">&#8212; Murillo Fagundes (Host)</p>
+        </div>
+
+        <div class="quote-card fade-up">
+          <span class="quote-mark">&ldquo;</span>
+          <p class="quote-text">O cliente nao compra IA. Ele compra reunioes agendadas, receita gerada, problema resolvido. Pare de vender ferramenta.</p>
+          <p class="quote-author">&#8212; Marcio Zimermann</p>
+        </div>
+
+        <div class="quote-card fade-up fade-up-delay-1">
+          <span class="quote-mark">&ldquo;</span>
+          <p class="quote-text">Quem dominar a orquestracao de agentes tera a produtividade de uma equipe de 50 pessoas — sozinho. Essa janela nao fica aberta para sempre.</p>
+          <p class="quote-author">&#8212; Murillo Fagundes (Host)</p>
+        </div>
+
+        <div class="quote-card fade-up">
+          <span class="quote-mark">&ldquo;</span>
+          <p class="quote-text">Use o Gemini para ler o projeto inteiro e planejar. Use o Claude para escrever as funcoes criticas. Nao existe ferramenta unica — existe ferramenta certa para cada tarefa.</p>
+          <p class="quote-author">&#8212; Hianto Mateus</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BLOCKERS ───────────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Pontos em Aberto</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="blockers-list">
+        <div class="blocker-item fade-up">
+          <span class="blocker-icon">&#9888;</span>
+          <p class="blocker-text"><strong>Curva de aprendizado do CLI:</strong> Participantes nao-tecnicos (gestores, vendedores) ainda tem resistencia ao uso do terminal. Necessidade de onboarding especifico para esse perfil antes do proximo desafio semanal.</p>
+        </div>
+        <div class="blocker-item fade-up fade-up-delay-1">
+          <span class="blocker-icon">&#9888;</span>
+          <p class="blocker-text"><strong>"Obesidade cerebral" pre-execucao:</strong> O grupo reconheceu que o excesso de aprendizado sem projeto pratico e um padrão recorrente. Sem sistema de accountability, o desafio semanal pode nao ser executado.</p>
+        </div>
+        <div class="blocker-item fade-up">
+          <span class="blocker-icon">&#9888;</span>
+          <p class="blocker-text"><strong>Alucinacao vs. Determinismo:</strong> A dependencia excessiva da IA sem revisao humana e um risco real. O grupo precisa definir quando a IA decide autonomamente e quando exige aprovacao humana — especialmente em projetos de clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── NEXT MEETING ──────────────────────────────────────── -->
+  <section class="report-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Proxima Reuniao</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="next-card fade-up fade-up-delay-1">
+        <div>
+          <p class="next-label">Agendada para</p>
+          <p class="next-date">Quinta-feira, 12 de Marco de 2026 &mdash; 19h</p>
+          <p class="next-agenda">Apresentacao dos agentes criados no desafio semanal &middot; Review dos resultados do Prompt de Sparring &middot; Novas oportunidades de mercado identificadas &middot; Mentoria sobre Leads Infinitos (Marcio Zimermann)</p>
+        </div>
+        <div style="width:48px; height:2px; background:var(--amber);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <div class="footer-brand">
+          <span class="footer-logo">MVP System</span>
+          <div class="footer-sep"></div>
+          <span class="footer-text">Meeting Report</span>
+        </div>
+        <span class="footer-generated">Gerado em 06 de Marco de 2026 &nbsp;&middot;&nbsp; Claude + AIOS Reuniao-Report Squad</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s ifconfig.me)",
+      "Bash(ss:*)",
+      "Bash(ufw status:*)",
+      "Bash(ufw allow:*)",
+      "Bash(systemctl is-active nginx)",
+      "Bash(systemctl is-active apache2)",
+      "Read(//etc/nginx/**)",
+      "Bash(caddy version)",
+      "Read(//etc/caddy/**)",
+      "Bash(curl:*)",
+      "Bash(docker ps:*)",
+      "Bash(python3:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker service:*)",
+      "Bash(docker cp:*)",
+      "Bash(sudo cat:*)",
+      "Bash(docker:*)",
+      "Bash(openssl:*)",
+      "Read(//srv/projetos/mvp-system/projetos/maisvendaspro/squads/marketing-brand/agents/**)",
+      "Read(//srv/projetos/mvp-system/projetos/maisvendaspro/squads/marketing-brand/tasks/**)",
+      "Bash(pnpm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite:*)",
+      "Bash(fuser:*)",
+      "Bash(iptables:*)",
+      "Bash(nginx:*)",
+      "Bash(cat:*)",
+      "Bash(systemctl list-units --type=service --state=running)",
+      "Read(//proc/26643117/**)",
+      "Bash(sudo python3:*)",
+      "Bash(pkill:*)",
+      "Bash(kill 2746332:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "context7"
+  ],
+  "disabledMcpjsonServers": [
+    "google-workspace"
+  ]
+}

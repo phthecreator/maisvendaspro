@@ -1,0 +1,41 @@
+name: reuniao-report
+title: Meeting Report Squad
+description: Transforma transcricoes de reunioes em apresentacoes HTML visuais com identidade visual da MVP. Recebe transcricao bruta ou material pre-processado e entrega um index.html executivo, bonito e diferenciado.
+version: 1.0.0
+author: Craft (squad-creator)
+
+agents:
+  - name: Extractor
+    id: meeting-extractor
+    role: Meeting Intelligence Analyst
+    description: Analisa a transcricao e extrai dados estruturados - titulo, participantes, topicos, decisoes, proximos passos, citacoes-chave.
+    file: agents/extractor.md
+
+  - name: Renderer
+    id: meeting-renderer
+    role: HTML Report Designer
+    description: Recebe os dados estruturados e gera o index.html com identidade visual da MVP.
+    file: agents/renderer.md
+
+tasks:
+  - name: process-meeting
+    description: Pipeline completo - recebe transcricao, analisa, gera HTML
+    file: tasks/process-meeting.md
+
+  - name: analyze-transcription
+    description: Apenas extrai dados estruturados da transcricao (sem gerar HTML)
+    file: tasks/analyze-transcription.md
+
+  - name: generate-html-report
+    description: Gera HTML a partir de dados ja estruturados
+    file: tasks/generate-html-report.md
+
+config:
+  brand: config/brand-standards.md
+  output_dir: reunioes-feitas
+  default_lang: pt-BR
+
+templates:
+  - name: meeting-report
+    file: templates/meeting-report.html
+    description: Template base para o relatorio HTML de reuniao com brand MVP
