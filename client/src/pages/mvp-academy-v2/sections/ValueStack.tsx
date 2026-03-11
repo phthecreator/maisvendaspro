@@ -5,10 +5,10 @@ import { SectionTitle, GlassCard } from '../components/EliteDesign';
 
 const ValueStack: React.FC = () => {
   const items = [
-    { item: 'MVP Plugin [Infraestrutura Pronta]', price: 'R$ 4.997' },
-    { item: 'Academy Execution [Método 30min]', price: 'R$ 1.997' },
-    { item: 'Desafio Vitória 7 Dias [Checklist]', price: 'R$ 997' },
-    { item: 'The Bunker [Acesso VIP Squad]', price: 'R$ 2.997' }
+    { item: 'Sua Máquina de Lucros [Pronta para Rodar]', price: 'R$ 4.997' },
+    { item: 'O Caminho da Liberdade [Método 30min]', price: 'R$ 1.997' },
+    { item: 'Plano de Guerra de 7 Dias', price: 'R$ 997' },
+    { item: 'The Bunker [Acesso ao Círculo de Elite]', price: 'R$ 2.997' }
   ];
 
   return (

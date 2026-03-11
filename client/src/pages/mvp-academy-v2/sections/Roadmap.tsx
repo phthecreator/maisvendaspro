@@ -6,18 +6,18 @@ const Roadmap: React.FC = () => {
   const steps = [
     { 
       step: '01', 
-      title: 'Question & Delete', 
-      desc: 'Limpamos sua mesa. Deletamos 90% das tarefas inúteis. Foco total em uma única oferta de alto ticket.' 
+      title: 'Desconstrução', 
+      desc: 'Limpamos sua mesa. Eliminamos as distrações e focamos em uma única oferta de alto valor que paga sua liberdade.' 
     },
     { 
       step: '02', 
-      title: 'Simplify & Plugin', 
-      desc: 'Não há o que criar. Plugamos nossa tecnologia de cópia e funis testados. Velocidade de engenharia.' 
+      title: 'Plugar e Lucrar', 
+      desc: 'Não há o que inventar. Você herda nossa estrutura pronta de vendas. O trabalho duro já foi feito por nós.' 
     },
     { 
       step: '03', 
-      title: 'Accelerate', 
-      desc: 'O primeiro real no dashboard em menos de 168 horas. Dados reais. Execução implacável.' 
+      title: 'Soberania', 
+      desc: 'O primeiro resultado real em tempo recorde. Você deixa de ser um estudante para ser o dono do jogo.' 
     }
   ];
 

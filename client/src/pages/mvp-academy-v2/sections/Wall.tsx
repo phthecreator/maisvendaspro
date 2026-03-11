@@ -21,16 +21,16 @@ const Wall: React.FC = () => {
                 O Filtro de Sangue
               </motion.span>
               
-              <h2 className="text-4xl md:text-5xl font-medium text-white mb-8 tracking-tight max-w-lg leading-[1.1]">
-                Este lugar <span className="italic font-serif">não foi feito</span> para todos.
+              <h2 className="text-4xl md:text-[3.5rem] font-medium text-white mb-8 tracking-tight max-w-lg leading-[1.1]">
+                O sucesso é <span className="italic font-serif text-amber-500">solitário</span> por um motivo.
               </h2>
               
               <p className="text-xl text-slate-400 mb-12 leading-relaxed max-w-lg">
-                Excluímos 90% dos interessados intencionalmente. O Bunker foi desenhado para quem prioriza a <span className="text-white font-medium">execução implacável</span> sobre a diversão teórica.
+                Excluímos quem busca "atalhos mágicos" ou "dicas rápidas". Este ambiente foi desenhado para quem prioriza a <span className="text-white font-medium">soberania financeira</span> acima de tudo.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {['O Turista Digital', 'O Caçador de Hacks', 'O Teórico Confortável', 'O Info-Obeso'].map((item, i) => (
+                {['Quem só consome conteúdos', 'Quem espera o momento perfeito', 'Quem tem medo de investir', 'Quem busca aprovação externa'].map((item, i) => (
                   <motion.div 
                     key={i}
                     initial={{ opacity: 0, x: -10 }}

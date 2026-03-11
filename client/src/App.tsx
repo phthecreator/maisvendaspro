@@ -13,6 +13,7 @@ import MVPAcademy from "./pages/mvp-academy";
 import MVPAcademyV1 from "./pages/mvp-academy-v1";
 import MVPAcademyV2 from "./pages/mvp-academy-v2";
 import MVPAcademyV3 from "./pages/mvp-academy-v3";
+import Dashboard from "./pages/dashboard";
 
 
 function Router() {
@@ -27,6 +28,8 @@ function Router() {
       <Route path={"/mvp-academy-v1"} component={MVPAcademyV1} />
       <Route path={"/mvp-academy-v2"} component={MVPAcademyV2} />
       <Route path={"/mvp-academy-v3"} component={MVPAcademyV3} />
+      <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/dashboard/:view"} component={Dashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

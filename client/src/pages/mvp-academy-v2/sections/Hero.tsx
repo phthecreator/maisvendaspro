@@ -19,14 +19,14 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-6xl md:text-[6.5rem] font-medium tracking-tight text-white mb-10 leading-[0.9] max-w-5xl mx-auto">
-              Construa seu <br className="hidden md:block" />
-              <span className="text-amber-500 italic font-serif">império digital</span> <br className="hidden md:block" />
-              em 168 horas.
+              Sua liberdade <br className="hidden md:block" />
+              <span className="text-amber-500 italic font-serif">não é um curso.</span> <br className="hidden md:block" />
+              É um ativo lucrativo.
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed font-light">
-              O fim da paralisia por excesso de informação. <br className="hidden sm:block" /> 
-              O MVP Academy entrega a execução que você nunca teve.
+              Pare de acumular certificados inúteis. <br className="hidden sm:block" /> 
+              O MVP Academy é o atalho para quem cansou de tentar e decidiu pertencer ao topo.
             </p>
             
             <div className="flex flex-col items-center gap-8">

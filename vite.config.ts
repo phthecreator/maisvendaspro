@@ -169,6 +169,9 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    proxy: {
+      "/api": "http://localhost:5000",
+    },
     strictPort: false, // Will find next available port if 3000 is busy
     host: true,
     allowedHosts: [
@@ -177,6 +180,8 @@ export default defineConfig({
       ".manus-asia.computer",
       ".manuscomputer.ai",
       ".manusvm.computer",
+      ".easypanel.host",
+      ".maisvendaspro.com.br",
       "localhost",
       "127.0.0.1",
     ],

@@ -8,8 +8,8 @@ const Void: React.FC = () => {
       <div className="max-w-7xl mx-auto px-8">
         <SectionTitle 
           subtitle="O Diagnóstico"
-          title="O Fim da Obesidade Mental."
-          description="A Indústria do Entretenimento Educacional prospera com o seu fracasso. Eles vendem dopamina. Nós entregamos dividendos."
+          title="A Armadilha do Aprendizado Infinito."
+          description="A indústria quer que você continue estudando para se sentir produtivo. Nós queremos que você pare de estudar e comece a lucrar."
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -17,10 +17,10 @@ const Void: React.FC = () => {
             <div className="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
               <Target className="text-amber-500" size={32} />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-6">O Paradoxo da Informação</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">A Ilusão do Progresso</h3>
             <p className="text-slate-400 leading-relaxed text-lg font-light">
-              Seu cérebro substitui a execução pelo "aprender". É um vício em progresso falso. 
-              Enquanto você estuda, o mercado exige <span className="text-white font-medium italic">velocidade absoluta</span>.
+              Assistir aulas libera dopamina, mas não paga boletos. É um vício em "estar quase lá". 
+              Enquanto você estuda, o mercado exige <span className="text-white font-medium italic">presença e lucro</span>.
             </p>
           </GlassCard>
           
@@ -28,10 +28,10 @@ const Void: React.FC = () => {
             <div className="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
               <Users className="text-amber-500" size={32} />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-6">O Inimigo Oculto</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">O Fim da Busca</h3>
             <p className="text-slate-400 leading-relaxed text-lg font-light">
-              O sistema quer que você continue comprando. Complicam o jogo para você se sentir incapaz. 
-              O MVP Academy <span className="text-white font-medium italic">simplifica o jogo</span> para você se tornar lucrativo.
+              Você não precisa de mais ferramentas. Precisa de uma direção clara e um ambiente de elite. 
+              O MVP Academy é a última porta que você vai precisar <span className="text-white font-medium italic">abrir este ano</span>.
             </p>
           </GlassCard>
         </div>
