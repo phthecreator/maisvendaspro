@@ -171,7 +171,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      "/api": "http://localhost:5000",
+      "/api": "http://localhost:5050",
     },
     strictPort: false, // Will find next available port if 3000 is busy
     host: true,
