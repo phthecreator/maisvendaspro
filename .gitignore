@@ -134,6 +134,7 @@ Desktop.ini
 /server/dist/
 .worktrees/
 legacy_root_backup/
+data/
 
 # Python
 __pycache__/

@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Menu, Check, ChevronDown } from 'lucide-react';
+import { ArrowRight, Menu, Check, ChevronDown, Loader2 } from 'lucide-react';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+
+const WHATSAPP_URL = 'https://wa.me/556291508399';
 
 const investmentRanges = [
   'Menos de R$ 10k',
@@ -48,6 +50,15 @@ const stats = [
   { value: '20', label: 'Dias para deploy' },
 ];
 
+function validateEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
+}
+
+function validatePhone(phone: string): boolean {
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 15;
+}
+
 export default function Home() {
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -59,6 +70,9 @@ export default function Home() {
   const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
+  const [formError, setFormError] = useState('');
+  const [lgpdConsent, setLgpdConsent] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     phone: '',
@@ -74,10 +88,47 @@ export default function Home() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.email || !formData.phone) return;
-    setFormSubmitted(true);
+    setFormError('');
+
+    if (!formData.email || !formData.phone) {
+      setFormError('Email e telefone são obrigatórios.');
+      return;
+    }
+    if (!validateEmail(formData.email)) {
+      setFormError('Email inválido.');
+      return;
+    }
+    if (!validatePhone(formData.phone)) {
+      setFormError('Telefone inválido. Use formato (00) 00000-0000.');
+      return;
+    }
+    if (!lgpdConsent) {
+      setFormError('Você precisa aceitar a política de privacidade.');
+      return;
+    }
+
+    setFormLoading(true);
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, lgpdConsent }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({ error: 'Erro ao enviar' }));
+        setFormError(data.error || 'Erro ao enviar. Tente novamente.');
+        return;
+      }
+
+      setFormSubmitted(true);
+    } catch {
+      setFormError('Erro de conexão. Tente novamente.');
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   const updateField = (field: string, value: string) => {
@@ -280,13 +331,14 @@ export default function Home() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs text-white/40 mb-1.5">Email *</label>
                       <input
                         type="email"
                         required
+                        maxLength={254}
                         value={formData.email}
                         onChange={(e) => updateField('email', e.target.value)}
                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#00ff88]/50 transition-colors"
@@ -298,6 +350,7 @@ export default function Home() {
                       <input
                         type="tel"
                         required
+                        maxLength={20}
                         value={formData.phone}
                         onChange={(e) => updateField('phone', e.target.value)}
                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#00ff88]/50 transition-colors"
@@ -311,6 +364,7 @@ export default function Home() {
                       <label className="block text-xs text-white/40 mb-1.5">Empresa</label>
                       <input
                         type="text"
+                        maxLength={200}
                         value={formData.company}
                         onChange={(e) => updateField('company', e.target.value)}
                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#00ff88]/50 transition-colors"
@@ -321,6 +375,7 @@ export default function Home() {
                       <label className="block text-xs text-white/40 mb-1.5">Instagram</label>
                       <input
                         type="text"
+                        maxLength={50}
                         value={formData.instagram}
                         onChange={(e) => updateField('instagram', e.target.value)}
                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#00ff88]/50 transition-colors"
@@ -389,16 +444,44 @@ export default function Home() {
                     </div>
                   </div>
 
+                  {/* LGPD Consent */}
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <div
+                      className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center shrink-0 transition-colors ${
+                        lgpdConsent
+                          ? 'bg-[#00ff88] border-[#00ff88]'
+                          : 'border-white/20 bg-white/5 group-hover:border-white/40'
+                      }`}
+                      onClick={() => setLgpdConsent(!lgpdConsent)}
+                    >
+                      {lgpdConsent && <Check className="w-3 h-3 text-black" />}
+                    </div>
+                    <span className="text-xs text-white/40 leading-relaxed" onClick={() => setLgpdConsent(!lgpdConsent)}>
+                      Concordo com o tratamento dos meus dados pessoais conforme a{' '}
+                      <span className="text-white/60 underline">Lei Geral de Proteção de Dados (LGPD)</span>.
+                      Seus dados serão utilizados exclusivamente para contato comercial e envio do diagnóstico.
+                      Não compartilhamos com terceiros.
+                    </span>
+                  </label>
+
+                  {formError && (
+                    <p className="text-sm text-red-400">{formError}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-4 bg-[#00ff88] text-black font-semibold rounded-lg hover:bg-[#00dd77] transition-colors text-sm"
+                    disabled={formLoading}
+                    className="w-full py-4 bg-[#00ff88] text-black font-semibold rounded-lg hover:bg-[#00dd77] transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    Quero meu diagnóstico gratuito
+                    {formLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      'Quero meu diagnóstico gratuito'
+                    )}
                   </button>
-
-                  <p className="text-center text-xs text-white/30">
-                    Seus dados são protegidos. Sem spam.
-                  </p>
                 </form>
               </motion.div>
             ) : (
@@ -422,7 +505,7 @@ export default function Home() {
                     Acesso imediato a squads de vendas, suporte, análise de dados, copywriting e automação.
                   </p>
                   <a
-                    href="https://wa.me/556291508399?text=Quero%20testar%20os%205%20squads%20gr%C3%A1tis"
+                    href={`${WHATSAPP_URL}?text=${encodeURIComponent('Quero testar os 5 squads grátis')}`}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-[#00ff88] text-black text-sm font-semibold rounded-lg hover:bg-[#00dd77] transition-colors"
                   >
                     Ativar squads agora
@@ -527,7 +610,7 @@ export default function Home() {
               <ArrowRight className="w-4 h-4" />
             </button>
             <a
-              href="https://wa.me/556291508399"
+              href={WHATSAPP_URL}
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/10 text-white/60 text-sm rounded-lg hover:text-white hover:border-white/20 transition-colors"
             >
               Falar no WhatsApp
@@ -556,7 +639,7 @@ export default function Home() {
 
           <div className="flex items-center gap-6 text-xs text-white/30">
             <a href="/mvp-academy" className="hover:text-white/60 transition-colors">Academy</a>
-            <a href="https://wa.me/556291508399" className="hover:text-white/60 transition-colors">WhatsApp</a>
+            <a href={WHATSAPP_URL} className="hover:text-white/60 transition-colors">WhatsApp</a>
           </div>
 
           <span className="text-xs text-white/20">
