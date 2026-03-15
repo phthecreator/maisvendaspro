@@ -412,6 +412,9 @@ const ApplicationForm: React.FC = () => {
     setSubmitError('');
 
     try {
+      if (!supabase) {
+        throw new Error('Sistema de envio indisponível. Tente novamente mais tarde.');
+      }
       const { error: supaErr } = await supabase.from('mentoria_applications').insert({
         nome: form.nome.trim(),
         email: form.email.trim().toLowerCase(),
