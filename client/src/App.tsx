@@ -37,7 +37,7 @@ function Router() {
       <Route path={"/mvp-academy-v1"} component={MVPAcademyV1} />
       <Route path={"/mvp-academy-v2"} component={MVPAcademyV2} />
       <Route path={"/mvp-academy-v3"} component={MVPAcademyV3} />
-      <Route path={"/bunker-brand-book"} component={BunkerBrandBook} />
+      <Route path={"/bunker-brand-book/:section?"} component={BunkerBrandBook} />
       <Route path={"/dashboard"} component={ProtectedDashboard} />
       <Route path={"/dashboard/:view"} component={ProtectedDashboard} />
       <Route path={"/404"} component={NotFound} />
