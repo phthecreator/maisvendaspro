@@ -308,12 +308,18 @@ export default function Positioning() {
         Nos vs. Eles
       </h3>
       <div
+        className="overflow-x-auto"
+        style={{
+          marginBottom: 48,
+        }}
+      >
+      <div
         style={{
           backgroundColor: 'rgba(47,53,58,0.3)',
           borderRadius: 8,
           overflow: 'hidden',
-          marginBottom: 48,
           border: '1px solid rgba(255,255,255,0.05)',
+          minWidth: 500,
         }}
       >
         {/* Header */}
@@ -385,6 +391,7 @@ export default function Positioning() {
             </div>
           </div>
         ))}
+      </div>
       </div>
 
       {/* Segment Value Propositions */}

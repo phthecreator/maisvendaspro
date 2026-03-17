@@ -17,7 +17,7 @@ const Feedback = () => {
   const [progress, setProgress] = useState(65);
 
   return (
-    <section id="feedback" className="pb-24 border-b border-[#00E5FF]/10">
+    <section id="feedback">
       <style>{`
         @keyframes bunker-skeleton-pulse {
           0%, 100% { opacity: 0.4; }

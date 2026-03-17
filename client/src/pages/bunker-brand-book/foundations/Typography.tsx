@@ -18,7 +18,7 @@ const TypeSpecimen = ({ label, children, meta, useCase }: { label: string; child
 );
 
 const Typography = () => (
-  <section className="pb-24 border-b border-[#00E5FF]/10">
+  <section>
     <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#00E5FF] mb-3"
       style={{ fontFamily: "'Roboto Mono', monospace" }}>03 / Sistema Tipografico</p>
     <h2 className="text-[42px] font-bold leading-tight mb-6"

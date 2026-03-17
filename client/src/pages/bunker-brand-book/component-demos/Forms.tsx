@@ -31,7 +31,7 @@ const Forms = () => {
   const [slider, setSlider] = useState(60);
 
   return (
-    <section id="forms" className="pb-24 border-b border-[#00E5FF]/10">
+    <section id="forms">
       <style>{`
         .bunker-input:focus { border-color: #00E5FF !important; box-shadow: 0 0 0 3px rgba(0,229,255,0.15) !important; }
         .bunker-slider { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: #2F353A; outline: none; }

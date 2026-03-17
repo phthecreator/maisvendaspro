@@ -1,18 +1,63 @@
 import { useState } from 'react';
 import { Link, useRoute } from 'wouter';
 import { Menu, X } from 'lucide-react';
+import BunkerShield from './BunkerShield';
 
 const NAV_ITEMS = [
-  { emoji: '\u{1F4CB}', label: 'Brand', path: '/bunker-brand-book/brand' },
-  { emoji: '\u{1F3A8}', label: 'Foundations', path: '/bunker-brand-book/foundations' },
-  { emoji: '\u{1F9E9}', label: 'Components', path: '/bunker-brand-book/components' },
-  { emoji: '\u{1F5A5}', label: 'Showcase', path: '/bunker-brand-book/showcase' },
+  {
+    emoji: '\u{1F4CB}', label: 'Brand', path: '/bunker-brand-book/brand',
+    subLinks: [
+      { label: 'Narrativa', id: 'narrativa' },
+      { label: 'Persona', id: 'persona' },
+      { label: 'Voz & Tom', id: 'voz-tom' },
+      { label: 'Posicionamento', id: 'posicionamento' },
+      { label: 'Arco do Movimento', id: 'arco-movimento' },
+    ],
+  },
+  {
+    emoji: '\u{1F3A8}', label: 'Foundations', path: '/bunker-brand-book/foundations',
+    subLinks: [
+      { label: 'Cores', id: 'cores' },
+      { label: 'Tipografia', id: 'tipografia' },
+      { label: 'Spacing & Grid', id: 'spacing-grid' },
+      { label: 'Texturas', id: 'texturas' },
+      { label: 'Motion', id: 'motion' },
+      { label: 'Elevacao', id: 'elevacao' },
+    ],
+  },
+  {
+    emoji: '\u{1F9E9}', label: 'Components', path: '/bunker-brand-book/components',
+    subLinks: [
+      { label: 'Botoes', id: 'botoes' },
+      { label: 'Cards', id: 'cards' },
+      { label: 'Formularios', id: 'formularios' },
+      { label: 'Navegacao', id: 'navegacao' },
+      { label: 'Feedback', id: 'feedback' },
+      { label: 'Dados', id: 'dados' },
+      { label: 'Especiais', id: 'especiais' },
+    ],
+  },
+  {
+    emoji: '\u{1F5A5}', label: 'Showcase', path: '/bunker-brand-book/showcase',
+    subLinks: [
+      { label: 'Sales Page', id: 'sales-page' },
+      { label: 'Area de Membros', id: 'area-membros' },
+      { label: 'Community Feed', id: 'community-feed' },
+    ],
+  },
 ];
 
 function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose?: () => void }) {
+  const [activeAnchor, setActiveAnchor] = useState<string | null>(null);
+
+  const handleSubLinkClick = (id: string) => {
+    setActiveAnchor(id);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div
-      className="bk-noise bk-scrollbar"
+      className="bk-noise bk-scrollbar bk-scan"
       style={{
         width: 240,
         height: '100vh',
@@ -22,6 +67,8 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
         padding: '24px 16px',
         overflowY: 'auto',
         position: 'relative',
+        borderRight: '1px solid rgba(0,229,255,0.15)',
+        boxShadow: '1px 0 10px rgba(0,229,255,0.05)',
       }}
     >
       {onClose && (
@@ -42,8 +89,9 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
         </button>
       )}
 
-      {/* Logo */}
-      <div style={{ marginBottom: 8 }}>
+      {/* Logo with shield */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+        <BunkerShield size={28} />
         <h1
           className="bk-aged-text"
           style={{
@@ -58,22 +106,27 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
         </h1>
       </div>
 
-      {/* Status */}
+      {/* Status — more prominent pulse */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 6,
-          marginBottom: 32,
+          gap: 8,
+          marginBottom: 24,
+          padding: '6px 10px',
+          backgroundColor: 'rgba(52,199,89,0.06)',
+          borderRadius: 4,
+          border: '1px solid rgba(52,199,89,0.1)',
         }}
       >
         <div
           style={{
-            width: 6,
-            height: 6,
+            width: 8,
+            height: 8,
             borderRadius: '50%',
             backgroundColor: '#34C759',
-            animation: 'bk-blink 2s step-start infinite',
+            boxShadow: '0 0 6px rgba(52,199,89,0.6), 0 0 12px rgba(52,199,89,0.3)',
+            animation: 'bk-status-pulse 2s ease-in-out infinite',
           }}
         />
         <span
@@ -82,69 +135,116 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
             fontSize: 10,
             color: '#34C759',
             textTransform: 'uppercase',
-            letterSpacing: '0.1em',
+            letterSpacing: '0.12em',
+            fontWeight: 700,
           }}
         >
           SYSTEM ONLINE
         </span>
       </div>
 
+      {/* Separator */}
+      <div
+        style={{
+          height: 1,
+          background: 'linear-gradient(90deg, transparent, rgba(0,229,255,0.15), transparent)',
+          marginBottom: 16,
+        }}
+      />
+
       {/* Navigation */}
       <nav style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
         {NAV_ITEMS.map((item) => {
           const isActive = currentPath === item.path || currentPath.startsWith(item.path + '/');
           return (
-            <Link key={item.path} href={item.path} onClick={onClose}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 10,
-                  padding: '10px 12px',
-                  borderRadius: 4,
-                  cursor: 'pointer',
-                  borderLeft: isActive ? '2px solid #00E5FF' : '2px solid transparent',
-                  backgroundColor: isActive ? 'rgba(255,255,255,0.05)' : 'transparent',
-                  transition: 'background-color 0.15s',
-                  fontFamily: "'Roboto Mono', monospace",
-                  fontSize: 13,
-                  color: isActive ? '#FDF5E6' : '#A9A9A9',
-                  textDecoration: 'none',
-                }}
-                onMouseEnter={(e) => {
-                  if (!isActive) e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.03)';
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive) e.currentTarget.style.backgroundColor = 'transparent';
-                }}
-              >
-                <span>{item.emoji}</span>
-                <span>{item.label}</span>
-              </div>
-            </Link>
+            <div key={item.path}>
+              <Link href={item.path} onClick={onClose}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    padding: '10px 12px',
+                    borderRadius: 4,
+                    cursor: 'pointer',
+                    borderLeft: isActive ? '2px solid #00E5FF' : '2px solid transparent',
+                    backgroundColor: isActive ? 'rgba(255,255,255,0.05)' : 'transparent',
+                    transition: 'background-color 0.15s',
+                    fontFamily: "'Roboto Mono', monospace",
+                    fontSize: 13,
+                    color: isActive ? '#FDF5E6' : '#A9A9A9',
+                    textDecoration: 'none',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.03)';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
+                >
+                  <span style={{ color: isActive ? '#00E5FF' : '#555', fontSize: 12 }}>&gt;</span>
+                  <span>{item.label}</span>
+                </div>
+              </Link>
+              {isActive && item.subLinks && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 1, marginTop: 2, marginBottom: 4 }}>
+                  {item.subLinks.map((sub) => (
+                    <button
+                      key={sub.id}
+                      onClick={() => handleSubLinkClick(sub.id)}
+                      style={{
+                        display: 'block',
+                        paddingLeft: 24,
+                        paddingRight: 12,
+                        paddingTop: 4,
+                        paddingBottom: 4,
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontFamily: "'Roboto Mono', monospace",
+                        fontSize: 11,
+                        color: activeAnchor === sub.id ? '#00E5FF' : 'rgba(169,169,169,0.7)',
+                        textAlign: 'left',
+                        transition: 'color 0.15s',
+                      }}
+                      onMouseEnter={(e) => {
+                        if (activeAnchor !== sub.id) e.currentTarget.style.color = '#A9A9A9';
+                      }}
+                      onMouseLeave={(e) => {
+                        if (activeAnchor !== sub.id) e.currentTarget.style.color = 'rgba(169,169,169,0.7)';
+                      }}
+                    >
+                      {sub.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           );
         })}
       </nav>
 
+      {/* Footer separator */}
+      <div
+        style={{
+          height: 1,
+          background: 'linear-gradient(90deg, transparent, rgba(205,127,50,0.2), transparent)',
+          marginTop: 16,
+          marginBottom: 12,
+        }}
+      />
+
       {/* Footer */}
       <div
         style={{
-          borderTop: '1px solid rgba(255,255,255,0.05)',
-          paddingTop: 16,
-          marginTop: 16,
+          fontFamily: "'Roboto Mono', monospace",
+          fontSize: 10,
+          color: '#555',
+          lineHeight: 1.8,
         }}
       >
-        <div
-          style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: 10,
-            color: '#A9A9A9',
-            lineHeight: 1.6,
-          }}
-        >
-          <div>v1.0.0</div>
-          <div>Marco 2026</div>
-        </div>
+        <div style={{ color: '#A9A9A9' }}>v1.0.0</div>
+        <div>Marco 2026</div>
       </div>
     </div>
   );
@@ -223,7 +323,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Content area */}
       <div
-        className="bk-scrollbar lg:ml-[240px]"
+        className="bk-noise bk-scrollbar lg:ml-[240px]"
         style={{
           flex: 1,
           overflowY: 'auto',

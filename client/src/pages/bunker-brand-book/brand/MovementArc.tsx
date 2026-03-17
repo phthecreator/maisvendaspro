@@ -295,13 +295,14 @@ export default function MovementArc() {
       >
         Canais da Comunidade
       </h3>
+      <div className="overflow-x-auto" style={{ marginBottom: 48 }}>
       <div
         style={{
           backgroundColor: 'rgba(47,53,58,0.3)',
           borderRadius: 8,
           overflow: 'hidden',
-          marginBottom: 48,
           border: '1px solid rgba(255,255,255,0.05)',
+          minWidth: 480,
         }}
       >
         {/* Header */}
@@ -339,6 +340,7 @@ export default function MovementArc() {
             <span style={{ color: '#FDF5E6', fontSize: 12 }}>{ch.who}</span>
           </div>
         ))}
+      </div>
       </div>
 
       {/* Rituals */}

@@ -21,7 +21,7 @@ const Buttons = () => {
   const [loading, setLoading] = useState(false);
 
   return (
-    <section id="buttons" className="pb-24 border-b border-[#00E5FF]/10">
+    <section id="buttons">
       <style>{`
         @keyframes bunker-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
       `}</style>

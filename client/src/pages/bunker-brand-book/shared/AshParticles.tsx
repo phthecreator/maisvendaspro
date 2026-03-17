@@ -2,14 +2,25 @@ import { useMemo } from 'react';
 
 const COLORS = ['#FF6600', '#FF4400', '#FFAA00', '#CD7F32', '#FF8C00'];
 
-export default function AshParticles() {
+const DENSITY_MAP = {
+  high: 50,
+  normal: 30,
+  low: 15,
+  none: 0,
+} as const;
+
+export type ParticleDensity = keyof typeof DENSITY_MAP;
+
+export default function AshParticles({ density = 'normal' }: { density?: ParticleDensity }) {
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const count = DENSITY_MAP[density];
+
   const particles = useMemo(() => {
-    if (prefersReducedMotion) return [];
-    return Array.from({ length: 40 }, (_, i) => {
+    if (prefersReducedMotion || count === 0) return [];
+    return Array.from({ length: count }, (_, i) => {
       const size = 2 + Math.random() * 3;
       const color = COLORS[Math.floor(Math.random() * COLORS.length)];
       const blur = 0.5 + Math.random() * 0.5;
@@ -23,9 +34,9 @@ export default function AshParticles() {
         blur,
       };
     });
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, count]);
 
-  if (prefersReducedMotion || particles.length === 0) return null;
+  if (prefersReducedMotion || count === 0 || particles.length === 0) return null;
 
   return (
     <div

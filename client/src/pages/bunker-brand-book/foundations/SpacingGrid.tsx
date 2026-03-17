@@ -17,7 +17,7 @@ const semanticSpacing = [
 ];
 
 const SpacingGrid = () => (
-  <section className="pb-24 border-b border-[#00E5FF]/10">
+  <section>
     <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#00E5FF] mb-3"
       style={{ fontFamily: "'Roboto Mono', monospace" }}>05 / Espacamento &amp; Grid</p>
     <h2 className="text-[42px] font-bold leading-tight mb-6"
@@ -50,7 +50,7 @@ const SpacingGrid = () => (
     {/* Semantic Spacing */}
     <h3 className="text-2xl font-bold mb-6"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Espacamento Semantico</h3>
-    <div className="grid grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
       {semanticSpacing.map((s) => (
         <div key={s.type} className="p-6 rounded-lg border border-white/5" style={{ background: '#2F353A' }}>
           <div className="text-[11px] text-[#00E5FF] uppercase tracking-[0.1em] mb-1"
@@ -126,7 +126,8 @@ const SpacingGrid = () => (
     {/* Breakpoints */}
     <h3 className="text-2xl font-bold mb-4"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Breakpoints</h3>
-    <table className="w-full text-[13px] mb-12" style={{ fontFamily: "'Roboto Mono', monospace" }}>
+    <div className="overflow-x-auto mb-12">
+    <table className="w-full text-[13px]" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       <thead>
         <tr className="border-b border-[#00E5FF]/20">
           <th className="text-left py-2.5 px-3 text-[11px] tracking-[0.1em] uppercase text-[#00E5FF] font-medium">Token</th>
@@ -146,6 +147,7 @@ const SpacingGrid = () => (
         ))}
       </tbody>
     </table>
+    </div>
 
     {/* Container Widths */}
     <h3 className="text-2xl font-bold mb-4"

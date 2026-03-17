@@ -17,7 +17,7 @@ const TexturePanel = ({ label, style, overlay, css }: TexturePanelProps) => (
 );
 
 const Textures = () => (
-  <section className="pb-24 border-b border-[#00E5FF]/10">
+  <section>
     <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#00E5FF] mb-3"
       style={{ fontFamily: "'Roboto Mono', monospace" }}>04 / Texturas &amp; Padroes</p>
     <h2 className="text-[42px] font-bold leading-tight mb-6"
@@ -30,7 +30,7 @@ const Textures = () => (
     {/* Original 6 */}
     <h3 className="text-2xl font-bold mb-4"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Texturas Base</h3>
-    <div className="grid grid-cols-3 gap-6 mb-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-5">
       <TexturePanel label="Metal Escovado" css="repeating-linear-gradient" style={{
         background: `repeating-linear-gradient(90deg, rgba(47,53,58,0.3) 0px, rgba(47,53,58,0.3) 1px, transparent 1px, transparent 3px),
           linear-gradient(180deg, #2F353A, #1A1E22)`
@@ -50,7 +50,7 @@ const Textures = () => (
       }} />
     </div>
 
-    <div className="grid grid-cols-3 gap-6 mb-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
       <TexturePanel label="Marcas de Batalha" css="diagonal linear-gradients" style={{
         background: `linear-gradient(47deg, transparent 40%, rgba(169,169,169,0.1) 40.5%, rgba(169,169,169,0.1) 41%, transparent 41.5%),
           linear-gradient(-30deg, transparent 60%, rgba(169,169,169,0.08) 60.5%, rgba(169,169,169,0.08) 61%, transparent 61.5%),
@@ -75,7 +75,7 @@ const Textures = () => (
     {/* New Textures */}
     <h3 className="text-2xl font-bold mb-4"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Novas Texturas</h3>
-    <div className="grid grid-cols-3 gap-6 mb-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-5">
       <TexturePanel label="Dot Grid" css="radial-gradient 1px dots, 24px spacing" style={{
         background: `radial-gradient(circle, rgba(0,229,255,0.06) 1px, transparent 1px), #1A1E22`,
         backgroundSize: '24px 24px',
@@ -94,7 +94,7 @@ const Textures = () => (
           #1A1E22`
       }} />
     </div>
-    <div className="grid grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       <TexturePanel label="Glassmorphism" css="backdrop-filter: blur(16px)" style={{
         background: 'rgba(255,255,255,0.04)',
         backdropFilter: 'blur(16px)',
@@ -130,7 +130,7 @@ const Textures = () => (
     <p className="text-[13px] text-[#A9A9A9] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       5 passos para compor texturas: Base &rarr; Mesh &rarr; Noise &rarr; Pattern &rarr; Vignette. Opacidade total max 40%.
     </p>
-    <div className="grid grid-cols-5 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
       {[
         { step: '1. Base', bg: '#1A1E22', extra: {} },
         { step: '2. + Mesh', bg: `radial-gradient(ellipse at 20% 30%, rgba(0,229,255,0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(205,127,50,0.03) 0%, transparent 50%), #1A1E22`, extra: {} },

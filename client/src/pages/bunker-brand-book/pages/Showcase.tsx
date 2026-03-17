@@ -87,9 +87,9 @@ const Showcase = () => {
         className="rounded-xl overflow-hidden"
         style={{ border: '1px solid rgba(255,255,255,0.06)' }}
       >
-        {activeTab === 'sales' && <SalesPage />}
-        {activeTab === 'member' && <MemberArea />}
-        {activeTab === 'community' && <CommunityFeed />}
+        <div id="sales-page">{activeTab === 'sales' && <SalesPage />}</div>
+        <div id="area-membros">{activeTab === 'member' && <MemberArea />}</div>
+        <div id="community-feed">{activeTab === 'community' && <CommunityFeed />}</div>
       </div>
     </section>
   );

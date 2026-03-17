@@ -1,7 +1,7 @@
 import './bunker.css';
 import { useRoute } from 'wouter';
 import Layout from './shared/Layout';
-import AshParticles from './shared/AshParticles';
+import AshParticles, { type ParticleDensity } from './shared/AshParticles';
 import Hub from './pages/Hub';
 import Brand from './pages/Brand';
 import Foundations from './pages/Foundations';
@@ -23,9 +23,18 @@ function PageContent({ section }: { section: string }) {
   }
 }
 
+const SECTION_DENSITY: Record<string, ParticleDensity> = {
+  '': 'high',
+  brand: 'normal',
+  foundations: 'low',
+  components: 'low',
+  showcase: 'normal',
+};
+
 export default function BunkerBrandBook() {
   const [, params] = useRoute('/bunker-brand-book/:section');
   const section = params?.section || '';
+  const density = SECTION_DENSITY[section] ?? 'normal';
 
   return (
     <div
@@ -37,7 +46,7 @@ export default function BunkerBrandBook() {
         fontFamily: "'Roboto Mono', monospace",
       }}
     >
-      <AshParticles />
+      <AshParticles density={density} />
       <Layout>
         <PageContent section={section} />
       </Layout>

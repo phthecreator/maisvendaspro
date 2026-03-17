@@ -26,7 +26,7 @@ const timelineEvents = [
 ];
 
 const DataDisplay = () => (
-  <section id="data-display" className="pb-24 border-b border-[#00E5FF]/10">
+  <section id="data-display">
     <style>{`
       @keyframes bunker-rank-glow {
         0%, 100% { box-shadow: 0 0 8px rgba(205,127,50,0.3); }
@@ -49,8 +49,8 @@ const DataDisplay = () => (
 
     {/* Table */}
     <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FDF5E6' }}>Tabela</h3>
-    <div className="rounded-lg border border-white/5 overflow-hidden mb-10">
-      <table className="w-full text-[13px]" style={{ fontFamily: mono }}>
+    <div className="rounded-lg border border-white/5 overflow-x-auto mb-10">
+      <table className="w-full text-[13px] min-w-[500px]" style={{ fontFamily: mono }}>
         <thead>
           <tr style={{ background: '#0d1117' }}>
             <th className="text-left py-3 px-4 text-[11px] tracking-[0.1em] uppercase font-medium" style={{ color: '#00E5FF' }}>Nome</th>
@@ -143,7 +143,7 @@ const DataDisplay = () => (
 
     {/* Stat Cards */}
     <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FDF5E6' }}>Stat Cards</h3>
-    <div className="grid grid-cols-4 gap-4 mb-10">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
       {[
         { icon: <Users size={20} />, value: '147', label: 'Membros ativos', color: '#00E5FF' },
         { icon: <Zap size={20} />, value: '89', label: 'Deploys este mes', color: '#CD7F32' },

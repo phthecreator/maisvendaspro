@@ -24,7 +24,7 @@ const Navigation = () => {
   ];
 
   return (
-    <section id="navigation" className="pb-24 border-b border-[#00E5FF]/10">
+    <section id="navigation">
       <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#00E5FF] mb-3"
         style={{ fontFamily: mono }}>Componentes / Navegacao</p>
       <h2 className="text-[42px] font-bold leading-tight mb-6"

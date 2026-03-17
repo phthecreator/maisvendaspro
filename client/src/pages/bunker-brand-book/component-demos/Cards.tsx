@@ -2,7 +2,7 @@ const mono = "'Roboto Mono', monospace";
 const serif = "'Averia Serif Libre', serif";
 
 const Cards = () => (
-  <section id="cards" className="pb-24 border-b border-[#00E5FF]/10">
+  <section id="cards">
     <style>{`
       @keyframes bunker-legendary-pulse {
         0%, 100% { box-shadow: 0 0 15px rgba(205,127,50,0.3), 0 0 30px rgba(205,127,50,0.15); }
@@ -25,7 +25,7 @@ const Cards = () => (
 
     {/* Standard Cards */}
     <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FDF5E6' }}>Padrao &amp; Rust</h3>
-    <div className="grid grid-cols-3 gap-6 mb-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
       {/* Default */}
       <div className="relative rounded-lg p-6 border border-white/5" style={{ background: '#2F353A' }}>
         <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-lg"
@@ -84,7 +84,7 @@ const Cards = () => (
 
     {/* Loot Cards */}
     <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FDF5E6' }}>Loot Cards — Raridades</h3>
-    <div className="grid grid-cols-4 gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {[
         { rarity: 'Common', border: '#A9A9A9', glow: 'none', shadow: 'none', title: 'Prompt Basico', desc: 'Template de prompt simples para tarefas cotidianas.', badge: 'Consumidor' },
         { rarity: 'Rare', border: '#3A86FF', glow: 'rgba(58,134,255,0.3)', shadow: '0 0 15px rgba(58,134,255,0.2)', title: 'Agent Builder', desc: 'Framework para criar agentes autonomos com Claude.', badge: 'Recruta' },

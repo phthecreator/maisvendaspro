@@ -158,7 +158,7 @@ const SignalIndicator = ({ bars, label }: { bars: number; label: string }) => (
 );
 
 const BunkerSpecials = () => (
-  <section id="bunker-specials" className="pb-24 border-b border-[#00E5FF]/10">
+  <section id="bunker-specials">
     <style>{`
       @keyframes bunker-glitch-text {
         0% { transform: translate(0); filter: hue-rotate(0deg); }

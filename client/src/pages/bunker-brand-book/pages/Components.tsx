@@ -7,26 +7,26 @@ import DataDisplay from '../component-demos/DataDisplay';
 import BunkerSpecials from '../component-demos/BunkerSpecials';
 
 const SectionDivider = () => (
-  <div className="w-full h-px opacity-10 my-4"
+  <div className="w-full h-px opacity-10 my-16"
     style={{ background: 'linear-gradient(90deg, transparent, #00E5FF, transparent)' }} />
 );
 
 export default function Components() {
   return (
     <div>
-      <div id="section-buttons"><Buttons /></div>
+      <section id="botoes" className="py-24"><Buttons /></section>
       <SectionDivider />
-      <div id="section-cards"><Cards /></div>
+      <section id="cards" className="py-24"><Cards /></section>
       <SectionDivider />
-      <div id="section-forms"><Forms /></div>
+      <section id="formularios" className="py-24"><Forms /></section>
       <SectionDivider />
-      <div id="section-navigation"><Navigation /></div>
+      <section id="navegacao" className="py-24"><Navigation /></section>
       <SectionDivider />
-      <div id="section-feedback"><Feedback /></div>
+      <section id="feedback" className="py-24"><Feedback /></section>
       <SectionDivider />
-      <div id="section-data-display"><DataDisplay /></div>
+      <section id="dados" className="py-24"><DataDisplay /></section>
       <SectionDivider />
-      <div id="section-bunker-specials"><BunkerSpecials /></div>
+      <section id="especiais" className="py-24"><BunkerSpecials /></section>
     </div>
   );
 }

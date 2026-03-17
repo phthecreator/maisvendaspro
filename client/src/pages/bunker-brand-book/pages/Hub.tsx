@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { Shield } from 'lucide-react';
+import BunkerShield from '../shared/BunkerShield';
 
 const SECTIONS = [
   {
@@ -47,18 +47,11 @@ export default function Hub() {
       >
         <div
           style={{
-            width: 80,
-            height: 80,
-            borderRadius: '50%',
-            border: '2px solid #CD7F32',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             marginBottom: 32,
             animation: 'bk-glow-pulse 3s ease-in-out infinite',
           }}
         >
-          <Shield size={36} color="#CD7F32" />
+          <BunkerShield size={100} />
         </div>
 
         <h1
@@ -116,8 +109,8 @@ export default function Hub() {
         {SECTIONS.map((section) => (
           <Link key={section.path} href={section.path}>
             <div
+              className="bk-metal"
               style={{
-                backgroundColor: '#2F353A',
                 border: '1px solid rgba(255,255,255,0.05)',
                 borderTop: '3px solid #00E5FF',
                 borderRadius: 8,

@@ -1,25 +1,75 @@
+import { useState } from 'react';
+
 interface SwatchProps {
   color: string;
   name: string;
   hex: string;
   usage: string;
+  token?: string;
   darkText?: boolean;
 }
 
-const Swatch = ({ color, name, hex, usage, darkText }: SwatchProps) => (
-  <div className="rounded-lg overflow-hidden border border-white/5" style={{ background: '#2F353A' }}>
-    <div className="h-24 relative" style={{ background: color }}>
-      <span className="absolute bottom-2 right-2.5 text-[11px] rounded px-1.5 py-0.5"
-        style={{ fontFamily: "'Roboto Mono', monospace", color: 'rgba(255,255,255,0.7)', background: 'rgba(0,0,0,0.5)' }}>
-        {hex}
-      </span>
+const Swatch = ({ color, name, hex, usage, token, darkText }: SwatchProps) => {
+  const [copied, setCopied] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  const handleClick = async () => {
+    try {
+      await navigator.clipboard.writeText(hex);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // Fallback silently
+    }
+  };
+
+  return (
+    <div
+      className="rounded-lg overflow-hidden border border-white/5"
+      style={{
+        background: '#2F353A',
+        cursor: 'pointer',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+        transform: hovered ? 'scale(1.02)' : 'scale(1)',
+        boxShadow: hovered ? '0 8px 24px rgba(0,0,0,0.4)' : 'none',
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={handleClick}
+    >
+      <div className="h-24 relative" style={{ background: color }}>
+        <span className="absolute bottom-2 right-2.5 text-[11px] rounded px-1.5 py-0.5"
+          style={{ fontFamily: "'Roboto Mono', monospace", color: 'rgba(255,255,255,0.7)', background: 'rgba(0,0,0,0.5)' }}>
+          {hex}
+        </span>
+        {/* Hover overlay with token name */}
+        {hovered && token && (
+          <div className="absolute inset-0 flex items-center justify-center"
+            style={{ background: 'rgba(0,0,0,0.55)' }}>
+            <span className="text-[11px] text-[#00E5FF] px-2 py-1 rounded"
+              style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(0,0,0,0.6)' }}>
+              {token}
+            </span>
+          </div>
+        )}
+        {/* Copied toast */}
+        {copied && (
+          <div className="absolute inset-0 flex items-center justify-center"
+            style={{ background: 'rgba(0,0,0,0.7)' }}>
+            <span className="text-[13px] font-medium text-[#34C759]"
+              style={{ fontFamily: "'Roboto Mono', monospace" }}>
+              Copiado!
+            </span>
+          </div>
+        )}
+      </div>
+      <div className="px-4 py-3">
+        <div className={`text-[13px] font-medium ${darkText ? 'text-[#1A1E22]' : ''}`}>{name}</div>
+        <div className="text-[11px] text-[#A9A9A9]">{usage}</div>
+      </div>
     </div>
-    <div className="px-4 py-3">
-      <div className={`text-[13px] font-medium ${darkText ? 'text-[#1A1E22]' : ''}`}>{name}</div>
-      <div className="text-[11px] text-[#A9A9A9]">{usage}</div>
-    </div>
-  </div>
-);
+  );
+};
 
 const GradientPanel = ({ gradient, label }: { gradient: string; label: string }) => (
   <div className="h-28 rounded-lg flex items-end p-3 border border-white/5" style={{ background: gradient }}>
@@ -45,7 +95,7 @@ const semanticTokens = [
 ];
 
 const ColorSystem = () => (
-  <section className="pb-24 border-b border-[#00E5FF]/10">
+  <section>
     <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#00E5FF] mb-3"
       style={{ fontFamily: "'Roboto Mono', monospace" }}>02 / Sistema de Cores</p>
     <h2 className="text-[42px] font-bold leading-tight mb-6"
@@ -60,10 +110,10 @@ const ColorSystem = () => (
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>
       Primarias — Base &amp; Background
     </h3>
-    <div className="grid grid-cols-3 gap-6 mb-10">
-      <Swatch color="#2F353A" name="Dark Metallic Gray" hex="#2F353A" usage="Backgrounds principais, cards, paineis" />
-      <Swatch color="#1A1E22" name="Chaos Black" hex="#1A1E22" usage="Sombras profundas, hero sections" />
-      <Swatch color="#2B3A33" name="Deep Moss Green" hex="#2B3A33" usage="Backgrounds secundarios, secoes alternadas" />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <Swatch color="#2F353A" name="Dark Metallic Gray" hex="#2F353A" token="--bunker-dark-metallic" usage="Backgrounds principais, cards, paineis" />
+      <Swatch color="#1A1E22" name="Chaos Black" hex="#1A1E22" token="--bunker-chaos-black" usage="Sombras profundas, hero sections" />
+      <Swatch color="#2B3A33" name="Deep Moss Green" hex="#2B3A33" token="--bunker-deep-moss" usage="Backgrounds secundarios, secoes alternadas" />
     </div>
 
     {/* Secondary */}
@@ -71,11 +121,11 @@ const ColorSystem = () => (
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>
       Secundarias — Oxidacao &amp; Energia
     </h3>
-    <div className="grid grid-cols-4 gap-6 mb-10">
-      <Swatch color="#8B4513" name="Oxidized Copper" hex="#8B4513" usage="Oxidacao principal, badges" />
-      <Swatch color="#CD7F32" name="Bronze Patina" hex="#CD7F32" usage="Detalhes metalicos, hover" />
-      <Swatch color="#00E5FF" name="Cyber Cyan" hex="#00E5FF" usage="CTAs, links, glow effects" />
-      <Swatch color="#3A86FF" name="Laser Blue" hex="#3A86FF" usage="Alternativa ao ciano, links" />
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+      <Swatch color="#8B4513" name="Oxidized Copper" hex="#8B4513" token="--bunker-oxidized-copper" usage="Oxidacao principal, badges" />
+      <Swatch color="#CD7F32" name="Bronze Patina" hex="#CD7F32" token="--bunker-bronze-patina" usage="Detalhes metalicos, hover" />
+      <Swatch color="#00E5FF" name="Cyber Cyan" hex="#00E5FF" token="--bunker-cyber-cyan" usage="CTAs, links, glow effects" />
+      <Swatch color="#3A86FF" name="Laser Blue" hex="#3A86FF" token="--bunker-laser-blue" usage="Alternativa ao ciano, links" />
     </div>
 
     {/* Neutrals & Functional */}
@@ -83,12 +133,12 @@ const ColorSystem = () => (
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>
       Neutras &amp; Funcionais
     </h3>
-    <div className="grid grid-cols-5 gap-5 mb-10">
-      <Swatch color="#FDF5E6" name="Aged White" hex="#FDF5E6" usage="Texto principal" darkText />
-      <Swatch color="#A9A9A9" name="Matte Silver" hex="#A9A9A9" usage="Texto secundario" />
-      <Swatch color="#FF3B30" name="Alert Red" hex="#FF3B30" usage="Erros" />
-      <Swatch color="#34C759" name="Signal Green" hex="#34C759" usage="Sucesso" />
-      <Swatch color="#FFAA00" name="Warning Amber" hex="#FFAA00" usage="Avisos" />
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mb-10">
+      <Swatch color="#FDF5E6" name="Aged White" hex="#FDF5E6" token="--bunker-aged-white" usage="Texto principal" darkText />
+      <Swatch color="#A9A9A9" name="Matte Silver" hex="#A9A9A9" token="--bunker-matte-silver" usage="Texto secundario" />
+      <Swatch color="#FF3B30" name="Alert Red" hex="#FF3B30" token="--bunker-alert-red" usage="Erros" />
+      <Swatch color="#34C759" name="Signal Green" hex="#34C759" token="--bunker-signal-green" usage="Sucesso" />
+      <Swatch color="#FFAA00" name="Warning Amber" hex="#FFAA00" token="--bunker-warning-amber" usage="Avisos" />
     </div>
 
     {/* Surface Elevation */}
@@ -99,7 +149,7 @@ const ColorSystem = () => (
     <p className="text-[13px] text-[#A9A9A9] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       6 niveis de superficie, do mais profundo ao mais elevado. Cada nivel adiciona luminosidade para criar hierarquia visual.
     </p>
-    <div className="grid grid-cols-6 gap-4 mb-10">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
       {surfaces.map((s) => (
         <div key={s.name} className="rounded-lg p-4 border border-white/5 min-h-[160px] flex flex-col justify-between"
           style={{ background: s.hex }}>
@@ -125,7 +175,7 @@ const ColorSystem = () => (
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>
       Tokens Semanticos
     </h3>
-    <div className="grid grid-cols-2 gap-4 mb-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
       {semanticTokens.map((t) => (
         <div key={t.label} className="rounded-lg p-5 flex items-start gap-3"
           style={{ background: t.bg, border: `1px solid ${t.border}` }}>
@@ -146,7 +196,8 @@ const ColorSystem = () => (
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>
       Contraste WCAG
     </h3>
-    <table className="w-full text-[13px] mb-10" style={{ fontFamily: "'Roboto Mono', monospace" }}>
+    <div className="overflow-x-auto mb-10">
+    <table className="w-full text-[13px]" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       <thead>
         <tr className="border-b border-[#00E5FF]/20">
           <th className="text-left py-2.5 px-3 text-[11px] tracking-[0.1em] uppercase text-[#00E5FF] font-medium">Combinacao</th>
@@ -174,13 +225,14 @@ const ColorSystem = () => (
         ))}
       </tbody>
     </table>
+    </div>
 
     {/* Gradients */}
     <h3 className="text-2xl font-bold mb-4"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>
       Gradientes Permitidos
     </h3>
-    <div className="grid grid-cols-4 gap-5">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
       <GradientPanel gradient="linear-gradient(180deg, #1A1E22 0%, #2F353A 100%)" label="Bunker Primary" />
       <GradientPanel gradient="linear-gradient(135deg, #1A1E22 0%, #2B3A33 100%)" label="Moss Depth" />
       <GradientPanel gradient="linear-gradient(180deg, #8B4513 0%, #CD7F32 100%)" label="Rust Metallic" />
