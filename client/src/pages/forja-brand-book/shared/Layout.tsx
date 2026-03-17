@@ -23,6 +23,26 @@ const NAV_ITEMS = [
     ],
   },
   {
+    emoji: '\u{1F3A8}', label: 'Foundations', path: '/forja-brand-book/foundations',
+    subLinks: [
+      { label: 'Cores', id: 'cores' },
+      { label: 'Texturas', id: 'texturas' },
+      { label: 'Motion', id: 'motion' },
+      { label: 'Spacing & Grid', id: 'spacing-grid' },
+      { label: 'Elevacao', id: 'elevacao' },
+    ],
+  },
+  {
+    emoji: '\u{1F9E9}', label: 'Components', path: '/forja-brand-book/components',
+    subLinks: [
+      { label: 'Botoes', id: 'botoes' },
+      { label: 'Cards', id: 'cards' },
+      { label: 'Formularios', id: 'formularios' },
+      { label: 'Feedback', id: 'feedback' },
+      { label: 'Especiais', id: 'especiais' },
+    ],
+  },
+  {
     emoji: '\u{1F4B0}', label: 'Investimento', path: '/forja-brand-book/investimento',
     subLinks: [
       { label: 'Stack de Valor', id: 'stack-valor' },

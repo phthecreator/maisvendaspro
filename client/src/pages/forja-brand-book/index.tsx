@@ -4,6 +4,8 @@ import Layout from './shared/Layout';
 import ForgeParticles, { type ParticleDensity } from './shared/ForgeParticles';
 import Hub from './pages/Hub';
 import Brand from './pages/Brand';
+import Foundations from './pages/Foundations';
+import Components from './pages/Components';
 import Program from './pages/Program';
 import Investment from './pages/Investment';
 import Showcase from './pages/Showcase';
@@ -12,6 +14,10 @@ function PageContent({ section }: { section: string }) {
   switch (section) {
     case 'brand':
       return <Brand />;
+    case 'foundations':
+      return <Foundations />;
+    case 'components':
+      return <Components />;
     case 'programa':
       return <Program />;
     case 'investimento':
@@ -26,6 +32,8 @@ function PageContent({ section }: { section: string }) {
 const SECTION_DENSITY: Record<string, ParticleDensity> = {
   '': 'high',
   brand: 'normal',
+  foundations: 'low',
+  components: 'low',
   programa: 'low',
   investimento: 'low',
   showcase: 'normal',

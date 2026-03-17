@@ -3,6 +3,8 @@ import ForjaAnvil from '../shared/ForjaAnvil';
 
 const SECTIONS = [
   { emoji: '\u{1F525}', title: 'Brand', description: 'Narrativa, Identidade Visual, Primal Branding, Posicionamento', path: '/forja-brand-book/brand' },
+  { emoji: '\u{1F3A8}', title: 'Foundations', description: 'Cores, Texturas, Motion, Spacing, Elevacao', path: '/forja-brand-book/foundations' },
+  { emoji: '\u{1F9E9}', title: 'Components', description: 'Botoes, Cards, Forms, Feedback, Especiais', path: '/forja-brand-book/components' },
   { emoji: '\u{2692}\u{FE0F}', title: 'Programa', description: 'Metodologia DWY, Cronograma 12 Semanas, Entregaveis', path: '/forja-brand-book/programa' },
   { emoji: '\u{1F4B0}', title: 'Investimento', description: 'Stack de Valor, Pricing, Objecoes, Garantia', path: '/forja-brand-book/investimento' },
   { emoji: '\u{1F5A5}\u{FE0F}', title: 'Showcase', description: 'Sales Page, Area do Mentorado, Sessao Diagnostico', path: '/forja-brand-book/showcase' },
