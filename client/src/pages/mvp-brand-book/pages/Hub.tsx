@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import AlchemistTriangle from '../shared/AlchemistTriangle';
 
@@ -9,9 +10,34 @@ const SECTIONS = [
   { n: '05', title: 'Showcase', description: 'Copy, Voice & Tone, Bios, Objeções', path: '/mvp-brand-book/showcase' },
 ];
 
+const FULL_TITLE = 'MAIS VENDAS PRO';
+
 export default function Hub() {
+  const [typedText, setTypedText] = useState('');
+  const [showCursor, setShowCursor] = useState(true);
+  const [doneTyping, setDoneTyping] = useState(false);
+
+  useEffect(() => {
+    if (typedText.length < FULL_TITLE.length) {
+      const timeout = setTimeout(() => {
+        setTypedText(FULL_TITLE.slice(0, typedText.length + 1));
+      }, 80);
+      return () => clearTimeout(timeout);
+    } else {
+      setDoneTyping(true);
+    }
+  }, [typedText]);
+
+  useEffect(() => {
+    if (!doneTyping) return;
+    const interval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 530);
+    return () => clearInterval(interval);
+  }, [doneTyping]);
+
   return (
-    <div>
+    <div className="mvp-fade-in">
       <div
         style={{
           minHeight: '65vh',
@@ -24,7 +50,7 @@ export default function Hub() {
           position: 'relative',
         }}
       >
-        <div style={{ marginBottom: 40 }}>
+        <div className="mvp-logo-pulse" style={{ marginBottom: 40 }}>
           <AlchemistTriangle size={80} />
         </div>
 
@@ -37,9 +63,21 @@ export default function Hub() {
             letterSpacing: '0.06em',
             margin: 0,
             marginBottom: 20,
+            minHeight: '1.2em',
           }}
         >
-          MAIS VENDAS PRO
+          {typedText}
+          <span
+            style={{
+              opacity: showCursor ? 1 : 0,
+              color: '#00C96E',
+              fontWeight: 400,
+              marginLeft: 2,
+              WebkitTextFillColor: '#00C96E',
+            }}
+          >
+            |
+          </span>
         </h1>
 
         <p
@@ -71,25 +109,26 @@ export default function Hub() {
         </p>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 1, marginTop: 40 }}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: 12,
+          marginTop: 40,
+        }}
+      >
         {SECTIONS.map((section) => (
           <Link key={section.path} href={section.path}>
             <div
+              className="mvp-glass mvp-card-hover"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: 20,
                 padding: '24px 20px',
                 cursor: 'pointer',
-                transition: 'background-color 0.2s',
-                borderBottom: '1px solid rgba(255,255,255,0.03)',
+                borderRadius: 8,
                 textDecoration: 'none',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(0, 201, 110, 0.04)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
               }}
             >
               <span

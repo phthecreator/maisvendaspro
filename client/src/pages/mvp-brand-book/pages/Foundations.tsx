@@ -249,8 +249,9 @@ function SwatchCard({ swatch }: { swatch: ColorSwatch }) {
         border: `1px solid ${hover ? 'rgba(0,201,110,0.3)' : 'rgba(255,255,255,0.08)'}`,
         borderRadius: 8,
         overflow: 'hidden',
-        transition: 'border-color 300ms ease, box-shadow 300ms ease',
+        transition: 'all 0.2s ease',
         boxShadow: hover ? '0 0 15px rgba(0,201,110,0.15)' : 'none',
+        transform: hover ? 'scale(1.02)' : 'scale(1)',
         cursor: 'default',
       }}
     >
@@ -361,12 +362,12 @@ export default function Foundations() {
     color: '#FFFFFF',
     background: '#0A0A0A',
     minHeight: '100vh',
-    padding: '0 32px 80px',
+    padding: '0 24px 80px',
   };
 
   const colorGrid: React.CSSProperties = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
     gap: 16,
     marginBottom: 40,
   };
@@ -439,6 +440,7 @@ export default function Foundations() {
 
         {/* ── WCAG Contrast ── */}
         <div style={{ ...subsectionLabel, marginTop: 40 }}>WCAG 2.1 Contrast Ratios</div>
+        <div style={{ overflowX: 'auto' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 40 }}>
           {wcagPairs.map((p, i) => (
             <div
@@ -481,6 +483,7 @@ export default function Foundations() {
               </span>
             </div>
           ))}
+        </div>
         </div>
 
         {/* ── Gradients ── */}
@@ -557,8 +560,9 @@ export default function Foundations() {
                 key={t.token}
                 style={{
                   display: 'flex',
+                  flexWrap: 'wrap',
                   alignItems: 'baseline',
-                  gap: 24,
+                  gap: '8px 24px',
                   padding: '16px 0',
                   borderBottom: '1px solid rgba(255,255,255,0.04)',
                 }}
@@ -574,13 +578,13 @@ export default function Foundations() {
                 <div
                   style={{
                     fontFamily: isMono ? "'JetBrains Mono', monospace" : "'Inter', sans-serif",
-                    fontSize: displaySize,
+                    fontSize: Math.min(displaySize, 36),
                     fontWeight: t.weight,
                     color: '#FFFFFF',
                     lineHeight: 1.2,
                     letterSpacing: isMono ? 0 : numSize >= 36 ? '-0.02em' : 0,
                     textTransform: t.token === 'overline' ? 'uppercase' as const : 'none' as const,
-                    flex: 1,
+                    flex: '1 1 200px',
                     minWidth: 0,
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
@@ -594,9 +598,7 @@ export default function Foundations() {
                     fontFamily: "'Inter', sans-serif",
                     fontSize: 11,
                     color: '#666666',
-                    width: 180,
                     flexShrink: 0,
-                    textAlign: 'right',
                   }}
                 >
                   {t.use}
@@ -634,12 +636,14 @@ export default function Foundations() {
 
         {/* Usage rules table */}
         <div style={subsectionLabel}>Regras de Uso</div>
+        <div style={{ overflowX: 'auto' }}>
         <div
           style={{
             background: '#111111',
             border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: 8,
             overflow: 'hidden',
+            minWidth: 500,
           }}
         >
           {[
@@ -676,6 +680,7 @@ export default function Foundations() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       <div style={divider} />
@@ -694,7 +699,7 @@ export default function Foundations() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: 20,
           }}
         >
@@ -823,7 +828,7 @@ export default function Foundations() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
             gap: 24,
             marginBottom: 48,
           }}
@@ -900,6 +905,7 @@ export default function Foundations() {
                 borderRadius: 8,
                 padding: '14px 18px',
                 minWidth: 140,
+                transition: 'all 0.2s ease',
               }}
             >
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: '#00C96E', marginBottom: 4 }}>
@@ -982,7 +988,7 @@ export default function Foundations() {
             <div
               key={lv.level}
               style={{
-                flex: '1 1 180px',
+                flex: '1 1 160px',
                 maxWidth: 240,
                 background: lv.hex,
                 border: lv.border !== 'none' ? `1px solid ${lv.border}` : '1px solid rgba(255,255,255,0.03)',
@@ -1026,12 +1032,14 @@ export default function Foundations() {
 
         {/* Borders & shadows spec */}
         <div style={subsectionLabel}>Border & Shadow Specifications</div>
+        <div style={{ overflowX: 'auto' }}>
         <div
           style={{
             background: '#111111',
             border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: 8,
             overflow: 'hidden',
+            minWidth: 480,
           }}
         >
           {[
@@ -1065,6 +1073,7 @@ export default function Foundations() {
               </span>
             </div>
           ))}
+        </div>
         </div>
       </section>
     </div>

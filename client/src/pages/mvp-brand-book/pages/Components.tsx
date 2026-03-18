@@ -57,7 +57,7 @@ const divider: React.CSSProperties = {
 const componentRow: React.CSSProperties = {
   display: 'flex',
   flexWrap: 'wrap',
-  gap: 16,
+  gap: 12,
   alignItems: 'center',
   marginBottom: 32,
 };
@@ -310,6 +310,54 @@ function DemoAlert({
 }
 
 // ═══════════════════════════════════════════════
+//  STAT CARD WITH HOVER
+// ═══════════════════════════════════════════════
+function StatCard({ stat }: { stat: { value: string; label: string; color: string } }) {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        background: '#0A0A0A',
+        border: `1px solid ${hover ? 'rgba(0,201,110,0.25)' : 'rgba(255,255,255,0.10)'}`,
+        borderRadius: 8,
+        padding: '28px 24px',
+        textAlign: 'center',
+        transition: 'all 0.2s ease',
+        transform: hover ? 'scale(1.02)' : 'scale(1)',
+        boxShadow: hover ? '0 0 15px rgba(0,201,110,0.12)' : 'none',
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: 40,
+          fontWeight: 700,
+          color: stat.color,
+          lineHeight: 1,
+          marginBottom: 8,
+        }}
+      >
+        {stat.value}
+      </div>
+      <div
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: 10,
+          fontWeight: 700,
+          color: '#A0A0A0',
+          letterSpacing: '0.15em',
+        }}
+      >
+        {stat.label}
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════
 //  MAIN COMPONENT
 // ═══════════════════════════════════════════════
 export default function Components() {
@@ -349,7 +397,7 @@ export default function Components() {
     color: '#FFFFFF',
     background: '#0A0A0A',
     minHeight: '100vh',
-    padding: '0 32px 80px',
+    padding: '0 24px 80px',
   };
 
   return (
@@ -418,7 +466,7 @@ export default function Components() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: 20,
           }}
         >
@@ -520,7 +568,7 @@ export default function Components() {
           de profundidade e borda do design system.
         </p>
 
-        <div style={{ maxWidth: 480, display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <div style={{ maxWidth: 480, width: '100%', display: 'flex', flexDirection: 'column', gap: 24 }}>
           {/* Text input */}
           <div>
             <label
@@ -693,7 +741,7 @@ export default function Components() {
 
         {/* Alerts */}
         <div style={subsectionLabel}>Alerts</div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 560, marginBottom: 40 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 560, width: '100%', marginBottom: 40 }}>
           <DemoAlert variant="success" message="Squad operacional. 97% de fidelidade cognitiva atingida." />
           <DemoAlert variant="warning" message="Créditos de token abaixo de 20%. Considere upgrade do plano." />
           <DemoAlert variant="error" message="Pipeline interrompido. Reconectando em 3... 2... 1..." />
@@ -702,7 +750,7 @@ export default function Components() {
 
         {/* Progress bar */}
         <div style={subsectionLabel}>Progress Bar</div>
-        <div style={{ maxWidth: 480, marginBottom: 40 }}>
+        <div style={{ maxWidth: 480, width: '100%', marginBottom: 40 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: '#A0A0A0' }}>
               Treinamento do Squad
@@ -836,6 +884,7 @@ export default function Components() {
         <div
           style={{
             maxWidth: 600,
+            width: '100%',
             background: '#000000',
             border: '1px solid rgba(0,201,110,0.15)',
             borderRadius: 8,
@@ -869,7 +918,7 @@ export default function Components() {
             </span>
           </div>
           {/* Terminal content */}
-          <div style={{ padding: '16px 20px', fontFamily: "'JetBrains Mono', monospace", fontSize: 13, lineHeight: 1.8 }}>
+          <div style={{ padding: '16px 20px', fontFamily: "'JetBrains Mono', monospace", fontSize: 13, lineHeight: 1.8, overflowX: 'auto' }}>
             <div>
               <span style={{ color: '#00C96E' }}>mvp@lab</span>
               <span style={{ color: '#666666' }}>:</span>
@@ -909,6 +958,7 @@ export default function Components() {
         <div
           style={{
             maxWidth: 600,
+            width: '100%',
             background: '#0A0A0A',
             border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: 8,
@@ -954,56 +1004,20 @@ export default function Components() {
 
         {/* Stat cards */}
         <div style={subsectionLabel}>Stat Cards</div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, marginBottom: 40 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 20, marginBottom: 40 }}>
           {[
             { value: '444x', label: 'ROI MÉDIO', color: '#00C96E' },
             { value: '91%', label: 'FIDELIDADE', color: '#00C96E' },
             { value: 'R$3', label: 'CUSTO TOKENS/DIA', color: '#33D489' },
             { value: '24/7', label: 'OPERAÇÃO', color: '#FFD700' },
           ].map((stat) => (
-            <div
-              key={stat.label}
-              style={{
-                background: '#0A0A0A',
-                border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: 8,
-                padding: '28px 24px',
-                textAlign: 'center',
-                minWidth: 140,
-                flex: '1 1 140px',
-                maxWidth: 200,
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 40,
-                  fontWeight: 700,
-                  color: stat.color,
-                  lineHeight: 1,
-                  marginBottom: 8,
-                }}
-              >
-                {stat.value}
-              </div>
-              <div
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  color: '#A0A0A0',
-                  letterSpacing: '0.15em',
-                }}
-              >
-                {stat.label}
-              </div>
-            </div>
+            <StatCard key={stat.label} stat={stat} />
           ))}
         </div>
 
         {/* Timeline */}
         <div style={subsectionLabel}>Timeline</div>
-        <div style={{ maxWidth: 480, marginBottom: 40, paddingLeft: 24 }}>
+        <div style={{ maxWidth: 480, width: '100%', marginBottom: 40, paddingLeft: 24 }}>
           {[
             { title: 'Discovery', desc: 'Mapeamento de processos e oportunidades de automação.', status: 'done' },
             { title: 'Extração Cognitiva', desc: 'Entrevistas e captura do conhecimento do especialista.', status: 'done' },

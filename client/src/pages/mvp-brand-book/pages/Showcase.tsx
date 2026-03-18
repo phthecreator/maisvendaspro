@@ -1,4 +1,41 @@
+import { useState, useCallback } from 'react';
 import SectionHeader from '../shared/SectionHeader';
+
+/* ─── Hover card wrapper ─── */
+function HoverGlowCard({
+  children,
+  style,
+  glowColor = 'rgba(0, 201, 110, 0.12)',
+  borderColor = 'rgba(0, 201, 110, 0.45)',
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement> & {
+  style?: React.CSSProperties;
+  glowColor?: string;
+  borderColor?: string;
+}) {
+  const [hovered, setHovered] = useState(false);
+  const onEnter = useCallback(() => setHovered(true), []);
+  const onLeave = useCallback(() => setHovered(false), []);
+  return (
+    <div
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      style={{
+        ...style,
+        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+        ...(hovered
+          ? {
+              borderColor,
+              boxShadow: `0 0 20px ${glowColor}`,
+            }
+          : {}),
+      }}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+}
 
 /* ─── COPY DATA ─── */
 const headlines = [
@@ -233,6 +270,7 @@ const cardStyle: React.CSSProperties = {
   border: '1px solid rgba(0, 201, 110, 0.15)',
   padding: 32,
   marginBottom: 16,
+  transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
 };
 
 const stageColors: Record<string, string> = {
@@ -273,23 +311,27 @@ export default function Showcase() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {headlines.map((h, i) => (
-              <div
+              <HoverGlowCard
                 key={i}
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: i < 2 ? 24 : 18,
+                  fontSize: i < 2 ? 20 : 16,
                   fontWeight: 700,
                   color: '#FFFFFF',
                   lineHeight: 1.3,
-                  padding: '16px 24px',
+                  padding: '16px 20px',
                   backgroundColor: '#111111',
                   borderRadius: 8,
                   borderLeft: '3px solid #00C96E',
+                  border: '1px solid rgba(0, 201, 110, 0.15)',
+                  borderLeftWidth: 3,
+                  borderLeftColor: '#00C96E',
                   opacity: 1 - i * 0.05,
+                  wordBreak: 'break-word' as const,
                 }}
               >
                 "{h}"
-              </div>
+              </HoverGlowCard>
             ))}
           </div>
         </div>
@@ -312,7 +354,7 @@ export default function Showcase() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
               gap: 12,
             }}
           >
@@ -443,7 +485,7 @@ export default function Showcase() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
               gap: 12,
             }}
           >
@@ -541,7 +583,7 @@ export default function Showcase() {
                 >
                   {v.pillar}
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="lg:grid-cols-2">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
                   {/* Yes */}
                   <div
                     style={{
@@ -649,7 +691,7 @@ export default function Showcase() {
                 >
                   {r.context}
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
                   <div
                     style={{
                       padding: 16,
@@ -721,7 +763,7 @@ export default function Showcase() {
           >
             Variações de Tom por Canal
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(480px, 1fr))', gap: 12 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12 }}>
             {toneVariations.map((t, i) => (
               <div key={i} style={cardStyle}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
@@ -850,7 +892,7 @@ export default function Showcase() {
               </div>
 
               {/* Bio versions */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12 }}>
                 {/* Instagram */}
                 <div
                   style={{
@@ -971,11 +1013,13 @@ export default function Showcase() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {objections.map((o, i) => (
-            <div
+            <HoverGlowCard
               key={i}
+              glowColor="rgba(0, 201, 110, 0.1)"
+              borderColor="rgba(0, 201, 110, 0.35)"
               style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
                 borderRadius: 12,
                 overflow: 'hidden',
                 border: '1px solid rgba(255,255,255,0.06)',
@@ -986,7 +1030,6 @@ export default function Showcase() {
                 style={{
                   padding: 24,
                   backgroundColor: 'rgba(255, 60, 60, 0.04)',
-                  borderRight: '1px solid rgba(255,255,255,0.06)',
                 }}
               >
                 <div
@@ -1047,7 +1090,7 @@ export default function Showcase() {
                   {o.reframe}
                 </p>
               </div>
-            </div>
+            </HoverGlowCard>
           ))}
         </div>
       </section>
@@ -1064,7 +1107,7 @@ export default function Showcase() {
             ...cardStyle,
             background: 'linear-gradient(135deg, #111111 0%, #0A1A0F 100%)',
             borderColor: 'rgba(0, 201, 110, 0.2)',
-            padding: 48,
+            padding: '32px 20px',
           }}
         >
           {foundingStory.split('\n\n').map((para, i) => {
@@ -1077,7 +1120,7 @@ export default function Showcase() {
                 key={i}
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: isPact ? 20 : isSystemName ? 16 : 16,
+                  fontSize: isPact ? 18 : isSystemName ? 15 : 15,
                   fontWeight: isPact ? 700 : isSystemName ? 700 : 400,
                   color: isPact ? '#00C96E' : isSystemName ? '#00C96E' : '#FFFFFF',
                   lineHeight: 1.8,

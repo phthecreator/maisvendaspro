@@ -90,7 +90,7 @@ export default function Brand() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
           <div className="mvp-glass" style={{ padding: 24, borderRadius: 8 }}>
             <h4 style={{ color: '#00C96E', fontSize: 12, marginBottom: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
               DE MCX PARA MVP
@@ -110,6 +110,7 @@ export default function Brand() {
         </div>
 
         <div
+          className="mvp-quote-pulse"
           style={{
             marginTop: 24,
             padding: 20,
@@ -153,7 +154,7 @@ export default function Brand() {
           </div>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
           {FOUNDERS.map((f) => (
             <div
               key={f.name}
@@ -218,7 +219,7 @@ export default function Brand() {
           {PILLARS.map((p) => (
             <div
               key={p.n}
-              className="mvp-glass"
+              className="mvp-glass mvp-card-hover"
               style={{
                 padding: 24,
                 borderRadius: 8,
@@ -263,8 +264,8 @@ export default function Brand() {
           description="4 produtos que conduzem o cliente do primeiro contato até a operação completa."
         />
 
-        {/* Value Ladder */}
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, marginBottom: 40, flexWrap: 'wrap', justifyContent: 'center' }}>
+        {/* Value Ladder — Desktop bars */}
+        <div className="hidden lg:flex" style={{ alignItems: 'flex-end', gap: 6, marginBottom: 40, justifyContent: 'center' }}>
           {VALUE_LADDER.map((step) => (
             <div key={step.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
               <div
@@ -312,6 +313,53 @@ export default function Brand() {
           ))}
         </div>
 
+        {/* Value Ladder — Mobile cards */}
+        <div className="lg:hidden" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 40 }}>
+          {VALUE_LADDER.map((step, i) => (
+            <div
+              key={step.label}
+              className="mvp-glass"
+              style={{
+                padding: 20,
+                borderRadius: 8,
+                borderLeft: `3px solid ${step.border}`,
+                boxShadow: step.glow ? `0 0 24px rgba(0, 201, 110, 0.15)` : 'none',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div
+                    style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: '50%',
+                      backgroundColor: 'rgba(0, 201, 110, 0.12)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 12,
+                      fontWeight: 700,
+                      color: '#00C96E',
+                      fontFamily: "'Inter', sans-serif",
+                    }}
+                  >
+                    {i + 1}
+                  </div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: step.glow ? '#00C96E' : '#FFFFFF', fontFamily: "'Inter', sans-serif" }}>
+                    {step.label}
+                  </div>
+                </div>
+                <div style={{ fontSize: 12, color: step.border, fontWeight: 600, fontFamily: "'Inter', sans-serif" }}>
+                  {step.price}
+                </div>
+              </div>
+              <p style={{ fontSize: 12, lineHeight: 1.6, color: '#8B9A8B', margin: 0 }}>
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
         {/* Hero's Journey narrative */}
         <div className="mvp-glass" style={{ padding: 24, borderRadius: 8, marginBottom: 24 }}>
           <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, marginTop: 0 }}>
@@ -355,6 +403,7 @@ export default function Brand() {
         </div>
 
         <div
+          className="mvp-quote-pulse"
           style={{
             marginTop: 24,
             padding: 20,

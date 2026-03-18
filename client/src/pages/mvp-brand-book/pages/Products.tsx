@@ -1,4 +1,30 @@
+import { useState, useCallback } from 'react';
 import SectionHeader from '../shared/SectionHeader';
+
+/* ─── Hover card wrapper ─── */
+function HoverCard({ children, style, ...rest }: React.HTMLAttributes<HTMLDivElement> & { style?: React.CSSProperties }) {
+  const [hovered, setHovered] = useState(false);
+  const onEnter = useCallback(() => setHovered(true), []);
+  const onLeave = useCallback(() => setHovered(false), []);
+  return (
+    <div
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      style={{
+        ...style,
+        ...(hovered
+          ? {
+              borderColor: 'rgba(0, 201, 110, 0.45)',
+              boxShadow: '0 0 20px rgba(0, 201, 110, 0.12)',
+            }
+          : {}),
+      }}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+}
 
 /* ─── Value Ladder data ─── */
 const products = [
@@ -134,6 +160,7 @@ const containerStyle: React.CSSProperties = {
   color: '#FFFFFF',
   maxWidth: 1100,
   margin: '0 auto',
+  padding: '0 4px',
 };
 
 const sectionStyle: React.CSSProperties = {
@@ -147,6 +174,7 @@ const cardStyle: React.CSSProperties = {
   border: '1px solid rgba(0, 201, 110, 0.15)',
   padding: 32,
   marginBottom: 24,
+  transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
 };
 
 const tableStyle: React.CSSProperties = {
@@ -185,48 +213,52 @@ const tdMutedStyle: React.CSSProperties = {
 /* ─── Deliverables table component ─── */
 function DeliverablesTable({ items }: { items: { item: string; detail: string }[] }) {
   return (
-    <table style={tableStyle}>
-      <thead>
-        <tr>
-          <th style={thStyle}>Entregável</th>
-          <th style={thStyle}>Detalhe</th>
-        </tr>
-      </thead>
-      <tbody>
-        {items.map((d, i) => (
-          <tr key={i}>
-            <td style={{ ...tdStyle, fontWeight: 600, whiteSpace: 'nowrap' as const, minWidth: 200 }}>{d.item}</td>
-            <td style={tdMutedStyle}>{d.detail}</td>
+    <div style={{ overflowX: 'auto' }}>
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Entregável</th>
+            <th style={thStyle}>Detalhe</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {items.map((d, i) => (
+            <tr key={i}>
+              <td style={{ ...tdStyle, fontWeight: 600, minWidth: 180 }}>{d.item}</td>
+              <td style={tdMutedStyle}>{d.detail}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
 /* ─── Sub-tier table ─── */
 function SubTierTable({ tiers }: { tiers: { tier: string; squads: string; price: string; profile: string }[] }) {
   return (
-    <table style={{ ...tableStyle, marginTop: 24 }}>
-      <thead>
-        <tr>
-          <th style={thStyle}>Sub-tier</th>
-          <th style={thStyle}>Squads</th>
-          <th style={thStyle}>Preço</th>
-          <th style={thStyle}>Perfil</th>
-        </tr>
-      </thead>
-      <tbody>
-        {tiers.map((t, i) => (
-          <tr key={i}>
-            <td style={{ ...tdStyle, fontWeight: 600 }}>{t.tier}</td>
-            <td style={tdStyle}>{t.squads}</td>
-            <td style={{ ...tdStyle, color: '#00C96E', fontWeight: 600 }}>{t.price}</td>
-            <td style={tdMutedStyle}>{t.profile}</td>
+    <div style={{ overflowX: 'auto' }}>
+      <table style={{ ...tableStyle, marginTop: 24 }}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Sub-tier</th>
+            <th style={thStyle}>Squads</th>
+            <th style={thStyle}>Preço</th>
+            <th style={thStyle}>Perfil</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {tiers.map((t, i) => (
+            <tr key={i}>
+              <td style={{ ...tdStyle, fontWeight: 600 }}>{t.tier}</td>
+              <td style={tdStyle}>{t.squads}</td>
+              <td style={{ ...tdStyle, color: '#00C96E', fontWeight: 600 }}>{t.price}</td>
+              <td style={tdMutedStyle}>{t.profile}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -518,7 +550,7 @@ export default function Products() {
       {/* ─── O BUNKER ─── */}
       <section id="bunker" style={sectionStyle}>
         <SectionHeader overline="Nível 1 — DIY Self-service" title="O Bunker" />
-        <div style={cardStyle}>
+        <HoverCard style={cardStyle}>
           <ProductCardHeader
             icon={'\u{1F6E1}\uFE0F'}
             name="O Bunker"
@@ -587,13 +619,13 @@ export default function Products() {
               <span style={{ color: '#00C96E', fontWeight: 700 }}>Operador</span>
             </div>
           </div>
-        </div>
+        </HoverCard>
       </section>
 
       {/* ─── A PRIMEIRA MISSAO ─── */}
       <section id="primeira-missao" style={sectionStyle}>
         <SectionHeader overline="Nível 2 — DFY Pontual" title="A Primeira Missão" />
-        <div style={cardStyle}>
+        <HoverCard style={cardStyle}>
           <ProductCardHeader
             icon={'\u26A1'}
             name="A Primeira Missão"
@@ -660,13 +692,13 @@ export default function Products() {
               ))}
             </div>
           </div>
-        </div>
+        </HoverCard>
       </section>
 
       {/* ─── A FORJA ─── */}
       <section id="forja" style={sectionStyle}>
         <SectionHeader overline="Nível 3 — Done With You" title="A Forja" />
-        <div style={cardStyle}>
+        <HoverCard style={cardStyle}>
           <ProductCardHeader
             icon={'\u{1F525}'}
             name="A Forja"
@@ -734,13 +766,13 @@ export default function Products() {
             </div>
             <SubTierTable tiers={forjaTiers} />
           </div>
-        </div>
+        </HoverCard>
       </section>
 
       {/* ─── O ARSENAL ─── */}
       <section id="arsenal" style={sectionStyle}>
         <SectionHeader overline="Nível 4 — DFY Total" title="O Arsenal" />
-        <div style={cardStyle}>
+        <HoverCard style={cardStyle}>
           <ProductCardHeader
             icon={'\u2694\uFE0F'}
             name="O Arsenal"
@@ -782,7 +814,7 @@ export default function Products() {
             </div>
             <SubTierTable tiers={arsenalTiers} />
           </div>
-        </div>
+        </HoverCard>
       </section>
 
       {/* ─── UPSELL FLOW ─── */}
@@ -797,7 +829,7 @@ export default function Products() {
           style={{
             ...cardStyle,
             background: 'linear-gradient(135deg, #111111 0%, #0A1A0F 100%)',
-            padding: 40,
+            padding: '24px 20px',
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>

@@ -82,6 +82,9 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
         borderRight: '1px solid rgba(0, 201, 110, 0.08)',
       }}
     >
+      {/* Subtle green line at the top */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, backgroundColor: '#00C96E' }} />
+
       {onClose && (
         <button
           onClick={onClose}
@@ -239,7 +242,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           top: 16,
           left: 16,
           zIndex: 40,
-          background: 'rgba(10, 10, 10, 0.9)',
+          background: 'rgba(10, 10, 10, 0.7)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
           border: '1px solid rgba(0, 201, 110, 0.15)',
           borderRadius: 6,
           padding: 8,
@@ -258,7 +263,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.6)' }}
             onClick={() => setMobileOpen(false)}
           />
-          <div style={{ position: 'relative', zIndex: 1 }}>
+          <div className="mvp-slide-in" style={{ position: 'relative', zIndex: 1 }}>
             <SidebarContent currentPath={currentPath} onClose={() => setMobileOpen(false)} />
           </div>
         </div>
