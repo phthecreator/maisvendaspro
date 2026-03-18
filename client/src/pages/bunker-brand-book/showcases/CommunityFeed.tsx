@@ -129,8 +129,8 @@ const CommunityFeed = () => {
     const Icon = icon;
     return (
       <span
-        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full"
-        style={{ fontFamily: mono, fontSize: 9, background: `${color}15`, color }}
+        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full shrink-0"
+        style={{ fontFamily: mono, fontSize: 10, background: `${color}15`, color }}
       >
         <Icon size={10} /> {label}
       </span>
@@ -138,7 +138,7 @@ const CommunityFeed = () => {
   };
 
   return (
-    <div className="flex rounded-xl overflow-hidden" style={{ background: '#0d1117', minHeight: 700 }}>
+    <div className="flex flex-col lg:flex-row rounded-xl overflow-hidden" style={{ background: '#0d1117', minHeight: 500 }}>
       {/* ===================== MAIN FEED ===================== */}
       <div className="flex-1 flex flex-col lg:border-r" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
         {/* Channel Tabs */}
@@ -152,7 +152,7 @@ const CommunityFeed = () => {
               onClick={() => setActiveChannel(i)}
               aria-selected={activeChannel === i}
               role="tab"
-              className="px-4 py-3 shrink-0"
+              className="px-4 py-3 shrink-0 min-h-[44px]"
               style={{
                 fontFamily: mono,
                 fontSize: 12,
@@ -192,17 +192,18 @@ const CommunityFeed = () => {
               >
                 Compartilhe seu progresso...
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
                 <div className="flex items-center gap-2">
                   <select
+                    className="min-h-[44px]"
                     style={{
                       fontFamily: mono,
-                      fontSize: 11,
+                      fontSize: 12,
                       background: '#1A1E22',
                       color: '#A9A9A9',
                       border: '1px solid rgba(255,255,255,0.08)',
                       borderRadius: 4,
-                      padding: '4px 8px',
+                      padding: '8px 12px',
                     }}
                   >
                     <option>#bunker-geral</option>
@@ -212,7 +213,7 @@ const CommunityFeed = () => {
                   </select>
                 </div>
                 <button
-                  className="flex items-center gap-2 px-4 py-2 rounded"
+                  className="flex items-center gap-2 px-4 py-2 rounded min-h-[44px]"
                   style={{
                     fontFamily: mono,
                     fontSize: 12,
@@ -223,7 +224,7 @@ const CommunityFeed = () => {
                     fontWeight: 600,
                   }}
                 >
-                  <Send size={12} /> Publicar
+                  <Send size={14} /> Publicar
                 </button>
               </div>
             </div>
@@ -240,7 +241,7 @@ const CommunityFeed = () => {
                 style={{ background: '#1A1E22', border: '1px solid rgba(255,255,255,0.05)' }}
               >
                 {/* Post header */}
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-start gap-3 mb-3">
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
                     style={{
@@ -253,9 +254,9 @@ const CommunityFeed = () => {
                   >
                     {p.name[0]}
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span style={{ fontFamily: mono, fontSize: 13, color: '#FDF5E6', fontWeight: 600 }}>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="shrink-0" style={{ fontFamily: mono, fontSize: 13, color: '#FDF5E6', fontWeight: 600 }}>
                         {p.name}
                       </span>
                       {renderBadge(p.badgeIcon, p.badge, p.badgeColor)}
@@ -305,21 +306,21 @@ const CommunityFeed = () => {
                 )}
 
                 {/* Reactions */}
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="flex items-center gap-1 cursor-pointer">
-                    <Heart size={13} color="#A9A9A9" />
+                <div className="flex items-center gap-2 mb-2">
+                  <button className="flex items-center gap-1.5 min-h-[44px] px-2 rounded hover:bg-white/5 transition-colors" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+                    <Heart size={14} color="#A9A9A9" />
                     <span style={{ fontFamily: mono, fontSize: 11, color: '#A9A9A9' }}>{p.reactions}</span>
-                  </div>
-                  <div className="flex items-center gap-1 cursor-pointer">
-                    <MessageCircle size={13} color="#A9A9A9" />
+                  </button>
+                  <button className="flex items-center gap-1.5 min-h-[44px] px-2 rounded hover:bg-white/5 transition-colors" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+                    <MessageCircle size={14} color="#A9A9A9" />
                     <span style={{ fontFamily: mono, fontSize: 11, color: '#A9A9A9' }}>{p.comments}</span>
-                  </div>
+                  </button>
                 </div>
 
                 {/* Thread */}
                 {p.thread && (
                   <div
-                    className="ml-6 mt-3 flex flex-col gap-3 pt-3"
+                    className="ml-2 sm:ml-6 mt-3 flex flex-col gap-3 pt-3"
                     style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
                   >
                     {p.thread.map((reply, ri) => (
