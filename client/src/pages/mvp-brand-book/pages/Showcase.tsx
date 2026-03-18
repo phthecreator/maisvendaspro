@@ -48,23 +48,23 @@ const voicePillars = [
     no: 'Descubra o SEGREDO que vai REVOLUCIONAR seu negócio com inteligência artificial!',
   },
   {
-    pillar: 'Direto, nao arrogante',
-    yes: 'Enquanto voce pensa, seu concorrente esta implementando. A pergunta nao e SE voce vai usar IA. E QUANDO.',
-    no: 'Quem nao usa IA e incompetente.',
+    pillar: 'Direto, não arrogante',
+    yes: 'Enquanto você pensa, seu concorrente está implementando. A pergunta não é SE você vai usar IA. É QUANDO.',
+    no: 'Quem não usa IA é incompetente.',
   },
   {
-    pillar: 'Tecnico com traducao',
-    yes: 'Um squad e como um funcionario que nunca dorme, nunca erra o script e custa R$3 por dia.',
-    no: 'Implementamos pipelines asincronos com webhooks bidirecionais e parsing de JSON via streaming API com RAG-enabled context injection.',
+    pillar: 'Técnico com tradução',
+    yes: 'Um squad é como um funcionário que nunca dorme, nunca erra o script e custa R$3 por dia.',
+    no: 'Implementamos pipelines assíncronos com webhooks bidirecionais e parsing de JSON via streaming API com RAG-enabled context injection.',
   },
   {
-    pillar: 'Pragmatico, nao raso',
-    yes: 'Reducao de 40% no tempo de triagem de RH. O squad custou R$3 em tokens. A funcionaria que fazia isso ganha R$4k/mes. Faca a conta.',
-    no: 'Segundo estudos da McKinsey sobre adocao de inteligencia artificial generativa no contexto organizacional brasileiro...',
+    pillar: 'Pragmático, não raso',
+    yes: 'Redução de 40% no tempo de triagem de RH. O squad custou R$3 em tokens. A funcionária que fazia isso ganha R$4k/mês. Faça a conta.',
+    no: 'Segundo estudos da McKinsey sobre adoção de inteligência artificial generativa no contexto organizacional brasileiro...',
   },
   {
-    pillar: 'Autentico, nao desleixado',
-    yes: 'A real e que 90% das empresas estao pagando o imposto da ineficiencia todo mes. Um squad resolve em 20 dias o que voce vem tolerando ha 2 anos.',
+    pillar: 'Autêntico, não desleixado',
+    yes: 'A real é que 90% das empresas estão pagando o imposto da ineficiência todo mês. Um squad resolve em 20 dias o que você vem tolerando há 2 anos.',
     no: 'Fala galeeera!! Bora disruptar o mercado com IA!! Tmj!!',
   },
 ];
@@ -73,14 +73,14 @@ const registerComparison = [
   {
     context: 'Apresentando a plataforma',
     business:
-      'A MVP transforma a inteligencia que ja existe na sua empresa em squads de IA que trabalham 24/7. Prospeccao, atendimento, triagem, follow-up — tudo automatizado. Em 20 dias, seu primeiro squad esta rodando. ROI medio: 444x.',
-    dev: 'A MVP orquestra agentes de IA via CLI usando o AIOS — um meta-framework que gerencia squads, tasks e workflows. Cada squad e um conjunto de mind clones com Voice DNA e Thinking DNA extraidos via ETL. Fidelidade cognitiva: 85-97%. Deploy via terminal em minutos.',
+      'A MVP transforma a inteligência que já existe na sua empresa em squads de IA que trabalham 24/7. Prospecção, atendimento, triagem, follow-up — tudo automatizado. Em 20 dias, seu primeiro squad está rodando. ROI médio: 444x.',
+    dev: 'A MVP orquestra agentes de IA via CLI usando o AIOS — um meta-framework que gerencia squads, tasks e workflows. Cada squad é um conjunto de mind clones com Voice DNA e Thinking DNA extraídos via ETL. Fidelidade cognitiva: 85-97%. Deploy via terminal em minutos.',
   },
   {
     context: 'Descrevendo o squad de vendas',
     business:
-      'Imagina um vendedor que nao dorme, nao reclama, nao esquece follow-up e custa R$3 por dia. Ele prospecta na sua lista de WhatsApp, qualifica pelo perfil, e agenda a reuniao. Voce so aparece pra fechar.',
-    dev: 'O squad de vendas usa Evolution API pra WhatsApp, MCP servers pra orquestracao, e mind clones treinados com SPIN Selling. O flow: ingestao de base → qualificacao por scoring → abordagem personalizada via template → agendamento automatico.',
+      'Imagina um vendedor que não dorme, não reclama, não esquece follow-up e custa R$3 por dia. Ele prospecta na sua lista de WhatsApp, qualifica pelo perfil, e agenda a reunião. Você só aparece pra fechar.',
+    dev: 'O squad de vendas usa Evolution API pra WhatsApp, MCP servers pra orquestração, e mind clones treinados com SPIN Selling. O flow: ingestão de base → qualificação por scoring → abordagem personalizada via template → agendamento automático.',
   },
 ];
 
@@ -89,25 +89,25 @@ const toneVariations = [
     channel: 'Redes Sociais',
     tone: 'Provocativo + Resultado concreto',
     example:
-      'Voce ta sentado numa mina de ouro e nao sabe. Enquanto voce faz follow-up manual, seu concorrente tem um squad que fez 847 abordagens ontem. Custo: R$3. Resultado: 12 reunioes agendadas.',
+      'Você tá sentado numa mina de ouro e não sabe. Enquanto você faz follow-up manual, seu concorrente tem um squad que fez 847 abordagens ontem. Custo: R$3. Resultado: 12 reuniões agendadas.',
   },
   {
     channel: 'Email',
     tone: 'Consultivo + Direto',
     example:
-      'Olha, eu vou ser direto: se voce ainda depende de pessoas para prospectar, qualificar e agendar reunioes, voce esta pagando o imposto da ineficiencia. Na Doutora Fit, um squad de IA reduziu 40% do tempo de triagem de RH no primeiro mes.',
+      'Olha, eu vou ser direto: se você ainda depende de pessoas para prospectar, qualificar e agendar reuniões, você está pagando o imposto da ineficiência. Na Doutora Fit, um squad de IA reduziu 40% do tempo de triagem de RH no primeiro mês.',
   },
   {
     channel: 'Landing Page',
-    tone: 'Autoridade + Transformacao mensuravel',
+    tone: 'Autoridade + Transformação mensurável',
     example:
-      'Transformamos a inteligencia que ja existe na sua empresa em uma maquina que trabalha 24/7. 14 squads. 35 mentes clonadas. Fidelidade cognitiva de 85-97%. O ultimo aplicativo que sua empresa contrata.',
+      'Transformamos a inteligência que já existe na sua empresa em uma máquina que trabalha 24/7. 14 squads. 35 mentes clonadas. Fidelidade cognitiva de 85-97%. O último aplicativo que sua empresa contrata.',
   },
   {
     channel: 'Call de Venda',
-    tone: 'Diagnostico + Conta de padeiro',
+    tone: 'Diagnóstico + Conta de padeiro',
     example:
-      'Me conta: quantas pessoas fazem prospeccao na sua empresa hoje? Quanto cada uma custa por mes? Um squad faz 3X reunioes por R$3/dia. Nao e promessa — e metrica. Quer ver funcionando?',
+      'Me conta: quantas pessoas fazem prospecção na sua empresa hoje? Quanto cada uma custa por mês? Um squad faz 3X reuniões por R$3/dia. Não é promessa — é métrica. Quer ver funcionando?',
   },
 ];
 
@@ -117,102 +117,102 @@ const founders = [
     name: 'Pedro Henrique Silva Ribeiro',
     role: 'Cofundador',
     archetype: 'O Mago',
-    oneLiner: 'Traduz tecnologia complexa em desejo de compra. Fecha contratos de R$50k com empresarios que nao sabem o que e API.',
+    oneLiner: 'Traduz tecnologia complexa em desejo de compra. Fecha contratos de R$50k com empresários que não sabem o que é API.',
     instagram:
-      'Pedro Ribeiro | Cofundador @maisvendaspro\nFaco empresarios comprarem o futuro antes de entenderem o presente.\nVoce ta sentado numa mina de ouro.\nQuem chega primeiro bebe agua limpa ↓',
+      'Pedro Ribeiro | Cofundador @maisvendaspro\nFaço empresários comprarem o futuro antes de entenderem o presente.\nVocê tá sentado numa mina de ouro.\nQuem chega primeiro bebe água limpa ↓',
     linkedin:
-      'Cofundador da Mais Vendas Pro — laboratorio de IA para aceleracao empresarial. Eu faco empresarios comprarem o futuro antes de entenderem o presente. Depois, entrego um sistema que faz o presente trabalhar sozinho. Na pratica: pego empresas que faturam R$20k a R$500k+/mes e implemento squads de IA que operam 24/7 com a inteligencia do proprio time do cliente. ROI medio de 444x.',
-    signature: 'Voce ta sentado numa mina de ouro.',
+      'Cofundador da Mais Vendas Pro — laboratório de IA para aceleração empresarial. Eu faço empresários comprarem o futuro antes de entenderem o presente. Depois, entrego um sistema que faz o presente trabalhar sozinho. Na prática: pego empresas que faturam R$20k a R$500k+/mês e implemento squads de IA que operam 24/7 com a inteligência do próprio time do cliente. ROI médio de 444x.',
+    signature: 'Você tá sentado numa mina de ouro.',
   },
   {
     name: 'Murillo Fagundes Alves',
     role: 'Cofundador & CTO',
     archetype: 'O Criador',
-    oneLiner: 'Arquiteta sistemas de IA que clonam mentes com fidelidade de 85-97%. Documenta tudo. Ensina tudo. Constroi o que parecia impossivel.',
+    oneLiner: 'Arquiteta sistemas de IA que clonam mentes com fidelidade de 85-97%. Documenta tudo. Ensina tudo. Constrói o que parecia impossível.',
     instagram:
-      'Murillo Alves | CTO @maisvendaspro\nConstruo maquinas que pensam como genios.\nO limite da IA e a imaginacao.\nOpen source, builds ao vivo ↓',
+      'Murillo Alves | CTO @maisvendaspro\nConstruo máquinas que pensam como gênios.\nO limite da IA é a imaginação.\nOpen source, builds ao vivo ↓',
     linkedin:
-      'Cofundador e CTO da Mais Vendas Pro. Arquiteto do AIOS — o sistema que clona mentes com fidelidade de 85-97%. Eu construo maquinas que pensam como genios — e ensino outras maquinas a fazer o mesmo. Squad Creator Pro, DNA Extractor, AIOS Framework. Open source, documentacao publica, builds ao vivo.',
-    signature: 'O limite da IA e a imaginacao.',
+      'Cofundador e CTO da Mais Vendas Pro. Arquiteto do AIOS — o sistema que clona mentes com fidelidade de 85-97%. Eu construo máquinas que pensam como gênios — e ensino outras máquinas a fazer o mesmo. Squad Creator Pro, DNA Extractor, AIOS Framework. Open source, documentação pública, builds ao vivo.',
+    signature: 'O limite da IA é a imaginação.',
   },
   {
     name: 'Raphael Meres',
     role: 'Cofundador & CEO',
     archetype: 'O Governante',
-    oneLiner: 'Conecta tecnologia com capital e mercado. Testa nas proprias empresas antes de oferecer. Mede ROI, nao promessas.',
+    oneLiner: 'Conecta tecnologia com capital e mercado. Testa nas próprias empresas antes de oferecer. Mede ROI, não promessas.',
     instagram:
-      'Raphael Meres | CEO @maisvendaspro\nConecto IA de ponta com empresas reais.\nSe voce tem processo, eu tenho squad.\nFaca a conta ↓',
+      'Raphael Meres | CEO @maisvendaspro\nConecto IA de ponta com empresas reais.\nSe você tem processo, eu tenho squad.\nFaça a conta ↓',
     linkedin:
-      'Cofundador e CEO da Mais Vendas Pro — laboratorio de IA para aceleracao empresarial. Eu conecto tecnologia de ponta com empresas reais. Nao em PowerPoint — em producao. Resultado real: reducao de 40% no tempo de triagem de RH. Squad custou R$3 em tokens. Funcionaria custava R$4k/mes. Faca a conta.',
+      'Cofundador e CEO da Mais Vendas Pro — laboratório de IA para aceleração empresarial. Eu conecto tecnologia de ponta com empresas reais. Não em PowerPoint — em produção. Resultado real: redução de 40% no tempo de triagem de RH. Squad custou R$3 em tokens. Funcionária custava R$4k/mês. Faça a conta.',
     signature: 'O foco tem que ser em ganhar dinheiro.',
   },
 ];
 
 const brandBio =
-  'A Mais Vendas Pro transforma a inteligencia que ja existe na sua empresa em squads de IA que trabalham 24 horas por dia, 7 dias por semana. 14 squads prontos, 35 mentes clonadas, fidelidade cognitiva de 85 a 97%. Do Bunker R$97/mes ao Arsenal R$100k. Laboratorio de IA para aceleracao empresarial.';
+  'A Mais Vendas Pro transforma a inteligência que já existe na sua empresa em squads de IA que trabalham 24 horas por dia, 7 dias por semana. 14 squads prontos, 35 mentes clonadas, fidelidade cognitiva de 85 a 97%. Do Bunker R$97/mês ao Arsenal R$100k. Laboratório de IA para aceleração empresarial.';
 
 /* ─── OBJECTIONS DATA ─── */
 const objections = [
   {
     objection: 'Ta caro.',
     reframe:
-      'Caro comparado com o que? O Bunker custa R$97/mes. Menos que uma hora do seu tempo se voce fatura R$20k. A Primeira Missao custa R$5k e implementa um squad em 5 dias — um estagiario custa R$1.500/mes e demora 3 meses pra aprender. Eu nao abaixo o preco. Eu aumento o valor.',
+      'Caro comparado com o quê? O Bunker custa R$97/mês. Menos que uma hora do seu tempo se você fatura R$20k. A Primeira Missão custa R$5k e implementa um squad em 5 dias — um estagiário custa R$1.500/mês e demora 3 meses pra aprender. Eu não abaixo o preço. Eu aumento o valor.',
   },
   {
-    objection: 'Ja tentei IA e nao funcionou.',
+    objection: 'Já tentei IA e não funcionou.',
     reframe:
-      'Provavelmente voce tentou ferramenta generica. ChatGPT solto. Automacao que quebra. Chatbot burro. A gente clona a inteligencia que JA EXISTE na sua empresa. Fidelidade cognitiva de 85 a 97%. Nao e IA generica. E a SUA IA, com o SEU conhecimento. Sistema funciona. E sistema e o que a gente entrega.',
+      'Provavelmente você tentou ferramenta genérica. ChatGPT solto. Automação que quebra. Chatbot burro. A gente clona a inteligência que JÁ EXISTE na sua empresa. Fidelidade cognitiva de 85 a 97%. Não é IA genérica. É a SUA IA, com o SEU conhecimento. Sistema funciona. E sistema é o que a gente entrega.',
   },
   {
-    objection: 'Nao tenho tempo pra implementar.',
+    objection: 'Não tenho tempo pra implementar.',
     reframe:
-      'Perfeito. Porque a gente implementa PRA voce. Na Primeira Missao, nosso time configura o squad em 5 dias. Voce participa de 1 hora de diagnostico e 2 horas de treinamento. Depois, o squad roda sozinho. Voce nao precisa de tempo pra implementar IA. Voce precisa de IA pra GANHAR tempo.',
+      'Perfeito. Porque a gente implementa PRA você. Na Primeira Missão, nosso time configura o squad em 5 dias. Você participa de 1 hora de diagnóstico e 2 horas de treinamento. Depois, o squad roda sozinho. Você não precisa de tempo pra implementar IA. Você precisa de IA pra GANHAR tempo.',
   },
   {
-    objection: 'Preciso pensar / conversar com o socio.',
+    objection: 'Preciso pensar / conversar com o sócio.',
     reframe:
-      'Respeito total. Decisao de investimento merece reflexao. So te peco uma coisa: leva numeros pro socio, nao opiniao. Pega o que voce gasta hoje com o processo que a gente mostrou e compara com o custo do squad. Se fizer sentido na planilha, faz sentido na empresa. Pensar e inteligente. Adiar por medo e caro.',
+      'Respeito total. Decisão de investimento merece reflexão. Só te peço uma coisa: leva números pro sócio, não opinião. Pega o que você gasta hoje com o processo que a gente mostrou e compara com o custo do squad. Se fizer sentido na planilha, faz sentido na empresa. Pensar é inteligente. Adiar por medo é caro.',
   },
   {
     objection: 'Tenho medo de IA / minha equipe vai resistir.',
     reframe:
-      'Os squads de IA nao SUBSTITUEM sua equipe — POTENCIALIZAM. Sua vendedora continua vendendo, mas agora tem um squad que pre-qualifica os leads. A equipe nao perde emprego. Perde trabalho repetitivo. E ganha tempo pra fazer o que so humano faz. O medo da IA e o medo do desconhecido. E o Bunker existe justamente pra transformar desconhecido em ferramenta.',
+      'Os squads de IA não SUBSTITUEM sua equipe — POTENCIALIZAM. Sua vendedora continua vendendo, mas agora tem um squad que pré-qualifica os leads. A equipe não perde emprego. Perde trabalho repetitivo. E ganha tempo pra fazer o que só humano faz. O medo da IA é o medo do desconhecido. E o Bunker existe justamente pra transformar desconhecido em ferramenta.',
   },
   {
-    objection: 'Qual a diferenca de voces pra outras empresas de IA?',
+    objection: 'Qual a diferença de vocês pra outras empresas de IA?',
     reframe:
-      'A maioria vende ferramenta. Nos vendemos INTELIGENCIA REPLICADA. Tres diferenciais: 1) Clonagem cognitiva — fidelidade de 85-97%. 2) Squads, nao ferramentas — cada squad tem agents especializados, tasks definidas, workflows testados. 3) Os fundadores sao o produto — quem vende entende a tecnologia, quem constroi entende o negocio.',
+      'A maioria vende ferramenta. Nós vendemos INTELIGÊNCIA REPLICADA. Três diferenciais: 1) Clonagem cognitiva — fidelidade de 85-97%. 2) Squads, não ferramentas — cada squad tem agents especializados, tasks definidas, workflows testados. 3) Os fundadores são o produto — quem vende entende a tecnologia, quem constrói entende o negócio.',
   },
   {
     objection: 'Vou esperar o momento certo.',
     reframe:
-      'Quem chega primeiro bebe agua limpa. O mercado de IA nao esta maturando — esta acelerando. Voce nao precisa implementar tudo de uma vez. O Bunker custa R$97/mes. Comece pequeno. Prove o conceito. O momento certo era ontem. O segundo melhor e agora.',
+      'Quem chega primeiro bebe água limpa. O mercado de IA não está maturando — está acelerando. Você não precisa implementar tudo de uma vez. O Bunker custa R$97/mês. Comece pequeno. Prove o conceito. O momento certo era ontem. O segundo melhor é agora.',
   },
 ];
 
 /* ─── FOUNDING STORY ─── */
-const foundingStory = `Eram tres problemas diferentes que se encontraram.
+const foundingStory = `Eram três problemas diferentes que se encontraram.
 
-Pedro vendia o impossivel. Sentava com empresarios que nao sabiam o que era IA e, em 60 minutos, fazia eles enxergarem uma mina de ouro onde so viam complicacao. Mas ele tinha um problema: vendia futuro sem ter presente pra entregar.
+Pedro vendia o impossível. Sentava com empresários que não sabiam o que era IA e, em 60 minutos, fazia eles enxergarem uma mina de ouro onde só viam complicação. Mas ele tinha um problema: vendia futuro sem ter presente pra entregar.
 
-Murillo construia coisas que ninguem comprava. Ficava ate de madrugada no terminal criando sistemas de IA que clonavam mentes com fidelidade de 91%. Arquitetava frameworks que criavam outros frameworks. Mas ninguem sabia que ele existia — porque engenheiro nao sabe vender.
+Murillo construía coisas que ninguém comprava. Ficava até de madrugada no terminal criando sistemas de IA que clonavam mentes com fidelidade de 91%. Arquitetava frameworks que criavam outros frameworks. Mas ninguém sabia que ele existia — porque engenheiro não sabe vender.
 
-Rapha tinha empresas reais precisando de solucoes que ninguem oferecia. Acesso a capital. Portfolio de negocios. Networking. Mas sem produto e sem time tecnico, era como ter um carro sem motor e sem estrada.
+Rapha tinha empresas reais precisando de soluções que ninguém oferecia. Acesso a capital. Portfólio de negócios. Networking. Mas sem produto e sem time técnico, era como ter um carro sem motor e sem estrada.
 
-Entao fizeram um pacto simples:
+Então fizeram um pacto simples:
 
-O que Pedro vende, Murillo constroi, Rapha testa nas trincheiras.
+O que Pedro vende, Murillo constrói, Rapha testa nas trincheiras.
 
-Em 20 dias, o primeiro squad de IA funcionou. Em 3 meses, eram 14 squads e 35 mentes clonadas operando em empresas reais. O ROI medio dos clientes bateu 444 vezes o investimento.
+Em 20 dias, o primeiro squad de IA funcionou. Em 3 meses, eram 14 squads e 35 mentes clonadas operando em empresas reais. O ROI médio dos clientes bateu 444 vezes o investimento.
 
-Pedro continuou vendendo — mas agora tinha produto. Murillo continuou construindo — mas agora tinha clientes. Rapha continuou estrategando — mas agora tinha maquina e receita.
+Pedro continuou vendendo — mas agora tinha produto. Murillo continuou construindo — mas agora tinha clientes. Rapha continuou estrategando — mas agora tinha máquina e receita.
 
 A empresa que nasceu desse pacto se chama Mais Vendas Pro.
 
-E a promessa que carregam e simples: se o seu negocio tem um processo que depende de pessoas, nos temos um squad de IA que faz melhor, mais rapido e 24 horas por dia.
+E a promessa que carregam é simples: se o seu negócio tem um processo que depende de pessoas, nós temos um squad de IA que faz melhor, mais rápido e 24 horas por dia.
 
 O nome do sistema? MVP-SYSTEM.
-O nome da promessa? O ultimo aplicativo que a sua empresa contrata.`;
+O nome da promessa? O último aplicativo que a sua empresa contrata.`;
 
 /* ─── SHARED STYLES ─── */
 const containerStyle: React.CSSProperties = {
@@ -239,7 +239,7 @@ const stageColors: Record<string, string> = {
   Topo: '#8B9A8B',
   Meio: '#00C96E',
   Fundo: '#00FF88',
-  Retencao: '#00A85A',
+  Retenção: '#00A85A',
 };
 
 /* ═══════════════════════════════════════════════════════
@@ -509,7 +509,7 @@ export default function Showcase() {
         <SectionHeader
           overline="Voz & Tom"
           title="Como a MVP Fala"
-          description="5 pilares de voz, 2 registros, variacoes por canal. A voz permanece a mesma. O tom se adapta."
+          description="5 pilares de voz, 2 registros, variações por canal. A voz permanece a mesma. O tom se adapta."
         />
 
         {/* Voice Pillars */}
@@ -562,7 +562,7 @@ export default function Showcase() {
                         marginBottom: 8,
                       }}
                     >
-                      E isso
+                      É isso
                     </div>
                     <p
                       style={{
@@ -596,7 +596,7 @@ export default function Showcase() {
                         marginBottom: 8,
                       }}
                     >
-                      Nao e isso
+                      Não é isso
                     </div>
                     <p
                       style={{
@@ -719,7 +719,7 @@ export default function Showcase() {
               marginBottom: 20,
             }}
           >
-            Variacoes de Tom por Canal
+            Variações de Tom por Canal
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(480px, 1fr))', gap: 12 }}>
             {toneVariations.map((t, i) => (
@@ -771,7 +771,7 @@ export default function Showcase() {
         <SectionHeader
           overline="Bios & Assinaturas"
           title="Os Fundadores"
-          description="Tres tipos de inteligencia. Um sistema. Uma promessa."
+          description="Três tipos de inteligência. Um sistema. Uma promessa."
         />
 
         {/* Founder cards */}
@@ -964,9 +964,9 @@ export default function Showcase() {
       {/* ─── OBJECTION BREAKERS ─── */}
       <section id="objecoes" style={sectionStyle}>
         <SectionHeader
-          overline="Quebradores de Objecao"
+          overline="Quebradores de Objeção"
           title="Reframes que Convertem"
-          description="O lead resiste. Voce reframing. A objecao vira ponte para a venda."
+          description="O lead resiste. Você reframing. A objeção vira ponte para a venda."
         />
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -1000,7 +1000,7 @@ export default function Showcase() {
                     fontWeight: 700,
                   }}
                 >
-                  Objecao
+                  Objeção
                 </div>
                 <p
                   style={{
@@ -1055,8 +1055,8 @@ export default function Showcase() {
       {/* ─── FOUNDING STORY ─── */}
       <section id="founding-story" style={{ ...sectionStyle, marginBottom: 40 }}>
         <SectionHeader
-          overline="Historia dos Fundadores"
-          title="Eram tres problemas diferentes que se encontraram."
+          overline="História dos Fundadores"
+          title="Eram três problemas diferentes que se encontraram."
         />
 
         <div
@@ -1112,8 +1112,8 @@ export default function Showcase() {
             }}
           >
             {[
-              { name: 'Pedro Henrique Silva Ribeiro', title: 'O Mago', quote: 'Voce ta sentado numa mina de ouro.' },
-              { name: 'Murillo Fagundes Alves', title: 'O Criador', quote: 'O limite da IA e a imaginacao.' },
+              { name: 'Pedro Henrique Silva Ribeiro', title: 'O Mago', quote: 'Você tá sentado numa mina de ouro.' },
+              { name: 'Murillo Fagundes Alves', title: 'O Criador', quote: 'O limite da IA é a imaginação.' },
               { name: 'Raphael Meres', title: 'O Governante', quote: 'O foco tem que ser em ganhar dinheiro.' },
             ].map((f, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>

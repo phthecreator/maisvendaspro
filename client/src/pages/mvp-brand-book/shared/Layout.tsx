@@ -9,7 +9,7 @@ const NAV_ITEMS = [
     path: '/mvp-brand-book/brand',
     subLinks: [
       { label: 'Narrativa', id: 'narrativa' },
-      { label: 'Arquetipos', id: 'arquetipos' },
+      { label: 'Arquétipos', id: 'arquetipos' },
       { label: '7 Pilares', id: 'primal-branding' },
       { label: 'Posicionamento', id: 'posicionamento' },
     ],
@@ -22,16 +22,16 @@ const NAV_ITEMS = [
       { label: 'Tipografia', id: 'tipografia' },
       { label: 'Texturas', id: 'texturas' },
       { label: 'Motion', id: 'motion' },
-      { label: 'Elevacao', id: 'elevacao' },
+      { label: 'Elevação', id: 'elevacao' },
     ],
   },
   {
     label: 'Components',
     path: '/mvp-brand-book/components',
     subLinks: [
-      { label: 'Botoes', id: 'botoes' },
+      { label: 'Botões', id: 'botoes' },
       { label: 'Cards', id: 'cards' },
-      { label: 'Formularios', id: 'formularios' },
+      { label: 'Formulários', id: 'formularios' },
       { label: 'Feedback', id: 'feedback' },
       { label: 'Especiais', id: 'especiais' },
     ],
@@ -42,7 +42,7 @@ const NAV_ITEMS = [
     subLinks: [
       { label: 'Escada de Valor', id: 'escada-valor' },
       { label: 'Bunker', id: 'bunker' },
-      { label: 'Primeira Missao', id: 'primeira-missao' },
+      { label: 'Primeira Missão', id: 'primeira-missao' },
       { label: 'Forja', id: 'forja' },
       { label: 'Arsenal', id: 'arsenal' },
     ],
@@ -54,7 +54,7 @@ const NAV_ITEMS = [
       { label: 'Copy', id: 'copy' },
       { label: 'Voice & Tone', id: 'voice-tone' },
       { label: 'Bios', id: 'bios' },
-      { label: 'Objecoes', id: 'objecoes' },
+      { label: 'Objeções', id: 'objecoes' },
     ],
   },
 ];
@@ -214,7 +214,7 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
           lineHeight: 1.8,
         }}
       >
-        <div>Marco 2026</div>
+        <div>Março 2026</div>
       </div>
     </div>
   );

@@ -66,7 +66,7 @@ const bunkerDeliverables = [
   { item: 'Onboarding automático', detail: 'Entrou no grupo → recebe sequência de boas-vindas + trilha + squad template automaticamente' },
 ];
 
-/* ─── Primeira Missao deliverables ─── */
+/* ─── Primeira Missão deliverables ─── */
 const primeiraMissaoDeliverables = [
   { item: 'Diagnóstico express (1h)', detail: 'Mapeamento da dor principal + processo a automatizar' },
   { item: '1 Squad implementado', detail: 'Customizado pro seu negócio, configurado e rodando' },
