@@ -44,7 +44,7 @@ const Buttons = () => {
           ...btnBase,
           padding: '12px 24px',
           background: '#FF6B00',
-          color: '#1A0A00',
+          color: '#141010',
           boxShadow: '0 0 20px rgba(255,107,0,0.3)',
         }}>
           <Flame size={16} /> Primary
@@ -62,7 +62,7 @@ const Buttons = () => {
           ...btnBase,
           padding: '12px 24px',
           background: 'linear-gradient(135deg, #FFD700, #FFA800)',
-          color: '#1A0A00',
+          color: '#141010',
           boxShadow: '0 0 15px rgba(255,215,0,0.3)',
         }}>
           <Star size={16} /> Gold
@@ -92,9 +92,9 @@ const Buttons = () => {
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Icone Only</h3>
       <div className="flex gap-3 flex-wrap mb-10">
         {[
-          { icon: <Flame size={18} />, bg: '#FF6B00', color: '#1A0A00' },
+          { icon: <Flame size={18} />, bg: '#FF6B00', color: '#141010' },
           { icon: <Zap size={18} />, bg: 'transparent', color: '#FF6B00', border: '1px solid #FF6B00' },
-          { icon: <Star size={18} />, bg: 'linear-gradient(135deg, #FFD700, #FFA800)', color: '#1A0A00' },
+          { icon: <Star size={18} />, bg: 'linear-gradient(135deg, #FFD700, #FFA800)', color: '#141010' },
           { icon: <Settings size={18} />, bg: 'transparent', color: '#B8976A', border: '1px solid rgba(184,151,106,0.3)' },
           { icon: <Download size={18} />, bg: 'rgba(255,107,0,0.12)', color: '#FF6B00' },
           { icon: <ChevronRight size={18} />, bg: 'rgba(255,215,0,0.12)', color: '#FFD700' },
@@ -122,7 +122,7 @@ const Buttons = () => {
             ...btnBase,
             padding: '12px 24px',
             background: loading ? 'rgba(255,107,0,0.5)' : '#FF6B00',
-            color: '#1A0A00',
+            color: '#141010',
             opacity: loading ? 0.8 : 1,
           }}>
           {loading ? (
@@ -131,7 +131,7 @@ const Buttons = () => {
                 width: 16,
                 height: 16,
                 border: '2px solid rgba(26,10,0,0.3)',
-                borderTopColor: '#1A0A00',
+                borderTopColor: '#141010',
                 borderRadius: '50%',
                 animation: 'forja-spin 0.6s linear infinite',
               }} />
@@ -145,14 +145,14 @@ const Buttons = () => {
           ...btnBase,
           padding: '12px 24px',
           background: 'rgba(255,107,0,0.5)',
-          color: '#1A0A00',
+          color: '#141010',
           opacity: 0.8,
         }}>
           <div style={{
             width: 16,
             height: 16,
             border: '2px solid rgba(26,10,0,0.3)',
-            borderTopColor: '#1A0A00',
+            borderTopColor: '#141010',
             borderRadius: '50%',
             animation: 'forja-spin 0.6s linear infinite',
           }} />
@@ -164,13 +164,13 @@ const Buttons = () => {
       <h3 className="text-xl font-bold mb-4"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Tamanhos</h3>
       <div className="flex gap-4 items-center">
-        <button style={{ ...btnBase, padding: '8px 16px', fontSize: 11, background: '#FF6B00', color: '#1A0A00' }}>
+        <button style={{ ...btnBase, padding: '8px 16px', fontSize: 11, background: '#FF6B00', color: '#141010' }}>
           Small
         </button>
-        <button style={{ ...btnBase, padding: '12px 24px', fontSize: 13, background: '#FF6B00', color: '#1A0A00' }}>
+        <button style={{ ...btnBase, padding: '12px 24px', fontSize: 13, background: '#FF6B00', color: '#141010' }}>
           Medium
         </button>
-        <button style={{ ...btnBase, padding: '16px 32px', fontSize: 15, background: '#FF6B00', color: '#1A0A00' }}>
+        <button style={{ ...btnBase, padding: '16px 32px', fontSize: 15, background: '#FF6B00', color: '#141010' }}>
           Large
         </button>
       </div>

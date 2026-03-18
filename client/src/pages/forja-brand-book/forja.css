@@ -7,9 +7,10 @@
 
 :root {
   /* Cores Primarias */
-  --forja-obsidiana: #1A0A00;
-  --forja-carvao: #2A1810;
-  --forja-noite: #0D0604;
+  --forja-obsidiana: #141010;
+  --forja-carvao: #1E1616;
+  --forja-noite: #0A0808;
+  --fj-noite: #0A0808;
 
   /* Acentos */
   --forja-laranja: #FF6B00;
@@ -58,11 +59,11 @@
 /* --- Texture Classes --- */
 
 .fj-forged-metal {
-  background: #2A1810;
+  background: #1E1616;
 }
 
 .fj-molten {
-  background: rgba(26, 10, 0, 0.7);
+  background: rgba(20, 16, 16, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -87,10 +88,10 @@
 /* --- Scrollbar --- */
 
 .fj-scrollbar::-webkit-scrollbar { width: 4px; }
-.fj-scrollbar::-webkit-scrollbar-track { background: #1A0A00; }
+.fj-scrollbar::-webkit-scrollbar-track { background: #141010; }
 .fj-scrollbar::-webkit-scrollbar-thumb { background: rgba(184, 151, 106, 0.3); border-radius: 2px; }
 .fj-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(184, 151, 106, 0.5); }
-.fj-scrollbar { scrollbar-width: thin; scrollbar-color: rgba(184,151,106,0.3) #1A0A00; }
+.fj-scrollbar { scrollbar-width: thin; scrollbar-color: rgba(184,151,106,0.3) #141010; }
 
 /* --- Reduced Motion --- */
 

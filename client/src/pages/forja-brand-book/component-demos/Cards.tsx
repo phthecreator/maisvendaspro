@@ -25,7 +25,7 @@ const Cards = () => (
     <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Padrao &amp; Elevado</h3>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
       {/* Default Card */}
-      <div className="relative rounded-lg p-6 border" style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.05)' }}>
+      <div className="relative rounded-lg p-6 border" style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.05)' }}>
         <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-lg"
           style={{ background: 'linear-gradient(90deg, transparent, #FF6B00, transparent)' }} />
         <div className="text-[11px] text-[#FF6B00] uppercase tracking-[0.1em] mb-1" style={{ fontFamily: mono }}>Modulo</div>
@@ -39,7 +39,7 @@ const Cards = () => (
         </span>
       </div>
       {/* Default Card 2 */}
-      <div className="relative rounded-lg p-6 border" style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.05)' }}>
+      <div className="relative rounded-lg p-6 border" style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.05)' }}>
         <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-lg"
           style={{ background: 'linear-gradient(90deg, transparent, #FFD700, transparent)' }} />
         <div className="text-[11px] text-[#FFD700] uppercase tracking-[0.1em] mb-1" style={{ fontFamily: mono }}>Avancado</div>
@@ -55,7 +55,7 @@ const Cards = () => (
       {/* Elevated Card */}
       <div className="relative rounded-lg p-6 border transition-all duration-300"
         style={{
-          background: '#2A1810',
+          background: '#1E1616',
           borderColor: 'rgba(255,107,0,0.1)',
           boxShadow: '0 8px 32px rgba(255,107,0,0.08), 0 2px 8px rgba(0,0,0,0.3)',
         }}
@@ -89,7 +89,7 @@ const Cards = () => (
         { label: 'Leads Qualificados', value: '184', trend: '+12%', up: true, accent: '#FFD700' },
         { label: 'Custo por Lead', value: 'R$ 8,40', trend: '-18%', up: false, accent: '#34C759' },
       ].map((stat) => (
-        <div key={stat.label} className="rounded-lg p-5 border" style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.08)' }}>
+        <div key={stat.label} className="rounded-lg p-5 border" style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.08)' }}>
           <div className="text-[11px] uppercase tracking-[0.1em] mb-3" style={{ fontFamily: mono, color: '#B8976A' }}>
             {stat.label}
           </div>
@@ -118,7 +118,7 @@ const Cards = () => (
         { icon: <Shield size={24} />, title: 'Suporte Dedicado', desc: 'Acesso direto ao Mestre da Forja via calls semanais.', color: '#B8976A' },
       ].map((feature) => (
         <div key={feature.title} className="rounded-lg p-5 border transition-all duration-300 cursor-pointer"
-          style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.05)' }}
+          style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.05)' }}
           onMouseEnter={(e) => {
             e.currentTarget.style.borderColor = feature.color;
             e.currentTarget.style.boxShadow = `0 0 20px ${feature.color}20`;
@@ -146,7 +146,7 @@ const Cards = () => (
         { quote: 'ROI de 15x no primeiro mes. Nunca vi uma mentoria entregar resultado tao rapido. Paguei-se na segunda semana.', name: 'Ricardo Lima', role: 'E-commerce Owner', avatar: 'R' },
       ].map((testimonial) => (
         <div key={testimonial.name} className="rounded-lg p-6 border relative"
-          style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.08)' }}>
+          style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.08)' }}>
           <div className="absolute top-4 right-5 text-[48px] leading-none opacity-10"
             style={{ fontFamily: serif, color: '#FF6B00' }}>"</div>
           <p className="text-[13px] leading-relaxed mb-5 relative z-10"

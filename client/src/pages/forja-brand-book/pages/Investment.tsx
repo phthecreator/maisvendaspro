@@ -54,13 +54,16 @@ export default function Investment() {
           </div>
 
           <div className="min-h-[44px]" style={{
-            padding: '16px 32px', border: '1px solid #FF6B00', borderRadius: 8,
+            padding: '16px 32px', backgroundColor: '#FF6B00', borderRadius: 8,
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
             cursor: 'pointer', transition: 'background-color 0.2s',
-            fontSize: 13, fontWeight: 600, color: '#FF6B00', fontFamily: "'Roboto Mono', monospace",
+            fontSize: 13, fontWeight: 600, color: '#141010', fontFamily: "'Roboto Mono', monospace",
             letterSpacing: '0.05em', textTransform: 'uppercase' as const,
-          }}>
-            Agendar Diagnostico
+          }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#FF8533'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#FF6B00'; }}
+          >
+            Agendar diagnóstico com o Pedro
           </div>
 
           <p style={{ fontSize: 12, color: 'rgba(184,151,106,0.5)', marginTop: 20 }}>

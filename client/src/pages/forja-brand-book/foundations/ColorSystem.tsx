@@ -37,7 +37,7 @@ const Swatch = ({ color, name, hex, usage, token, darkText }: SwatchProps) => {
       tabIndex={0}
       aria-label={`Copiar cor ${name}: ${hex}`}
       style={{
-        background: '#2A1810',
+        background: '#1E1616',
         cursor: 'pointer',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
         transform: hovered ? 'scale(1.02)' : 'scale(1)',
@@ -73,7 +73,7 @@ const Swatch = ({ color, name, hex, usage, token, darkText }: SwatchProps) => {
         )}
       </div>
       <div className="px-4 py-3">
-        <div className={`text-[13px] font-medium ${darkText ? 'text-[#1A0A00]' : ''}`}>{name}</div>
+        <div className={`text-[13px] font-medium ${darkText ? 'text-[#141010]' : ''}`}>{name}</div>
         <div className="text-[11px] text-[#B8976A]">{usage}</div>
       </div>
     </div>
@@ -90,9 +90,9 @@ const GradientPanel = ({ gradient, label }: { gradient: string; label: string })
 const surfaces = [
   { name: 'surface-0', hex: '#0A0400', label: 'Deepest' },
   { name: 'surface-1', hex: '#120A04', label: 'Base' },
-  { name: 'surface-2', hex: '#1A0A00', label: 'Raised' },
+  { name: 'surface-2', hex: '#141010', label: 'Raised' },
   { name: 'surface-3', hex: '#241408', label: 'Overlay' },
-  { name: 'surface-4', hex: '#2A1810', label: 'Modal' },
+  { name: 'surface-4', hex: '#1E1616', label: 'Modal' },
   { name: 'surface-5', hex: '#3A2818', label: 'Popover' },
 ];
 
@@ -120,9 +120,9 @@ const ColorSystem = () => (
       Primarias — Base &amp; Background
     </h3>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <Swatch color="#1A0A00" name="Obsidiana Quente" hex="#1A0A00" token="--forja-obsidiana" usage="Background principal, hero sections" />
-      <Swatch color="#2A1810" name="Carvao Forjado" hex="#2A1810" token="--forja-carvao" usage="Surfaces, cards, paineis" />
-      <Swatch color="#0D0604" name="Noite da Forja" hex="#0D0604" token="--forja-noite" usage="Sidebar, deepest backgrounds" />
+      <Swatch color="#141010" name="Obsidiana Quente" hex="#141010" token="--forja-obsidiana" usage="Background principal, hero sections" />
+      <Swatch color="#1E1616" name="Carvao Forjado" hex="#1E1616" token="--forja-carvao" usage="Surfaces, cards, paineis" />
+      <Swatch color="#0A0808" name="Noite da Forja" hex="#0A0808" token="--forja-noite" usage="Sidebar, deepest backgrounds" />
     </div>
 
     {/* Accent */}
@@ -226,7 +226,7 @@ const ColorSystem = () => (
             <td className="py-2.5 px-3">
               <span style={{ color: row.fg }}>{row.combo.split(' sobre ')[0]}</span>
               {' sobre '}
-              <span className="bg-[#1A0A00] px-1.5 py-0.5 rounded text-[12px]">Obsidiana</span>
+              <span className="bg-[#141010] px-1.5 py-0.5 rounded text-[12px]">Obsidiana</span>
             </td>
             <td className={`py-2.5 px-3 ${row.pass ? 'text-[#34C759]' : 'text-[#FFAA00]'}`}>{row.ratio}</td>
             <td className={`py-2.5 px-3 ${row.pass ? 'text-[#34C759]' : 'text-[#FFAA00]'}`}>{row.level}</td>
@@ -242,8 +242,8 @@ const ColorSystem = () => (
       Gradientes Permitidos
     </h3>
     <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-      <GradientPanel gradient="linear-gradient(180deg, #1A0A00 0%, #2A1810 100%)" label="Forja Primary" />
-      <GradientPanel gradient="linear-gradient(135deg, #1A0A00 0%, #3A2818 100%)" label="Ember Depth" />
+      <GradientPanel gradient="linear-gradient(180deg, #141010 0%, #1E1616 100%)" label="Forja Primary" />
+      <GradientPanel gradient="linear-gradient(135deg, #141010 0%, #3A2818 100%)" label="Ember Depth" />
       <GradientPanel gradient="linear-gradient(180deg, #FF4500 0%, #FFD700 100%)" label="Rust Metallic" />
       <GradientPanel gradient="linear-gradient(90deg, transparent 0%, #FF6B00 50%, transparent 100%)" label="Energy Line" />
     </div>

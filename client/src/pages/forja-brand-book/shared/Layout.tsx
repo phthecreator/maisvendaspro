@@ -73,7 +73,7 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
     <div
       className="fj-scrollbar"
       style={{
-        width: 240, height: '100vh', backgroundColor: '#0D0604',
+        width: 240, height: '100vh', backgroundColor: '#0A0808',
         display: 'flex', flexDirection: 'column', padding: '24px 16px',
         overflowY: 'auto', position: 'relative',
         borderRight: '1px solid rgba(255,255,255,0.04)',
@@ -168,7 +168,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
 
       <button onClick={() => setMobileOpen(true)}
-        style={{ position: 'fixed', top: 16, left: 16, zIndex: 40, background: 'rgba(13,6,4,0.9)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 8, color: '#FFF8F0', cursor: 'pointer' }}
+        style={{ position: 'fixed', top: 16, left: 16, zIndex: 40, background: 'rgba(10,8,8,0.9)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 8, color: '#FFF8F0', cursor: 'pointer' }}
         className="lg:hidden min-h-[44px] min-w-[44px]" aria-label="Abrir menu"
       >
         <Menu size={20} />

@@ -1,7 +1,7 @@
 function BrowserFrame({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,107,0,0.15)', marginBottom: 24 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', backgroundColor: '#0D0604', borderBottom: '1px solid rgba(255,107,0,0.1)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', backgroundColor: '#0A0808', borderBottom: '1px solid rgba(255,107,0,0.1)' }}>
         <div style={{ display: 'flex', gap: 6 }}>
           <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#FF4500' }} />
           <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#FFD700' }} />
@@ -9,7 +9,7 @@ function BrowserFrame({ title, children }: { title: string; children: React.Reac
         </div>
         <div style={{ flex: 1, textAlign: 'center', fontSize: 11, color: '#B8976A' }}>{title}</div>
       </div>
-      <div style={{ backgroundColor: '#1A0A00', padding: 24 }}>
+      <div style={{ backgroundColor: '#141010', padding: 24 }}>
         {children}
       </div>
     </div>
@@ -91,7 +91,7 @@ export default function Showcase() {
               <div style={{ fontSize: 16, color: '#FFF8F0', fontWeight: 600 }}>Boa tarde, Rafael</div>
               <div style={{ fontSize: 11, color: '#B8976A' }}>Semana 6 de 12</div>
             </div>
-            <div style={{ width: 200, height: 8, borderRadius: 4, backgroundColor: '#2A1810', overflow: 'hidden' }}>
+            <div style={{ width: 200, height: 8, borderRadius: 4, backgroundColor: '#1E1616', overflow: 'hidden' }}>
               <div style={{ width: '50%', height: '100%', borderRadius: 4, background: 'linear-gradient(90deg, #FF6B00, #FFD700)' }} />
             </div>
           </div>

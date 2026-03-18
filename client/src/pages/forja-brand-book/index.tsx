@@ -49,7 +49,7 @@ export default function ForjaBrandBook() {
       className="fj-scrollbar"
       style={{
         minHeight: '100vh',
-        backgroundColor: '#1A0A00',
+        backgroundColor: '#141010',
         color: '#FFF8F0',
         fontFamily: "'Roboto Mono', monospace",
       }}

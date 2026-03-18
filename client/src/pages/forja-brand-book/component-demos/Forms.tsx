@@ -129,7 +129,7 @@ const Forms = () => {
                 }}
                 onClick={cb.onChange}>
                 {cb.checked && (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A0A00" strokeWidth="3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#141010" strokeWidth="3">
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
                 )}
@@ -151,7 +151,7 @@ const Forms = () => {
             onClick={() => setToggle(!toggle)}>
             <div className="absolute w-5 h-5 rounded-full transition-all duration-200"
               style={{
-                background: toggle ? '#1A0A00' : '#B8976A',
+                background: toggle ? '#141010' : '#B8976A',
                 top: '50%',
                 transform: 'translateY(-50%)',
                 left: toggle ? 26 : 2,
@@ -201,7 +201,7 @@ const Forms = () => {
       {/* Complete Form */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Formulario Completo</h3>
       <div className="rounded-lg p-8 border max-w-[500px]"
-        style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.1)' }}>
+        style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.1)' }}>
         <div className="text-[11px] text-[#FF6B00] uppercase tracking-[0.15em] mb-2" style={{ fontFamily: mono }}>
           Agendar Diagnostico
         </div>
@@ -262,7 +262,7 @@ const Forms = () => {
               width: '100%',
               padding: '14px 24px',
               background: '#FF6B00',
-              color: '#1A0A00',
+              color: '#141010',
               boxShadow: '0 0 20px rgba(255,107,0,0.3)',
               marginTop: 8,
             }}>

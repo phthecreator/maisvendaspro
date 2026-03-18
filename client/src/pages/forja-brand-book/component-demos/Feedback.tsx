@@ -70,7 +70,7 @@ const Feedback = () => {
           ].map((toast, i) => (
             <div key={i} className="rounded-lg px-4 py-3 flex items-start gap-3 border"
               style={{
-                background: '#2A1810',
+                background: '#1E1616',
                 borderColor: 'rgba(255,107,0,0.1)',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               }}>
@@ -130,7 +130,7 @@ const Feedback = () => {
 
       {/* Skeleton Loader */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Skeleton Loader</h3>
-      <div className="rounded-lg p-6 border" style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.05)' }}>
+      <div className="rounded-lg p-6 border" style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.05)' }}>
         <div className="flex gap-4">
           <div className="w-12 h-12 rounded-full flex-shrink-0"
             style={{ background: 'rgba(255,107,0,0.08)', animation: 'forja-skeleton-pulse 1.5s ease-in-out infinite' }} />

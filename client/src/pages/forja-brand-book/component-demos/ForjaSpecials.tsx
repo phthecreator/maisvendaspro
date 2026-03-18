@@ -31,7 +31,7 @@ const WeekBadge = ({ week, active }: { week: string; active: boolean }) => (
 );
 
 const MetricCard = ({ label, value, trend, up }: { label: string; value: string; trend: string; up: boolean }) => (
-  <div className="rounded-lg p-4 border" style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.08)' }}>
+  <div className="rounded-lg p-4 border" style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.08)' }}>
     <div className="text-[10px] uppercase tracking-[0.15em] mb-2" style={{ fontFamily: mono, color: '#B8976A' }}>{label}</div>
     <div className="flex items-end justify-between">
       <span className="text-[24px] font-bold" style={{ fontFamily: serif, color: '#FFF8F0' }}>{value}</span>
@@ -98,7 +98,7 @@ const ForjaSpecials = () => {
       {/* Value Stack Row */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Value Stack Row</h3>
       <div className="rounded-lg p-6 border mb-10 max-w-[500px]"
-        style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.08)' }}>
+        style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.08)' }}>
         <div className="text-[11px] text-[#FF6B00] uppercase tracking-[0.15em] mb-4" style={{ fontFamily: mono }}>
           O que voce recebe
         </div>
@@ -115,7 +115,7 @@ const ForjaSpecials = () => {
 
       {/* Week Badges */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Week Badges</h3>
-      <div className="rounded-lg p-6 border mb-10" style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.08)' }}>
+      <div className="rounded-lg p-6 border mb-10" style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.08)' }}>
         <div className="flex gap-3 flex-wrap items-center">
           {Array.from({ length: 12 }, (_, i) => (
             <WeekBadge key={i} week={`S${i + 1}`} active={i < 5} />
@@ -145,7 +145,7 @@ const ForjaSpecials = () => {
       {/* Status Indicators */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Status Indicators</h3>
       <div className="rounded-lg p-6 border mb-10 flex flex-wrap gap-8"
-        style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.08)' }}>
+        style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.08)' }}>
         <StatusIndicator label="FORJA ATIVA" active={true} />
         <StatusIndicator label="SQUAD OPERANDO" active={true} />
         <StatusIndicator label="BIGORNA AGENDADA" active={true} />
@@ -156,7 +156,7 @@ const ForjaSpecials = () => {
       {/* Qualification Checklist */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Checklist de Qualificacao</h3>
       <div className="rounded-lg p-6 border mb-10 max-w-[500px]"
-        style={{ background: '#2A1810', borderColor: 'rgba(255,107,0,0.08)' }}>
+        style={{ background: '#1E1616', borderColor: 'rgba(255,107,0,0.08)' }}>
         <div className="text-[11px] text-[#FF6B00] uppercase tracking-[0.15em] mb-4" style={{ fontFamily: mono }}>
           Voce se qualifica?
         </div>
@@ -174,7 +174,7 @@ const ForjaSpecials = () => {
                   background: checkedItems[i] ? '#FF6B00' : 'transparent',
                   border: checkedItems[i] ? '1px solid #FF6B00' : '1px solid rgba(184,151,106,0.3)',
                 }}>
-                {checkedItems[i] && <Check size={13} color="#1A0A00" strokeWidth={3} />}
+                {checkedItems[i] && <Check size={13} color="#141010" strokeWidth={3} />}
               </div>
               <span className="text-[13px]" style={{
                 fontFamily: mono,
@@ -204,13 +204,13 @@ const ForjaSpecials = () => {
       <div className="max-w-[360px]">
         <div className="rounded-xl border overflow-hidden relative"
           style={{
-            background: '#2A1810',
+            background: '#1E1616',
             borderColor: '#FF6B00',
             boxShadow: '0 0 30px rgba(255,107,0,0.15)',
           }}>
           {/* Badge */}
           <div className="text-center py-2 text-[10px] uppercase tracking-[0.2em] font-bold"
-            style={{ fontFamily: mono, background: 'linear-gradient(90deg, #FF6B00, #FFD700)', color: '#1A0A00' }}>
+            style={{ fontFamily: mono, background: 'linear-gradient(90deg, #FF6B00, #FFD700)', color: '#141010' }}>
             Mais Popular
           </div>
 
@@ -261,7 +261,7 @@ const ForjaSpecials = () => {
               padding: '14px 24px',
               minHeight: 44,
               background: '#FF6B00',
-              color: '#1A0A00',
+              color: '#141010',
               boxShadow: '0 0 20px rgba(255,107,0,0.3)',
               transition: 'all 0.2s',
             }}>

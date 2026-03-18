@@ -1,6 +1,6 @@
 const COLORS = [
-  { name: 'Obsidiana Quente', hex: '#1A0A00', role: 'Background principal' },
-  { name: 'Carvao Forjado', hex: '#2A1810', role: 'Surfaces, cards' },
+  { name: 'Obsidiana Quente', hex: '#141010', role: 'Background principal' },
+  { name: 'Carvao Forjado', hex: '#1E1616', role: 'Surfaces, cards' },
   { name: 'Laranja Forja', hex: '#FF6B00', role: 'Acento primario, CTAs' },
   { name: 'Ouro Fundido', hex: '#FFD700', role: 'Destaques premium' },
   { name: 'Brasa', hex: '#FF4500', role: 'Alertas, urgencia' },
@@ -76,7 +76,7 @@ export default function Brand() {
           {COLORS.map((c) => (
             <div key={c.hex} style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
               <div style={{ height: 64, backgroundColor: c.hex, borderBottom: '1px solid rgba(255,255,255,0.05)' }} />
-              <div style={{ padding: 12, backgroundColor: '#2A1810' }}>
+              <div style={{ padding: 12, backgroundColor: '#1E1616' }}>
                 <div style={{ fontSize: 12, fontWeight: 700, color: '#FFF8F0', marginBottom: 4 }}>{c.name}</div>
                 <div style={{ fontSize: 11, color: '#B8976A', fontFamily: "'Roboto Mono', monospace" }}>{c.hex}</div>
                 <div style={{ fontSize: 10, color: '#7A6040', marginTop: 4 }}>{c.role}</div>
@@ -148,10 +148,10 @@ export default function Brand() {
         {/* Value Ladder */}
         <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, marginBottom: 40, flexWrap: 'wrap', justifyContent: 'center' }}>
           {[
-            { label: 'YouTube', price: 'Gratis', h: 60, bg: '#2A1810', border: '#555' },
-            { label: 'Bunker', price: 'R$250/ano', h: 100, bg: '#2A1810', border: '#00E5FF' },
-            { label: 'A FORJA', price: 'R$15.000', h: 160, bg: 'linear-gradient(180deg, #3A2818, #2A1810)', border: '#FF6B00' },
-            { label: 'DFY', price: 'R$30-100k', h: 200, bg: '#2A1810', border: '#FFD700' },
+            { label: 'YouTube', price: 'Gratis', h: 60, bg: '#1E1616', border: '#555' },
+            { label: 'Bunker', price: 'R$250/ano', h: 100, bg: '#1E1616', border: '#00E5FF' },
+            { label: 'A FORJA', price: 'R$15.000', h: 160, bg: 'linear-gradient(180deg, #3A2818, #1E1616)', border: '#FF6B00' },
+            { label: 'DFY', price: 'R$30-100k', h: 200, bg: '#1E1616', border: '#FFD700' },
           ].map((step) => (
             <div key={step.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
               <div style={{

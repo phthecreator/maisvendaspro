@@ -148,7 +148,7 @@ const MotionSystem = () => {
           { name: 'scale-in', label: 'Scale In', animation: 'forja-scale-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards' },
           { name: 'forge-glow', label: 'Forge Glow', animation: 'forja-forge-glow 0.7s ease-out forwards' },
         ].map((p) => (
-          <div key={p.name} className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#1A0A00' }}>
+          <div key={p.name} className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#141010' }}>
             <div className="h-28 flex items-center justify-center relative">
               <div
                 key={playingEntrance === p.name ? Date.now() : 'static'}
@@ -184,7 +184,7 @@ const MotionSystem = () => {
       <h3 className="text-2xl font-bold mb-6"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Animacoes da Forja</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <div className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#1A0A00' }}>
+        <div className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#141010' }}>
           <div className="h-32 flex items-center justify-center">
             <div className="text-2xl font-bold"
               style={{
@@ -209,7 +209,7 @@ const MotionSystem = () => {
             Play Heat Reveal
           </button>
         </div>
-        <div className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#1A0A00' }}>
+        <div className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#141010' }}>
           <div className="h-32 flex items-center justify-center">
             <div className="text-2xl font-bold"
               style={{

@@ -20,7 +20,7 @@ const elevations = [
   {
     level: 2,
     name: 'Overlay',
-    hex: '#1A0A00',
+    hex: '#141010',
     shadow: '0 4px 12px rgba(10,4,0,0.4), 0 0 0 1px rgba(255,107,0,0.06)',
     shadowSpec: '0 4px 12px rgba(10,4,0,0.4)',
     desc: 'Dropdowns, menus',
@@ -36,7 +36,7 @@ const elevations = [
   {
     level: 4,
     name: 'Popover',
-    hex: '#2A1810',
+    hex: '#1E1616',
     shadow: '0 16px 48px rgba(10,4,0,0.6), 0 0 0 1px rgba(255,107,0,0.1)',
     shadowSpec: '0 16px 48px rgba(10,4,0,0.6)',
     desc: 'Tooltips, popovers',
@@ -105,7 +105,7 @@ const Elevation = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         {borders.map((b) => (
           <div key={b.name} className="rounded-lg p-5 flex flex-col items-center text-center"
-            style={{ background: '#1A0A00', border: `2px solid ${b.value}` }}>
+            style={{ background: '#141010', border: `2px solid ${b.value}` }}>
             <div className="text-[13px] font-medium mb-1"
               style={{ fontFamily: "'Roboto Mono', monospace", color: '#FFF8F0' }}>{b.name}</div>
             <div className="text-[11px] text-[#B8976A] mb-2"
@@ -126,7 +126,7 @@ const Elevation = () => {
         <div className="flex-1 flex flex-col items-center gap-3">
           <div className="rounded-lg p-4 text-center"
             style={{
-              background: '#2A1810',
+              background: '#1E1616',
               boxShadow: '0 4px 12px rgba(10,4,0,0.4), 0 0 0 1px rgba(255,107,0,0.06)',
             }}>
             <div className="text-[12px] text-[#FFF8F0]" style={{ fontFamily: "'Roboto Mono', monospace" }}>
@@ -140,7 +140,7 @@ const Elevation = () => {
         <div className="flex-1 flex flex-col items-center gap-3">
           <div className="rounded-lg p-4 text-center"
             style={{
-              background: '#2A1810',
+              background: '#1E1616',
               boxShadow: '0 8px 24px rgba(10,4,0,0.5), 0 0 0 1px rgba(255,107,0,0.08)',
             }}>
             <div className="text-[12px] text-[#FFF8F0]" style={{ fontFamily: "'Roboto Mono', monospace" }}>
@@ -160,7 +160,7 @@ const Elevation = () => {
         <div className="flex-1 flex flex-col items-center gap-3">
           <div className="rounded-lg p-5 text-center"
             style={{
-              background: '#2A1810',
+              background: '#1E1616',
               boxShadow: '0 16px 48px rgba(10,4,0,0.6), 0 0 0 1px rgba(255,107,0,0.1)',
             }}>
             <div className="text-[12px] text-[#FFF8F0]" style={{ fontFamily: "'Roboto Mono', monospace" }}>

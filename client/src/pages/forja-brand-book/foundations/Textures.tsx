@@ -33,19 +33,19 @@ const Textures = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-5">
       <TexturePanel label="Metal Forjado" css="repeating-linear-gradient" style={{
         background: `repeating-linear-gradient(90deg, rgba(42,24,16,0.3) 0px, rgba(42,24,16,0.3) 1px, transparent 1px, transparent 3px),
-          linear-gradient(180deg, #2A1810, #1A0A00)`
+          linear-gradient(180deg, #1E1616, #141010)`
       }} />
       <TexturePanel label="Brasa & Oxidacao" css="radial-gradient ellipse" style={{
         background: `radial-gradient(ellipse at 30% 40%, rgba(255,69,0,0.4) 0%, transparent 50%),
           radial-gradient(ellipse at 70% 60%, rgba(255,107,0,0.3) 0%, transparent 50%),
-          linear-gradient(135deg, #2A1810, #1A0A00)`
+          linear-gradient(135deg, #1E1616, #141010)`
       }} />
       <TexturePanel label="Linhas de Calor" css="grid + radial-gradient dots" style={{
         background: `linear-gradient(0deg, transparent 49%, rgba(255,107,0,0.08) 49%, rgba(255,107,0,0.08) 51%, transparent 51%),
           linear-gradient(90deg, transparent 49%, rgba(255,107,0,0.08) 49%, rgba(255,107,0,0.08) 51%, transparent 51%),
           radial-gradient(circle at 25% 25%, rgba(255,107,0,0.15) 1px, transparent 1px),
           radial-gradient(circle at 75% 75%, rgba(255,107,0,0.15) 1px, transparent 1px),
-          #1A0A00`,
+          #141010`,
         backgroundSize: '40px 40px, 40px 40px, 40px 40px, 40px 40px',
       }} />
     </div>
@@ -55,14 +55,14 @@ const Textures = () => (
         background: `linear-gradient(47deg, transparent 40%, rgba(184,151,106,0.1) 40.5%, rgba(184,151,106,0.1) 41%, transparent 41.5%),
           linear-gradient(-30deg, transparent 60%, rgba(184,151,106,0.08) 60.5%, rgba(184,151,106,0.08) 61%, transparent 61.5%),
           linear-gradient(15deg, transparent 75%, rgba(184,151,106,0.06) 75.5%, rgba(184,151,106,0.06) 76%, transparent 76.5%),
-          #2A1810`
+          #1E1616`
       }} />
       <TexturePanel label="Heat Lines (CRT)" css="repeating-linear-gradient 2px" style={{
         background: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,107,0,0.03) 2px, rgba(255,107,0,0.03) 4px),
           radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.08) 0%, transparent 60%),
-          #1A0A00`
+          #141010`
       }} />
-      <TexturePanel label="Grain / Noise (5%)" css="SVG feTurbulence filter" style={{ background: '#2A1810' }}
+      <TexturePanel label="Grain / Noise (5%)" css="SVG feTurbulence filter" style={{ background: '#1E1616' }}
         overlay={
           <div className="absolute inset-0 pointer-events-none"
             style={{
@@ -77,13 +77,13 @@ const Textures = () => (
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Novas Texturas</h3>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-5">
       <TexturePanel label="Ember Grid" css="radial-gradient 1px dots, 24px spacing" style={{
-        background: `radial-gradient(circle, rgba(255,107,0,0.06) 1px, transparent 1px), #1A0A00`,
+        background: `radial-gradient(circle, rgba(255,107,0,0.06) 1px, transparent 1px), #141010`,
         backgroundSize: '24px 24px',
       }} />
       <TexturePanel label="Cross-Hatch" css="45deg/-45deg linear-gradients 8px" style={{
         background: `linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 75%, transparent 75%),
           linear-gradient(-45deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 75%, transparent 75%),
-          #2A1810`,
+          #1E1616`,
         backgroundSize: '8px 8px, 8px 8px',
       }} />
       <TexturePanel label="Mesh Gradient" css="multiple radial-gradients 3-5%" style={{
@@ -91,7 +91,7 @@ const Textures = () => (
           radial-gradient(ellipse at 80% 20%, rgba(255,215,0,0.04) 0%, transparent 50%),
           radial-gradient(ellipse at 50% 70%, rgba(255,168,0,0.03) 0%, transparent 50%),
           radial-gradient(ellipse at 30% 80%, rgba(255,69,0,0.04) 0%, transparent 50%),
-          #1A0A00`
+          #141010`
       }} />
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -104,14 +104,14 @@ const Textures = () => (
           <div className="absolute inset-0 -z-10" style={{
             background: `radial-gradient(ellipse at 30% 40%, rgba(255,107,0,0.15) 0%, transparent 50%),
               radial-gradient(ellipse at 70% 60%, rgba(255,215,0,0.1) 0%, transparent 50%),
-              #1A0A00`
+              #141010`
           }} />
         } />
       <TexturePanel label="Vignette" css="box-shadow: inset 0 0 150px" style={{
-        background: '#2A1810',
+        background: '#1E1616',
         boxShadow: 'inset 0 0 150px rgba(10,4,0,0.6)',
       }} />
-      <div className="h-48 rounded-lg relative overflow-hidden border border-white/5" style={{ background: '#1A0A00' }}>
+      <div className="h-48 rounded-lg relative overflow-hidden border border-white/5" style={{ background: '#141010' }}>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-[11px] text-[#B8976A] text-center px-4" style={{ fontFamily: "'Roboto Mono', monospace" }}>
             Combine texturas<br />usando z-index layers
@@ -132,11 +132,11 @@ const Textures = () => (
     </p>
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
       {[
-        { step: '1. Base', bg: '#1A0A00', extra: {} },
-        { step: '2. + Mesh', bg: `radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(255,215,0,0.03) 0%, transparent 50%), #1A0A00`, extra: {} },
-        { step: '3. + Noise', bg: '#1A0A00', extra: { position: 'relative' as const } },
-        { step: '4. + Pattern', bg: `radial-gradient(circle, rgba(255,107,0,0.06) 1px, transparent 1px), radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.05) 0%, transparent 50%), #1A0A00`, extra: { backgroundSize: '24px 24px, 100% 100%, 100% 100%' } },
-        { step: '5. + Vignette', bg: `radial-gradient(circle, rgba(255,107,0,0.06) 1px, transparent 1px), radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.05) 0%, transparent 50%), #1A0A00`, extra: { backgroundSize: '24px 24px, 100% 100%, 100% 100%', boxShadow: 'inset 0 0 80px rgba(10,4,0,0.6)' } },
+        { step: '1. Base', bg: '#141010', extra: {} },
+        { step: '2. + Mesh', bg: `radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(255,215,0,0.03) 0%, transparent 50%), #141010`, extra: {} },
+        { step: '3. + Noise', bg: '#141010', extra: { position: 'relative' as const } },
+        { step: '4. + Pattern', bg: `radial-gradient(circle, rgba(255,107,0,0.06) 1px, transparent 1px), radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.05) 0%, transparent 50%), #141010`, extra: { backgroundSize: '24px 24px, 100% 100%, 100% 100%' } },
+        { step: '5. + Vignette', bg: `radial-gradient(circle, rgba(255,107,0,0.06) 1px, transparent 1px), radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.05) 0%, transparent 50%), #141010`, extra: { backgroundSize: '24px 24px, 100% 100%, 100% 100%', boxShadow: 'inset 0 0 80px rgba(10,4,0,0.6)' } },
       ].map((layer, i) => (
         <div key={i} className="h-36 rounded-lg border border-white/5 flex items-end p-3 relative overflow-hidden"
           style={{ background: layer.bg, ...layer.extra }}>
