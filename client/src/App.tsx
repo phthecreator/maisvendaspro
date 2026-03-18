@@ -16,6 +16,7 @@ import MVPAcademyV3 from "./pages/mvp-academy-v3";
 import Dashboard from "./pages/dashboard";
 import BunkerBrandBook from "./pages/bunker-brand-book";
 import ForjaBrandBook from "./pages/forja-brand-book";
+import MvpBrandBook from "./pages/mvp-brand-book";
 import AuthGate from "./components/shared/AuthGate";
 
 function ProtectedDashboard() {
@@ -40,6 +41,7 @@ function Router() {
       <Route path={"/mvp-academy-v3"} component={MVPAcademyV3} />
       <Route path={"/bunker-brand-book/:section?"} component={BunkerBrandBook} />
       <Route path={"/forja-brand-book/:section?"} component={ForjaBrandBook} />
+      <Route path={"/mvp-brand-book/:section?"} component={MvpBrandBook} />
       <Route path={"/dashboard"} component={ProtectedDashboard} />
       <Route path={"/dashboard/:view"} component={ProtectedDashboard} />
       <Route path={"/404"} component={NotFound} />

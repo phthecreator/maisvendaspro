@@ -1,0 +1,73 @@
+/* ============================================
+   Mais Vendas Pro — Design System CSS
+   Matrix-themed Brand Book (Minimalist)
+   ============================================ */
+
+/* --- Keyframes --- */
+
+@keyframes mvp-code-rain {
+  0% { transform: translateY(-20px); opacity: 0; }
+  5% { opacity: 0.7; }
+  80% { opacity: 0.3; }
+  100% { transform: translateY(105vh); opacity: 0; }
+}
+
+@keyframes mvp-glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 201, 110, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 201, 110, 0.6); }
+}
+
+@keyframes mvp-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* --- Texture Classes --- */
+
+.mvp-glass {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 201, 110, 0.08);
+}
+
+.mvp-grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 201, 110, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 201, 110, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* --- Utility Classes --- */
+
+.mvp-matrix-text {
+  background: linear-gradient(135deg, #00C96E 0%, #33D489 40%, #00A85A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mvp-terminal::after {
+  content: '\2588';
+  animation: mvp-blink 1s step-start infinite;
+  color: #00C96E;
+  margin-left: 2px;
+}
+
+/* --- Scrollbar --- */
+
+.mvp-scrollbar::-webkit-scrollbar { width: 4px; }
+.mvp-scrollbar::-webkit-scrollbar-track { background: #0A0A0A; }
+.mvp-scrollbar::-webkit-scrollbar-thumb { background: rgba(0, 201, 110, 0.3); border-radius: 2px; }
+.mvp-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(0, 201, 110, 0.5); }
+.mvp-scrollbar { scrollbar-width: thin; scrollbar-color: rgba(0,201,110,0.3) #0A0A0A; }
+
+/* --- Reduced Motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

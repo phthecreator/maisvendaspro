@@ -1,0 +1,373 @@
+import SectionHeader from '../shared/SectionHeader';
+import AlchemistTriangle from '../shared/AlchemistTriangle';
+
+const FOUNDERS = [
+  {
+    name: 'Pedro',
+    role: 'CRO — O Mago',
+    archetype: 'Mago',
+    description: 'Transforma caos em sistema. Ve padroes onde outros veem confusao. Domina a alquimia da conversao — funis, copy, estrategia de vendas. O cara que olha pro teu negocio e fala "aqui tem dinheiro escondido".',
+    color: '#00C96E',
+  },
+  {
+    name: 'Murillo',
+    role: 'CTO — O Criador',
+    archetype: 'Criador',
+    description: 'Constroi o que nao existe. Arquiteta sistemas, squads de IA, automacoes que rodam 24/7. Se o Mago enxerga o caminho, o Criador pavimenta com codigo e infraestrutura. Engenheiro de maquinas inteligentes.',
+    color: '#33D489',
+  },
+  {
+    name: 'Rapha',
+    role: 'CEO — O Governante',
+    archetype: 'Governante',
+    description: 'Garante que o reino funciona. Visao de longo prazo, estrutura de negocios, gestao de portfolio. Enquanto o Mago e o Criador mergulham no detalhe, o Governante mantem a direcao e protege a operacao.',
+    color: '#00A85A',
+  },
+];
+
+const PILLARS = [
+  {
+    n: 1,
+    title: 'Historia de Criacao',
+    text: 'Tres socios com backgrounds complementares — vendas, tecnologia e gestao — se encontraram num ponto em comum: empresas desperdicam fortunas tentando escalar sem sistema. A MCX nasceu como consultoria e evoluiu para Mais Vendas Pro quando percebemos que o mercado precisava de maquinas, nao de conselhos.',
+  },
+  {
+    n: 2,
+    title: 'Credo',
+    text: 'Inteligencia artificial so funciona quando tem estrategia por tras. Maquina sem direcao e desperdicio. Resultado se mede em receita, nao em likes. O empresario nao precisa de mais conteudo — precisa de sistema que trabalhe enquanto ele dorme. Cada real investido tem que voltar multiplicado.',
+  },
+  {
+    n: 3,
+    title: 'Icones',
+    text: 'O Triangulo Alquimista — tres vertices representando os fundadores e a triade Estrategia + Tecnologia + Gestao. Estetica Matrix: verde sobre preto, codigo fluindo, terminal como interface de poder. O triangulo com o ponto central e o simbolo da transmutacao — transformar negocio comum em maquina.',
+  },
+  {
+    n: 4,
+    title: 'Rituais',
+    text: 'Sessao diagnostico antes de qualquer venda. Onboarding com setup completo de squads de IA. Review semanal de metricas com ajuste de rota. Deploy quinzenal de novas automacoes. Quarterly business review com roadmap do proximo trimestre.',
+  },
+  {
+    n: 5,
+    title: 'Pagaos (Inimigos)',
+    text: 'O guru de marketing que vende curso e some. A agencia que cobra retainer e entrega relatorio bonito sem resultado. O "faz tudo sozinho" que leva 2 anos pra montar o que a gente monta em 90 dias. A IA generica sem estrategia — chatbot burro, automacao sem funil.',
+  },
+  {
+    n: 6,
+    title: 'Palavras Sagradas',
+    text: 'Maquina = sistema automatizado que gera resultado. Squad = time de IA especialista. Deploy = colocar no ar, em producao. Funil = caminho do desconhecido ate o cliente. Escada de valor = jornada do cliente de R$97 a R$100k. Alquimia = transformacao de negocio comum em operacao de alto nivel.',
+  },
+  {
+    n: 7,
+    title: 'Lider',
+    text: 'Nao e um guru. Sao tres operadores que constroem o que vendem. Pedro mostra o funil rodando, nao o slide. Murillo mostra o terminal, nao a teoria. Rapha mostra o P&L, nao a promessa. Autoridade vem de resultado entregue, nao de palco.',
+  },
+];
+
+const VALUE_LADDER = [
+  { label: 'Bunker IA', price: 'R$97/mes', description: 'Comunidade + conteudo + deploys em grupo', h: 80, border: '#00C96E', glow: false },
+  { label: 'Primeira Missao', price: 'R$3-5k', description: 'Projeto inicial de automacao — prova de conceito', h: 120, border: '#33D489', glow: false },
+  { label: 'A Forja', price: 'R$15-30k', description: 'Mentoria premium 90 dias — done with you', h: 170, border: '#00C96E', glow: true },
+  { label: 'Arsenal', price: 'R$50-100k', description: 'Implementacao completa — done for you', h: 220, border: '#00A85A', glow: false },
+];
+
+export default function Brand() {
+  return (
+    <div>
+      {/* === NARRATIVA === */}
+      <section id="narrativa" style={{ marginBottom: 120 }}>
+        <SectionHeader
+          overline="Origem"
+          title="A Historia da Mais Vendas Pro"
+          description="De consultoria a fabrica de maquinas inteligentes."
+        />
+
+        <div
+          className="mvp-glass"
+          style={{ padding: 32, borderRadius: 8, marginBottom: 24 }}
+        >
+          <p style={{ fontSize: 15, lineHeight: 1.9, color: '#FFFFFF', margin: 0 }}>
+            Tudo comecou com tres problemas diferentes que se encontraram na mesma mesa. Pedro via empresas com produtos incriveis que nao sabiam vender. Murillo via processos manuais que podiam rodar sozinhos com IA. Rapha via negocios crescendo sem estrutura, quebrando no proprio sucesso. A MCX nasceu como consultoria — mas rapidamente ficou claro que o mercado nao precisava de mais conselhos. Precisava de maquinas.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+          <div className="mvp-glass" style={{ padding: 24, borderRadius: 8 }}>
+            <h4 style={{ color: '#00C96E', fontSize: 12, marginBottom: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              DE MCX PARA MVP
+            </h4>
+            <p style={{ fontSize: 13, lineHeight: 1.7, color: '#8B9A8B', margin: 0 }}>
+              MCX era consultoria tradicional. Mais Vendas Pro e a evolucao: um ecossistema de produtos que instala maquinas de vendas inteligentes em negocios de alto ticket. O nome carrega duplo sentido — MVP como Minimum Viable Product e como Mais Vendas Pro.
+            </p>
+          </div>
+          <div className="mvp-glass" style={{ padding: 24, borderRadius: 8 }}>
+            <h4 style={{ color: '#33D489', fontSize: 12, marginBottom: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              A TESE CENTRAL
+            </h4>
+            <p style={{ fontSize: 13, lineHeight: 1.7, color: '#8B9A8B', margin: 0 }}>
+              Inteligencia artificial sem estrategia e chatbot caro. Estrategia sem automacao e consultoria lenta. A Mais Vendas Pro une os dois: squads de IA dirigidos por estrategia de negocio, gerando resultado mensuravel em receita.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: 24,
+            padding: 20,
+            borderLeft: '3px solid #00C96E',
+            backgroundColor: 'rgba(0, 201, 110, 0.03)',
+            borderRadius: '0 8px 8px 0',
+          }}
+        >
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: '#33D489', margin: 0, fontStyle: 'italic' }}>
+            "Eram tres problemas diferentes que se encontraram na mesma mesa. E a solucao nao era mais um conselho — era uma maquina."
+          </p>
+        </div>
+      </section>
+
+      {/* === ARQUETIPOS === */}
+      <section id="arquetipos" style={{ marginBottom: 120 }}>
+        <SectionHeader
+          overline="Identidade"
+          title="O Alquimista — Tres Arquetipos"
+          description="Mago + Criador + Governante = A triade que transforma negocios."
+        />
+
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 40 }}>
+          <div style={{ position: 'relative', width: 200, height: 200 }}>
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <AlchemistTriangle size={180} />
+            </div>
+            {/* Labels around triangle */}
+            <div style={{ position: 'absolute', top: -8, left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: '#00C96E', fontFamily: "'Inter', sans-serif" }}>Pedro</div>
+              <div style={{ fontSize: 9, color: '#8B9A8B' }}>Mago</div>
+            </div>
+            <div style={{ position: 'absolute', bottom: -8, left: -20, textAlign: 'center' }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: '#33D489', fontFamily: "'Inter', sans-serif" }}>Murillo</div>
+              <div style={{ fontSize: 9, color: '#8B9A8B' }}>Criador</div>
+            </div>
+            <div style={{ position: 'absolute', bottom: -8, right: -24, textAlign: 'center' }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: '#00A85A', fontFamily: "'Inter', sans-serif" }}>Rapha</div>
+              <div style={{ fontSize: 9, color: '#8B9A8B' }}>Governante</div>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {FOUNDERS.map((f) => (
+            <div
+              key={f.name}
+              className="mvp-glass"
+              style={{
+                padding: 24,
+                borderRadius: 8,
+                borderLeft: `3px solid ${f.color}`,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                <div
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: '50%',
+                    backgroundColor: `${f.color}15`,
+                    border: `1px solid ${f.color}40`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: f.color,
+                    fontFamily: "'Inter', sans-serif",
+                  }}
+                >
+                  {f.name[0]}
+                </div>
+                <div>
+                  <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: '#FFFFFF', margin: 0, fontWeight: 700 }}>
+                    {f.name}
+                  </h3>
+                  <div style={{ fontSize: 11, color: f.color, fontWeight: 600, letterSpacing: '0.05em' }}>
+                    {f.role}
+                  </div>
+                </div>
+              </div>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#8B9A8B', margin: 0 }}>
+                {f.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mvp-glass" style={{ padding: 20, borderRadius: 8, marginTop: 24, textAlign: 'center' }}>
+          <p style={{ fontSize: 13, color: '#8B9A8B', margin: 0, lineHeight: 1.7 }}>
+            <span style={{ color: '#00C96E', fontWeight: 600 }}>Complementaridade:</span> O Mago enxerga a oportunidade. O Criador constroi a solucao. O Governante escala a operacao. Juntos formam O Alquimista — capaz de transformar qualquer negocio em maquina.
+          </p>
+        </div>
+      </section>
+
+      {/* === PRIMAL BRANDING === */}
+      <section id="primal-branding" style={{ marginBottom: 120 }}>
+        <SectionHeader
+          overline="Framework"
+          title="Primal Branding — 7 Pilares"
+          description="Os elementos primitivos que constroem a identidade da marca."
+        />
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {PILLARS.map((p) => (
+            <div
+              key={p.n}
+              className="mvp-glass"
+              style={{
+                padding: 24,
+                borderRadius: 8,
+                borderLeft: '3px solid #00C96E',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                <div
+                  style={{
+                    width: 32,
+                    height: 32,
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(0, 201, 110, 0.12)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: '#00C96E',
+                    fontFamily: "'Inter', sans-serif",
+                  }}
+                >
+                  {p.n}
+                </div>
+                <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, color: '#FFFFFF', margin: 0, fontWeight: 700 }}>
+                  {p.title}
+                </h3>
+              </div>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#8B9A8B', margin: 0, whiteSpace: 'pre-line' }}>
+                {p.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* === POSICIONAMENTO === */}
+      <section id="posicionamento" style={{ marginBottom: 120 }}>
+        <SectionHeader
+          overline="Estrategia"
+          title="Posicionamento — Escada de Valor"
+          description="4 produtos que conduzem o cliente do primeiro contato ate a operacao completa."
+        />
+
+        {/* Value Ladder */}
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, marginBottom: 40, flexWrap: 'wrap', justifyContent: 'center' }}>
+          {VALUE_LADDER.map((step) => (
+            <div key={step.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+              <div
+                style={{
+                  width: 140,
+                  height: step.h,
+                  background: step.glow ? 'linear-gradient(180deg, rgba(0,201,110,0.12), #111111)' : '#111111',
+                  borderRadius: '8px 8px 0 0',
+                  border: `1.5px solid ${step.border}`,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'flex-end',
+                  padding: 14,
+                  boxShadow: step.glow ? `0 0 24px rgba(0, 201, 110, 0.2)` : 'none',
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 700,
+                    color: step.glow ? '#00C96E' : '#FFFFFF',
+                    textAlign: 'center',
+                    fontFamily: "'Inter', sans-serif",
+                  }}
+                >
+                  {step.label}
+                </div>
+                <div style={{ fontSize: 10, color: '#8B9A8B', marginTop: 4, fontFamily: "'Inter', sans-serif" }}>
+                  {step.price}
+                </div>
+                <div
+                  style={{
+                    fontSize: 9,
+                    color: 'rgba(139, 154, 139, 0.5)',
+                    marginTop: 6,
+                    textAlign: 'center',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {step.description}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Hero's Journey narrative */}
+        <div className="mvp-glass" style={{ padding: 24, borderRadius: 8, marginBottom: 24 }}>
+          <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, marginTop: 0 }}>
+            A Jornada do Heroi
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {[
+              { step: '1', label: 'Bunker IA', text: 'O empresario descobre que IA pode ser aplicada ao negocio. Entra na comunidade, aprende os fundamentos, faz seus primeiros deploys em grupo. Sai da esteira de conteudo e entra em modo implementacao.' },
+              { step: '2', label: 'Primeira Missao', text: 'Prova de conceito. Um projeto focado — chatbot, automacao de lead, qualificacao automatica. O empresario ve a IA funcionando no proprio negocio e entende o potencial real.' },
+              { step: '3', label: 'A Forja', text: 'Mentoria premium de 90 dias. Acompanhamento semanal, squads de IA trabalhando entre as calls, sistema completo de vendas implementado. Sai com maquina posicionada e vendendo.' },
+              { step: '4', label: 'Arsenal', text: 'Implementacao completa done-for-you. A equipe MVP instala a operacao inteira: funis, automacoes, squads de IA, integracao CRM, tracking completo. O empresario recebe a maquina rodando.' },
+            ].map((item) => (
+              <div key={item.step} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                <div
+                  style={{
+                    minWidth: 28,
+                    height: 28,
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(0, 201, 110, 0.12)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 12,
+                    fontWeight: 700,
+                    color: '#00C96E',
+                  }}
+                >
+                  {item.step}
+                </div>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: '#00C96E', marginBottom: 4, fontFamily: "'Inter', sans-serif" }}>
+                    {item.label}
+                  </div>
+                  <p style={{ fontSize: 13, lineHeight: 1.7, color: '#8B9A8B', margin: 0 }}>
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: 24,
+            padding: 20,
+            borderLeft: '3px solid #00C96E',
+            backgroundColor: 'rgba(0, 201, 110, 0.03)',
+            borderRadius: '0 8px 8px 0',
+          }}
+        >
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: '#33D489', margin: 0, fontStyle: 'italic' }}>
+            "Cada degrau resolve um problema e revela o proximo. O cliente nunca e empurrado — ele sobe porque faz sentido."
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
