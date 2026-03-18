@@ -46,7 +46,7 @@ const Navigation = () => {
             </div>
             <nav className="flex items-center gap-5 flex-wrap">
               {['Home', 'Cursos', 'Comunidade', 'Deploy'].map((item) => (
-                <a key={item} className="text-[12px] uppercase tracking-[0.08em] cursor-pointer transition-colors duration-200"
+                <a key={item} className="min-h-[44px] flex items-center text-[12px] uppercase tracking-[0.08em] cursor-pointer transition-colors duration-200"
                   style={{ fontFamily: mono, color: item === 'Home' ? '#00E5FF' : '#A9A9A9' }}>
                   {item}
                 </a>
@@ -73,7 +73,7 @@ const Navigation = () => {
             {sidebarItems.map((item) => (
               <button key={item.id}
                 onClick={() => setActiveSidebarItem(item.id)}
-                className="w-full flex items-center gap-3 px-4 py-2.5 text-[12px] cursor-pointer transition-all duration-200 text-left"
+                className="w-full flex items-center gap-3 px-4 py-2.5 min-h-[44px] text-[12px] cursor-pointer transition-all duration-200 text-left"
                 style={{
                   fontFamily: mono,
                   color: activeSidebarItem === item.id ? '#00E5FF' : '#A9A9A9',
@@ -105,7 +105,7 @@ const Navigation = () => {
           {tabs.map((tab) => (
             <button key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className="px-6 py-3 text-[12px] uppercase tracking-[0.08em] cursor-pointer transition-all duration-200 relative"
+              className="px-6 py-3 min-h-[44px] text-[12px] uppercase tracking-[0.08em] cursor-pointer transition-all duration-200 relative"
               style={{
                 fontFamily: mono,
                 color: activeTab === tab.id ? '#00E5FF' : '#A9A9A9',

@@ -55,7 +55,7 @@ const Elevation = () => (
             </div>
           </div>
           {/* Button */}
-          <button className="w-full py-2 rounded text-[11px] uppercase tracking-[0.08em] cursor-pointer"
+          <button className="w-full py-2 min-h-[44px] rounded text-[11px] uppercase tracking-[0.08em] cursor-pointer"
             style={{
               fontFamily: "'Roboto Mono', monospace",
               background: 'rgba(0,229,255,0.12)',

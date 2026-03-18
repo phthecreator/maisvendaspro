@@ -34,9 +34,9 @@ const Forms = () => {
     <section id="forms">
       <style>{`
         .bunker-input:focus { border-color: #00E5FF !important; box-shadow: 0 0 0 3px rgba(0,229,255,0.15) !important; }
-        .bunker-slider { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: #2F353A; outline: none; }
-        .bunker-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #00E5FF; cursor: pointer; box-shadow: 0 0 8px rgba(0,229,255,0.4); }
-        .bunker-slider::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #00E5FF; cursor: pointer; border: none; box-shadow: 0 0 8px rgba(0,229,255,0.4); }
+        .bunker-slider { -webkit-appearance: none; appearance: none; height: 8px; border-radius: 4px; background: #2F353A; outline: none; }
+        .bunker-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #00E5FF; cursor: pointer; box-shadow: 0 0 8px rgba(0,229,255,0.4); }
+        .bunker-slider::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #00E5FF; cursor: pointer; border: none; box-shadow: 0 0 8px rgba(0,229,255,0.4); }
       `}</style>
 
       <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#00E5FF] mb-3"
@@ -178,12 +178,14 @@ const Forms = () => {
         </div>
         <div>
           <label style={labelStyle}>Slider — {slider}%</label>
-          <input type="range" min="0" max="100" value={slider}
-            onChange={(e) => setSlider(Number(e.target.value))}
-            className="bunker-slider w-full cursor-pointer"
-            style={{
-              background: `linear-gradient(90deg, #00E5FF 0%, #00E5FF ${slider}%, #2F353A ${slider}%, #2F353A 100%)`,
-            }} />
+          <div className="min-h-[44px] flex items-center">
+            <input type="range" min="0" max="100" value={slider}
+              onChange={(e) => setSlider(Number(e.target.value))}
+              className="bunker-slider w-full cursor-pointer"
+              style={{
+                background: `linear-gradient(90deg, #00E5FF 0%, #00E5FF ${slider}%, #2F353A ${slider}%, #2F353A 100%)`,
+              }} />
+          </div>
           <div className="flex justify-between mt-1 text-[10px] text-[#A9A9A9]" style={{ fontFamily: mono }}>
             <span>0%</span>
             <span>100%</span>

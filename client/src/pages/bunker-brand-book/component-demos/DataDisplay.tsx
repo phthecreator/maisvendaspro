@@ -49,7 +49,10 @@ const DataDisplay = () => (
 
     {/* Table */}
     <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FDF5E6' }}>Tabela</h3>
-    <div className="rounded-lg border border-white/5 overflow-x-auto mb-10">
+    <p className="text-[11px] text-[#A9A9A9] mb-2 md:hidden" style={{ fontFamily: mono }}>
+      &larr; Deslize para ver mais &rarr;
+    </p>
+    <div className="rounded-lg border border-white/5 overflow-x-auto mb-10" style={{ WebkitOverflowScrolling: 'touch' }}>
       <table className="w-full text-[13px] min-w-[500px]" style={{ fontFamily: mono }}>
         <thead>
           <tr style={{ background: '#0d1117' }}>

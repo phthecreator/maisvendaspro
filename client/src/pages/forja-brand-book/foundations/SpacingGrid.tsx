@@ -46,7 +46,7 @@ const SpacingGrid = () => (
     <p className="text-[13px] text-[#B8976A] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       Grid flexivel com gutter de 24px. Responsivo com colapso automatico em breakpoints menores.
     </p>
-    <div className="overflow-x-auto mb-3">
+    <div className="overflow-x-auto mb-1">
       <div className="rounded-lg p-4 border border-white/5" style={{ background: '#0A0400', minWidth: 600 }}>
         <div className="grid grid-cols-12 gap-2">
           {Array.from({ length: 12 }).map((_, i) => (
@@ -63,7 +63,8 @@ const SpacingGrid = () => (
         </div>
       </div>
     </div>
-    <div className="overflow-x-auto mb-3">
+    <p className="text-xs text-center opacity-50 mt-2 md:hidden" style={{ fontFamily: "'Roboto Mono', monospace" }}>&larr; Deslize para ver &rarr;</p>
+    <div className="overflow-x-auto mb-1 mt-3">
       <div className="rounded-lg p-4 border border-white/5" style={{ background: '#0A0400', minWidth: 600 }}>
         <div className="grid grid-cols-12 gap-2">
           <div className="col-span-4 h-12 rounded flex items-center justify-center text-[11px]"
@@ -81,7 +82,8 @@ const SpacingGrid = () => (
         </div>
       </div>
     </div>
-    <div className="overflow-x-auto mb-12">
+    <p className="text-xs text-center opacity-50 mt-2 md:hidden" style={{ fontFamily: "'Roboto Mono', monospace" }}>&larr; Deslize para ver &rarr;</p>
+    <div className="overflow-x-auto mb-1 mt-3">
       <div className="rounded-lg p-4 border border-white/5" style={{ background: '#0A0400', minWidth: 600 }}>
         <div className="grid grid-cols-12 gap-2">
           <div className="col-span-3 h-12 rounded flex items-center justify-center text-[11px]"
@@ -99,6 +101,7 @@ const SpacingGrid = () => (
         </div>
       </div>
     </div>
+    <p className="text-xs text-center opacity-50 mt-2 mb-12 md:hidden" style={{ fontFamily: "'Roboto Mono', monospace" }}>&larr; Deslize para ver &rarr;</p>
 
     {/* Responsive Breakpoints Table */}
     <h3 className="text-2xl font-bold mb-4"

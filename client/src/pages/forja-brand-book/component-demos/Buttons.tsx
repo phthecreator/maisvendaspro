@@ -15,6 +15,7 @@ const btnBase = {
   display: 'inline-flex',
   alignItems: 'center',
   gap: 8,
+  minHeight: 44,
 };
 
 const Buttons = () => {
@@ -163,7 +164,7 @@ const Buttons = () => {
       <h3 className="text-xl font-bold mb-4"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Tamanhos</h3>
       <div className="flex gap-4 items-center">
-        <button style={{ ...btnBase, padding: '8px 16px', fontSize: 11, background: '#FF6B00', color: '#1A0A00', minHeight: 44 }}>
+        <button style={{ ...btnBase, padding: '8px 16px', fontSize: 11, background: '#FF6B00', color: '#1A0A00' }}>
           Small
         </button>
         <button style={{ ...btnBase, padding: '12px 24px', fontSize: 13, background: '#FF6B00', color: '#1A0A00' }}>
