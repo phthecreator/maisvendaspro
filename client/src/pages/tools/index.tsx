@@ -55,8 +55,8 @@ const products: Product[] = [
     name: 'CopyForge',
     tagline: 'Copy completa em 30 segundos',
     description: 'Cola a URL do seu produto e recebe VSL, emails, ads e landing page copy — tudo gerado por 25 agentes especializados.',
-    price: '$29/mes',
-    priceDetail: 'ou $0.10/geracao',
+    price: '$29/mês',
+    priceDetail: 'ou $0.10/geração',
     tier: 'quick',
     tierLabel: 'Quick Win',
     icon: Copy,
@@ -70,13 +70,13 @@ const products: Product[] = [
     name: 'ClipMachine',
     tagline: 'Lives viram clips virais',
     description: 'Upload de live ou podcast e receba 10+ clips otimizados com legendas, thumbnails e score de viralidade.',
-    price: '$19/mes',
+    price: '$19/mês',
     priceDetail: 'ou $2/video',
     tier: 'quick',
     tierLabel: 'Quick Win',
     icon: Film,
     gradient: 'from-purple-500 to-pink-500',
-    features: ['10+ clips por video', 'Legendas automaticas', 'Thumbnails AI', 'Score de viralidade'],
+    features: ['10+ clips por vídeo', 'Legendas automáticas', 'Thumbnails AI', 'Score de viralidade'],
     squadBase: 'ai-reels (7 agents)',
     status: 'waitlist',
   },
@@ -84,8 +84,8 @@ const products: Product[] = [
     id: 3,
     name: 'LeadHunter Pro',
     tagline: 'Leads qualificados sob demanda',
-    description: 'Pesquisa leads por nicho com email, LinkedIn e score de qualificacao. Nunca mais prospecte manualmente.',
-    price: '$49/mes',
+    description: 'Pesquisa leads por nicho com email, LinkedIn e score de qualificação. Nunca mais prospecte manualmente.',
+    price: '$49/mês',
     priceDetail: 'ou $0.05/lead',
     tier: 'quick',
     tierLabel: 'Quick Win',
@@ -99,57 +99,57 @@ const products: Product[] = [
     id: 4,
     name: 'SquadRH',
     tagline: 'RH automatizado por IA',
-    description: 'Job descriptions, avaliacoes, onboarding e fit cultural — tudo gerado automaticamente.',
-    price: '$39/mes',
+    description: 'Job descriptions, avaliações, onboarding e fit cultural — tudo gerado automaticamente.',
+    price: '$39/mês',
     tier: 'quick',
     tierLabel: 'Quick Win',
     icon: Users,
     gradient: 'from-orange-500 to-amber-400',
-    features: ['Job description AI', 'Avaliacao candidatos', 'Onboarding automatico', 'Fit cultural score'],
+    features: ['Job description AI', 'Avaliação candidatos', 'Onboarding automático', 'Fit cultural score'],
     squadBase: 'squad-rh (6 agents)',
     status: 'soon',
   },
   {
     id: 5,
     name: 'UTM Builder',
-    tagline: 'Tracking sem complicacao',
-    description: 'Gera UTMs, tracking e dashboard de atribuicao para todas as suas campanhas.',
+    tagline: 'Tracking sem complicação',
+    description: 'Gera UTMs, tracking e dashboard de atribuição para todas as suas campanhas.',
     price: 'Free',
-    priceDetail: 'Pro: $9/mes',
+    priceDetail: 'Pro: $9/mês',
     tier: 'quick',
     tierLabel: 'Quick Win',
     icon: Target,
     gradient: 'from-teal-500 to-emerald-400',
-    features: ['Gerador de UTMs', 'Dashboard atribuicao', 'Integracao GA4', 'Templates por canal'],
+    features: ['Gerador de UTMs', 'Dashboard atribuição', 'Integração GA4', 'Templates por canal'],
     squadBase: 'gerador-utms + data',
     status: 'soon',
   },
   {
     id: 6,
     name: 'ContentEngine',
-    tagline: '30 dias de conteudo em 30 minutos',
-    description: 'Calendario editorial completo com posts, reels, stories e carrosseis gerados por 30 agentes.',
-    price: '$49/mes',
-    priceDetail: 'Pro: $99/mes',
+    tagline: '30 dias de conteúdo em 30 minutos',
+    description: 'Calendário editorial completo com posts, reels, stories e carrosséis gerados por 30 agentes.',
+    price: '$49/mês',
+    priceDetail: 'Pro: $99/mês',
     tier: 'core',
     tierLabel: 'Core Product',
     icon: PenTool,
     gradient: 'from-violet-500 to-purple-400',
-    features: ['Calendario 30 dias', 'Posts + Reels + Stories', 'Carrosseis prontos', 'Hashtags otimizadas'],
+    features: ['Calendário 30 dias', 'Posts + Reels + Stories', 'Carrosséis prontos', 'Hashtags otimizadas'],
     squadBase: 'content-engine (30 agents)',
     status: 'waitlist',
   },
   {
     id: 7,
     name: 'AdsPilot',
-    tagline: 'Suas campanhas no piloto automatico',
-    description: 'Conecta Meta Ads, analisa performance, sugere otimizacoes e gera novos criativos automaticamente.',
-    price: '$79/mes',
+    tagline: 'Suas campanhas no piloto automático',
+    description: 'Conecta Meta Ads, analisa performance, sugere otimizações e gera novos criativos automaticamente.',
+    price: '$79/mês',
     tier: 'core',
     tierLabel: 'Core Product',
     icon: TrendingUp,
     gradient: 'from-red-500 to-rose-400',
-    features: ['Analise Meta Ads', 'Sugestoes AI', 'Criativos automaticos', 'Relatorio semanal'],
+    features: ['Análise Meta Ads', 'Sugestões AI', 'Criativos automáticos', 'Relatório semanal'],
     squadBase: 'meta-ads (4) + ads-mgmt (7)',
     status: 'soon',
   },
@@ -157,14 +157,14 @@ const products: Product[] = [
     id: 8,
     name: 'MindClone Studio',
     tagline: 'Clone sua mente em IA',
-    description: 'Responda um questionario, extraia seu DNA mental e crie um clone consultivo que pensa como voce.',
-    price: '$99/mes',
+    description: 'Responda um questionário, extraia seu DNA mental e crie um clone consultivo que pensa como você.',
+    price: '$99/mês',
     priceDetail: 'ou $199 one-time',
     tier: 'core',
     tierLabel: 'Core Product',
     icon: Brain,
     gradient: 'from-fuchsia-500 to-pink-400',
-    features: ['DNA mental extraido', 'Clone consultivo', 'Respostas no seu tom', 'Evolui com uso'],
+    features: ['DNA mental extraído', 'Clone consultivo', 'Respostas no seu tom', 'Evolui com uso'],
     squadBase: 'mmos (17 agents)',
     status: 'waitlist',
   },
@@ -172,13 +172,13 @@ const products: Product[] = [
     id: 9,
     name: 'CloserAI',
     tagline: 'Treine vendas com IA',
-    description: 'Scripts de vendas, simulador de objecoes, gravacao de calls e analise de performance.',
-    price: '$59/mes',
+    description: 'Scripts de vendas, simulador de objeções, gravação de calls e análise de performance.',
+    price: '$59/mês',
     tier: 'core',
     tierLabel: 'Core Product',
     icon: MessageSquare,
     gradient: 'from-emerald-500 to-teal-400',
-    features: ['Scripts personalizados', 'Simulador objecoes', 'Gravacao de calls', 'Performance score'],
+    features: ['Scripts personalizados', 'Simulador objeções', 'Gravação de calls', 'Performance score'],
     squadBase: 'sales-closer (8 agents)',
     status: 'soon',
   },
@@ -186,14 +186,14 @@ const products: Product[] = [
     id: 10,
     name: 'LandingForge',
     tagline: 'Landing pages em 1 click',
-    description: 'Descreva seu produto e receba landing page completa com copy, design e codigo pronto pra deploy.',
+    description: 'Descreva seu produto e receba landing page completa com copy, design e código pronto pra deploy.',
     price: '$29/mes',
     priceDetail: 'ou $15/pagina',
     tier: 'core',
     tierLabel: 'Core Product',
     icon: LayoutTemplate,
     gradient: 'from-sky-500 to-blue-400',
-    features: ['Copy + design + codigo', 'Deploy 1-click', 'A/B testing', 'Mobile-first'],
+    features: ['Copy + design + código', 'Deploy 1-click', 'A/B testing', 'Mobile-first'],
     squadBase: 'landing-page (4) + copy',
     status: 'soon',
   },
@@ -202,7 +202,7 @@ const products: Product[] = [
     name: 'BookDigest Pro',
     tagline: 'Livros viram action items',
     description: 'Upload PDF/livro e receba resumo executivo, action items, mind map e flashcards.',
-    price: '$19/mes',
+    price: '$19/mês',
     priceDetail: 'ou $3/livro',
     tier: 'core',
     tierLabel: 'Core Product',
@@ -215,10 +215,10 @@ const products: Product[] = [
   {
     id: 12,
     name: 'VideoAI Studio',
-    tagline: 'Videos com avatar AI',
-    description: 'Gere videos com seu avatar falando, corte lives e crie ads — tudo numa plataforma.',
-    price: '$9/mes',
-    priceDetail: 'ate $79/mes',
+    tagline: 'Vídeos com avatar AI',
+    description: 'Gere vídeos com seu avatar falando, corte lives e crie ads — tudo numa plataforma.',
+    price: '$9/mês',
+    priceDetail: 'até $79/mês',
     tier: 'core',
     tierLabel: 'Core Product',
     icon: Video,
@@ -231,44 +231,44 @@ const products: Product[] = [
     id: 13,
     name: 'Squad Marketplace',
     tagline: 'Escolha. Pague. Deploy.',
-    description: 'Catalogo com 67 squads prontos — escolha por departamento, pague e receba sua equipe AI operando.',
-    price: '$97/mes',
+    description: 'Catálogo com 67 squads prontos — escolha por departamento, pague e receba sua equipe AI operando.',
+    price: '$97/mês',
     priceDetail: 'por squad ativo',
     tier: 'platform',
     tierLabel: 'Platform',
     icon: ShoppingCart,
     gradient: 'from-green-400 to-emerald-300',
-    features: ['67 squads prontos', 'Filtro por departamento', 'Deploy automatico', 'Suporte incluido'],
+    features: ['67 squads prontos', 'Filtro por departamento', 'Deploy automático', 'Suporte incluído'],
     squadBase: 'TODOS os squads',
     status: 'waitlist',
   },
   {
     id: 14,
     name: 'Advisory Board AI',
-    tagline: 'Conselho de administracao AI',
-    description: '11+ mentes clonadas como conselheiros — pergunte e receba visoes de Elon, Jobs, Hormozi e mais.',
-    price: '$199/mes',
+    tagline: 'Conselho de administração AI',
+    description: '11+ mentes clonadas como conselheiros — pergunte e receba visões de Elon, Jobs, Hormozi e mais.',
+    price: '$199/mês',
     priceDetail: 'ou $29/consulta',
     tier: 'platform',
     tierLabel: 'Platform',
     icon: Sparkles,
     gradient: 'from-yellow-400 to-amber-300',
-    features: ['11 mentes clonadas', 'Conselho estrategico', 'Multi-perspectiva', 'Historico decisoes'],
+    features: ['11 mentes clonadas', 'Conselho estratégico', 'Multi-perspectiva', 'Histórico decisões'],
     squadBase: 'advisory-board (11)',
     status: 'soon',
   },
   {
     id: 15,
     name: 'OpsAutomate',
-    tagline: 'Operacoes no automatico',
+    tagline: 'Operações no automático',
     description: 'Conecta ClickUp, Slack e email — squad de ops automatiza seus processos internos.',
-    price: '$99/mes',
-    priceDetail: 'ate $299/mes',
+    price: '$99/mês',
+    priceDetail: 'até $299/mês',
     tier: 'platform',
     tierLabel: 'Platform',
     icon: Layers,
     gradient: 'from-cyan-400 to-sky-300',
-    features: ['Integra ClickUp', 'Integra Slack', 'Automacao processos', 'Dashboard ops'],
+    features: ['Integra ClickUp', 'Integra Slack', 'Automação processos', 'Dashboard ops'],
     squadBase: 'ops (5) + hybrid-ops (9)',
     status: 'soon',
   },
@@ -276,8 +276,8 @@ const products: Product[] = [
     id: 16,
     name: 'DesignSystem Gen',
     tagline: 'Design system em horas',
-    description: 'Analisa sua marca e gera design system completo com tokens, componentes, Figma e codigo.',
-    price: '$149/mes',
+    description: 'Analisa sua marca e gera design system completo com tokens, componentes, Figma e código.',
+    price: '$149/mês',
     priceDetail: 'ou $499 one-time',
     tier: 'platform',
     tierLabel: 'Platform',
@@ -291,9 +291,9 @@ const products: Product[] = [
     id: 17,
     name: 'Playbook SaaS AI',
     tagline: 'Monte seu SaaS em 30 dias',
-    description: 'Curso + templates + AIOS framework — aprenda a criar seu proprio SaaS com equipes de IA.',
+    description: 'Curso + templates + AIOS framework — aprenda a criar seu próprio SaaS com equipes de IA.',
     price: 'R$997',
-    priceDetail: 'ou $47/mes comunidade',
+    priceDetail: 'ou $47/mês comunidade',
     tier: 'playbook',
     tierLabel: 'Playbook',
     icon: Rocket,
@@ -306,14 +306,14 @@ const products: Product[] = [
     id: 18,
     name: 'Squad Templates',
     tagline: 'Squads por nicho',
-    description: 'Marketplace de templates de squads por industria — restaurante, clinica, e-commerce, etc.',
+    description: 'Marketplace de templates de squads por indústria — restaurante, clínica, e-commerce, etc.',
     price: '$49',
-    priceDetail: 'ate $199/template',
+    priceDetail: 'até $199/template',
     tier: 'playbook',
     tierLabel: 'Playbook',
     icon: Globe,
     gradient: 'from-blue-400 to-indigo-300',
-    features: ['Templates por nicho', 'Pronto pra usar', 'Customizavel', 'Documentacao inclusa'],
+    features: ['Templates por nicho', 'Pronto pra usar', 'Customizável', 'Documentação inclusa'],
     squadBase: 'squad-creator-pro (7)',
     status: 'soon',
   },
@@ -328,7 +328,7 @@ const products: Product[] = [
     tierLabel: 'Playbook',
     icon: Shield,
     gradient: 'from-violet-400 to-purple-300',
-    features: ['Assessment completo', 'Zona de genialidade', 'Roadmap carreira', 'PDF exportavel'],
+    features: ['Assessment completo', 'Zona de genialidade', 'Roadmap carreira', 'PDF exportável'],
     squadBase: 'zona-genialidade (8)',
     status: 'soon',
   },
@@ -336,14 +336,14 @@ const products: Product[] = [
     id: 20,
     name: 'WhatsApp Sales Bot',
     tagline: 'Vendas no WhatsApp 24/7',
-    description: 'Bot que qualifica leads, agenda calls e faz follow-up automatico pelo WhatsApp.',
-    price: '$39/mes',
-    priceDetail: 'ate $99/mes',
+    description: 'Bot que qualifica leads, agenda calls e faz follow-up automático pelo WhatsApp.',
+    price: '$39/mês',
+    priceDetail: 'até $99/mês',
     tier: 'playbook',
     tierLabel: 'Playbook',
     icon: Mic,
     gradient: 'from-green-500 to-emerald-400',
-    features: ['Qualifica leads', 'Agenda automatico', 'Follow-up AI', 'Dashboard conversas'],
+    features: ['Qualifica leads', 'Agenda automático', 'Follow-up AI', 'Dashboard conversas'],
     squadBase: 'telecom-mvp (3) + closer',
     status: 'waitlist',
   },
@@ -473,8 +473,8 @@ function WaitlistForm() {
         <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#00C96E]/10 mb-4">
           <Zap className="h-8 w-8 text-[#00C96E]" />
         </div>
-        <h3 className="text-xl font-semibold text-white mb-2">Voce esta na lista.</h3>
-        <p className="text-white/50">Avisaremos quando as ferramentas estiverem disponiveis.</p>
+        <h3 className="text-xl font-semibold text-white mb-2">Você está na lista.</h3>
+        <p className="text-white/50">Avisaremos quando as ferramentas estiverem disponíveis.</p>
       </motion.div>
     );
   }
@@ -599,13 +599,13 @@ export default function Tools() {
               <span className="text-white">O arsenal completo</span>
               <br />
               <span className="text-[#00C96E]" style={{ textShadow: '0 0 40px rgba(0,201,110,0.3)' }}>
-                pra sua operacao.
+                pra sua operação.
               </span>
             </h1>
 
             <p className="mx-auto max-w-2xl text-lg text-white/50 mb-10">
-              Cada ferramenta e alimentada por squads de IA especializados.
-              Nao e template. Nao e prompt. Sao equipes inteiras trabalhando pra voce.
+              Cada ferramenta é alimentada por squads de IA especializados.
+              Não é template. Não é prompt. São equipes inteiras trabalhando pra você.
             </p>
 
             {/* Stats */}
@@ -675,8 +675,8 @@ export default function Tools() {
               Quer tudo implementado na sua empresa?
             </h2>
             <p className="text-white/50 max-w-xl mx-auto mb-8">
-              Nossas ferramentas sao a ponta do iceberg. Com implementacao enterprise,
-              voce recebe squads completos operando dentro da sua estrutura. De R$30k a R$90k.
+              Nossas ferramentas são a ponta do iceberg. Com implementação enterprise,
+              você recebe squads completos operando dentro da sua estrutura. De R$30k a R$90k.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -685,14 +685,14 @@ export default function Tools() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#FFD700] px-6 py-3 text-sm font-semibold text-black hover:bg-[#FFD700]/90 transition-all"
               >
-                Falar sobre implementacao
+                Falar sobre implementação
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="/"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition-all"
               >
-                Ver mais sobre nos
+                Ver mais sobre nós
               </a>
             </div>
           </div>
@@ -706,7 +706,7 @@ export default function Tools() {
             Acesso antecipado
           </h2>
           <p className="text-white/50 mb-8">
-            Seja o primeiro a testar quando lancarmos. Sem spam. Sem compromisso.
+            Seja o primeiro a testar quando lançarmos. Sem spam. Sem compromisso.
           </p>
           <WaitlistForm />
         </div>
