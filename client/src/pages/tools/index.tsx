@@ -359,7 +359,7 @@ const tierConfig: Record<Tier, { label: string; color: string; borderColor: stri
 
 const statusConfig = {
   soon: { label: 'Em breve', bg: 'bg-white/5', text: 'text-white/50', border: 'border-white/10' },
-  waitlist: { label: 'Lista de espera', bg: 'bg-[#00ff88]/10', text: 'text-[#00ff88]', border: 'border-[#00ff88]/20' },
+  waitlist: { label: 'Lista de espera', bg: 'bg-[#00C96E]/10', text: 'text-[#00C96E]', border: 'border-[#00C96E]/20' },
   beta: { label: 'Beta', bg: 'bg-violet-500/10', text: 'text-violet-400', border: 'border-violet-500/20' },
 };
 
@@ -394,14 +394,14 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
         {/* Content */}
         <div className="relative z-10">
           <h3 className="text-lg font-semibold text-white mb-1">{product.name}</h3>
-          <p className="text-[#00ff88] text-sm font-medium mb-3">{product.tagline}</p>
+          <p className="text-[#00C96E] text-sm font-medium mb-3">{product.tagline}</p>
           <p className="text-white/50 text-sm leading-relaxed mb-4">{product.description}</p>
 
           {/* Features */}
           <div className="space-y-1.5 mb-5">
             {product.features.map((feature) => (
               <div key={feature} className="flex items-center gap-2 text-xs text-white/40">
-                <div className="h-1 w-1 rounded-full bg-[#00ff88]/50" />
+                <div className="h-1 w-1 rounded-full bg-[#00C96E]/50" />
                 {feature}
               </div>
             ))}
@@ -428,7 +428,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             }}
             className={`mt-4 w-full rounded-xl py-2.5 text-sm font-medium transition-all duration-300 ${
               product.status === 'waitlist'
-                ? 'bg-[#00ff88]/10 text-[#00ff88] border border-[#00ff88]/20 hover:bg-[#00ff88]/20'
+                ? 'bg-[#00C96E]/10 text-[#00C96E] border border-[#00C96E]/20 hover:bg-[#00C96E]/20'
                 : 'bg-white/5 text-white/40 border border-white/10 cursor-default'
             }`}
           >
@@ -470,8 +470,8 @@ function WaitlistForm() {
         animate={{ opacity: 1, scale: 1 }}
         className="text-center py-8"
       >
-        <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#00ff88]/10 mb-4">
-          <Zap className="h-8 w-8 text-[#00ff88]" />
+        <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#00C96E]/10 mb-4">
+          <Zap className="h-8 w-8 text-[#00C96E]" />
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">Voce esta na lista.</h3>
         <p className="text-white/50">Avisaremos quando as ferramentas estiverem disponiveis.</p>
@@ -487,12 +487,12 @@ function WaitlistForm() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="seu@email.com"
         required
-        className="flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-[#00ff88]/50 focus:outline-none focus:ring-1 focus:ring-[#00ff88]/20 transition-all"
+        className="flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-[#00C96E]/50 focus:outline-none focus:ring-1 focus:ring-[#00C96E]/20 transition-all"
       />
       <button
         type="submit"
         disabled={loading}
-        className="rounded-xl bg-[#00ff88] px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-[#00ff88]/90 hover:shadow-[0_0_30px_rgba(0,255,136,0.3)] disabled:opacity-50"
+        className="rounded-xl bg-[#00C96E] px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-[#00C96E]/90 hover:shadow-[0_0_30px_rgba(0,201,110,0.3)] disabled:opacity-50"
       >
         {loading ? 'Entrando...' : 'Quero acesso antecipado'}
       </button>
@@ -520,22 +520,22 @@ export default function Tools() {
       <nav className="fixed top-0 z-50 w-full border-b border-white/[0.06] bg-black/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <a href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#00ff88]/10">
-              <Bot className="h-5 w-5 text-[#00ff88]" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#00C96E]/10">
+              <Bot className="h-5 w-5 text-[#00C96E]" />
             </div>
             <span className="font-semibold text-white">MVP</span>
-            <span className="text-[#00ff88] font-bold">Tools</span>
+            <span className="text-[#00C96E] font-bold">Tools</span>
           </a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
             <a href="/" className="text-sm text-white/50 hover:text-white transition-colors">Home</a>
-            <a href="/tools" className="text-sm text-[#00ff88]">Ferramentas</a>
+            <a href="/tools" className="text-sm text-[#00C96E]">Ferramentas</a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg bg-[#00ff88]/10 px-4 py-2 text-sm font-medium text-[#00ff88] border border-[#00ff88]/20 hover:bg-[#00ff88]/20 transition-all"
+              className="rounded-lg bg-[#00C96E]/10 px-4 py-2 text-sm font-medium text-[#00C96E] border border-[#00C96E]/20 hover:bg-[#00C96E]/20 transition-all"
             >
               Falar com especialista
             </a>
@@ -557,13 +557,13 @@ export default function Tools() {
                   <a href="/" className="text-white/70 hover:text-white py-2">Home</a>
                 </SheetClose>
                 <SheetClose asChild>
-                  <a href="/tools" className="text-[#00ff88] py-2">Ferramentas</a>
+                  <a href="/tools" className="text-[#00C96E] py-2">Ferramentas</a>
                 </SheetClose>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-lg bg-[#00ff88] px-4 py-3 text-center text-sm font-semibold text-black mt-4"
+                  className="rounded-lg bg-[#00C96E] px-4 py-3 text-center text-sm font-semibold text-black mt-4"
                 >
                   Falar com especialista
                 </a>
@@ -577,12 +577,12 @@ export default function Tools() {
       <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         {/* Grid background */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'linear-gradient(rgba(0,255,136,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,1) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(0,201,110,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,201,110,1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
 
         {/* Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[800px] bg-[#00ff88]/5 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[800px] bg-[#00C96E]/5 rounded-full blur-[120px]" />
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 text-center">
           <motion.div
@@ -590,7 +590,7 @@ export default function Tools() {
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#00ff88]/20 bg-[#00ff88]/5 px-4 py-1.5 text-xs text-[#00ff88] mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#00C96E]/20 bg-[#00C96E]/5 px-4 py-1.5 text-xs text-[#00C96E] mb-6">
               <Sparkles className="h-3.5 w-3.5" />
               20 ferramentas AI — Powered by 67 Squads
             </div>
@@ -598,7 +598,7 @@ export default function Tools() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
               <span className="text-white">O arsenal completo</span>
               <br />
-              <span className="text-[#00ff88]" style={{ textShadow: '0 0 40px rgba(0,255,136,0.3)' }}>
+              <span className="text-[#00C96E]" style={{ textShadow: '0 0 40px rgba(0,201,110,0.3)' }}>
                 pra sua operacao.
               </span>
             </h1>
@@ -618,7 +618,7 @@ export default function Tools() {
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                   className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4"
                 >
-                  <div className="text-2xl font-bold text-[#00ff88]">{stat.value}</div>
+                  <div className="text-2xl font-bold text-[#00C96E]">{stat.value}</div>
                   <div className="text-xs text-white/40 mt-1">{stat.label}</div>
                 </motion.div>
               ))}
@@ -716,7 +716,7 @@ export default function Tools() {
       <footer className="border-t border-white/[0.06] py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <Bot className="h-5 w-5 text-[#00ff88]" />
+            <Bot className="h-5 w-5 text-[#00C96E]" />
             <span className="text-sm text-white/30">Mais Vendas Pro &copy; 2026</span>
           </div>
           <div className="flex items-center gap-6 text-sm text-white/30">

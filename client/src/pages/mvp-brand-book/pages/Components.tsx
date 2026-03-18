@@ -359,11 +359,11 @@ export default function Components() {
           ═══════════════════════════════════════ */}
       <section id="botoes" style={{ paddingTop: 48 }}>
         <div style={sectionOverline}>UI.BUTTONS</div>
-        <h2 style={sectionTitle}>Botoes</h2>
+        <h2 style={sectionTitle}>Botões</h2>
         <p style={sectionDesc}>
-          Sistema de botoes do MVP. Primary para CTAs, Secondary para acoes alternativas,
-          Ghost para acoes minimas, Danger para acoes destrutivas, e o Matrix Button com
-          efeito 3D tatico para conversao.
+          Sistema de botões do MVP. Primary para CTAs, Secondary para ações alternativas,
+          Ghost para ações mínimas, Danger para ações destrutivas, e o Matrix Button com
+          efeito 3D tático para conversão.
         </p>
 
         {/* Variants */}
@@ -427,9 +427,9 @@ export default function Components() {
             <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#00C96E', letterSpacing: '0.1em', marginBottom: 12 }}>
               DEFAULT
             </div>
-            <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>Card Padrao</div>
+            <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>Card Padrão</div>
             <div style={{ fontSize: 14, color: '#A0A0A0', lineHeight: 1.6 }}>
-              Surface background com borda sutil. Hover revela destaque verde e elevacao.
+              Surface background com borda sutil. Hover revela destaque verde e elevação.
             </div>
           </DemoCard>
 
@@ -472,7 +472,7 @@ export default function Components() {
             </div>
             <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>Squad Comercial IA</div>
             <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 24, fontWeight: 700, color: '#00C96E', marginBottom: 8 }}>
-              R$ 4.997<span style={{ fontSize: 14, color: '#666666' }}>/mes</span>
+              R$ 4.997<span style={{ fontSize: 14, color: '#666666' }}>/mês</span>
             </div>
             <div style={{ fontSize: 13, color: '#A0A0A0', lineHeight: 1.5 }}>
               Clone cognitivo do seu melhor vendedor. Fidelidade 91%.
@@ -500,8 +500,8 @@ export default function Components() {
             </div>
             <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>ROI Comprovado</div>
             <div style={{ fontSize: 13, color: '#A0A0A0', lineHeight: 1.5 }}>
-              Retorno medio de 444x sobre investimento em tokens de IA.
-              Metricas transparentes e documentadas.
+              Retorno médio de 444x sobre investimento em tokens de IA.
+              Métricas transparentes e documentadas.
             </div>
           </DemoCard>
         </div>
@@ -514,9 +514,9 @@ export default function Components() {
           ═══════════════════════════════════════ */}
       <section id="formularios">
         <div style={sectionOverline}>UI.FORMS</div>
-        <h2 style={sectionTitle}>Formularios</h2>
+        <h2 style={sectionTitle}>Formulários</h2>
         <p style={sectionDesc}>
-          Inputs dark-first com focus ring verde. Todos os campos seguem o mesmo padrao
+          Inputs dark-first com focus ring verde. Todos os campos seguem o mesmo padrão
           de profundidade e borda do design system.
         </p>
 
@@ -608,8 +608,8 @@ export default function Components() {
               <option value="">Selecione o segmento...</option>
               <option value="saas">SaaS / Tecnologia</option>
               <option value="ecommerce">E-commerce</option>
-              <option value="services">Servicos Profissionais</option>
-              <option value="health">Saude</option>
+              <option value="services">Serviços Profissionais</option>
+              <option value="health">Saúde</option>
             </select>
           </div>
 
@@ -638,7 +638,7 @@ export default function Components() {
               )}
             </div>
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#FFFFFF' }}>
-              Aceito os termos de servico
+              Aceito os termos de serviço
             </span>
           </div>
 
@@ -672,7 +672,7 @@ export default function Components() {
               />
             </div>
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#FFFFFF' }}>
-              Notificacoes por email
+              Notificações por email
             </span>
           </div>
         </div>
@@ -688,16 +688,16 @@ export default function Components() {
         <h2 style={sectionTitle}>Feedback</h2>
         <p style={sectionDesc}>
           Alertas, progress bars, badges e skeleton loaders para comunicar estados
-          do sistema ao usuario.
+          do sistema ao usuário.
         </p>
 
         {/* Alerts */}
         <div style={subsectionLabel}>Alerts</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 560, marginBottom: 40 }}>
           <DemoAlert variant="success" message="Squad operacional. 97% de fidelidade cognitiva atingida." />
-          <DemoAlert variant="warning" message="Creditos de token abaixo de 20%. Considere upgrade do plano." />
+          <DemoAlert variant="warning" message="Créditos de token abaixo de 20%. Considere upgrade do plano." />
           <DemoAlert variant="error" message="Pipeline interrompido. Reconectando em 3... 2... 1..." />
-          <DemoAlert variant="info" message="Novo squad disponivel para ativacao no seu workspace." />
+          <DemoAlert variant="info" message="Novo squad disponível para ativação no seu workspace." />
         </div>
 
         {/* Progress bar */}
@@ -827,8 +827,8 @@ export default function Components() {
         <div style={sectionOverline}>UI.SPECIALS</div>
         <h2 style={sectionTitle}>Componentes Especiais</h2>
         <p style={sectionDesc}>
-          Terminal blocks, stat cards, timelines e code blocks que referenciam a estetica
-          Matrix do MVP. Elementos que diferenciam a marca de interfaces corporativas genericas.
+          Terminal blocks, stat cards, timelines e code blocks que referenciam a estética
+          Matrix do MVP. Elementos que diferenciam a marca de interfaces corporativas genéricas.
         </p>
 
         {/* Terminal block */}
@@ -956,10 +956,10 @@ export default function Components() {
         <div style={subsectionLabel}>Stat Cards</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, marginBottom: 40 }}>
           {[
-            { value: '444x', label: 'ROI MEDIO', color: '#00C96E' },
+            { value: '444x', label: 'ROI MÉDIO', color: '#00C96E' },
             { value: '91%', label: 'FIDELIDADE', color: '#00C96E' },
             { value: 'R$3', label: 'CUSTO TOKENS/DIA', color: '#33D489' },
-            { value: '24/7', label: 'OPERACAO', color: '#FFD700' },
+            { value: '24/7', label: 'OPERAÇÃO', color: '#FFD700' },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -1005,9 +1005,9 @@ export default function Components() {
         <div style={subsectionLabel}>Timeline</div>
         <div style={{ maxWidth: 480, marginBottom: 40, paddingLeft: 24 }}>
           {[
-            { title: 'Discovery', desc: 'Mapeamento de processos e oportunidades de automacao.', status: 'done' },
-            { title: 'Extracao Cognitiva', desc: 'Entrevistas e captura do conhecimento do especialista.', status: 'done' },
-            { title: 'Build do Squad', desc: 'Treinamento do clone cognitivo com fidelidade mensuravel.', status: 'active' },
+            { title: 'Discovery', desc: 'Mapeamento de processos e oportunidades de automação.', status: 'done' },
+            { title: 'Extração Cognitiva', desc: 'Entrevistas e captura do conhecimento do especialista.', status: 'done' },
+            { title: 'Build do Squad', desc: 'Treinamento do clone cognitivo com fidelidade mensurável.', status: 'active' },
             { title: 'Deploy', desc: 'Squad operacional integrado aos canais de atendimento.', status: 'pending' },
           ].map((step, i) => (
             <div

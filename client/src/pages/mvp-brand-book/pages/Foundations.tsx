@@ -394,11 +394,11 @@ export default function Foundations() {
         <p style={sectionDesc}>
           A paleta MVP abandona o verde neon brilhante em favor de um verde escuro sofisticado
           &mdash; inspirado no terminal do Matrix, com sobriedade enterprise. O verde evoca
-          codigo executando em producao, nao letreiros de neon.
+          código executando em produção, não letreiros de neon.
         </p>
 
         {/* Primary */}
-        <div style={subsectionLabel}>Primarias &mdash; Verde Alquimista</div>
+        <div style={subsectionLabel}>Primárias &mdash; Verde Alquimista</div>
         <div style={colorGrid}>
           {primaryColors.map((c) => (
             <SwatchCard key={c.hex} swatch={c} />
@@ -414,7 +414,7 @@ export default function Foundations() {
         </div>
 
         {/* Accents */}
-        <div style={subsectionLabel}>Acentos Secundarios</div>
+        <div style={subsectionLabel}>Acentos Secundários</div>
         <div style={colorGrid}>
           {accentColors.map((c) => (
             <SwatchCard key={c.hex} swatch={c} />
@@ -430,7 +430,7 @@ export default function Foundations() {
         </div>
 
         {/* Semantic */}
-        <div style={subsectionLabel}>Funcionais (Semanticas)</div>
+        <div style={subsectionLabel}>Funcionais (Semânticas)</div>
         <div style={colorGrid}>
           {semanticColors.map((c) => (
             <SwatchCard key={c.hex} swatch={c} />
@@ -537,15 +537,15 @@ export default function Foundations() {
           ═══════════════════════════════════════ */}
       <section id="tipografia">
         <div style={sectionOverline}>SYSTEM.TYPOGRAPHY</div>
-        <h2 style={sectionTitle}>Sistema Tipografico</h2>
+        <h2 style={sectionTitle}>Sistema Tipográfico</h2>
         <p style={sectionDesc}>
           Inter para toda interface &mdash; o workhorse da marca. JetBrains Mono para
-          overlines, metricas, blocos de codigo e terminal aesthetic. A combinacao transmite:
-          &ldquo;construido por devs, para empresarios.&rdquo;
+          overlines, métricas, blocos de código e terminal aesthetic. A combinação transmite:
+          &ldquo;construído por devs, para empresários.&rdquo;
         </p>
 
         {/* Type scale showcase */}
-        <div style={subsectionLabel}>Escala Tipografica</div>
+        <div style={subsectionLabel}>Escala Tipográfica</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 0, marginBottom: 48 }}>
           {typeScale.map((t) => {
             const isMono = t.font === 'JetBrains Mono';
@@ -685,10 +685,10 @@ export default function Foundations() {
           ═══════════════════════════════════════ */}
       <section id="texturas">
         <div style={sectionOverline}>SYSTEM.TEXTURES</div>
-        <h2 style={sectionTitle}>Texturas e Padroes</h2>
+        <h2 style={sectionTitle}>Texturas e Padrões</h2>
         <p style={sectionDesc}>
           Camadas decorativas que adicionam profundidade e identidade Matrix. A soma total de
-          opacidade nao deve ultrapassar 15% para garantir legibilidade.
+          opacidade não deve ultrapassar 15% para garantir legibilidade.
         </p>
 
         <div
@@ -792,15 +792,15 @@ export default function Foundations() {
           ═══════════════════════════════════════ */}
       <section id="motion">
         <div style={sectionOverline}>SYSTEM.MOTION</div>
-        <h2 style={sectionTitle}>Motion e Animacao</h2>
+        <h2 style={sectionTitle}>Motion e Animação</h2>
         <p style={sectionDesc}>
-          Animacoes devem parecer calculadas, como codigo executando. Conteudo emerge da
-          escuridao &mdash; nunca aparece do nada. Max 2-3 elementos animados por viewport.
+          Animações devem parecer calculadas, como código executando. Conteúdo emerge da
+          escuridão &mdash; nunca aparece do nada. Max 2-3 elementos animados por viewport.
         </p>
 
         {/* Live animation demos */}
         <div style={subsectionLabel}>
-          Animacoes ao Vivo{' '}
+          Animações ao Vivo{' '}
           <button
             onClick={replayAnimations}
             style={{
@@ -962,10 +962,10 @@ export default function Foundations() {
           ═══════════════════════════════════════ */}
       <section id="elevacao">
         <div style={sectionOverline}>SYSTEM.ELEVATION</div>
-        <h2 style={sectionTitle}>Elevacao e Superficies</h2>
+        <h2 style={sectionTitle}>Elevação e Superfícies</h2>
         <p style={sectionDesc}>
-          O MVP usa a profundidade dos pretos como sistema de elevacao em vez de sombras
-          tradicionais. Cada nivel acima recebe borda proporcional para definicao sutil.
+          O MVP usa a profundidade dos pretos como sistema de elevação em vez de sombras
+          tradicionais. Cada nível acima recebe borda proporcional para definição sutil.
         </p>
 
         {/* Stacked elevation cards */}

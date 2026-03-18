@@ -2,11 +2,11 @@ import { Link } from 'wouter';
 import AlchemistTriangle from '../shared/AlchemistTriangle';
 
 const SECTIONS = [
-  { n: '01', title: 'Brand', description: 'Narrativa, Arquetipos, 7 Pilares, Posicionamento', path: '/mvp-brand-book/brand' },
-  { n: '02', title: 'Foundations', description: 'Cores, Tipografia, Texturas, Motion, Elevacao', path: '/mvp-brand-book/foundations' },
-  { n: '03', title: 'Components', description: 'Botoes, Cards, Formularios, Feedback, Especiais', path: '/mvp-brand-book/components' },
-  { n: '04', title: 'Produtos', description: 'Escada de Valor, Bunker, Primeira Missao, Forja, Arsenal', path: '/mvp-brand-book/produtos' },
-  { n: '05', title: 'Showcase', description: 'Copy, Voice & Tone, Bios, Objecoes', path: '/mvp-brand-book/showcase' },
+  { n: '01', title: 'Brand', description: 'Narrativa, Arquétipos, 7 Pilares, Posicionamento', path: '/mvp-brand-book/brand' },
+  { n: '02', title: 'Foundations', description: 'Cores, Tipografia, Texturas, Motion, Elevação', path: '/mvp-brand-book/foundations' },
+  { n: '03', title: 'Components', description: 'Botões, Cards, Formulários, Feedback, Especiais', path: '/mvp-brand-book/components' },
+  { n: '04', title: 'Produtos', description: 'Escada de Valor, Bunker, Primeira Missão, Forja, Arsenal', path: '/mvp-brand-book/produtos' },
+  { n: '05', title: 'Showcase', description: 'Copy, Voice & Tone, Bios, Objeções', path: '/mvp-brand-book/showcase' },
 ];
 
 export default function Hub() {
@@ -67,7 +67,7 @@ export default function Hub() {
             margin: 0,
           }}
         >
-          Transformamos inteligencia em maquinas que trabalham 24/7
+          Transformamos inteligência em máquinas que trabalham 24/7
         </p>
       </div>
 

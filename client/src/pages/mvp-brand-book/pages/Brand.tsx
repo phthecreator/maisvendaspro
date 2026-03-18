@@ -6,21 +6,21 @@ const FOUNDERS = [
     name: 'Pedro',
     role: 'CRO — O Mago',
     archetype: 'Mago',
-    description: 'Transforma caos em sistema. Ve padroes onde outros veem confusao. Domina a alquimia da conversao — funis, copy, estrategia de vendas. O cara que olha pro teu negocio e fala "aqui tem dinheiro escondido".',
+    description: 'Transforma caos em sistema. Vê padrões onde outros veem confusão. Domina a alquimia da conversão — funis, copy, estratégia de vendas. O cara que olha pro teu negócio e fala "aqui tem dinheiro escondido".',
     color: '#00C96E',
   },
   {
     name: 'Murillo',
     role: 'CTO — O Criador',
     archetype: 'Criador',
-    description: 'Constroi o que nao existe. Arquiteta sistemas, squads de IA, automacoes que rodam 24/7. Se o Mago enxerga o caminho, o Criador pavimenta com codigo e infraestrutura. Engenheiro de maquinas inteligentes.',
+    description: 'Constrói o que não existe. Arquiteta sistemas, squads de IA, automações que rodam 24/7. Se o Mago enxerga o caminho, o Criador pavimenta com código e infraestrutura. Engenheiro de máquinas inteligentes.',
     color: '#33D489',
   },
   {
     name: 'Rapha',
     role: 'CEO — O Governante',
     archetype: 'Governante',
-    description: 'Garante que o reino funciona. Visao de longo prazo, estrutura de negocios, gestao de portfolio. Enquanto o Mago e o Criador mergulham no detalhe, o Governante mantem a direcao e protege a operacao.',
+    description: 'Garante que o reino funciona. Visão de longo prazo, estrutura de negócios, gestão de portfólio. Enquanto o Mago e o Criador mergulham no detalhe, o Governante mantém a direção e protege a operação.',
     color: '#00A85A',
   },
 ];
@@ -28,46 +28,46 @@ const FOUNDERS = [
 const PILLARS = [
   {
     n: 1,
-    title: 'Historia de Criacao',
-    text: 'Tres socios com backgrounds complementares — vendas, tecnologia e gestao — se encontraram num ponto em comum: empresas desperdicam fortunas tentando escalar sem sistema. A MCX nasceu como consultoria e evoluiu para Mais Vendas Pro quando percebemos que o mercado precisava de maquinas, nao de conselhos.',
+    title: 'História de Criação',
+    text: 'Três sócios com backgrounds complementares — vendas, tecnologia e gestão — se encontraram num ponto em comum: empresas desperdiçam fortunas tentando escalar sem sistema. A MCX nasceu como consultoria e evoluiu para Mais Vendas Pro quando percebemos que o mercado precisava de máquinas, não de conselhos.',
   },
   {
     n: 2,
     title: 'Credo',
-    text: 'Inteligencia artificial so funciona quando tem estrategia por tras. Maquina sem direcao e desperdicio. Resultado se mede em receita, nao em likes. O empresario nao precisa de mais conteudo — precisa de sistema que trabalhe enquanto ele dorme. Cada real investido tem que voltar multiplicado.',
+    text: 'Inteligência artificial só funciona quando tem estratégia por trás. Máquina sem direção é desperdício. Resultado se mede em receita, não em likes. O empresário não precisa de mais conteúdo — precisa de sistema que trabalhe enquanto ele dorme. Cada real investido tem que voltar multiplicado.',
   },
   {
     n: 3,
-    title: 'Icones',
-    text: 'O Triangulo Alquimista — tres vertices representando os fundadores e a triade Estrategia + Tecnologia + Gestao. Estetica Matrix: verde sobre preto, codigo fluindo, terminal como interface de poder. O triangulo com o ponto central e o simbolo da transmutacao — transformar negocio comum em maquina.',
+    title: 'Ícones',
+    text: 'O Triângulo Alquimista — três vértices representando os fundadores e a tríade Estratégia + Tecnologia + Gestão. Estética Matrix: verde sobre preto, código fluindo, terminal como interface de poder. O triângulo com o ponto central é o símbolo da transmutação — transformar negócio comum em máquina.',
   },
   {
     n: 4,
     title: 'Rituais',
-    text: 'Sessao diagnostico antes de qualquer venda. Onboarding com setup completo de squads de IA. Review semanal de metricas com ajuste de rota. Deploy quinzenal de novas automacoes. Quarterly business review com roadmap do proximo trimestre.',
+    text: 'Sessão diagnóstico antes de qualquer venda. Onboarding com setup completo de squads de IA. Review semanal de métricas com ajuste de rota. Deploy quinzenal de novas automações. Quarterly business review com roadmap do próximo trimestre.',
   },
   {
     n: 5,
-    title: 'Pagaos (Inimigos)',
-    text: 'O guru de marketing que vende curso e some. A agencia que cobra retainer e entrega relatorio bonito sem resultado. O "faz tudo sozinho" que leva 2 anos pra montar o que a gente monta em 90 dias. A IA generica sem estrategia — chatbot burro, automacao sem funil.',
+    title: 'Pagãos (Inimigos)',
+    text: 'O guru de marketing que vende curso e some. A agência que cobra retainer e entrega relatório bonito sem resultado. O "faz tudo sozinho" que leva 2 anos pra montar o que a gente monta em 90 dias. A IA genérica sem estratégia — chatbot burro, automação sem funil.',
   },
   {
     n: 6,
     title: 'Palavras Sagradas',
-    text: 'Maquina = sistema automatizado que gera resultado. Squad = time de IA especialista. Deploy = colocar no ar, em producao. Funil = caminho do desconhecido ate o cliente. Escada de valor = jornada do cliente de R$97 a R$100k. Alquimia = transformacao de negocio comum em operacao de alto nivel.',
+    text: 'Máquina = sistema automatizado que gera resultado. Squad = time de IA especialista. Deploy = colocar no ar, em produção. Funil = caminho do desconhecido até o cliente. Escada de valor = jornada do cliente de R$97 a R$100k. Alquimia = transformação de negócio comum em operação de alto nível.',
   },
   {
     n: 7,
-    title: 'Lider',
-    text: 'Nao e um guru. Sao tres operadores que constroem o que vendem. Pedro mostra o funil rodando, nao o slide. Murillo mostra o terminal, nao a teoria. Rapha mostra o P&L, nao a promessa. Autoridade vem de resultado entregue, nao de palco.',
+    title: 'Líder',
+    text: 'Não é um guru. São três operadores que constroem o que vendem. Pedro mostra o funil rodando, não o slide. Murillo mostra o terminal, não a teoria. Rapha mostra o P&L, não a promessa. Autoridade vem de resultado entregue, não de palco.',
   },
 ];
 
 const VALUE_LADDER = [
-  { label: 'Bunker IA', price: 'R$97/mes', description: 'Comunidade + conteudo + deploys em grupo', h: 80, border: '#00C96E', glow: false },
-  { label: 'Primeira Missao', price: 'R$3-5k', description: 'Projeto inicial de automacao — prova de conceito', h: 120, border: '#33D489', glow: false },
+  { label: 'Bunker IA', price: 'R$97/mês', description: 'Comunidade + conteúdo + deploys em grupo', h: 80, border: '#00C96E', glow: false },
+  { label: 'Primeira Missão', price: 'R$3-5k', description: 'Projeto inicial de automação — prova de conceito', h: 120, border: '#33D489', glow: false },
   { label: 'A Forja', price: 'R$15-30k', description: 'Mentoria premium 90 dias — done with you', h: 170, border: '#00C96E', glow: true },
-  { label: 'Arsenal', price: 'R$50-100k', description: 'Implementacao completa — done for you', h: 220, border: '#00A85A', glow: false },
+  { label: 'Arsenal', price: 'R$50-100k', description: 'Implementação completa — done for you', h: 220, border: '#00A85A', glow: false },
 ];
 
 export default function Brand() {
@@ -77,8 +77,8 @@ export default function Brand() {
       <section id="narrativa" style={{ marginBottom: 120 }}>
         <SectionHeader
           overline="Origem"
-          title="A Historia da Mais Vendas Pro"
-          description="De consultoria a fabrica de maquinas inteligentes."
+          title="A História da Mais Vendas Pro"
+          description="De consultoria a fábrica de máquinas inteligentes."
         />
 
         <div
@@ -86,7 +86,7 @@ export default function Brand() {
           style={{ padding: 32, borderRadius: 8, marginBottom: 24 }}
         >
           <p style={{ fontSize: 15, lineHeight: 1.9, color: '#FFFFFF', margin: 0 }}>
-            Tudo comecou com tres problemas diferentes que se encontraram na mesma mesa. Pedro via empresas com produtos incriveis que nao sabiam vender. Murillo via processos manuais que podiam rodar sozinhos com IA. Rapha via negocios crescendo sem estrutura, quebrando no proprio sucesso. A MCX nasceu como consultoria — mas rapidamente ficou claro que o mercado nao precisava de mais conselhos. Precisava de maquinas.
+            Tudo começou com três problemas diferentes que se encontraram na mesma mesa. Pedro via empresas com produtos incríveis que não sabiam vender. Murillo via processos manuais que podiam rodar sozinhos com IA. Rapha via negócios crescendo sem estrutura, quebrando no próprio sucesso. A MCX nasceu como consultoria — mas rapidamente ficou claro que o mercado não precisava de mais conselhos. Precisava de máquinas.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export default function Brand() {
               DE MCX PARA MVP
             </h4>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: '#8B9A8B', margin: 0 }}>
-              MCX era consultoria tradicional. Mais Vendas Pro e a evolucao: um ecossistema de produtos que instala maquinas de vendas inteligentes em negocios de alto ticket. O nome carrega duplo sentido — MVP como Minimum Viable Product e como Mais Vendas Pro.
+              MCX era consultoria tradicional. Mais Vendas Pro é a evolução: um ecossistema de produtos que instala máquinas de vendas inteligentes em negócios de alto ticket. O nome carrega duplo sentido — MVP como Minimum Viable Product e como Mais Vendas Pro.
             </p>
           </div>
           <div className="mvp-glass" style={{ padding: 24, borderRadius: 8 }}>
@@ -104,7 +104,7 @@ export default function Brand() {
               A TESE CENTRAL
             </h4>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: '#8B9A8B', margin: 0 }}>
-              Inteligencia artificial sem estrategia e chatbot caro. Estrategia sem automacao e consultoria lenta. A Mais Vendas Pro une os dois: squads de IA dirigidos por estrategia de negocio, gerando resultado mensuravel em receita.
+              Inteligência artificial sem estratégia é chatbot caro. Estratégia sem automação é consultoria lenta. A Mais Vendas Pro une os dois: squads de IA dirigidos por estratégia de negócio, gerando resultado mensurável em receita.
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function Brand() {
           }}
         >
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: '#33D489', margin: 0, fontStyle: 'italic' }}>
-            "Eram tres problemas diferentes que se encontraram na mesma mesa. E a solucao nao era mais um conselho — era uma maquina."
+            "Eram três problemas diferentes que se encontraram na mesma mesa. E a solução não era mais um conselho — era uma máquina."
           </p>
         </div>
       </section>
@@ -128,8 +128,8 @@ export default function Brand() {
       <section id="arquetipos" style={{ marginBottom: 120 }}>
         <SectionHeader
           overline="Identidade"
-          title="O Alquimista — Tres Arquetipos"
-          description="Mago + Criador + Governante = A triade que transforma negocios."
+          title="O Alquimista — Três Arquétipos"
+          description="Mago + Criador + Governante = A tríade que transforma negócios."
         />
 
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 40 }}>
@@ -201,7 +201,7 @@ export default function Brand() {
 
         <div className="mvp-glass" style={{ padding: 20, borderRadius: 8, marginTop: 24, textAlign: 'center' }}>
           <p style={{ fontSize: 13, color: '#8B9A8B', margin: 0, lineHeight: 1.7 }}>
-            <span style={{ color: '#00C96E', fontWeight: 600 }}>Complementaridade:</span> O Mago enxerga a oportunidade. O Criador constroi a solucao. O Governante escala a operacao. Juntos formam O Alquimista — capaz de transformar qualquer negocio em maquina.
+            <span style={{ color: '#00C96E', fontWeight: 600 }}>Complementaridade:</span> O Mago enxerga a oportunidade. O Criador constrói a solução. O Governante escala a operação. Juntos formam O Alquimista — capaz de transformar qualquer negócio em máquina.
           </p>
         </div>
       </section>
@@ -258,9 +258,9 @@ export default function Brand() {
       {/* === POSICIONAMENTO === */}
       <section id="posicionamento" style={{ marginBottom: 120 }}>
         <SectionHeader
-          overline="Estrategia"
+          overline="Estratégia"
           title="Posicionamento — Escada de Valor"
-          description="4 produtos que conduzem o cliente do primeiro contato ate a operacao completa."
+          description="4 produtos que conduzem o cliente do primeiro contato até a operação completa."
         />
 
         {/* Value Ladder */}
@@ -315,14 +315,14 @@ export default function Brand() {
         {/* Hero's Journey narrative */}
         <div className="mvp-glass" style={{ padding: 24, borderRadius: 8, marginBottom: 24 }}>
           <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, marginTop: 0 }}>
-            A Jornada do Heroi
+            A Jornada do Herói
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
-              { step: '1', label: 'Bunker IA', text: 'O empresario descobre que IA pode ser aplicada ao negocio. Entra na comunidade, aprende os fundamentos, faz seus primeiros deploys em grupo. Sai da esteira de conteudo e entra em modo implementacao.' },
-              { step: '2', label: 'Primeira Missao', text: 'Prova de conceito. Um projeto focado — chatbot, automacao de lead, qualificacao automatica. O empresario ve a IA funcionando no proprio negocio e entende o potencial real.' },
-              { step: '3', label: 'A Forja', text: 'Mentoria premium de 90 dias. Acompanhamento semanal, squads de IA trabalhando entre as calls, sistema completo de vendas implementado. Sai com maquina posicionada e vendendo.' },
-              { step: '4', label: 'Arsenal', text: 'Implementacao completa done-for-you. A equipe MVP instala a operacao inteira: funis, automacoes, squads de IA, integracao CRM, tracking completo. O empresario recebe a maquina rodando.' },
+              { step: '1', label: 'Bunker IA', text: 'O empresário descobre que IA pode ser aplicada ao negócio. Entra na comunidade, aprende os fundamentos, faz seus primeiros deploys em grupo. Sai da esteira de conteúdo e entra em modo implementação.' },
+              { step: '2', label: 'Primeira Missão', text: 'Prova de conceito. Um projeto focado — chatbot, automação de lead, qualificação automática. O empresário vê a IA funcionando no próprio negócio e entende o potencial real.' },
+              { step: '3', label: 'A Forja', text: 'Mentoria premium de 90 dias. Acompanhamento semanal, squads de IA trabalhando entre as calls, sistema completo de vendas implementado. Sai com máquina posicionada e vendendo.' },
+              { step: '4', label: 'Arsenal', text: 'Implementação completa done-for-you. A equipe MVP instala a operação inteira: funis, automações, squads de IA, integração CRM, tracking completo. O empresário recebe a máquina rodando.' },
             ].map((item) => (
               <div key={item.step} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <div
@@ -364,7 +364,7 @@ export default function Brand() {
           }}
         >
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: '#33D489', margin: 0, fontStyle: 'italic' }}>
-            "Cada degrau resolve um problema e revela o proximo. O cliente nunca e empurrado — ele sobe porque faz sentido."
+            "Cada degrau resolve um problema e revela o próximo. O cliente nunca é empurrado — ele sobe porque faz sentido."
           </p>
         </div>
       </section>

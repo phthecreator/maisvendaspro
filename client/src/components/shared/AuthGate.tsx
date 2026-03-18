@@ -43,14 +43,14 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#00ff88]/50"
+          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#00C96E]/50"
           placeholder="Senha"
           autoFocus
         />
         {error && <p className="text-sm text-red-400">{error}</p>}
         <button
           type="submit"
-          className="w-full py-3 bg-[#00ff88] text-black font-semibold rounded-lg hover:bg-[#00dd77] transition-colors text-sm"
+          className="w-full py-3 bg-[#00C96E] text-black font-semibold rounded-lg hover:bg-[#00A85A] transition-colors text-sm"
         >
           Entrar
         </button>

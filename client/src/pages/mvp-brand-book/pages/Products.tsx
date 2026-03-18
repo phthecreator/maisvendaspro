@@ -7,10 +7,10 @@ const products = [
     icon: '\u{1F6E1}\uFE0F',
     name: 'O Bunker',
     tagline: 'Entre. Se proteja. Fique forte.',
-    price: 'R$97/mes',
+    price: 'R$97/mês',
     priceAlt: 'R$997/ano',
     model: 'DIY Self-service',
-    narrative: 'Protecao',
+    narrative: 'Proteção',
     barHeight: 120,
     gradient: 'linear-gradient(180deg, #00C96E 0%, #00A85A 100%)',
     opacity: 0.55,
@@ -18,7 +18,7 @@ const products = [
   {
     id: 'primeira-missao',
     icon: '\u26A1',
-    name: 'A Primeira Missao',
+    name: 'A Primeira Missão',
     tagline: 'Seu primeiro combate real com IA.',
     price: 'R$3-5k',
     priceAlt: null,
@@ -32,7 +32,7 @@ const products = [
     id: 'forja',
     icon: '\u{1F525}',
     name: 'A Forja',
-    tagline: 'Forje sua maquina de IA.',
+    tagline: 'Forje sua máquina de IA.',
     price: 'R$15-30k',
     priceAlt: '90 dias',
     model: 'DWY — Done With You',
@@ -45,11 +45,11 @@ const products = [
     id: 'arsenal',
     icon: '\u2694\uFE0F',
     name: 'O Arsenal',
-    tagline: 'Seu exercito completo de IA.',
+    tagline: 'Seu exército completo de IA.',
     price: 'R$50-100k',
     priceAlt: null,
     model: 'DFY total',
-    narrative: 'Dominio Total',
+    narrative: 'Domínio Total',
     barHeight: 320,
     gradient: 'linear-gradient(180deg, #00FF88 0%, #00C96E 100%)',
     opacity: 1,
@@ -58,72 +58,72 @@ const products = [
 
 /* ─── Bunker deliverables ─── */
 const bunkerDeliverables = [
-  { item: 'Grupo WhatsApp exclusivo', detail: 'Acesso imediato — conteudo, networking, suporte' },
-  { item: 'Trilha autoguiada (4 niveis)', detail: 'L1: Fundamentos IA · L2: Automacao + Agentes · L3: Infra & Deploy · L4: Operacao & Escala' },
-  { item: '1 Squad Template incluso', detail: 'Escolhe na entrada (marketing, vendas ou conteudo)' },
-  { item: 'Conteudo semanal', detail: 'Aulas praticas via Notebook LM (conceito = IA gera, pratica = gravada)' },
-  { item: 'Encontro semanal ao vivo', detail: 'Terca 19h — tira-duvidas, demo ao vivo, cases' },
-  { item: 'Onboarding automatico', detail: 'Entrou no grupo → recebe sequencia de boas-vindas + trilha + squad template automaticamente' },
+  { item: 'Grupo WhatsApp exclusivo', detail: 'Acesso imediato — conteúdo, networking, suporte' },
+  { item: 'Trilha autoguiada (4 níveis)', detail: 'L1: Fundamentos IA · L2: Automação + Agentes · L3: Infra & Deploy · L4: Operação & Escala' },
+  { item: '1 Squad Template incluso', detail: 'Escolhe na entrada (marketing, vendas ou conteúdo)' },
+  { item: 'Conteúdo semanal', detail: 'Aulas práticas via Notebook LM (conceito = IA gera, prática = gravada)' },
+  { item: 'Encontro semanal ao vivo', detail: 'Terça 19h — tira-dúvidas, demo ao vivo, cases' },
+  { item: 'Onboarding automático', detail: 'Entrou no grupo → recebe sequência de boas-vindas + trilha + squad template automaticamente' },
 ];
 
 /* ─── Primeira Missao deliverables ─── */
 const primeiraMissaoDeliverables = [
-  { item: 'Diagnostico express (1h)', detail: 'Mapeamento da dor principal + processo a automatizar' },
-  { item: '1 Squad implementado', detail: 'Customizado pro seu negocio, configurado e rodando' },
+  { item: 'Diagnóstico express (1h)', detail: 'Mapeamento da dor principal + processo a automatizar' },
+  { item: '1 Squad implementado', detail: 'Customizado pro seu negócio, configurado e rodando' },
   { item: 'Setup completo', detail: 'Agents configurados, tasks definidas, workflows testados' },
-  { item: 'Treinamento de operacao (2h)', detail: 'Voce/seu time aprende a usar e manter o squad' },
-  { item: '30 dias de suporte', detail: 'Ajustes e duvidas pos-implementacao' },
-  { item: 'Relatorio de resultados', detail: 'Metricas do squad nos primeiros 30 dias' },
+  { item: 'Treinamento de operação (2h)', detail: 'Você/seu time aprende a usar e manter o squad' },
+  { item: '30 dias de suporte', detail: 'Ajustes e dúvidas pós-implementação' },
+  { item: 'Relatório de resultados', detail: 'Métricas do squad nos primeiros 30 dias' },
   { item: 'Acesso ao Bunker (3 meses)', detail: 'Incluso — continua evoluindo com a comunidade' },
 ];
 
 const mostRequestedSquads = [
-  'Squad Marketing (conteudo + copy automatizados)',
-  'Squad Trafego (gestao de Meta Ads)',
+  'Squad Marketing (conteúdo + copy automatizados)',
+  'Squad Tráfego (gestão de Meta Ads)',
   'Squad Vendas (closer + comercial)',
-  'Squad Landing Page (paginas prontas em horas)',
+  'Squad Landing Page (páginas prontas em horas)',
   'Squad RH (recrutamento + processos)',
 ];
 
 /* ─── Forja deliverables ─── */
 const forjaDeliverables = [
   { item: '3-7 Squads implementados', detail: 'Customizados por area (marketing, vendas, ops, design, etc.)' },
-  { item: '90 dias de acompanhamento', detail: 'Reuniao individual semanal (1h) + grupo semanal + SOS mensal' },
-  { item: 'Squads produzindo entre as calls', detail: 'Entregas continuas — nao e "so conversar", e maquina rodando' },
-  { item: 'DNA Extractor', detail: 'Clonagem de conhecimento de 1-2 pessoas-chave do seu negocio' },
-  { item: 'Dashboard de resultados', detail: 'Metricas de todos os squads em tempo real' },
+  { item: '90 dias de acompanhamento', detail: 'Reunião individual semanal (1h) + grupo semanal + SOS mensal' },
+  { item: 'Squads produzindo entre as calls', detail: 'Entregas contínuas — não é "só conversar", é máquina rodando' },
+  { item: 'DNA Extractor', detail: 'Clonagem de conhecimento de 1-2 pessoas-chave do seu negócio' },
+  { item: 'Dashboard de resultados', detail: 'Métricas de todos os squads em tempo real' },
   { item: 'Treinamento do time (4h)', detail: 'Sua equipe opera os squads com autonomia total' },
   { item: 'Acesso ao Bunker (12 meses)', detail: 'Incluso' },
 ];
 
 const forjaTiers = [
-  { tier: 'Forja Core', squads: '3-5 squads', price: 'R$15k', profile: 'Agencia/empresa R$20-80k/mes' },
-  { tier: 'Forja Growth', squads: '5-7 squads', price: 'R$20-30k', profile: 'Empresa R$80-200k/mes' },
+  { tier: 'Forja Core', squads: '3-5 squads', price: 'R$15k', profile: 'Agência/empresa R$20-80k/mês' },
+  { tier: 'Forja Growth', squads: '5-7 squads', price: 'R$20-30k', profile: 'Empresa R$80-200k/mês' },
 ];
 
 /* ─── Arsenal deliverables ─── */
 const arsenalDeliverables = [
   { item: '15-30+ Squads implementados', detail: 'Cobertura total de todas as areas' },
-  { item: 'Implementacao em 3-4 dias (imersao)', detail: 'Presencial ou remoto intensivo' },
-  { item: 'DNA Extractor completo', detail: 'Clonagem de toda lideranca — suas mentes viram IA' },
+  { item: 'Implementação em 3-4 dias (imersão)', detail: 'Presencial ou remoto intensivo' },
+  { item: 'DNA Extractor completo', detail: 'Clonagem de toda liderança — suas mentes viram IA' },
   { item: 'MMOS Advisory Board', detail: '35+ mentes de especialistas como conselheiros' },
   { item: 'Squad Creator Pro', detail: 'Squads custom criados sob medida, sem limite' },
   { item: 'Treinamento completo (8h+)', detail: 'Todo time operando com autonomia' },
-  { item: '6 meses de suporte dedicado', detail: 'Account manager + suporte tecnico' },
-  { item: 'Dashboard enterprise', detail: 'Metricas, ROI, health checks de todos squads' },
-  { item: 'Acesso ao Bunker (vitalicio)', detail: 'Incluso' },
+  { item: '6 meses de suporte dedicado', detail: 'Account manager + suporte técnico' },
+  { item: 'Dashboard enterprise', detail: 'Métricas, ROI, health checks de todos squads' },
+  { item: 'Acesso ao Bunker (vitalício)', detail: 'Incluso' },
 ];
 
 const arsenalTiers = [
-  { tier: 'Arsenal Tatico', squads: '15-20 squads', price: 'R$50k', profile: '1-2 areas, empresa R$80-200k/mes' },
-  { tier: 'Arsenal Estrategico', squads: '20-25 squads', price: 'R$75k', profile: '3-4 areas, empresa R$200-500k/mes' },
-  { tier: 'Arsenal Completo', squads: '30+ squads', price: 'R$100k', profile: 'Empresa inteira, R$500k+/mes' },
+  { tier: 'Arsenal Tático', squads: '15-20 squads', price: 'R$50k', profile: '1-2 áreas, empresa R$80-200k/mês' },
+  { tier: 'Arsenal Estratégico', squads: '20-25 squads', price: 'R$75k', profile: '3-4 áreas, empresa R$200-500k/mês' },
+  { tier: 'Arsenal Completo', squads: '30+ squads', price: 'R$100k', profile: 'Empresa inteira, R$500k+/mês' },
 ];
 
 /* ─── Upsell flow steps ─── */
 const upsellSteps = [
-  { icon: '\u{1F6E1}\uFE0F', name: 'Bunker', price: 'R$97/mes', trigger: 'Membro experimenta squad template, ve potencial' },
-  { icon: '\u26A1', name: 'Primeira Missao', price: 'R$3-5k', trigger: 'Relatorio 30 dias mostra resultado concreto' },
+  { icon: '\u{1F6E1}\uFE0F', name: 'Bunker', price: 'R$97/mês', trigger: 'Membro experimenta squad template, vê potencial' },
+  { icon: '\u26A1', name: 'Primeira Missão', price: 'R$3-5k', trigger: 'Relatório 30 dias mostra resultado concreto' },
   { icon: '\u{1F525}', name: 'Forja', price: 'R$15-30k', trigger: '90 dias de resultado comprovado, squads produzindo' },
   { icon: '\u2694\uFE0F', name: 'Arsenal', price: 'R$50-100k', trigger: 'Cliente vira case + evangelista' },
 ];
@@ -188,7 +188,7 @@ function DeliverablesTable({ items }: { items: { item: string; detail: string }[
     <table style={tableStyle}>
       <thead>
         <tr>
-          <th style={thStyle}>Entregavel</th>
+          <th style={thStyle}>Entregável</th>
           <th style={thStyle}>Detalhe</th>
         </tr>
       </thead>
@@ -212,7 +212,7 @@ function SubTierTable({ tiers }: { tiers: { tier: string; squads: string; price:
         <tr>
           <th style={thStyle}>Sub-tier</th>
           <th style={thStyle}>Squads</th>
-          <th style={thStyle}>Preco</th>
+          <th style={thStyle}>Preço</th>
           <th style={thStyle}>Perfil</th>
         </tr>
       </thead>
@@ -337,8 +337,8 @@ export default function Products() {
       <section id="escada-valor" style={sectionStyle}>
         <SectionHeader
           overline="Escada de Valor"
-          title="A Jornada do Heroi"
-          description="Protecao → Combate → Forja → Dominio Total. Quatro produtos. Uma escada. O heroi fica mais forte a cada nivel."
+          title="A Jornada do Herói"
+          description="Proteção → Combate → Forja → Domínio Total. Quatro produtos. Uma escada. O herói fica mais forte a cada nível."
         />
 
         {/* Narrative intro */}
@@ -359,9 +359,9 @@ export default function Products() {
               margin: 0,
             }}
           >
-            Voce esta exposto. O mercado esta mudando. IA esta devorando negocios lentos. Mas existe um caminho:
+            Você está exposto. O mercado está mudando. IA está devorando negócios lentos. Mas existe um caminho:
             entre no Bunker, proteja-se, fique forte. Depois saia para o primeiro combate real. Prove que funciona.
-            Entao forje sua maquina — junto com a gente. E quando estiver pronto, monte seu exercito completo.
+            Então forje sua máquina — junto com a gente. E quando estiver pronto, monte seu exército completo.
           </p>
         </div>
 
@@ -505,25 +505,25 @@ export default function Products() {
             letterSpacing: '0.08em',
           }}
         >
-          <span style={{ color: '#00C96E', fontWeight: 600 }}>Protecao</span>
+          <span style={{ color: '#00C96E', fontWeight: 600 }}>Proteção</span>
           {' → '}
           <span style={{ color: '#00C96E', fontWeight: 600 }}>Combate</span>
           {' → '}
           <span style={{ color: '#00C96E', fontWeight: 600 }}>Forja</span>
           {' → '}
-          <span style={{ color: '#00C96E', fontWeight: 600 }}>Dominio Total</span>
+          <span style={{ color: '#00C96E', fontWeight: 600 }}>Domínio Total</span>
         </div>
       </section>
 
       {/* ─── O BUNKER ─── */}
       <section id="bunker" style={sectionStyle}>
-        <SectionHeader overline="Nivel 1 — DIY Self-service" title="O Bunker" />
+        <SectionHeader overline="Nível 1 — DIY Self-service" title="O Bunker" />
         <div style={cardStyle}>
           <ProductCardHeader
             icon={'\u{1F6E1}\uFE0F'}
             name="O Bunker"
             tagline="Entre. Se proteja. Fique forte."
-            price="R$97/mes"
+            price="R$97/mês"
             priceAlt="R$997/ano"
             model="DIY Self-service"
           />
@@ -538,8 +538,8 @@ export default function Products() {
               maxWidth: 700,
             }}
           >
-            Voce entra cru e sai preparado. O Bunker e onde voce aprende a usar IA de verdade no seu negocio
-            — sem teoria, sem enrolacao. Implementacao real, no seu ritmo, com suporte de quem ja faz.
+            Você entra cru e sai preparado. O Bunker é onde você aprende a usar IA de verdade no seu negócio
+            — sem teoria, sem enrolação. Implementação real, no seu ritmo, com suporte de quem já faz.
           </p>
 
           <DeliverablesTable items={bunkerDeliverables} />
@@ -592,11 +592,11 @@ export default function Products() {
 
       {/* ─── A PRIMEIRA MISSAO ─── */}
       <section id="primeira-missao" style={sectionStyle}>
-        <SectionHeader overline="Nivel 2 — DFY Pontual" title="A Primeira Missao" />
+        <SectionHeader overline="Nível 2 — DFY Pontual" title="A Primeira Missão" />
         <div style={cardStyle}>
           <ProductCardHeader
             icon={'\u26A1'}
-            name="A Primeira Missao"
+            name="A Primeira Missão"
             tagline="Seu primeiro combate real com IA. Um squad. Cinco dias. Resultado."
             price="R$3-5k"
             model="DFY pontual — 1 squad"
@@ -612,8 +612,8 @@ export default function Products() {
               maxWidth: 700,
             }}
           >
-            Voce saiu do Bunker. Esta pronto pro primeiro combate de verdade. A gente pega, implementa UM squad
-            no seu negocio em 5 dias, e voce ve o resultado com os proprios olhos. Sem teoria — resultado.
+            Você saiu do Bunker. Está pronto pro primeiro combate de verdade. A gente pega, implementa UM squad
+            no seu negócio em 5 dias, e você vê o resultado com os próprios olhos. Sem teoria — resultado.
           </p>
 
           <DeliverablesTable items={primeiraMissaoDeliverables} />
@@ -665,12 +665,12 @@ export default function Products() {
 
       {/* ─── A FORJA ─── */}
       <section id="forja" style={sectionStyle}>
-        <SectionHeader overline="Nivel 3 — Done With You" title="A Forja" />
+        <SectionHeader overline="Nível 3 — Done With You" title="A Forja" />
         <div style={cardStyle}>
           <ProductCardHeader
             icon={'\u{1F525}'}
             name="A Forja"
-            tagline="Forje sua maquina de IA. Junto com a gente. 90 dias."
+            tagline="Forje sua máquina de IA. Junto com a gente. 90 dias."
             price="R$15-30k"
             priceAlt="90 dias"
             model="DWY — Done With You"
@@ -686,9 +686,9 @@ export default function Products() {
               maxWidth: 700,
             }}
           >
-            Voce provou que funciona. Agora e hora de escalar. Na Forja, construimos sua maquina de IA junto
-            com voce — 3 a 7 squads cobrindo multiplas areas do negocio. E o diferencial: os squads trabalham
-            ENTRE as reunioes.
+            Você provou que funciona. Agora é hora de escalar. Na Forja, construímos sua máquina de IA junto
+            com você — 3 a 7 squads cobrindo múltiplas áreas do negócio. E o diferencial: os squads trabalham
+            ENTRE as reuniões.
           </p>
 
           {/* Diferencial callout */}
@@ -739,12 +739,12 @@ export default function Products() {
 
       {/* ─── O ARSENAL ─── */}
       <section id="arsenal" style={sectionStyle}>
-        <SectionHeader overline="Nivel 4 — DFY Total" title="O Arsenal" />
+        <SectionHeader overline="Nível 4 — DFY Total" title="O Arsenal" />
         <div style={cardStyle}>
           <ProductCardHeader
             icon={'\u2694\uFE0F'}
             name="O Arsenal"
-            tagline="Seu exercito completo de IA. Implementado. Funcionando. Voce comanda."
+            tagline="Seu exército completo de IA. Implementado. Funcionando. Você comanda."
             price="R$50-100k"
             model="DFY total"
           />
@@ -759,8 +759,8 @@ export default function Products() {
               maxWidth: 700,
             }}
           >
-            Arsenal completo. Toda a operacao da empresa coberta por squads de IA. Marketing, vendas, design,
-            dados, operacoes, RH, juridico. Voce comanda. Eles executam. 24 horas. 7 dias.
+            Arsenal completo. Toda a operação da empresa coberta por squads de IA. Marketing, vendas, design,
+            dados, operações, RH, jurídico. Você comanda. Eles executam. 24 horas. 7 dias.
           </p>
 
           <DeliverablesTable items={arsenalDeliverables} />
@@ -789,8 +789,8 @@ export default function Products() {
       <section id="upsell-flow" style={{ ...sectionStyle, marginBottom: 40 }}>
         <SectionHeader
           overline="Jornada de Upsell"
-          title="Fluxo Natural de Evolucao"
-          description="Cada produto e uma evolucao natural — o heroi fica mais forte a cada nivel. Ninguem precisa comprar tudo de uma vez."
+          title="Fluxo Natural de Evolução"
+          description="Cada produto é uma evolução natural — o herói fica mais forte a cada nível. Ninguém precisa comprar tudo de uma vez."
         />
 
         <div

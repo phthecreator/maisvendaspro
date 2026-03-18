@@ -2,50 +2,50 @@ import SectionHeader from '../shared/SectionHeader';
 
 /* ─── COPY DATA ─── */
 const headlines = [
-  'Transformamos a inteligencia que ja existe na sua empresa em uma maquina que trabalha 24/7.',
-  'Voce esta sentado numa mina de ouro. A gente te da a pa.',
-  'Enquanto voce dorme, seus squads de IA estao vendendo, atendendo e produzindo.',
-  '14 squads. 35 mentes. Uma plataforma. Seu negocio nunca mais vai ser o mesmo.',
-  'Eu nao abaixo o preco — eu aumento o valor.',
-  '85 a 97% de fidelidade cognitiva. Nao e promessa. E metrica.',
+  'Transformamos a inteligência que já existe na sua empresa em uma máquina que trabalha 24/7.',
+  'Você está sentado numa mina de ouro. A gente te dá a pá.',
+  'Enquanto você dorme, seus squads de IA estão vendendo, atendendo e produzindo.',
+  '14 squads. 35 mentes. Uma plataforma. Seu negócio nunca mais vai ser o mesmo.',
+  'Eu não abaixo o preço — eu aumento o valor.',
+  '85 a 97% de fidelidade cognitiva. Não é promessa. É métrica.',
   'Um squad. Cinco dias. Resultado. Depois a gente conversa sobre o resto.',
-  'Quem chega primeiro bebe agua limpa. Os atrasados bebem o que sobrou.',
+  'Quem chega primeiro bebe água limpa. Os atrasados bebem o que sobrou.',
 ];
 
 const taglines = [
   { text: 'Sua empresa. Potencializada por IA.', use: 'Logo lockup principal' },
-  { text: 'O ultimo aplicativo que a sua empresa contrata.', use: 'Paginas de venda' },
-  { text: 'Squads de IA que trabalham enquanto voce dorme.', use: 'Bio de redes sociais' },
-  { text: 'Da inteligencia humana a maquina que nunca para.', use: 'Email signature' },
-  { text: 'Implemente. Escale. Domine.', use: 'CTA curto, botoes' },
-  { text: 'Laboratorio de IA para aceleracao empresarial.', use: 'LinkedIn, B2B' },
+  { text: 'O último aplicativo que a sua empresa contrata.', use: 'Páginas de venda' },
+  { text: 'Squads de IA que trabalham enquanto você dorme.', use: 'Bio de redes sociais' },
+  { text: 'Da inteligência humana à máquina que nunca para.', use: 'Email signature' },
+  { text: 'Implemente. Escale. Domine.', use: 'CTA curto, botões' },
+  { text: 'Laboratório de IA para aceleração empresarial.', use: 'LinkedIn, B2B' },
 ];
 
 const elevatorPitch30s =
-  'A Mais Vendas Pro transforma a inteligencia que ja existe na sua empresa em squads de IA que trabalham 24 horas por dia. Clonamos o conhecimento dos seus melhores profissionais com fidelidade de ate 97% e colocamos equipes de IA pra vender, atender, produzir conteudo e operar — sem parar. Ja temos 14 squads prontos cobrindo marketing, vendas, design, RH, juridico. E o ROI medio dos nossos clientes e de 444 vezes o investimento.';
+  'A Mais Vendas Pro transforma a inteligência que já existe na sua empresa em squads de IA que trabalham 24 horas por dia. Clonamos o conhecimento dos seus melhores profissionais com fidelidade de até 97% e colocamos equipes de IA pra vender, atender, produzir conteúdo e operar — sem parar. Já temos 14 squads prontos cobrindo marketing, vendas, design, RH, jurídico. E o ROI médio dos nossos clientes é de 444 vezes o investimento.';
 
 const elevatorPitch60s =
-  'Toda empresa tem gente boa. Gente que sabe vender, que conhece o produto, que entende o cliente. O problema? Essas pessoas trabalham 8 horas por dia, tiram ferias, ficam doentes, pedem demissao.\n\nA Mais Vendas Pro resolve isso. A gente pega o conhecimento dos seus melhores profissionais — o jeito que vendem, o tom que usam, as decisoes que tomam — e transforma em squads de IA que operam 24 horas, 7 dias por semana. Com fidelidade cognitiva de 85 a 97%. Nao e chatbot. Nao e automacao generica. E a mente do seu melhor funcionario, replicada e escalada.\n\nTemos 4 formas de comecar: desde a comunidade por R$97/mes ate a implementacao completa de 30+ squads por R$100 mil. Mas a maioria comeca com A Primeira Missao — um squad, cinco dias, resultado concreto por R$5 mil. Se funcionar, a gente conversa sobre escalar. Se nao funcionar, voce viu com os proprios olhos que tentou.';
+  'Toda empresa tem gente boa. Gente que sabe vender, que conhece o produto, que entende o cliente. O problema? Essas pessoas trabalham 8 horas por dia, tiram férias, ficam doentes, pedem demissão.\n\nA Mais Vendas Pro resolve isso. A gente pega o conhecimento dos seus melhores profissionais — o jeito que vendem, o tom que usam, as decisões que tomam — e transforma em squads de IA que operam 24 horas, 7 dias por semana. Com fidelidade cognitiva de 85 a 97%. Não é chatbot. Não é automação genérica. É a mente do seu melhor funcionário, replicada e escalada.\n\nTemos 4 formas de começar: desde a comunidade por R$97/mês até a implementação completa de 30+ squads por R$100 mil. Mas a maioria começa com A Primeira Missão — um squad, cinco dias, resultado concreto por R$5 mil. Se funcionar, a gente conversa sobre escalar. Se não funcionar, você viu com os próprios olhos que tentou.';
 
 const ctas = [
   { stage: 'Topo', text: 'Comenta "SQUAD" que eu te mostro qual IA resolve a sua maior dor.', where: 'Instagram/TikTok' },
-  { stage: 'Topo', text: 'Salva esse post. Quando voce decidir parar de fazer tudo sozinho, vai precisar dele.', where: 'Instagram/TikTok' },
+  { stage: 'Topo', text: 'Salva esse post. Quando você decidir parar de fazer tudo sozinho, vai precisar dele.', where: 'Instagram/TikTok' },
   { stage: 'Meio', text: 'Faz o quiz de 2 minutos e descobre qual squad de IA sua empresa precisa primeiro.', where: 'Landing page / bio' },
-  { stage: 'Meio', text: 'Assiste o case completo: como reduzimos 40% do tempo de RH com R$3 de custo.', where: 'Email / pagina' },
-  { stage: 'Meio', text: 'Agenda um diagnostico de 15 minutos. Sem compromisso.', where: 'Email / DM aquecido' },
-  { stage: 'Fundo', text: 'Entra no Bunker. R$97/mes. Comeca hoje, implementa amanha.', where: 'Pagina de vendas Bunker' },
-  { stage: 'Fundo', text: 'Comeca com A Primeira Missao. Um squad. Cinco dias. Resultado ou voce viu com os proprios olhos.', where: 'Pagina de vendas / email' },
-  { stage: 'Fundo', text: 'Agenda a call com o Pedro. 15 minutos. Ele vai te mostrar exatamente quanto voce esta perdendo por mes sem IA.', where: 'Pagina de vendas / WhatsApp' },
-  { stage: 'Retencao', text: 'Seu squad de marketing ja esta rodando. Imagina com vendas, RH e atendimento tambem. Vem pra Forja.', where: 'WhatsApp pos-venda' },
-  { stage: 'Retencao', text: 'Voce ja viu o resultado de 1 squad. Agora imagina 30. Hora do Arsenal. Agenda com o Pedro.', where: 'Email de upsell' },
+  { stage: 'Meio', text: 'Assiste o case completo: como reduzimos 40% do tempo de RH com R$3 de custo.', where: 'Email / página' },
+  { stage: 'Meio', text: 'Agenda um diagnóstico de 15 minutos. Sem compromisso.', where: 'Email / DM aquecido' },
+  { stage: 'Fundo', text: 'Entra no Bunker. R$97/mês. Começa hoje, implementa amanhã.', where: 'Página de vendas Bunker' },
+  { stage: 'Fundo', text: 'Começa com A Primeira Missão. Um squad. Cinco dias. Resultado ou você viu com os próprios olhos.', where: 'Página de vendas / email' },
+  { stage: 'Fundo', text: 'Agenda a call com o Pedro. 15 minutos. Ele vai te mostrar exatamente quanto você está perdendo por mês sem IA.', where: 'Página de vendas / WhatsApp' },
+  { stage: 'Retenção', text: 'Seu squad de marketing já está rodando. Imagina com vendas, RH e atendimento também. Vem pra Forja.', where: 'WhatsApp pós-venda' },
+  { stage: 'Retenção', text: 'Você já viu o resultado de 1 squad. Agora imagina 30. Hora do Arsenal. Agenda com o Pedro.', where: 'Email de upsell' },
 ];
 
 /* ─── VOICE & TONE DATA ─── */
 const voicePillars = [
   {
-    pillar: 'Alquimista, nao guru',
-    yes: 'A inteligencia que ja existe na sua empresa pode virar uma maquina que trabalha 24/7. Nos transformamos isso em squad — com metricas, nao promessas.',
-    no: 'Descubra o SEGREDO que vai REVOLUCIONAR seu negocio com inteligencia artificial!',
+    pillar: 'Alquimista, não guru',
+    yes: 'A inteligência que já existe na sua empresa pode virar uma máquina que trabalha 24/7. Nós transformamos isso em squad — com métricas, não promessas.',
+    no: 'Descubra o SEGREDO que vai REVOLUCIONAR seu negócio com inteligência artificial!',
   },
   {
     pillar: 'Direto, nao arrogante',

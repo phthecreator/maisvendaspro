@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
     <header className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden px-4">
       {/* Background Grid Effect */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00ff8810_1px,transparent_1px),linear-gradient(to_bottom,#00ff8810_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00C96E10_1px,transparent_1px),linear-gradient(to_bottom,#00C96E10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">

@@ -324,12 +324,12 @@ export default function Home() {
   const roi = formSubmitted ? calculateROI(formData.invested, formData.wouldInvest) : null;
 
   return (
-    <div ref={scrollRef} className="relative min-h-screen bg-black text-white selection:bg-[#00ff88]/20">
+    <div ref={scrollRef} className="relative min-h-screen bg-black text-white selection:bg-[#00C96E]/20">
       {/* --- HEADER --- */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/70 border-b border-white/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 group">
-            <div className="relative w-8 h-8 flex items-center justify-center bg-[#00ff88] rounded-md">
+            <div className="relative w-8 h-8 flex items-center justify-center bg-[#00C96E] rounded-md">
               <svg
                 width="16"
                 height="16"
@@ -406,7 +406,7 @@ export default function Home() {
                     <SheetClose asChild>
                       <a
                         href={`${WHATSAPP_URL}?text=${encodeURIComponent('Quero agendar meu diagnóstico gratuito')}`}
-                        className="w-full block rounded-lg bg-[#00ff88] px-5 py-3 text-sm font-semibold text-black text-center"
+                        className="w-full block rounded-lg bg-[#00C96E] px-5 py-3 text-sm font-semibold text-black text-center"
                       >
                         Agendar diagnóstico
                       </a>
@@ -417,7 +417,7 @@ export default function Home() {
             )}
             <button
               onClick={() => scrollTo('qualify')}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[#00ff88] rounded-lg text-sm font-semibold text-black hover:bg-[#00dd77] transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[#00C96E] rounded-lg text-sm font-semibold text-black hover:bg-[#00A85A] transition-colors"
             >
               Começar
             </button>
@@ -438,7 +438,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00C96E] animate-pulse" />
             <span className="text-white/50 text-xs font-mono tracking-wide">Enterprise AI Infrastructure</span>
           </motion.div>
 
@@ -449,7 +449,7 @@ export default function Home() {
             className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05] text-white mb-6"
           >
             Uma equipe de IA que{' '}
-            <span className="text-[#00ff88]">opera</span>
+            <span className="text-[#00C96E]">opera</span>
             <br className="hidden sm:block" />
             {' '}seu negócio 24/7.
           </motion.h1>
@@ -471,7 +471,7 @@ export default function Home() {
           >
             <button
               onClick={() => scrollTo('qualify')}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00ff88] text-black text-sm font-semibold rounded-lg hover:bg-[#00dd77] transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C96E] text-black text-sm font-semibold rounded-lg hover:bg-[#00A85A] transition-colors"
             >
               Receber meu diagnóstico gratuito
               <ArrowRight className="w-4 h-4" />
@@ -503,7 +503,7 @@ export default function Home() {
                   </div>
                   <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                     <motion.div
-                      className="h-full bg-[#00ff88] rounded-full"
+                      className="h-full bg-[#00C96E] rounded-full"
                       initial={false}
                       animate={{ width: `${progress}%` }}
                       transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -542,7 +542,7 @@ export default function Home() {
                           value={currentValue}
                           onChange={(e) => updateField(currentQuestion.field, e.target.value)}
                           onKeyDown={handleKeyDown}
-                          className="w-full px-0 py-3 bg-transparent border-b-2 border-white/10 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-[#00ff88] transition-colors"
+                          className="w-full px-0 py-3 bg-transparent border-b-2 border-white/10 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-[#00C96E] transition-colors"
                           placeholder={currentQuestion.placeholder}
                         />
                       )}
@@ -557,7 +557,7 @@ export default function Home() {
                               onClick={() => updateField(currentQuestion.field, opt)}
                               className={`flex-1 px-6 py-4 rounded-lg border text-base font-medium transition-all ${
                                 currentValue === opt
-                                  ? 'border-[#00ff88] bg-[#00ff88]/10 text-[#00ff88]'
+                                  ? 'border-[#00C96E] bg-[#00C96E]/10 text-[#00C96E]'
                                   : 'border-white/10 bg-white/[0.02] text-white/50 hover:text-white hover:border-white/20'
                               }`}
                             >
@@ -577,7 +577,7 @@ export default function Home() {
                               onClick={() => updateField(currentQuestion.field, range)}
                               className={`w-full text-left px-5 py-4 rounded-lg border text-sm font-medium transition-all ${
                                 currentValue === range
-                                  ? 'border-[#00ff88] bg-[#00ff88]/10 text-[#00ff88]'
+                                  ? 'border-[#00C96E] bg-[#00C96E]/10 text-[#00C96E]'
                                   : 'border-white/10 bg-white/[0.02] text-white/50 hover:text-white hover:border-white/20'
                               }`}
                             >
@@ -599,7 +599,7 @@ export default function Home() {
                             <div
                               className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center shrink-0 transition-colors ${
                                 lgpdConsent
-                                  ? 'bg-[#00ff88] border-[#00ff88]'
+                                  ? 'bg-[#00C96E] border-[#00C96E]'
                                   : 'border-white/20 bg-white/5 group-hover:border-white/40'
                               }`}
                               onClick={() => setLgpdConsent(!lgpdConsent)}
@@ -658,7 +658,7 @@ export default function Home() {
                         <button
                           type="submit"
                           disabled={formLoading || !lgpdConsent}
-                          className="inline-flex items-center gap-2 px-8 py-3 bg-[#00ff88] text-black text-sm font-semibold rounded-lg hover:bg-[#00dd77] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                          className="inline-flex items-center gap-2 px-8 py-3 bg-[#00C96E] text-black text-sm font-semibold rounded-lg hover:bg-[#00A85A] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                         >
                           {formLoading ? (
                             <>
@@ -681,7 +681,7 @@ export default function Home() {
                           type="button"
                           onClick={goNext}
                           disabled={!canContinue()}
-                          className="inline-flex items-center gap-2 px-6 py-3 bg-[#00ff88] text-black text-sm font-semibold rounded-lg hover:bg-[#00dd77] transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                          className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C96E] text-black text-sm font-semibold rounded-lg hover:bg-[#00A85A] transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
                         >
                           Continuar
                           <ArrowRight className="w-4 h-4" />
@@ -700,8 +700,8 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#00ff88]/10 border border-[#00ff88]/30 flex items-center justify-center">
-                  <Check className="w-8 h-8 text-[#00ff88]" />
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#00C96E]/10 border border-[#00C96E]/30 flex items-center justify-center">
+                  <Check className="w-8 h-8 text-[#00C96E]" />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-2">
                   Obrigado, {formData.name}!
@@ -713,13 +713,13 @@ export default function Home() {
                 {/* Mini ROI Calculator result */}
                 {roi && (
                   <div className="border border-white/10 bg-white/[0.02] rounded-xl p-8 mb-8 text-left">
-                    <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-4 block">
+                    <span className="font-mono text-[#00C96E] text-xs tracking-widest mb-4 block">
                       /// SEU ROI ESTIMADO
                     </span>
                     <div className="grid grid-cols-2 gap-6 mb-6">
                       <div>
                         <p className="text-xs text-white/40 mb-1">Economia anual estimada</p>
-                        <p className="text-2xl sm:text-3xl font-semibold text-[#00ff88] font-mono">
+                        <p className="text-2xl sm:text-3xl font-semibold text-[#00C96E] font-mono">
                           {roi.savings}
                         </p>
                       </div>
@@ -736,7 +736,7 @@ export default function Home() {
                     </p>
                     <a
                       href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Olá! Sou ${formData.name}${formData.company ? ` da ${formData.company}` : ''}. Quero agendar meu diagnóstico completo gratuito.`)}`}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-[#00ff88] text-black text-sm font-semibold rounded-lg hover:bg-[#00dd77] transition-colors"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C96E] text-black text-sm font-semibold rounded-lg hover:bg-[#00A85A] transition-colors"
                     >
                       Agendar diagnóstico completo gratuito
                       <ArrowRight className="w-4 h-4" />
@@ -767,7 +767,7 @@ export default function Home() {
           <section id="como-funciona" className="relative z-20 py-24 px-4 sm:px-6 border-t border-white/5">
             <div className="mx-auto max-w-5xl">
               <div className="text-center mb-16">
-                <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-3 block">/// PROCESSO</span>
+                <span className="font-mono text-[#00C96E] text-xs tracking-widest mb-3 block">/// PROCESSO</span>
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
                   Do diagnóstico à operação autônoma
                 </h2>
@@ -783,7 +783,7 @@ export default function Home() {
                     transition={{ delay: i * 0.1, duration: 0.5 }}
                     className="relative p-6 border border-white/5 bg-white/[0.02] rounded-xl group hover:border-white/10 transition-colors"
                   >
-                    <span className="font-mono text-[#00ff88]/40 text-xs mb-4 block">{step.num}</span>
+                    <span className="font-mono text-[#00C96E]/40 text-xs mb-4 block">{step.num}</span>
                     <h3 className="text-base font-semibold text-white mb-2">{step.title}</h3>
                     <p className="text-sm text-white/40 leading-relaxed">{step.desc}</p>
                     {i < steps.length - 1 && (
@@ -799,7 +799,7 @@ export default function Home() {
           <section id="sistema" className="relative z-20 py-24 px-4 sm:px-6 border-t border-white/5">
             <div className="mx-auto max-w-5xl">
               <div className="text-center mb-16">
-                <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-3 block">/// O SISTEMA</span>
+                <span className="font-mono text-[#00C96E] text-xs tracking-widest mb-3 block">/// O SISTEMA</span>
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
                   Infraestrutura que opera em escala
                 </h2>
@@ -821,10 +821,10 @@ export default function Home() {
                       transition={{ delay: i * 0.1, duration: 0.4 }}
                       className="p-6 border border-white/5 bg-white/[0.02] rounded-xl text-center"
                     >
-                      <div className="w-10 h-10 mx-auto mb-4 rounded-lg bg-[#00ff88]/5 border border-[#00ff88]/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-[#00ff88]/60" />
+                      <div className="w-10 h-10 mx-auto mb-4 rounded-lg bg-[#00C96E]/5 border border-[#00C96E]/10 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-[#00C96E]/60" />
                       </div>
-                      <div className="text-3xl md:text-4xl font-semibold text-[#00ff88] mb-1 font-mono">
+                      <div className="text-3xl md:text-4xl font-semibold text-[#00C96E] mb-1 font-mono">
                         {stat.value}
                       </div>
                       <p className="text-xs text-white/40">{stat.label}</p>
@@ -844,11 +844,11 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="font-mono text-[#00ff88] text-xs tracking-widest mb-6 block">/// A PROPOSTA</span>
+                <span className="font-mono text-[#00C96E] text-xs tracking-widest mb-6 block">/// A PROPOSTA</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight mb-6">
                   Uma equipe de IA dentro do seu negócio que funciona{' '}
-                  <span className="text-[#00ff88]">24/7</span> e custa menos que{' '}
-                  <span className="text-[#00ff88]">1 funcionário CLT</span>.
+                  <span className="text-[#00C96E]">24/7</span> e custa menos que{' '}
+                  <span className="text-[#00C96E]">1 funcionário CLT</span>.
                 </h2>
                 <p className="text-white/40 text-lg max-w-xl mx-auto">
                   Não vendemos ferramentas. Implantamos times de agentes inteligentes
@@ -877,7 +877,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
                     href={`${WHATSAPP_URL}?text=${encodeURIComponent('Quero agendar meu diagnóstico gratuito')}`}
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#00ff88] text-black text-sm font-semibold rounded-lg hover:bg-[#00dd77] transition-colors"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C96E] text-black text-sm font-semibold rounded-lg hover:bg-[#00A85A] transition-colors"
                   >
                     Agendar diagnóstico
                     <ArrowRight className="w-4 h-4" />
@@ -897,7 +897,7 @@ export default function Home() {
           <footer className="py-12 border-t border-white/5 px-4 sm:px-6">
             <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-md bg-[#00ff88] flex items-center justify-center">
+                <div className="w-6 h-6 rounded-md bg-[#00C96E] flex items-center justify-center">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-black">
                     <path
                       d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
