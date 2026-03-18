@@ -168,7 +168,7 @@ const ForjaSpecials = () => {
             'Orcamento para ferramentas de IA',
             'Compromisso com calls semanais',
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-3 cursor-pointer" onClick={() => toggleCheck(i)}>
+            <div key={i} className="flex items-center gap-3 cursor-pointer min-h-[44px]" onClick={() => toggleCheck(i)}>
               <div className="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 transition-all duration-200"
                 style={{
                   background: checkedItems[i] ? '#FF6B00' : 'transparent',
@@ -259,6 +259,7 @@ const ForjaSpecials = () => {
               gap: 8,
               width: '100%',
               padding: '14px 24px',
+              minHeight: 44,
               background: '#FF6B00',
               color: '#1A0A00',
               boxShadow: '0 0 20px rgba(255,107,0,0.3)',

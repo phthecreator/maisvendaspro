@@ -80,6 +80,7 @@ const Elevation = () => {
             }}
             onMouseEnter={() => setHoveredLevel(e.level)}
             onMouseLeave={() => setHoveredLevel(null)}
+            onClick={() => setHoveredLevel(hoveredLevel === e.level ? null : e.level)}
           >
             <div>
               <div className="text-[11px] text-[#FF6B00] uppercase tracking-[0.1em] mb-1"
@@ -121,7 +122,7 @@ const Elevation = () => {
       <p className="text-[13px] text-[#B8976A] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
         Sombras com tom quente para manter coerencia com a paleta da Forja.
       </p>
-      <div className="flex gap-8 mb-12">
+      <div className="flex gap-8 flex-wrap mb-12">
         <div className="flex-1 flex flex-col items-center gap-3">
           <div className="rounded-lg p-4 text-center"
             style={{
@@ -178,7 +179,7 @@ const Elevation = () => {
       {/* Text on Surfaces */}
       <h3 className="text-2xl font-bold mb-6"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Texto sobre Superficies</h3>
-      <div className="grid grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {elevations.map((s) => (
           <div key={`text-${s.level}`} className="rounded-lg p-5 border border-white/5" style={{ background: s.hex }}>
             <div className="text-[10px] text-[#FF6B00] uppercase tracking-[0.1em] mb-3"

@@ -107,7 +107,7 @@ export default function Brand() {
         <h3 style={{ color: '#FFF8F0', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Simbolos & Icones</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {SYMBOLS.map((s) => (
-            <div key={s.symbol} className="fj-forged-metal" style={{ display: 'grid', gridTemplateColumns: '140px 1fr 1fr', gap: 16, padding: '16px 20px', borderRadius: 6, border: '1px solid rgba(255,107,0,0.05)', alignItems: 'center' }}>
+            <div key={s.symbol} className="fj-forged-metal grid grid-cols-1 md:grid-cols-[140px_1fr_1fr]" style={{ gap: 16, padding: '16px 20px', borderRadius: 6, border: '1px solid rgba(255,107,0,0.05)', alignItems: 'center' }}>
               <span style={{ color: '#FFD700', fontWeight: 700, fontSize: 13 }}>{s.symbol}</span>
               <span style={{ color: '#FFF8F0', fontSize: 12 }}>{s.meaning}</span>
               <span style={{ color: '#B8976A', fontSize: 11 }}>{s.use}</span>

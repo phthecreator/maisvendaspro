@@ -20,7 +20,7 @@ export default function Hub() {
           <ForjaAnvil size={80} />
         </div>
 
-        <h1 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 44, fontWeight: 700, letterSpacing: '0.08em', margin: 0, marginBottom: 20 }}>
+        <h1 className="fj-molten-text text-2xl sm:text-3xl md:text-4xl" style={{ fontFamily: "'Cinzel', serif", fontWeight: 700, letterSpacing: '0.08em', margin: 0, marginBottom: 20 }}>
           A FORJA
         </h1>
 

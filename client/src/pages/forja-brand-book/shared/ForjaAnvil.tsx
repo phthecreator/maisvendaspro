@@ -1,6 +1,6 @@
 export default function ForjaAnvil({ size = 40 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Forja Logo">
       <path d="M12 36 L52 36 L56 44 L48 48 L16 48 L8 44 Z" fill="#B8976A" stroke="#FF6B00" strokeWidth="0.5" />
       <path d="M16 36 L16 30 L20 26 L44 26 L48 30 L48 36" fill="#8B6914" stroke="#FF6B00" strokeWidth="0.5" />
       <path d="M20 26 L6 30 L6 34 L16 36 L16 30 L20 26" fill="#9A7B2E" stroke="#FF6B00" strokeWidth="0.5" />

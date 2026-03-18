@@ -80,14 +80,14 @@ const MotionSystem = () => {
       </p>
       <div className="space-y-3 mb-12">
         {durations.map((d) => (
-          <div key={d.name} className="flex items-center gap-4 cursor-pointer group"
+          <div key={d.name} className="flex items-center gap-4 flex-wrap cursor-pointer group min-h-[44px]"
             onClick={() => {
               setPlayingDuration(d.name);
               setTimeout(() => setPlayingDuration(null), d.ms + 200);
             }}>
             <div className="w-20 text-right text-[12px] text-[#B8976A] flex-shrink-0"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{d.ms}ms</div>
-            <div className="flex-1 h-8 rounded relative overflow-hidden"
+            <div className="flex-1 h-8 rounded relative overflow-hidden min-w-[100px]"
               style={{ background: 'rgba(255,107,0,0.06)', border: '1px solid rgba(255,107,0,0.1)' }}>
               <div className="h-full rounded transition-all"
                 style={{
@@ -97,11 +97,11 @@ const MotionSystem = () => {
                   transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
                 }} />
             </div>
-            <div className="w-28 text-[11px] flex-shrink-0"
+            <div className="w-28 text-[11px] flex-shrink-0 hidden sm:block"
               style={{ fontFamily: "'Roboto Mono', monospace", color: '#B8976A' }}>
               {d.name}
             </div>
-            <div className="w-36 text-[10px] text-[#B8976A] opacity-60 flex-shrink-0"
+            <div className="w-36 text-[10px] text-[#B8976A] opacity-60 flex-shrink-0 hidden md:block"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{d.desc}</div>
           </div>
         ))}
@@ -115,12 +115,13 @@ const MotionSystem = () => {
       </p>
       <div className="space-y-3 mb-12">
         {easings.map((e) => (
-          <div key={e.name} className="flex items-center gap-4"
+          <div key={e.name} className="flex items-center gap-4 flex-wrap"
             onMouseEnter={() => setHoveredEasing(e.name)}
-            onMouseLeave={() => setHoveredEasing(null)}>
+            onMouseLeave={() => setHoveredEasing(null)}
+            onClick={() => setHoveredEasing(hoveredEasing === e.name ? null : e.name)}>
             <div className="w-24 text-right text-[12px] text-[#FFF8F0] flex-shrink-0"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{e.name}</div>
-            <div className="flex-1 h-8 rounded relative overflow-hidden"
+            <div className="flex-1 h-8 rounded relative overflow-hidden min-w-[100px]"
               style={{ background: 'rgba(255,215,0,0.06)', border: '1px solid rgba(255,215,0,0.1)' }}>
               <div className="h-full rounded"
                 style={{
@@ -131,7 +132,7 @@ const MotionSystem = () => {
                   transitionProperty: 'width',
                 }} />
             </div>
-            <div className="w-56 text-[10px] text-[#B8976A] flex-shrink-0"
+            <div className="w-56 text-[10px] text-[#B8976A] flex-shrink-0 hidden md:block"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{e.value}</div>
           </div>
         ))}
@@ -140,7 +141,7 @@ const MotionSystem = () => {
       {/* Entrance Patterns */}
       <h3 className="text-2xl font-bold mb-6"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Padroes de Entrada</h3>
-      <div className="grid grid-cols-4 gap-4 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         {[
           { name: 'fade-in', label: 'Fade In', animation: 'forja-fade-in 0.6s ease-out forwards' },
           { name: 'slide-up', label: 'Slide Up', animation: 'forja-slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards' },
@@ -165,7 +166,7 @@ const MotionSystem = () => {
             </div>
             <button
               onClick={() => triggerEntrance(p.name)}
-              className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer"
+              className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer min-h-[44px]"
               style={{
                 fontFamily: "'Roboto Mono', monospace",
                 background: 'rgba(255,107,0,0.08)',
@@ -182,7 +183,7 @@ const MotionSystem = () => {
       {/* Forja Specials */}
       <h3 className="text-2xl font-bold mb-6"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Animacoes da Forja</h3>
-      <div className="grid grid-cols-2 gap-6 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <div className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#1A0A00' }}>
           <div className="h-32 flex items-center justify-center">
             <div className="text-2xl font-bold"
@@ -197,7 +198,7 @@ const MotionSystem = () => {
           </div>
           <button
             onClick={() => { setPlayingHeatReveal(false); requestAnimationFrame(() => setPlayingHeatReveal(true)); setTimeout(() => setPlayingHeatReveal(false), 1500); }}
-            className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer"
+            className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer min-h-[44px]"
             style={{
               fontFamily: "'Roboto Mono', monospace",
               background: 'rgba(255,107,0,0.08)',
@@ -221,7 +222,7 @@ const MotionSystem = () => {
           </div>
           <button
             onClick={() => { setPlayingForgeStrike(false); requestAnimationFrame(() => setPlayingForgeStrike(true)); setTimeout(() => setPlayingForgeStrike(false), 1500); }}
-            className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer"
+            className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer min-h-[44px]"
             style={{
               fontFamily: "'Roboto Mono', monospace",
               background: 'rgba(255,215,0,0.08)',

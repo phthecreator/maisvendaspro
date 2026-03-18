@@ -199,12 +199,12 @@ export default function Persona() {
       >
         Um Dia na Vida
       </h3>
-      <div style={{ position: 'relative', paddingLeft: 48, marginBottom: 48 }}>
+      <div className="pl-4 sm:pl-12" style={{ position: 'relative', marginBottom: 48 }}>
         {/* Vertical line */}
         <div
+          className="left-[3px] sm:left-[19px]"
           style={{
             position: 'absolute',
-            left: 19,
             top: 0,
             bottom: 0,
             width: 2,
@@ -215,9 +215,9 @@ export default function Persona() {
           <div key={i} style={{ position: 'relative', marginBottom: 20, paddingBottom: 4 }}>
             {/* Dot */}
             <div
+              className="-left-[20px] sm:-left-[36px]"
               style={{
                 position: 'absolute',
-                left: -36,
                 top: 4,
                 width: 12,
                 height: 12,
@@ -482,6 +482,8 @@ export default function Persona() {
           >
             <button
               onClick={() => setOpenObjection(openObjection === i ? null : i)}
+              aria-expanded={openObjection === i}
+              className="min-h-[44px]"
               style={{
                 width: '100%',
                 display: 'flex',

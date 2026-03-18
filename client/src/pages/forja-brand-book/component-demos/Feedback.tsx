@@ -43,10 +43,10 @@ const Feedback = () => {
             <div className="flex-1 text-[13px]" style={{ fontFamily: mono, color: '#FFF8F0' }}>
               {alert.message}
             </div>
-            <button className="flex-shrink-0 cursor-pointer p-1 rounded transition-colors duration-200"
+            <button className="flex-shrink-0 cursor-pointer p-2 rounded transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
               style={{ color: alert.color, background: 'transparent', border: 'none' }}
               onClick={() => setDismissed([...dismissed, alert.type])}>
-              <X size={14} />
+              <X size={16} />
             </button>
           </div>
         ))}
@@ -82,8 +82,8 @@ const Feedback = () => {
                 </div>
                 <p className="text-[11px]" style={{ fontFamily: mono, color: '#B8976A' }}>{toast.desc}</p>
               </div>
-              <button className="flex-shrink-0 cursor-pointer p-0.5" style={{ color: '#B8976A', background: 'transparent', border: 'none' }}>
-                <X size={12} />
+              <button className="flex-shrink-0 cursor-pointer p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" style={{ color: '#B8976A', background: 'transparent', border: 'none' }}>
+                <X size={14} />
               </button>
             </div>
           ))}
@@ -107,10 +107,10 @@ const Feedback = () => {
           </div>
           <div className="flex gap-2 mt-2">
             <button onClick={() => setProgress(Math.max(0, progress - 10))}
-              className="text-[10px] px-2 py-0.5 rounded cursor-pointer"
+              className="text-xs px-3 py-2 rounded cursor-pointer min-h-[44px]"
               style={{ fontFamily: mono, background: 'rgba(255,107,0,0.1)', color: '#FF6B00', border: 'none' }}>-10</button>
             <button onClick={() => setProgress(Math.min(100, progress + 10))}
-              className="text-[10px] px-2 py-0.5 rounded cursor-pointer"
+              className="text-xs px-3 py-2 rounded cursor-pointer min-h-[44px]"
               style={{ fontFamily: mono, background: 'rgba(255,107,0,0.1)', color: '#FF6B00', border: 'none' }}>+10</button>
           </div>
         </div>

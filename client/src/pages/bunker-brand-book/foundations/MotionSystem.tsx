@@ -78,12 +78,12 @@ const MotionSystem = () => {
       </p>
       <div className="space-y-3 mb-12">
         {durations.map((d) => (
-          <div key={d.name} className="flex items-center gap-4 cursor-pointer group"
+          <div key={d.name} className="flex items-center gap-4 flex-wrap cursor-pointer group min-h-[44px]"
             onClick={() => {
               setPlayingDuration(d.name);
               setTimeout(() => setPlayingDuration(null), d.ms + 200);
             }}>
-            <div className="w-20 text-right text-[12px] text-[#A9A9A9] flex-shrink-0"
+            <div className="w-14 sm:w-20 text-right text-[12px] text-[#A9A9A9] flex-shrink-0"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{d.ms}ms</div>
             <div className="flex-1 h-8 rounded relative overflow-hidden"
               style={{ background: 'rgba(0,229,255,0.06)', border: '1px solid rgba(0,229,255,0.1)' }}>
@@ -99,7 +99,7 @@ const MotionSystem = () => {
               style={{ fontFamily: "'Roboto Mono', monospace", color: '#A9A9A9' }}>
               {d.name}
             </div>
-            <div className="w-36 text-[10px] text-[#A9A9A9] opacity-60 flex-shrink-0"
+            <div className="hidden sm:block w-36 text-[10px] text-[#A9A9A9] opacity-60 flex-shrink-0"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{d.desc}</div>
           </div>
         ))}
@@ -113,10 +113,10 @@ const MotionSystem = () => {
       </p>
       <div className="space-y-3 mb-12">
         {easings.map((e) => (
-          <div key={e.name} className="flex items-center gap-4"
+          <div key={e.name} className="flex items-center gap-4 flex-wrap min-h-[44px]"
             onMouseEnter={() => setHoveredEasing(e.name)}
             onMouseLeave={() => setHoveredEasing(null)}>
-            <div className="w-24 text-right text-[12px] text-[#FDF5E6] flex-shrink-0"
+            <div className="w-20 sm:w-24 text-right text-[12px] text-[#FDF5E6] flex-shrink-0"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{e.name}</div>
             <div className="flex-1 h-8 rounded relative overflow-hidden"
               style={{ background: 'rgba(205,127,50,0.06)', border: '1px solid rgba(205,127,50,0.1)' }}>
@@ -129,7 +129,7 @@ const MotionSystem = () => {
                   transitionProperty: 'width',
                 }} />
             </div>
-            <div className="w-56 text-[10px] text-[#A9A9A9] flex-shrink-0"
+            <div className="hidden sm:block w-56 text-[10px] text-[#A9A9A9] flex-shrink-0"
               style={{ fontFamily: "'Roboto Mono', monospace" }}>{e.value}</div>
           </div>
         ))}
@@ -138,7 +138,7 @@ const MotionSystem = () => {
       {/* Entrance Patterns */}
       <h3 className="text-2xl font-bold mb-6"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Padroes de Entrada</h3>
-      <div className="grid grid-cols-4 gap-4 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         {[
           { name: 'fade-in', label: 'Fade In', animation: 'bunker-fade-in 0.6s ease-out forwards' },
           { name: 'slide-up', label: 'Slide Up', animation: 'bunker-slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards' },
@@ -163,7 +163,7 @@ const MotionSystem = () => {
             </div>
             <button
               onClick={() => triggerEntrance(p.name)}
-              className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer"
+              className="w-full py-2.5 min-h-[44px] text-[11px] uppercase tracking-[0.1em] cursor-pointer"
               style={{
                 fontFamily: "'Roboto Mono', monospace",
                 background: 'rgba(0,229,255,0.08)',
@@ -183,7 +183,7 @@ const MotionSystem = () => {
       {/* Bunker Specials */}
       <h3 className="text-2xl font-bold mb-6"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Animacoes do Bunker</h3>
-      <div className="grid grid-cols-2 gap-6 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <div className="rounded-lg border border-white/5 overflow-hidden" style={{ background: '#1A1E22' }}>
           <div className="h-32 flex items-center justify-center">
             <div className="text-2xl font-bold"
@@ -198,7 +198,7 @@ const MotionSystem = () => {
           </div>
           <button
             onClick={() => { setPlayingScan(false); requestAnimationFrame(() => setPlayingScan(true)); setTimeout(() => setPlayingScan(false), 1500); }}
-            className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer"
+            className="w-full py-2.5 min-h-[44px] text-[11px] uppercase tracking-[0.1em] cursor-pointer"
             style={{
               fontFamily: "'Roboto Mono', monospace",
               background: 'rgba(0,229,255,0.08)',
@@ -222,7 +222,7 @@ const MotionSystem = () => {
           </div>
           <button
             onClick={() => { setPlayingPowerOn(false); requestAnimationFrame(() => setPlayingPowerOn(true)); setTimeout(() => setPlayingPowerOn(false), 1500); }}
-            className="w-full py-2.5 text-[11px] uppercase tracking-[0.1em] cursor-pointer"
+            className="w-full py-2.5 min-h-[44px] text-[11px] uppercase tracking-[0.1em] cursor-pointer"
             style={{
               fontFamily: "'Roboto Mono', monospace",
               background: 'rgba(205,127,50,0.08)',

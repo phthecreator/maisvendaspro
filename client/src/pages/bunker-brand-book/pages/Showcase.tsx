@@ -32,10 +32,9 @@ const Showcase = () => {
         06 / Showcase
       </p>
       <h2
-        className="mb-6"
+        className="mb-6 text-2xl sm:text-3xl md:text-4xl"
         style={{
           fontFamily: serif,
-          fontSize: 42,
           fontWeight: 700,
           lineHeight: 1.15,
           color: '#FDF5E6',
@@ -44,10 +43,9 @@ const Showcase = () => {
         Composicao Visual
       </h2>
       <p
-        className="mb-10 max-w-[700px]"
+        className="mb-10 max-w-[700px] text-sm md:text-base"
         style={{
           fontFamily: mono,
-          fontSize: 15,
           color: '#A9A9A9',
           lineHeight: 1.7,
         }}
@@ -64,7 +62,7 @@ const Showcase = () => {
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className="px-6 py-3"
+            className="px-6 py-3 min-h-[44px]"
             style={{
               fontFamily: mono,
               fontSize: 13,

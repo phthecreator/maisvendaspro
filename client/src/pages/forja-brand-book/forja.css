@@ -3,6 +3,44 @@
    Premium Mentoring Brand Book (Minimalist)
    ============================================ */
 
+/* --- Design Tokens (CSS Custom Properties) --- */
+
+:root {
+  /* Cores Primarias */
+  --forja-obsidiana: #1A0A00;
+  --forja-carvao: #2A1810;
+  --forja-noite: #0D0604;
+
+  /* Acentos */
+  --forja-laranja: #FF6B00;
+  --forja-ouro: #FFD700;
+  --forja-brasa: #FF4500;
+  --forja-ambar: #FFA800;
+
+  /* Neutras */
+  --forja-pergaminho: #FFF8F0;
+  --forja-bronze: #B8976A;
+
+  /* Tipografia */
+  --fj-font-display: 'Cinzel', serif;
+  --fj-font-body: 'Roboto Mono', monospace;
+  --fj-font-accent: 'Averia Serif Libre', serif;
+
+  /* Espacamento */
+  --fj-space-xs: 4px;
+  --fj-space-sm: 8px;
+  --fj-space-md: 16px;
+  --fj-space-lg: 32px;
+  --fj-space-xl: 64px;
+  --fj-space-2xl: 120px;
+
+  /* Layout */
+  --fj-max-width: 1200px;
+  --fj-radius-sm: 6px;
+  --fj-radius-md: 8px;
+  --fj-radius-lg: 12px;
+}
+
 /* --- Keyframes (minimal set) --- */
 
 @keyframes fj-spark-rise {

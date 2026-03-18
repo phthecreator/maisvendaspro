@@ -20,9 +20,9 @@ export default function SectionHeader({ overline, title, description }: SectionH
         {overline}
       </div>
       <h2
+        className="text-2xl sm:text-3xl md:text-4xl"
         style={{
           fontFamily: "'Averia Serif Libre', serif",
-          fontSize: 42,
           fontWeight: 700,
           color: '#FDF5E6',
           margin: 0,
@@ -33,9 +33,9 @@ export default function SectionHeader({ overline, title, description }: SectionH
       </h2>
       {description && (
         <p
+          className="text-sm md:text-base"
           style={{
             fontFamily: "'Roboto Mono', monospace",
-            fontSize: 15,
             color: '#A9A9A9',
             maxWidth: 700,
             marginTop: 16,

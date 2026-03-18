@@ -149,10 +149,9 @@ const SalesPage = () => {
           </div>
 
           <h1
-            className="mb-6"
+            className="mb-6 text-2xl sm:text-3xl md:text-5xl"
             style={{
               fontFamily: "'Averia Serif Libre', serif",
-              fontSize: 48,
               fontWeight: 700,
               lineHeight: 1.15,
               background: 'linear-gradient(135deg, #FDF5E6 0%, #CD7F32 40%, #FDF5E6 60%, #A9A9A9 100%)',
@@ -717,6 +716,7 @@ const SalesPage = () => {
               >
                 <button
                   onClick={() => setOpenFaq(isOpen ? null : i)}
+                  aria-expanded={isOpen}
                   className="w-full text-left p-5 flex items-center gap-4"
                   style={{ background: 'none', border: 'none', cursor: 'pointer' }}
                 >

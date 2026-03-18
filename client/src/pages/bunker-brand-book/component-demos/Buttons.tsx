@@ -100,8 +100,8 @@ const Buttons = () => {
         ].map((btn, i) => (
           <button key={i} className="flex items-center justify-center rounded-full cursor-pointer transition-all duration-200"
             style={{
-              width: 40,
-              height: 40,
+              width: 44,
+              height: 44,
               background: btn.bg,
               color: btn.color,
               border: btn.border || 'none',

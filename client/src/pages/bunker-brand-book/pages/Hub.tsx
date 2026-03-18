@@ -55,10 +55,9 @@ export default function Hub() {
         </div>
 
         <h1
-          className="bk-aged-text"
+          className="bk-aged-text text-3xl sm:text-4xl md:text-5xl"
           style={{
             fontFamily: "'Cinzel', serif",
-            fontSize: 48,
             fontWeight: 700,
             letterSpacing: '0.06em',
             margin: 0,

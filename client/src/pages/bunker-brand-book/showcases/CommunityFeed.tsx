@@ -140,7 +140,7 @@ const CommunityFeed = () => {
   return (
     <div className="flex rounded-xl overflow-hidden" style={{ background: '#0d1117', minHeight: 700 }}>
       {/* ===================== MAIN FEED ===================== */}
-      <div className="flex-1 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+      <div className="flex-1 flex flex-col lg:border-r" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
         {/* Channel Tabs */}
         <div
           className="flex gap-0 overflow-x-auto px-4"
@@ -150,6 +150,8 @@ const CommunityFeed = () => {
             <button
               key={i}
               onClick={() => setActiveChannel(i)}
+              aria-selected={activeChannel === i}
+              role="tab"
               className="px-4 py-3 shrink-0"
               style={{
                 fontFamily: mono,
@@ -357,7 +359,7 @@ const CommunityFeed = () => {
       </div>
 
       {/* ===================== RIGHT SIDEBAR ===================== */}
-      <aside className="shrink-0" style={{ width: 220, background: '#1A1E22' }}>
+      <aside className="hidden lg:block shrink-0" style={{ width: 220, background: '#1A1E22' }}>
         {/* Profile card */}
         <div className="p-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="flex items-center gap-3 mb-3">

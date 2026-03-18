@@ -2,6 +2,80 @@
    Bunker da IA — Design System CSS
    ============================================ */
 
+/* --- Design Tokens (from 03-design-system.md) --- */
+
+:root {
+  /* === CORES PRIMARIAS === */
+  --bk-dark-metallic:    #2F353A;
+  --bk-chaos-black:      #1A1E22;
+  --bk-deep-moss:        #2B3A33;
+
+  /* === CORES SECUNDARIAS === */
+  --bk-oxidized-copper:  #8B4513;
+  --bk-bronze-patina:    #CD7F32;
+  --bk-cyber-cyan:       #00E5FF;
+  --bk-laser-blue:       #3A86FF;
+
+  /* === NEUTRAS === */
+  --bk-aged-white:       #FDF5E6;
+  --bk-matte-silver:     #A9A9A9;
+
+  /* === FUNCIONAIS === */
+  --bk-alert-red:        #FF3B30;
+  --bk-signal-green:     #34C759;
+  --bk-warning-amber:    #FFAA00;
+
+  /* === ALIASES SEMANTICOS === */
+  --bk-bg-primary:       var(--bk-chaos-black);
+  --bk-bg-secondary:     var(--bk-dark-metallic);
+  --bk-bg-tertiary:      var(--bk-deep-moss);
+  --bk-text-primary:     var(--bk-aged-white);
+  --bk-text-secondary:   var(--bk-matte-silver);
+  --bk-accent-primary:   var(--bk-cyber-cyan);
+  --bk-accent-secondary: var(--bk-laser-blue);
+  --bk-brand-rust:       var(--bk-oxidized-copper);
+  --bk-brand-bronze:     var(--bk-bronze-patina);
+
+  /* === TIPOGRAFIA — FAMILIAS === */
+  --bk-font-display:     'Averia Serif Libre', 'Old Standard TT', Georgia, serif;
+  --bk-font-body:        'Roboto Mono', 'Ubuntu Mono', 'Courier New', monospace;
+  --bk-font-code:        'Roboto Mono', 'Ubuntu Mono', monospace;
+  --bk-font-logo:        'Cinzel', serif;
+  --bk-font-data:        'Orbitron', sans-serif;
+
+  /* === TIPOGRAFIA — ESCALA === */
+  --bk-text-display-xl:  4.5rem;
+  --bk-text-display-lg:  3rem;
+  --bk-text-display-md:  2.25rem;
+  --bk-text-heading-lg:  1.75rem;
+  --bk-text-heading-md:  1.375rem;
+  --bk-text-heading-sm:  1.125rem;
+  --bk-text-body-lg:     1.125rem;
+  --bk-text-body-md:     1rem;
+  --bk-text-body-sm:     0.875rem;
+  --bk-text-caption:     0.75rem;
+  --bk-text-overline:    0.6875rem;
+
+  /* === TIPOGRAFIA — PESOS === */
+  --bk-font-weight-light:   300;
+  --bk-font-weight-regular: 400;
+  --bk-font-weight-medium:  500;
+  --bk-font-weight-bold:    700;
+
+  /* === TIPOGRAFIA — LINE HEIGHTS === */
+  --bk-leading-tight:    1.1;
+  --bk-leading-snug:     1.2;
+  --bk-leading-normal:   1.4;
+  --bk-leading-relaxed:  1.6;
+
+  /* === TIPOGRAFIA — LETTER SPACING === */
+  --bk-tracking-tight:   -0.02em;
+  --bk-tracking-normal:  0;
+  --bk-tracking-wide:    0.01em;
+  --bk-tracking-wider:   0.02em;
+  --bk-tracking-widest:  0.15em;
+}
+
 /* --- Keyframes --- */
 
 @keyframes bk-ash-fall {

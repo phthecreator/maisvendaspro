@@ -17,6 +17,7 @@ import {
   Hammer,
   Rocket,
   Plus,
+  Menu,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
@@ -77,10 +78,60 @@ const MemberArea = () => {
   const orbitron = "'Orbitron', sans-serif";
 
   return (
-    <div className="flex rounded-xl overflow-hidden" style={{ background: '#0d1117', minHeight: 700 }}>
+    <div className="flex flex-col md:flex-row rounded-xl overflow-hidden" style={{ background: '#0d1117', minHeight: 700 }}>
+      {/* ===================== MOBILE HEADER ===================== */}
+      <div
+        className="flex md:hidden items-center justify-between px-4 py-3"
+        style={{ background: '#1A1E22', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
+      >
+        <span style={{ fontFamily: orbitron, fontSize: 16, fontWeight: 700, color: '#00E5FF', letterSpacing: '0.15em' }}>
+          BUNKER
+        </span>
+        <div className="flex items-center gap-3">
+          <div className="relative">
+            <Bell size={18} color="#A9A9A9" />
+            <div
+              className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center"
+              style={{ background: '#FF3B30', fontSize: 9, color: '#FDF5E6', fontWeight: 700 }}
+            >
+              3
+            </div>
+          </div>
+          <div className="flex items-center gap-1">
+            <Flame size={16} color="#FFAA00" />
+            <span style={{ fontFamily: orbitron, fontSize: 12, color: '#FFAA00' }}>12</span>
+          </div>
+          <Menu size={20} color="#A9A9A9" />
+        </div>
+      </div>
+
+      {/* Mobile Tab Bar */}
+      <div
+        className="flex md:hidden overflow-x-auto gap-0 px-2"
+        style={{ background: '#1A1E22', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
+      >
+        {navItems.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={i}
+              className="flex flex-col items-center gap-1 px-3 py-2 shrink-0"
+              style={{
+                borderBottom: item.active ? '2px solid #00E5FF' : '2px solid transparent',
+              }}
+            >
+              <Icon size={16} color={item.active ? '#00E5FF' : '#A9A9A9'} />
+              <span style={{ fontFamily: mono, fontSize: 9, color: item.active ? '#FDF5E6' : '#A9A9A9' }}>
+                {item.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
       {/* ===================== SIDEBAR ===================== */}
       <aside
-        className="shrink-0 flex flex-col"
+        className="hidden md:flex shrink-0 flex-col"
         style={{ width: 210, background: '#1A1E22', borderRight: '1px solid rgba(255,255,255,0.05)' }}
       >
         {/* Logo */}
@@ -184,7 +235,7 @@ const MemberArea = () => {
 
         <div className="flex-1 overflow-y-auto p-6">
           {/* Stats Row */}
-          <div className="grid grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {[
               { label: 'Modulos Completos', value: '4/16', sub: '25%', color: '#00E5FF' },
               { label: 'Streak Atual', value: '12', sub: 'dias', color: '#FFAA00', iconEl: Flame },
@@ -341,7 +392,7 @@ const MemberArea = () => {
             <h3 className="mb-4" style={{ fontFamily: serif, fontSize: 18, fontWeight: 700, color: '#FDF5E6' }}>
               Acoes Rapidas
             </h3>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <button
                 className="flex items-center gap-2 px-4 py-2.5 rounded"
                 style={{

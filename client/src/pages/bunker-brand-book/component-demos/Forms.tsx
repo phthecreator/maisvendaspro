@@ -48,7 +48,7 @@ const Forms = () => {
         Inputs, textareas, selects, checkboxes, radios, toggles e sliders com focus states em Cyber Cyan.
       </p>
 
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         {/* Text Input */}
         <div>
           <label style={labelStyle}>Nome completo</label>
@@ -71,7 +71,7 @@ const Forms = () => {
       </div>
 
       {/* Select */}
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
           <label style={labelStyle}>Nivel de experiencia</label>
           <select className="bunker-input px-4 py-3 cursor-pointer"
@@ -96,7 +96,7 @@ const Forms = () => {
       </div>
 
       {/* Checkbox & Radio */}
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
           <label style={labelStyle}>Checkboxes</label>
           <div className="space-y-3">
@@ -104,18 +104,22 @@ const Forms = () => {
               { label: 'Deploy automatico', checked: checkA, onChange: () => setCheckA(!checkA) },
               { label: 'Notificacoes por email', checked: checkB, onChange: () => setCheckB(!checkB) },
             ].map((cb) => (
-              <label key={cb.label} className="flex items-center gap-3 cursor-pointer">
-                <div className="w-5 h-5 rounded border flex items-center justify-center flex-shrink-0 transition-all duration-200"
-                  style={{
-                    background: cb.checked ? '#00E5FF' : 'rgba(0,0,0,0.3)',
-                    borderColor: cb.checked ? '#00E5FF' : 'rgba(169,169,169,0.3)',
-                  }}
+              <label key={cb.label} className="flex items-center gap-3 cursor-pointer min-h-[44px]">
+                <div className="min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
+                  role="checkbox"
+                  aria-checked={cb.checked}
                   onClick={cb.onChange}>
-                  {cb.checked && (
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A1E22" strokeWidth="3">
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                  )}
+                  <div className="w-5 h-5 rounded border flex items-center justify-center transition-all duration-200"
+                    style={{
+                      background: cb.checked ? '#00E5FF' : 'rgba(0,0,0,0.3)',
+                      borderColor: cb.checked ? '#00E5FF' : 'rgba(169,169,169,0.3)',
+                    }}>
+                    {cb.checked && (
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A1E22" strokeWidth="3">
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                    )}
+                  </div>
                 </div>
                 <span className="text-[13px] text-[#FDF5E6]" style={{ fontFamily: mono }}>{cb.label}</span>
               </label>
@@ -130,15 +134,19 @@ const Forms = () => {
               { label: 'Plano Anual', value: 'opt2' },
               { label: 'Plano Vitalicio', value: 'opt3' },
             ].map((r) => (
-              <label key={r.value} className="flex items-center gap-3 cursor-pointer" onClick={() => setRadio(r.value)}>
-                <div className="w-5 h-5 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-200"
-                  style={{
-                    borderColor: radio === r.value ? '#00E5FF' : 'rgba(169,169,169,0.3)',
-                    background: 'rgba(0,0,0,0.3)',
-                  }}>
-                  {radio === r.value && (
-                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#00E5FF' }} />
-                  )}
+              <label key={r.value} className="flex items-center gap-3 cursor-pointer min-h-[44px]" onClick={() => setRadio(r.value)}>
+                <div className="min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
+                  role="radio"
+                  aria-checked={radio === r.value}>
+                  <div className="w-5 h-5 rounded-full border flex items-center justify-center transition-all duration-200"
+                    style={{
+                      borderColor: radio === r.value ? '#00E5FF' : 'rgba(169,169,169,0.3)',
+                      background: 'rgba(0,0,0,0.3)',
+                    }}>
+                    {radio === r.value && (
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#00E5FF' }} />
+                    )}
+                  </div>
                 </div>
                 <span className="text-[13px] text-[#FDF5E6]" style={{ fontFamily: mono }}>{r.label}</span>
               </label>
@@ -148,11 +156,13 @@ const Forms = () => {
       </div>
 
       {/* Toggle & Slider */}
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <label style={labelStyle}>Toggle / Switch</label>
           <div className="flex items-center gap-3">
             <div className="w-12 h-6 rounded-full cursor-pointer relative transition-all duration-200"
+              role="switch"
+              aria-checked={toggle}
               style={{ background: toggle ? '#00E5FF' : 'rgba(169,169,169,0.3)' }}
               onClick={() => setToggle(!toggle)}>
               <div className="absolute top-0.5 w-5 h-5 rounded-full transition-all duration-200"

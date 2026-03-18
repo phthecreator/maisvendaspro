@@ -23,9 +23,19 @@ const Swatch = ({ color, name, hex, usage, token, darkText }: SwatchProps) => {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleClick();
+    }
+  };
+
   return (
     <div
       className="rounded-lg overflow-hidden border border-white/5"
+      role="button"
+      tabIndex={0}
+      aria-label={`Copiar cor ${name}: ${hex}`}
       style={{
         background: '#2A1810',
         cursor: 'pointer',
@@ -36,6 +46,7 @@ const Swatch = ({ color, name, hex, usage, token, darkText }: SwatchProps) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
       <div className="h-24 relative" style={{ background: color }}>
         <span className="absolute bottom-2 right-2.5 text-[11px] rounded px-1.5 py-0.5"

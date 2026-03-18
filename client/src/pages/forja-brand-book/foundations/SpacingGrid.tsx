@@ -46,50 +46,56 @@ const SpacingGrid = () => (
     <p className="text-[13px] text-[#B8976A] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       Grid flexivel com gutter de 24px. Responsivo com colapso automatico em breakpoints menores.
     </p>
-    <div className="rounded-lg p-4 border border-white/5 mb-3" style={{ background: '#0A0400' }}>
-      <div className="grid grid-cols-12 gap-2">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <div key={i} className="h-16 rounded flex items-center justify-center text-[11px]"
-            style={{
-              fontFamily: "'Roboto Mono', monospace",
-              background: 'rgba(255,107,0,0.12)',
-              border: '1px solid rgba(255,107,0,0.2)',
-              color: '#FF6B00',
-            }}>
-            {i + 1}
+    <div className="overflow-x-auto mb-3">
+      <div className="rounded-lg p-4 border border-white/5" style={{ background: '#0A0400', minWidth: 600 }}>
+        <div className="grid grid-cols-12 gap-2">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div key={i} className="h-16 rounded flex items-center justify-center text-[11px]"
+              style={{
+                fontFamily: "'Roboto Mono', monospace",
+                background: 'rgba(255,107,0,0.12)',
+                border: '1px solid rgba(255,107,0,0.2)',
+                color: '#FF6B00',
+              }}>
+              {i + 1}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div className="overflow-x-auto mb-3">
+      <div className="rounded-lg p-4 border border-white/5" style={{ background: '#0A0400', minWidth: 600 }}>
+        <div className="grid grid-cols-12 gap-2">
+          <div className="col-span-4 h-12 rounded flex items-center justify-center text-[11px]"
+            style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.2)', color: '#FFD700' }}>
+            span-4
           </div>
-        ))}
-      </div>
-    </div>
-    <div className="rounded-lg p-4 border border-white/5 mb-3" style={{ background: '#0A0400' }}>
-      <div className="grid grid-cols-12 gap-2">
-        <div className="col-span-4 h-12 rounded flex items-center justify-center text-[11px]"
-          style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.2)', color: '#FFD700' }}>
-          span-4
-        </div>
-        <div className="col-span-4 h-12 rounded flex items-center justify-center text-[11px]"
-          style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.2)', color: '#FFD700' }}>
-          span-4
-        </div>
-        <div className="col-span-4 h-12 rounded flex items-center justify-center text-[11px]"
-          style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.2)', color: '#FFD700' }}>
-          span-4
+          <div className="col-span-4 h-12 rounded flex items-center justify-center text-[11px]"
+            style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.2)', color: '#FFD700' }}>
+            span-4
+          </div>
+          <div className="col-span-4 h-12 rounded flex items-center justify-center text-[11px]"
+            style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.2)', color: '#FFD700' }}>
+            span-4
+          </div>
         </div>
       </div>
     </div>
-    <div className="rounded-lg p-4 border border-white/5 mb-12" style={{ background: '#0A0400' }}>
-      <div className="grid grid-cols-12 gap-2">
-        <div className="col-span-3 h-12 rounded flex items-center justify-center text-[11px]"
-          style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(52,199,89,0.12)', border: '1px solid rgba(52,199,89,0.2)', color: '#34C759' }}>
-          span-3
-        </div>
-        <div className="col-span-6 h-12 rounded flex items-center justify-center text-[11px]"
-          style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(52,199,89,0.12)', border: '1px solid rgba(52,199,89,0.2)', color: '#34C759' }}>
-          span-6
-        </div>
-        <div className="col-span-3 h-12 rounded flex items-center justify-center text-[11px]"
-          style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(52,199,89,0.12)', border: '1px solid rgba(52,199,89,0.2)', color: '#34C759' }}>
-          span-3
+    <div className="overflow-x-auto mb-12">
+      <div className="rounded-lg p-4 border border-white/5" style={{ background: '#0A0400', minWidth: 600 }}>
+        <div className="grid grid-cols-12 gap-2">
+          <div className="col-span-3 h-12 rounded flex items-center justify-center text-[11px]"
+            style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(52,199,89,0.12)', border: '1px solid rgba(52,199,89,0.2)', color: '#34C759' }}>
+            span-3
+          </div>
+          <div className="col-span-6 h-12 rounded flex items-center justify-center text-[11px]"
+            style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(52,199,89,0.12)', border: '1px solid rgba(52,199,89,0.2)', color: '#34C759' }}>
+            span-6
+          </div>
+          <div className="col-span-3 h-12 rounded flex items-center justify-center text-[11px]"
+            style={{ fontFamily: "'Roboto Mono', monospace", background: 'rgba(52,199,89,0.12)', border: '1px solid rgba(52,199,89,0.2)', color: '#34C759' }}>
+            span-3
+          </div>
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@ const Typography = () => (
     <TypeSpecimen label="Display — Cinzel 900 — 64px"
       meta="Font: Cinzel | Size: 64px / 4rem | Weight: 900 Black | Line-height: 1.1 | Letter-spacing: 0.06em"
       useCase="Logo, marca, premium">
-      <div style={{ fontFamily: "'Cinzel', serif", fontSize: 64, fontWeight: 900, lineHeight: 1.1, letterSpacing: '0.06em', color: '#FDF5E6' }}>
+      <div className="text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: "'Cinzel', serif", fontWeight: 900, lineHeight: 1.1, letterSpacing: '0.06em', color: '#FDF5E6' }}>
         BUNKER DA IA
       </div>
     </TypeSpecimen>
@@ -104,7 +104,7 @@ const Typography = () => (
     <p className="text-[13px] text-[#A9A9A9] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       4 niveis de opacidade para criar hierarquia visual em texto sobre backgrounds escuros.
     </p>
-    <div className="grid grid-cols-2 gap-4 mb-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
       {[
         { label: 'Primary — 92%', opacity: 0.92, desc: 'Texto principal, titulos, conteudo de leitura.' },
         { label: 'Secondary — 68%', opacity: 0.68, desc: 'Texto de suporte, descricoes, placeholders ativos.' },
@@ -153,7 +153,7 @@ const Typography = () => (
     <p className="text-[13px] text-[#A9A9A9] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       Orbitron e reservada exclusivamente para numeros, metricas e dados de impacto. Nunca use para corpo de texto.
     </p>
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {[
         { value: 'R$250', sub: '/ano', color: '#00E5FF' },
         { value: '147', sub: 'membros', color: '#CD7F32' },

@@ -28,7 +28,7 @@ const Elevation = () => (
     {/* Surface Cards */}
     <h3 className="text-2xl font-bold mb-6"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Niveis de Superficie</h3>
-    <div className="grid grid-cols-3 gap-5 mb-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-12">
       {surfaces.map((s) => (
         <div key={s.name} className="rounded-lg p-5 border border-white/5 flex flex-col gap-4"
           style={{ background: s.hex }}>
@@ -74,7 +74,7 @@ const Elevation = () => (
     {/* Border Tokens */}
     <h3 className="text-2xl font-bold mb-6"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Tokens de Borda</h3>
-    <div className="grid grid-cols-4 gap-4 mb-12">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
       {borders.map((b) => (
         <div key={b.name} className="rounded-lg p-5 flex flex-col items-center text-center"
           style={{ background: '#1A1E22', border: `2px solid ${b.value}` }}>
@@ -94,7 +94,7 @@ const Elevation = () => (
     <p className="text-[13px] text-[#A9A9A9] mb-6" style={{ fontFamily: "'Roboto Mono', monospace" }}>
       Sombras reservadas para tooltips, dropdowns e elementos que flutuam acima da superficie.
     </p>
-    <div className="flex gap-8 mb-12">
+    <div className="flex flex-wrap gap-8 mb-12">
       <div className="flex-1 flex flex-col items-center gap-3">
         <div className="rounded-lg p-4 text-center"
           style={{
@@ -152,7 +152,7 @@ const Elevation = () => (
     {/* Text on Surfaces */}
     <h3 className="text-2xl font-bold mb-6"
       style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FDF5E6' }}>Texto sobre Superficies</h3>
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {surfaces.map((s) => (
         <div key={`text-${s.name}`} className="rounded-lg p-5 border border-white/5" style={{ background: s.hex }}>
           <div className="text-[10px] text-[#00E5FF] uppercase tracking-[0.1em] mb-3"

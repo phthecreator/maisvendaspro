@@ -48,7 +48,7 @@ const Feedback = () => {
             <div className="flex-1 text-[13px]" style={{ fontFamily: mono, color: '#FDF5E6' }}>
               {alert.message}
             </div>
-            <button className="flex-shrink-0 cursor-pointer p-1 rounded transition-colors duration-200"
+            <button className="flex-shrink-0 cursor-pointer min-h-[44px] min-w-[44px] p-2 rounded transition-colors duration-200 flex items-center justify-center"
               style={{ color: alert.color, background: 'transparent', border: 'none' }}
               onClick={() => setDismissed([...dismissed, alert.type])}>
               <X size={14} />
@@ -78,10 +78,10 @@ const Feedback = () => {
           </div>
           <div className="flex gap-2 mt-2">
             <button onClick={() => setProgress(Math.max(0, progress - 10))}
-              className="text-[10px] px-2 py-0.5 rounded cursor-pointer"
+              className="text-xs px-3 py-2 min-h-[44px] rounded cursor-pointer"
               style={{ fontFamily: mono, background: 'rgba(0,229,255,0.1)', color: '#00E5FF', border: 'none' }}>-10</button>
             <button onClick={() => setProgress(Math.min(100, progress + 10))}
-              className="text-[10px] px-2 py-0.5 rounded cursor-pointer"
+              className="text-xs px-3 py-2 min-h-[44px] rounded cursor-pointer"
               style={{ fontFamily: mono, background: 'rgba(0,229,255,0.1)', color: '#00E5FF', border: 'none' }}>+10</button>
           </div>
         </div>
@@ -152,7 +152,7 @@ const Feedback = () => {
               Bunker da IA Cohort #4 abre em 15 dias. Garanta sua vaga.
             </span>
           </div>
-          <button className="cursor-pointer p-1 rounded" style={{ color: '#A9A9A9', background: 'transparent', border: 'none' }}
+          <button className="cursor-pointer min-h-[44px] min-w-[44px] p-2 rounded flex items-center justify-center" style={{ color: '#A9A9A9', background: 'transparent', border: 'none' }}
             onClick={() => setShowBanner(false)}>
             <X size={14} />
           </button>

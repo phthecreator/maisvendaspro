@@ -12,6 +12,7 @@ const inputStyle: React.CSSProperties = {
   borderRadius: 6,
   outline: 'none',
   width: '100%',
+  minHeight: 44,
   transition: 'border-color 0.2s, box-shadow 0.2s',
 };
 
@@ -46,7 +47,7 @@ const Forms = () => {
 
       {/* Text Inputs */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Text Input</h3>
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
           <label style={labelStyle}>Nome completo</label>
           <input type="text" placeholder="Seu nome" className="forja-input px-4 py-3"
@@ -61,7 +62,7 @@ const Forms = () => {
 
       {/* Select Dropdown */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Select</h3>
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
           <label style={labelStyle}>Faturamento mensal</label>
           <select className="forja-input px-4 py-3 cursor-pointer"
@@ -118,15 +119,17 @@ const Forms = () => {
             { label: 'Aceito os termos de uso', checked: checkA, onChange: () => setCheckA(!checkA) },
             { label: 'Quero receber novidades por email', checked: checkB, onChange: () => setCheckB(!checkB) },
           ].map((cb) => (
-            <label key={cb.label} className="flex items-center gap-3 cursor-pointer">
-              <div className="w-5 h-5 rounded border flex items-center justify-center flex-shrink-0 transition-all duration-200"
+            <label key={cb.label} className="flex items-center gap-3 cursor-pointer min-h-[44px]">
+              <div className="w-[44px] h-[44px] rounded border flex items-center justify-center flex-shrink-0 transition-all duration-200"
+                role="checkbox"
+                aria-checked={cb.checked}
                 style={{
                   background: cb.checked ? '#FF6B00' : 'rgba(0,0,0,0.3)',
                   borderColor: cb.checked ? '#FF6B00' : 'rgba(184,151,106,0.3)',
                 }}
                 onClick={cb.onChange}>
                 {cb.checked && (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0A00" strokeWidth="3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A0A00" strokeWidth="3">
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
                 )}
@@ -141,12 +144,16 @@ const Forms = () => {
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Toggle / Switch</h3>
       <div className="mb-10">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-6 rounded-full cursor-pointer relative transition-all duration-200"
+          <div className="w-12 h-[44px] rounded-full cursor-pointer relative transition-all duration-200 flex items-center"
+            role="switch"
+            aria-checked={toggle}
             style={{ background: toggle ? '#FF6B00' : 'rgba(184,151,106,0.3)' }}
             onClick={() => setToggle(!toggle)}>
-            <div className="absolute top-0.5 w-5 h-5 rounded-full transition-all duration-200"
+            <div className="absolute w-5 h-5 rounded-full transition-all duration-200"
               style={{
                 background: toggle ? '#1A0A00' : '#B8976A',
+                top: '50%',
+                transform: 'translateY(-50%)',
                 left: toggle ? 26 : 2,
               }} />
           </div>
@@ -158,7 +165,7 @@ const Forms = () => {
 
       {/* Error State */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FFF8F0' }}>Estado de Erro</h3>
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
           <label style={labelStyle}>Email (com erro)</label>
           <input type="email" value="email-invalido" readOnly className="px-4 py-3"

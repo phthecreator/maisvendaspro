@@ -74,6 +74,7 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
       {onClose && (
         <button
           onClick={onClose}
+          className="min-h-[44px] min-w-[44px] flex items-center justify-center"
           style={{
             position: 'absolute',
             top: 16,
@@ -164,7 +165,7 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
                     display: 'flex',
                     alignItems: 'center',
                     gap: 8,
-                    padding: '10px 12px',
+                    padding: '12px 12px',
                     borderRadius: 4,
                     cursor: 'pointer',
                     borderLeft: isActive ? '2px solid #00E5FF' : '2px solid transparent',
@@ -196,8 +197,8 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
                         display: 'block',
                         paddingLeft: 24,
                         paddingRight: 12,
-                        paddingTop: 4,
-                        paddingBottom: 4,
+                        paddingTop: 8,
+                        paddingBottom: 8,
                         background: 'none',
                         border: 'none',
                         cursor: 'pointer',
@@ -287,7 +288,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           color: '#FDF5E6',
           cursor: 'pointer',
         }}
-        className="lg:hidden"
+        className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center"
         aria-label="Open menu"
       >
         <Menu size={20} />
@@ -331,10 +332,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         }}
       >
         <div
+          className="p-4 sm:p-8 md:px-12 md:py-16 lg:px-12 lg:py-16"
           style={{
             maxWidth: 1200,
             margin: '0 auto',
-            padding: '64px 48px',
           }}
         >
           {children}

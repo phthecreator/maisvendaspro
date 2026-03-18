@@ -61,7 +61,7 @@ export default function Showcase() {
           </div>
 
           {/* Value Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, padding: '20px 0 0' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" style={{ gap: 12, padding: '20px 0 0' }}>
             {[
               { icon: '\u{1F3AF}', title: 'Sessoes Individuais', desc: '12 sessoes de 1h' },
               { icon: '\u{1F916}', title: 'Squads de IA', desc: 'Trabalhando 24/7' },
@@ -97,7 +97,7 @@ export default function Showcase() {
           </div>
 
           {/* Metrics */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 20 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" style={{ gap: 12, marginBottom: 20 }}>
             {[
               { label: 'Receita Gerada', value: 'R$ 32.000', trend: '+18%' },
               { label: 'Deploys', value: '7 projetos', trend: '+2' },
@@ -192,9 +192,9 @@ export default function Showcase() {
               </div>
               <div style={{ textAlign: 'center', padding: '20px 0' }}>
                 <p style={{ fontSize: 14, color: '#FFF8F0', margin: '0 0 16px' }}>Agendar call de 30min com o Mestre da Forja</p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, maxWidth: 300, margin: '0 auto 16px' }}>
+                <div className="grid grid-cols-2 sm:grid-cols-3" style={{ gap: 8, maxWidth: 300, margin: '0 auto 16px' }}>
                   {['Seg 10h', 'Ter 14h', 'Qua 16h', 'Qui 10h', 'Sex 14h', 'Seg 16h'].map((s) => (
-                    <div key={s} style={{ padding: '8px', borderRadius: 6, border: '1px solid rgba(255,107,0,0.1)', backgroundColor: 'rgba(255,107,0,0.03)', fontSize: 11, color: '#B8976A', cursor: 'pointer' }}>
+                    <div key={s} className="min-h-[44px] flex items-center justify-center" style={{ padding: '8px', borderRadius: 6, border: '1px solid rgba(255,107,0,0.1)', backgroundColor: 'rgba(255,107,0,0.03)', fontSize: 11, color: '#B8976A', cursor: 'pointer' }}>
                       {s}
                     </div>
                   ))}

@@ -48,6 +48,7 @@ export default function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
         </span>
         <button
           onClick={handleCopy}
+          className="min-h-[44px] min-w-[44px]"
           style={{
             background: 'none',
             border: 'none',
@@ -58,7 +59,7 @@ export default function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
             gap: 4,
             fontFamily: "'Roboto Mono', monospace",
             fontSize: 11,
-            padding: '4px 8px',
+            padding: '8px 12px',
             borderRadius: 4,
             transition: 'color 0.15s',
           }}

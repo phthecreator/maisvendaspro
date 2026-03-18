@@ -53,9 +53,10 @@ export default function Investment() {
             90 dias &middot; Parcelamento em ate 12x &middot; Nota fiscal emitida
           </div>
 
-          <div style={{
+          <div className="min-h-[44px]" style={{
             padding: '16px 32px', border: '1px solid #FF6B00', borderRadius: 8,
-            display: 'inline-block', cursor: 'pointer', transition: 'background-color 0.2s',
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', transition: 'background-color 0.2s',
             fontSize: 13, fontWeight: 600, color: '#FF6B00', fontFamily: "'Roboto Mono', monospace",
             letterSpacing: '0.05em', textTransform: 'uppercase' as const,
           }}>

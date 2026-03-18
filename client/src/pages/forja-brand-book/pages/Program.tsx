@@ -101,7 +101,7 @@ export default function Program() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {WEEKS.map((w, idx) => (
-            <div key={w.weeks} className="fj-forged-metal" style={{ padding: 24, borderRadius: 8, border: '1px solid rgba(255,107,0,0.05)', display: 'grid', gridTemplateColumns: '80px 1fr', gap: 20, alignItems: 'start' }}>
+            <div key={w.weeks} className="fj-forged-metal grid grid-cols-[60px_1fr] md:grid-cols-[80px_1fr]" style={{ padding: 24, borderRadius: 8, border: '1px solid rgba(255,107,0,0.05)', gap: 20, alignItems: 'start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{
                   width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -135,7 +135,7 @@ export default function Program() {
         </h2>
         <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 12 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 12 }}>
           {DELIVERABLES.map((d) => (
             <div key={d.item} className="fj-forged-metal" style={{ padding: 20, borderRadius: 8, border: '1px solid rgba(255,107,0,0.05)', display: 'flex', gap: 12, alignItems: 'start' }}>
               <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#FF6B00', marginTop: 6, flexShrink: 0 }} />

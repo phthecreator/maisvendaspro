@@ -100,8 +100,8 @@ const Buttons = () => {
         ].map((btn, i) => (
           <button key={i} className="flex items-center justify-center rounded-full cursor-pointer transition-all duration-200"
             style={{
-              width: 40,
-              height: 40,
+              width: 44,
+              height: 44,
               background: btn.bg,
               color: btn.color,
               border: btn.border || 'none',
@@ -163,7 +163,7 @@ const Buttons = () => {
       <h3 className="text-xl font-bold mb-4"
         style={{ fontFamily: "'Averia Serif Libre', serif", color: '#FFF8F0' }}>Tamanhos</h3>
       <div className="flex gap-4 items-center">
-        <button style={{ ...btnBase, padding: '8px 16px', fontSize: 11, background: '#FF6B00', color: '#1A0A00' }}>
+        <button style={{ ...btnBase, padding: '8px 16px', fontSize: 11, background: '#FF6B00', color: '#1A0A00', minHeight: 44 }}>
           Small
         </button>
         <button style={{ ...btnBase, padding: '12px 24px', fontSize: 13, background: '#FF6B00', color: '#1A0A00' }}>

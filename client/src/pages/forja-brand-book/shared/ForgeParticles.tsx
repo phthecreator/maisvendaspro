@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 const COLOR = '#FF6B00';
 
@@ -12,21 +12,27 @@ const DENSITY_MAP = {
 export type ParticleDensity = keyof typeof DENSITY_MAP;
 
 export default function ForgeParticles({ density = 'normal' }: { density?: ParticleDensity }) {
-  const prefersReducedMotion =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, []);
 
   const count = DENSITY_MAP[density];
 
   const particles = useMemo(() => {
-    if (prefersReducedMotion || count === 0) return [];
+    if (reducedMotion || count === 0) return [];
     return Array.from({ length: count }, (_, i) => {
       const size = 1.5 + Math.random() * 2;
       return { id: i, size, left: Math.random() * 100, delay: Math.random() * 20, duration: 10 + Math.random() * 12 };
     });
-  }, [prefersReducedMotion, count]);
+  }, [reducedMotion, count]);
 
-  if (prefersReducedMotion || count === 0 || particles.length === 0) return null;
+  if (reducedMotion || count === 0 || particles.length === 0) return null;
 
   return (
     <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 1, overflow: 'hidden' }} aria-hidden="true">

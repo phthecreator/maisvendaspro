@@ -202,15 +202,13 @@ export default function VoiceTone() {
       </h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 48 }}>
         {SPECTRUM.map((s) => (
-          <div key={s.left} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div key={s.left} className="flex items-center gap-2 sm:gap-3">
             <span
+              className="w-[60px] sm:w-[100px] text-right shrink-0"
               style={{
                 fontFamily: "'Roboto Mono', monospace",
                 fontSize: 11,
                 color: '#A9A9A9',
-                width: 100,
-                textAlign: 'right',
-                flexShrink: 0,
               }}
             >
               {s.left}
@@ -240,12 +238,11 @@ export default function VoiceTone() {
               />
             </div>
             <span
+              className="w-[60px] sm:w-[100px] shrink-0"
               style={{
                 fontFamily: "'Roboto Mono', monospace",
                 fontSize: 11,
                 color: '#A9A9A9',
-                width: 100,
-                flexShrink: 0,
               }}
             >
               {s.right}
@@ -291,6 +288,9 @@ export default function VoiceTone() {
             <button
               key={ctx.id}
               onClick={() => setActiveContext(ctx.id)}
+              aria-selected={activeContext === ctx.id}
+              role="tab"
+              className="min-h-[44px]"
               style={{
                 fontFamily: "'Roboto Mono', monospace",
                 fontSize: 12,

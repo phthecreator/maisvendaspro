@@ -80,7 +80,7 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
       }}
     >
       {onClose && (
-        <button onClick={onClose} style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', color: '#B8976A', cursor: 'pointer' }} aria-label="Fechar menu">
+        <button onClick={onClose} className="min-h-[44px] min-w-[44px] flex items-center justify-center" style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', color: '#B8976A', cursor: 'pointer' }} aria-label="Fechar menu">
           <X size={20} />
         </button>
       )}
@@ -109,7 +109,7 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
               <Link href={item.path} onClick={onClose}>
                 <div
                   style={{
-                    display: 'flex', alignItems: 'center', gap: 8, padding: '10px 12px', borderRadius: 4, cursor: 'pointer',
+                    display: 'flex', alignItems: 'center', gap: 8, padding: '12px 12px', borderRadius: 4, cursor: 'pointer',
                     borderLeft: isActive ? '2px solid #FF6B00' : '2px solid transparent',
                     backgroundColor: isActive ? 'rgba(255,255,255,0.05)' : 'transparent',
                     transition: 'background-color 0.15s',
@@ -128,7 +128,7 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
                   {item.subLinks.map((sub) => (
                     <button key={sub.id} onClick={() => handleSubLinkClick(sub.id)}
                       style={{
-                        display: 'block', paddingLeft: 24, paddingRight: 12, paddingTop: 4, paddingBottom: 4,
+                        display: 'block', paddingLeft: 24, paddingRight: 12, paddingTop: 8, paddingBottom: 8,
                         background: 'none', border: 'none', cursor: 'pointer',
                         fontFamily: "'Roboto Mono', monospace", fontSize: 11,
                         color: activeAnchor === sub.id ? '#FF6B00' : 'rgba(184,151,106,0.7)', textAlign: 'left', transition: 'color 0.15s',
@@ -169,7 +169,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <button onClick={() => setMobileOpen(true)}
         style={{ position: 'fixed', top: 16, left: 16, zIndex: 40, background: 'rgba(13,6,4,0.9)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 8, color: '#FFF8F0', cursor: 'pointer' }}
-        className="lg:hidden" aria-label="Abrir menu"
+        className="lg:hidden min-h-[44px] min-w-[44px]" aria-label="Abrir menu"
       >
         <Menu size={20} />
       </button>
@@ -184,7 +184,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       )}
 
       <div className="fj-scrollbar lg:ml-[240px]" style={{ flex: 1, overflowY: 'auto', minHeight: '100vh' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '80px 48px' }}>
+        <div className="p-4 sm:p-8 md:px-12 md:py-16 lg:px-12 lg:py-20" style={{ maxWidth: 900, margin: '0 auto' }}>
           {children}
         </div>
       </div>

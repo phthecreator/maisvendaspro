@@ -44,7 +44,7 @@ const Navigation = () => {
               <span className="text-[14px] font-bold tracking-[0.05em]"
                 style={{ fontFamily: "'Cinzel', serif", color: '#FDF5E6' }}>BUNKER</span>
             </div>
-            <nav className="flex items-center gap-5">
+            <nav className="flex items-center gap-5 flex-wrap">
               {['Home', 'Cursos', 'Comunidade', 'Deploy'].map((item) => (
                 <a key={item} className="text-[12px] uppercase tracking-[0.08em] cursor-pointer transition-colors duration-200"
                   style={{ fontFamily: mono, color: item === 'Home' ? '#00E5FF' : '#A9A9A9' }}>
@@ -62,8 +62,8 @@ const Navigation = () => {
 
       {/* Sidebar */}
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FDF5E6' }}>Sidebar</h3>
-      <div className="flex gap-6 mb-10">
-        <div className="w-56 rounded-lg border border-white/5 py-3" style={{ background: '#0d1117' }}>
+      <div className="flex gap-6 mb-10 overflow-x-auto">
+        <div className="w-56 flex-shrink-0 rounded-lg border border-white/5 py-3 hidden md:block" style={{ background: '#0d1117' }}>
           <div className="px-4 mb-4 flex items-center gap-2">
             <Shield size={16} color="#00E5FF" />
             <span className="text-[12px] font-bold tracking-[0.05em]"
@@ -142,7 +142,7 @@ const Navigation = () => {
       <h3 className="text-xl font-bold mb-4" style={{ fontFamily: serif, color: '#FDF5E6' }}>Paginacao</h3>
       <div className="rounded-lg border border-white/5 p-4" style={{ background: '#1A1E22' }}>
         <div className="flex items-center justify-center gap-1">
-          <button className="w-9 h-9 rounded flex items-center justify-center cursor-pointer transition-all duration-200"
+          <button className="w-11 h-11 rounded flex items-center justify-center cursor-pointer transition-all duration-200"
             style={{ fontFamily: mono, fontSize: 12, background: 'transparent', border: '1px solid rgba(169,169,169,0.2)', color: '#A9A9A9' }}
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}>
             <ChevronLeft size={14} />
@@ -150,7 +150,7 @@ const Navigation = () => {
           {[1, 2, 3, '...', 10].map((page, i) => (
             <button key={i}
               onClick={() => typeof page === 'number' && setCurrentPage(page)}
-              className="w-9 h-9 rounded flex items-center justify-center cursor-pointer transition-all duration-200"
+              className="w-11 h-11 rounded flex items-center justify-center cursor-pointer transition-all duration-200"
               style={{
                 fontFamily: mono,
                 fontSize: 12,
@@ -161,7 +161,7 @@ const Navigation = () => {
               {page}
             </button>
           ))}
-          <button className="w-9 h-9 rounded flex items-center justify-center cursor-pointer transition-all duration-200"
+          <button className="w-11 h-11 rounded flex items-center justify-center cursor-pointer transition-all duration-200"
             style={{ fontFamily: mono, fontSize: 12, background: 'transparent', border: '1px solid rgba(169,169,169,0.2)', color: '#A9A9A9' }}
             onClick={() => setCurrentPage(Math.min(10, currentPage + 1))}>
             <ChevronRight size={14} />
