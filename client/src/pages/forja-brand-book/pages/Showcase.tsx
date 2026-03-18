@@ -20,11 +20,11 @@ export default function Showcase() {
   return (
     <div>
       {/* === SALES PAGE === */}
-      <section id="sales-page" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="sales-page" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           Preview: Pagina de Vendas
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <BrowserFrame title="forja.maisvendaspro.com.br">
           {/* Hero */}
@@ -78,11 +78,11 @@ export default function Showcase() {
       </section>
 
       {/* === AREA DO MENTORADO === */}
-      <section id="area-mentorado" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="area-mentorado" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           Preview: Dashboard do Mentorado
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <BrowserFrame title="app.forja.maisvendaspro.com.br/dashboard">
           {/* Header */}
@@ -139,11 +139,11 @@ export default function Showcase() {
       </section>
 
       {/* === SESSAO DIAGNOSTICO === */}
-      <section id="sessao-diagnostico" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="sessao-diagnostico" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           Preview: Sessao de Diagnostico
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <BrowserFrame title="forja.maisvendaspro.com.br/diagnostico">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>

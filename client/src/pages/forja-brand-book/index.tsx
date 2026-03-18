@@ -30,13 +30,13 @@ function PageContent({ section }: { section: string }) {
 }
 
 const SECTION_DENSITY: Record<string, ParticleDensity> = {
-  '': 'high',
-  brand: 'normal',
-  foundations: 'low',
-  components: 'low',
+  '': 'normal',
+  brand: 'low',
+  foundations: 'none',
+  components: 'none',
   programa: 'low',
-  investimento: 'low',
-  showcase: 'normal',
+  investimento: 'none',
+  showcase: 'low',
 };
 
 export default function ForjaBrandBook() {

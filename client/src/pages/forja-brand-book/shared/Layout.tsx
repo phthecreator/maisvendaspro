@@ -71,13 +71,12 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
 
   return (
     <div
-      className="fj-noise fj-scrollbar fj-heat-lines"
+      className="fj-scrollbar"
       style={{
         width: 240, height: '100vh', backgroundColor: '#0D0604',
         display: 'flex', flexDirection: 'column', padding: '24px 16px',
         overflowY: 'auto', position: 'relative',
-        borderRight: '1px solid rgba(255,107,0,0.15)',
-        boxShadow: '1px 0 10px rgba(255,107,0,0.05)',
+        borderRight: '1px solid rgba(255,255,255,0.04)',
       }}
     >
       {onClose && (
@@ -93,14 +92,14 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
         </h1>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '6px 10px', backgroundColor: 'rgba(255,168,0,0.06)', borderRadius: 4, border: '1px solid rgba(255,168,0,0.1)' }}>
-        <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#FFA800', boxShadow: '0 0 6px rgba(255,168,0,0.6), 0 0 12px rgba(255,168,0,0.3)', animation: 'fj-status-pulse 2s ease-in-out infinite' }} />
-        <span style={{ fontFamily: "'Roboto Mono', monospace", fontSize: 10, color: '#FFA800', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700 }}>
-          FORJA ATIVA
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '6px 10px' }}>
+        <div style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#FF6B00' }} />
+        <span style={{ fontFamily: "'Roboto Mono', monospace", fontSize: 10, color: '#B8976A', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+          v1.0
         </span>
       </div>
 
-      <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(255,107,0,0.15), transparent)', marginBottom: 16 }} />
+      <div style={{ height: 1, background: 'rgba(255,255,255,0.04)', marginBottom: 16 }} />
 
       <nav style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
         {NAV_ITEMS.map((item) => {
@@ -147,10 +146,9 @@ function SidebarContent({ currentPath, onClose }: { currentPath: string; onClose
         })}
       </nav>
 
-      <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent)', marginTop: 16, marginBottom: 12 }} />
+      <div style={{ height: 1, background: 'rgba(255,255,255,0.04)', marginTop: 16, marginBottom: 12 }} />
 
-      <div style={{ fontFamily: "'Roboto Mono', monospace", fontSize: 10, color: '#555', lineHeight: 1.8 }}>
-        <div style={{ color: '#B8976A' }}>v1.0.0</div>
+      <div style={{ fontFamily: "'Roboto Mono', monospace", fontSize: 10, color: 'rgba(184,151,106,0.4)', lineHeight: 1.8 }}>
         <div>Marco 2026</div>
       </div>
     </div>
@@ -185,8 +183,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       )}
 
-      <div className="fj-noise fj-scrollbar lg:ml-[240px]" style={{ flex: 1, overflowY: 'auto', minHeight: '100vh' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 48px' }}>
+      <div className="fj-scrollbar lg:ml-[240px]" style={{ flex: 1, overflowY: 'auto', minHeight: '100vh' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '80px 48px' }}>
           {children}
         </div>
       </div>

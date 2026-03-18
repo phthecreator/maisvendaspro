@@ -30,11 +30,11 @@ export default function Brand() {
   return (
     <div>
       {/* === NARRATIVA === */}
-      <section id="narrativa" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="narrativa" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           A Historia da Forja
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <div className="fj-forged-metal" style={{ padding: 32, borderRadius: 8, border: '1px solid rgba(255,107,0,0.1)', marginBottom: 24 }}>
           <p style={{ fontSize: 15, lineHeight: 1.9, color: '#FFF8F0', margin: 0 }}>
@@ -44,7 +44,7 @@ export default function Brand() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
           <div className="fj-molten" style={{ padding: 24, borderRadius: 8 }}>
-            <h4 style={{ color: '#FF6B00', fontSize: 14, marginBottom: 12, fontWeight: 700 }}>O BUNKER TE TIRA DA ESTEIRA</h4>
+            <h4 style={{ color: '#FF6B00', fontSize: 12, marginBottom: 12, fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.1em' }}>O BUNKER TE TIRA DA ESTEIRA</h4>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: '#B8976A', margin: 0 }}>
               A comunidade de R$250/ano quebra o ciclo de consumo e te coloca em modo implementacao. Voce deploya, erra em grupo, aprende fazendo.
             </p>
@@ -65,13 +65,13 @@ export default function Brand() {
       </section>
 
       {/* === IDENTIDADE VISUAL === */}
-      <section id="identidade" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="identidade" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           Identidade Visual
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
-        <h3 style={{ color: '#FFD700', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Paleta de Cores</h3>
+        <h3 style={{ color: '#FFF8F0', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Paleta de Cores</h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 12, marginBottom: 40 }}>
           {COLORS.map((c) => (
             <div key={c.hex} style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
@@ -85,7 +85,7 @@ export default function Brand() {
           ))}
         </div>
 
-        <h3 style={{ color: '#FFD700', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Tipografia</h3>
+        <h3 style={{ color: '#FFF8F0', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Tipografia</h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16, marginBottom: 40 }}>
           <div className="fj-forged-metal" style={{ padding: 24, borderRadius: 8, border: '1px solid rgba(255,107,0,0.1)' }}>
             <div style={{ fontSize: 10, color: '#FF6B00', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Titulos</div>
@@ -104,7 +104,7 @@ export default function Brand() {
           </div>
         </div>
 
-        <h3 style={{ color: '#FFD700', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Simbolos & Icones</h3>
+        <h3 style={{ color: '#FFF8F0', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Simbolos & Icones</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {SYMBOLS.map((s) => (
             <div key={s.symbol} className="fj-forged-metal" style={{ display: 'grid', gridTemplateColumns: '140px 1fr 1fr', gap: 16, padding: '16px 20px', borderRadius: 6, border: '1px solid rgba(255,107,0,0.05)', alignItems: 'center' }}>
@@ -117,11 +117,11 @@ export default function Brand() {
       </section>
 
       {/* === PRIMAL BRANDING === */}
-      <section id="primal-branding" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="primal-branding" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           Primal Branding — 7 Pilares
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {PILLARS.map((p) => (
@@ -132,18 +132,18 @@ export default function Brand() {
                 </div>
                 <h3 style={{ fontFamily: "'Cinzel', serif", fontSize: 18, color: '#FFD700', margin: 0 }}>{p.title}</h3>
               </div>
-              <p style={{ fontSize: 13, lineHeight: 1.8, color: '#B8976A', margin: 0, whiteSpace: 'pre-line' }}>{p.text}</p>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#B8976A', margin: 0, whiteSpace: 'pre-line' }}>{p.text}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* === POSICIONAMENTO === */}
-      <section id="posicionamento" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="posicionamento" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           Posicionamento na Escada de Valor
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         {/* Value Ladder */}
         <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, marginBottom: 40, flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -172,7 +172,7 @@ export default function Brand() {
           </p>
         </div>
 
-        <h3 style={{ color: '#FFD700', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Criterios de Qualificacao</h3>
+        <h3 style={{ color: '#FFF8F0', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Criterios de Qualificacao</h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12, marginBottom: 32 }}>
           {[
             'Faturamento >= R$80k/mes',
@@ -186,12 +186,12 @@ export default function Brand() {
           ))}
         </div>
 
-        <h3 style={{ color: '#FFD700', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Bunker vs Forja</h3>
+        <h3 style={{ color: '#FFF8F0', fontSize: 16, marginBottom: 16, fontWeight: 700 }}>Bunker vs Forja</h3>
         <div style={{ overflow: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'left', padding: '12px 16px', borderBottom: '2px solid #FF6B00', color: '#00E5FF' }}>Bunker</th>
+                <th style={{ textAlign: 'left', padding: '12px 16px', borderBottom: '2px solid #FF6B00', color: '#B8976A' }}>Bunker</th>
                 <th style={{ textAlign: 'left', padding: '12px 16px', borderBottom: '2px solid #FF6B00', color: '#FF6B00' }}>Forja</th>
               </tr>
             </thead>

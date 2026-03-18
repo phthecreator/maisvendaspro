@@ -24,11 +24,11 @@ export default function Program() {
   return (
     <div>
       {/* === VISAO GERAL === */}
-      <section id="visao-geral" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="visao-geral" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           90 Dias de Transformacao
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginBottom: 40 }}>
           {[
@@ -50,7 +50,7 @@ export default function Program() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
           {[
             { phase: 'FUNDACAO', days: 'Dias 1-30', desc: 'Setup AIOS, definicao de nicho, primeiros clientes', color: '#FF6B00' },
-            { phase: 'CONSTRUCAO', days: 'Dias 31-60', desc: 'Squads operando, pipeline de vendas, 3+ projetos', color: '#FFD700' },
+            { phase: 'CONSTRUCAO', days: 'Dias 31-60', desc: 'Squads operando, pipeline de vendas, 3+ projetos', color: '#FFF8F0' },
             { phase: 'OPERACAO', days: 'Dias 61-90', desc: 'Sistema autonomo, receita recorrente, escalabilidade', color: '#FF4500' },
           ].map((p) => (
             <div key={p.phase} className="fj-forged-metal" style={{ padding: 24, borderRadius: 8, borderTop: `3px solid ${p.color}` }}>
@@ -63,11 +63,11 @@ export default function Program() {
       </section>
 
       {/* === METODOLOGIA === */}
-      <section id="metodologia" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="metodologia" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           O Metodo Forja
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <div className="fj-molten" style={{ padding: 24, borderRadius: 8, marginBottom: 32 }}>
           <p style={{ fontSize: 15, lineHeight: 1.9, color: '#FFF8F0', margin: 0 }}>
@@ -84,20 +84,20 @@ export default function Program() {
             <div key={m.title} className="fj-forged-metal" style={{ padding: 28, borderRadius: 8, border: '1px solid rgba(255,107,0,0.08)', borderLeft: '3px solid #FF6B00' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <span style={{ fontSize: 28 }}>{m.icon}</span>
-                <h3 style={{ fontFamily: "'Cinzel', serif", fontSize: 18, color: '#FFD700', margin: 0 }}>{m.title}</h3>
+                <h3 style={{ fontFamily: "'Cinzel', serif", fontSize: 18, color: '#FFF8F0', margin: 0 }}>{m.title}</h3>
               </div>
-              <p style={{ fontSize: 13, lineHeight: 1.8, color: '#B8976A', margin: 0 }}>{m.desc}</p>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#B8976A', margin: 0 }}>{m.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* === SEMANA A SEMANA === */}
-      <section id="semana-a-semana" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="semana-a-semana" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           Cronograma de 12 Semanas
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {WEEKS.map((w, idx) => (
@@ -129,11 +129,11 @@ export default function Program() {
       </section>
 
       {/* === ENTREGAVEIS === */}
-      <section id="entregaveis" style={{ marginBottom: 80 }}>
-        <h2 className="fj-molten-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+      <section id="entregaveis" style={{ marginBottom: 120 }}>
+        <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: 32, fontWeight: 700, color: '#FFF8F0', marginBottom: 8 }}>
           O Que Voce Recebe
         </h2>
-        <div style={{ height: 3, width: 60, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
+        <div style={{ height: 2, width: 40, backgroundColor: '#FF6B00', marginBottom: 32, borderRadius: 2 }} />
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 12 }}>
           {DELIVERABLES.map((d) => (

@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 
-const COLORS = ['#FF6B00', '#FFD700', '#FF4500', '#FF8C00', '#FFA500'];
+const COLOR = '#FF6B00';
 
 const DENSITY_MAP = {
-  high: 45,
-  normal: 25,
-  low: 12,
+  high: 8,
+  normal: 5,
+  low: 3,
   none: 0,
 } as const;
 
@@ -21,10 +21,8 @@ export default function ForgeParticles({ density = 'normal' }: { density?: Parti
   const particles = useMemo(() => {
     if (prefersReducedMotion || count === 0) return [];
     return Array.from({ length: count }, (_, i) => {
-      const size = 1.5 + Math.random() * 2.5;
-      const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-      const blur = 0.3 + Math.random() * 0.6;
-      return { id: i, size, left: Math.random() * 100, delay: Math.random() * 15, duration: 7 + Math.random() * 9, color, blur };
+      const size = 1.5 + Math.random() * 2;
+      return { id: i, size, left: Math.random() * 100, delay: Math.random() * 20, duration: 10 + Math.random() * 12 };
     });
   }, [prefersReducedMotion, count]);
 
@@ -42,9 +40,7 @@ export default function ForgeParticles({ density = 'normal' }: { density?: Parti
             left: `${p.left}%`,
             bottom: -20,
             borderRadius: '50%',
-            backgroundColor: p.color,
-            boxShadow: `0 0 ${p.size + 1}px ${p.color}`,
-            filter: `blur(${p.blur}px)`,
+            backgroundColor: COLOR,
             opacity: 0,
             animation: `fj-spark-rise ${p.duration}s ${p.delay}s linear infinite`,
           }}
