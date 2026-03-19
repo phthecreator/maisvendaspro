@@ -328,8 +328,8 @@ export default function Home() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C96E] animate-pulse" />
             <span className="text-white/50 text-xs font-mono tracking-wide">Squads de IA para empresas</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05] text-white mb-6">
-            Uma equipe de IA que <span className="text-[#00C96E]">trabalha 24h</span> por voce
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-6">
+            Uma equipe de IA que <span className="text-[#00C96E]">trabalha 24h</span> por você
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-4">
             Sem CLT. Sem erro humano. Sem ferias.
@@ -379,8 +379,8 @@ export default function Home() {
             {pains.map((p, i) => {
               const Icon = p.icon;
               return (
-                <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 border border-white/5 bg-white/[0.02] rounded-xl text-center group hover:border-red-500/20 transition-colors">
-                  <div className="w-14 h-14 rounded-xl bg-red-500/10 flex items-center justify-center mx-auto mb-5"><Icon className="text-red-400" size={24} /></div>
+                <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 border border-white/5 bg-white/[0.02] rounded-xl text-center group hover:border-[#FF0066]/20 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-[#FF0066]/10 flex items-center justify-center mx-auto mb-5"><Icon className="text-[#FF0066]" size={24} /></div>
                   <h3 className="text-lg font-semibold text-white mb-3">{p.title}</h3>
                   <p className="text-white/70 text-sm leading-relaxed">{p.desc}</p>
                 </motion.div>
@@ -409,8 +409,8 @@ export default function Home() {
                       <div><h3 className="text-white font-semibold text-sm">{s.name}</h3><p className="text-white/40 text-xs">{s.segment} — {s.revenue}</p></div>
                     </div>
                   </div>
-                  <div className="p-5 border-b border-white/5 bg-red-500/5">
-                    <p className="text-red-400 font-mono text-xs uppercase mb-1">Antes</p>
+                  <div className="p-5 border-b border-white/5 bg-[#FF0066]/5">
+                    <p className="text-[#FF0066] font-mono text-xs uppercase mb-1">Antes</p>
                     <p className="text-white/70 text-sm">{s.before.pain}</p>
                     <p className="text-white/40 text-xs mt-1">{s.before.cost}</p>
                   </div>
@@ -572,8 +572,8 @@ export default function Home() {
                     {currentQ.type === 'contact' && (
                       <div className="space-y-4">
                         <input ref={inputRef} type="text" value={quizAnswers.name} onChange={e => updateQuiz('name', e.target.value)} placeholder="Seu nome" autoComplete="name" className="w-full px-0 py-3 bg-transparent border-b-2 border-white/10 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-[#00C96E] transition-colors" />
-                        <input type="tel" value={quizAnswers.whatsapp} onChange={e => updateQuiz('whatsapp', e.target.value)} placeholder="(00) 00000-0000" autoComplete="tel" className={`w-full px-0 py-3 bg-transparent border-b-2 text-xl text-white placeholder:text-white/20 focus:outline-none transition-colors ${phoneError ? 'border-red-500 focus:border-red-400' : 'border-white/10 focus:border-[#00C96E]'}`} />
-                        {phoneError && <p className="text-red-400 text-sm" role="alert">{phoneError}</p>}
+                        <input type="tel" value={quizAnswers.whatsapp} onChange={e => updateQuiz('whatsapp', e.target.value)} placeholder="(00) 00000-0000" autoComplete="tel" className={`w-full px-0 py-3 bg-transparent border-b-2 text-xl text-white placeholder:text-white/20 focus:outline-none transition-colors ${phoneError ? 'border-[#EF4444] focus:border-[#EF4444]' : 'border-white/10 focus:border-[#00C96E]'}`} />
+                        {phoneError && <p className="text-[#FF0066] text-sm" role="alert">{phoneError}</p>}
                       </div>
                     )}
                   </motion.div>
