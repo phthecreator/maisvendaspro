@@ -216,7 +216,61 @@ async function startServer() {
   app.use(rateLimit);
   app.use(express.json({ limit: "10kb" }));
 
-  // ─── Lead capture API ─────────────────────────────────────────────────────
+  // ─── Quiz API (new home form) ────────────────────────────────────────────
+  app.post("/api/quiz", (req, res) => {
+    try {
+      const { area, teamSize, revenue, aiMaturity, freeText, timing, name, whatsapp, squadRecommended } = req.body;
+
+      if (!name || typeof name !== "string" || name.trim().length < 2) {
+        return res.status(400).json({ error: "Nome deve ter pelo menos 2 caracteres" });
+      }
+      if (!whatsapp || !isValidPhone(whatsapp)) {
+        return res.status(400).json({ error: "WhatsApp invalido" });
+      }
+
+      // Server-side score (never trust client)
+      const REVENUE_SCORE: Record<string, number> = { "+R$10M": 30, "R$2M-R$10M": 25, "R$500k-R$2M": 20, "R$100k-R$500k": 10, "Ate R$100k": 5 };
+      const TEAM_SCORE: Record<string, number> = { "30+": 15, "11-30": 12, "4-10": 8, "1-3": 3 };
+      const MATURITY_SCORE: Record<string, number> = { "Tenho equipe de IA": 15, "Tenho automacoes": 12, "Uso ChatGPT/Gemini": 5, "Nunca usei": 2 };
+      const TIMING_SCORE: Record<string, number> = { "Essa semana": 20, "Este mes": 15, "Proximos 3 meses": 5, "So pesquisando": 2 };
+
+      let score = 0;
+      score += REVENUE_SCORE[revenue] || 5;
+      score += TEAM_SCORE[teamSize] || 3;
+      score += MATURITY_SCORE[aiMaturity] || 2;
+      score += TIMING_SCORE[timing] || 2;
+      if (freeText && freeText.length > 50) score += 10;
+      else if (freeText && freeText.length > 0) score += 3;
+      const temperatura = score >= 60 ? "HOT" : score >= 30 ? "WARM" : "COLD";
+
+      const lead = {
+        type: "quiz-home-v2",
+        name: sanitize(name),
+        whatsapp: sanitize(whatsapp, 20),
+        area: sanitize(area || "", 50),
+        teamSize: sanitize(teamSize || "", 10),
+        revenue: sanitize(revenue || "", 30),
+        aiMaturity: sanitize(aiMaturity || "", 30),
+        freeText: sanitize(freeText || "", 500),
+        timing: sanitize(timing || "", 30),
+        score,
+        temperatura,
+        squadRecommended: sanitize(squadRecommended || "", 100),
+        createdAt: new Date().toISOString(),
+      };
+
+      // Save to leads file
+      const leadsDir = path.resolve(__dirname, "..", "data");
+      if (!fs.existsSync(leadsDir)) fs.mkdirSync(leadsDir, { recursive: true });
+      fs.appendFileSync(path.join(leadsDir, "leads.jsonl"), JSON.stringify(lead) + "\n");
+
+      res.json({ success: true, score, temperatura });
+    } catch (e) {
+      res.status(500).json({ error: "Erro interno" });
+    }
+  });
+
+  // ─── Lead capture API (legacy form) ─────────────────────────────────────
   app.post("/api/leads", (req, res) => {
     try {
       const { email, phone, company, instagram, usesAI, invested, wouldInvest, lgpdConsent } = req.body;
