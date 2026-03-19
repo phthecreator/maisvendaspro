@@ -52,36 +52,36 @@ function validatePhone(phone: string): boolean {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const founders = [
-  { name: 'Pedro', role: 'O Mago', desc: 'Vendia o impossivel. Transformava ideias em negocios reais antes de qualquer um entender.' },
-  { name: 'Murillo', role: 'O Criador', desc: 'Construia o que ninguem comprava. Sistemas tao avancados que o mercado levava meses pra alcancar.' },
-  { name: 'Rapha', role: 'O Governante', desc: 'Testava em empresas reais. Se nao gerava resultado mensuravel, nao existia.' },
+  { name: 'Pedro', role: 'O Mago', desc: 'Vendia o impossível. Transformava ideias em negócios reais antes de qualquer um entender.' },
+  { name: 'Murillo', role: 'O Criador', desc: 'Construía o que ninguém comprava. Sistemas tão avançados que o mercado levava meses pra alcançar.' },
+  { name: 'Rapha', role: 'O Governante', desc: 'Testava em empresas reais. Se não gerava resultado mensurável, não existia.' },
 ];
 
 const pains = [
-  { icon: Users, title: 'Depende de gente', desc: 'Um funcionario sai e leva junto metade do conhecimento. Turnover vira risco existencial.' },
-  { icon: DollarSign, title: 'Paga caro pra operar', desc: 'Folha, encargos, ferramentas, treinamento. O custo de manter a maquina rodando so cresce.' },
+  { icon: Users, title: 'Depende de gente', desc: 'Um funcionário sai e leva junto metade do conhecimento. Turnover vira risco existencial.' },
+  { icon: DollarSign, title: 'Paga caro pra operar', desc: 'Folha, encargos, ferramentas, treinamento. O custo de manter a máquina rodando só cresce.' },
   { icon: TrendingUp, title: 'Escalar = contratar', desc: 'Cada novo cliente exige mais gente. O modelo "cresce contratando" tem rendimento decrescente.' },
 ];
 
 const scenarios = [
   {
-    icon: Stethoscope, name: 'Clinica da Dra. Renata', segment: 'Saude / Estetica', revenue: 'R$1.2M/mes',
-    before: { pain: '4 recepcionistas + 1 social media + 1 designer', cost: 'R$38k/mes em equipe' },
-    after: { result: '90 posts/mes, 98% leads respondidos em <5min', cost: 'R$6k/mes com squads' },
+    icon: Stethoscope, name: 'Clínica da Dra. Renata', segment: 'Saúde / Estética', revenue: 'R$1.2M/mês',
+    before: { pain: '4 recepcionistas + 1 social media + 1 designer', cost: 'R$38k/mês em equipe' },
+    after: { result: '90 posts/mês, 98% leads respondidos em <5min', cost: 'R$6k/mês com squads' },
     squads: ['content-engine', 'ai-reels', 'lead-hunter', 'copywriting-squad'],
     saving: 'R$384k/ano', roi: 'R$8,90 pra cada R$1',
   },
   {
-    icon: Truck, name: 'Distribuidora do Marcos', segment: 'Distribuicao', revenue: 'R$4M/mes',
-    before: { pain: '3 vendedores + 2 RH + 1 analista', cost: 'R$82k/mes, turnover 40%' },
-    after: { result: '1.400 prospeccoes/mes, turnover 12%, 3 dashboards real-time', cost: 'Payback em 15 dias' },
+    icon: Truck, name: 'Distribuidora do Marcos', segment: 'Distribuição', revenue: 'R$4M/mês',
+    before: { pain: '3 vendedores + 2 RH + 1 analista', cost: 'R$82k/mês, turnover 40%' },
+    after: { result: '1.400 prospecções/mês, turnover 12%, 3 dashboards real-time', cost: 'Payback em 15 dias' },
     squads: ['squad-comercial', 'sales-closer', 'squad-rh', 'data', 'ops'],
     saving: 'R$816k/ano', roi: 'Payback em 15 dias',
   },
   {
-    icon: Rocket, name: 'Agencia do Thiago', segment: 'Agencia', revenue: 'R$300k/mes',
+    icon: Rocket, name: 'Agência do Thiago', segment: 'Agência', revenue: 'R$300k/mês',
     before: { pain: '1 pessoa pra tudo, 14h/dia', cost: 'Limite de 8 clientes' },
-    after: { result: '4h/dia estrategico, 20 clientes sem contratar', cost: 'Zero contratacao nova' },
+    after: { result: '4h/dia estratégico, 20 clientes sem contratar', cost: 'Zero contratação nova' },
     squads: ['copywriting-squad', 'landing-page-squad', 'meta-ads-traffic', 'design', 'content-engine'],
     saving: 'R$180k/ano', roi: '2.5x clientes sem equipe',
   },
@@ -89,15 +89,15 @@ const scenarios = [
 
 const products = [
   { icon: Shield, name: 'O Bunker', tagline: 'Entenda o poder da IA', step: 1 },
-  { icon: Zap, name: 'A Primeira Missao', tagline: '1 squad em 5 dias', step: 2 },
+  { icon: Zap, name: 'A Primeira Missão', tagline: '1 squad em 5 dias', step: 2 },
   { icon: Flame, name: 'A Forja', tagline: '3-7 squads em 90 dias', step: 3 },
-  { icon: Gem, name: 'O Arsenal', tagline: 'Operacao total com IA', step: 4 },
+  { icon: Gem, name: 'O Arsenal', tagline: 'Operação total com IA', step: 4 },
 ];
 
 const howSteps = [
-  { icon: Search, num: '01', title: 'Diagnostico', desc: 'Analisamos sua operacao e mapeamos onde squads de IA geram mais impacto.' },
-  { icon: Cpu, num: '02', title: 'Instalacao', desc: 'Configuramos os squads na sua operacao. Voce nao precisa entender de IA — a gente instala.' },
-  { icon: BarChart3, num: '03', title: 'Resultado', desc: 'Em 20 dias voce ve os numeros mudando. Menos custo, mais velocidade, mais margem.' },
+  { icon: Search, num: '01', title: 'Diagnóstico', desc: 'Analisamos sua operação e mapeamos onde squads de IA geram mais impacto.' },
+  { icon: Cpu, num: '02', title: 'Instalação', desc: 'Configuramos os squads na sua operação. Você não precisa entender de IA — a gente instala.' },
+  { icon: BarChart3, num: '03', title: 'Resultado', desc: 'Em 20 dias você vê os números mudando. Menos custo, mais velocidade, mais margem.' },
 ];
 
 const stats = [
@@ -108,22 +108,22 @@ const stats = [
 ];
 
 const faqs = [
-  { q: 'O que exatamente e um squad de IA?', a: 'Um squad e um conjunto de agentes de IA configurados pra executar tarefas especificas na sua empresa. Funciona como uma equipe dedicada, 24 horas por dia.' },
-  { q: 'Preciso entender de tecnologia?', a: 'Nao. A gente instala tudo. Voce nao precisa saber programar ou configurar IA.' },
-  { q: 'Em quanto tempo vejo resultado?', a: 'Os primeiros squads estao operacionais em ate 20 dias. Resultados mensuraveis aparecem ja na primeira semana.' },
-  { q: 'Funciona pro meu segmento?', a: 'Se sua empresa tem operacao com pessoas, funciona. Temos squads pra mais de 15 segmentos diferentes.' },
-  { q: 'E se nao funcionar?', a: 'Garantia de 90 dias. Se os squads nao atingirem as metas projetadas, voce recebe 100% de volta.' },
-  { q: 'Substitui minha equipe?', a: 'Nao substitui — multiplica. Os squads assumem tarefas repetitivas, liberando sua equipe pro estrategico.' },
+  { q: 'O que exatamente é um squad de IA?', a: 'Um squad é um conjunto de agentes de IA configurados pra executar tarefas específicas na sua empresa. Funciona como uma equipe dedicada, 24 horas por dia.' },
+  { q: 'Preciso entender de tecnologia?', a: 'Não. A gente instala tudo. Você não precisa saber programar ou configurar IA.' },
+  { q: 'Em quanto tempo vejo resultado?', a: 'Os primeiros squads estão operacionais em até 20 dias. Resultados mensuráveis aparecem já na primeira semana.' },
+  { q: 'Funciona pro meu segmento?', a: 'Se sua empresa tem operação com pessoas, funciona. Temos squads pra mais de 15 segmentos diferentes.' },
+  { q: 'E se não funcionar?', a: 'Garantia de 90 dias. Se os squads não atingirem as metas projetadas, você recebe 100% de volta.' },
+  { q: 'Substitui minha equipe?', a: 'Não substitui — multiplica. Os squads assumem tarefas repetitivas, liberando sua equipe pro estratégico.' },
 ];
 
 const quizQuestions = [
-  { id: 'area', question: 'Qual area te da mais dor de cabeca?', type: 'select' as const, options: ['Marketing', 'Vendas', 'RH', 'Atendimento', 'Financeiro', 'Operacoes'] },
+  { id: 'area', question: 'Qual área te dá mais dor de cabeça?', type: 'select' as const, options: ['Marketing', 'Vendas', 'RH', 'Atendimento', 'Financeiro', 'Operacoes'] },
   { id: 'teamSize', question: 'Quantas pessoas trabalham nessa area?', type: 'select' as const, options: ['1-3', '4-10', '11-30', '30+'] },
-  { id: 'revenue', question: 'Quanto sua empresa fatura por mes?', type: 'select' as const, options: ['Ate R$100k', 'R$100k-R$500k', 'R$500k-R$2M', 'R$2M-R$10M', '+R$10M'] },
-  { id: 'aiMaturity', question: 'Voce ja usa IA no dia a dia?', type: 'select' as const, options: ['Nunca usei', 'Uso ChatGPT/Gemini', 'Tenho automacoes', 'Tenho equipe de IA'] },
+  { id: 'revenue', question: 'Quanto sua empresa fatura por mês?', type: 'select' as const, options: ['Ate R$100k', 'R$100k-R$500k', 'R$500k-R$2M', 'R$2M-R$10M', '+R$10M'] },
+  { id: 'aiMaturity', question: 'Você já usa IA no dia a dia?', type: 'select' as const, options: ['Nunca usei', 'Uso ChatGPT/Gemini', 'Tenho automacoes', 'Tenho equipe de IA'] },
   { id: 'freeText', question: 'Se pudesse resolver UM problema com IA essa semana, qual seria?', type: 'textarea' as const },
-  { id: 'timing', question: 'Quando gostaria de comecar?', type: 'select' as const, options: ['Essa semana', 'Este mes', 'Proximos 3 meses', 'So pesquisando'] },
-  { id: 'contact', question: 'Pra onde enviamos seu diagnostico?', sub: 'Voce recebe o resultado completo + squad recomendado no WhatsApp', type: 'contact' as const },
+  { id: 'timing', question: 'Quando gostaria de começar?', type: 'select' as const, options: ['Essa semana', 'Este mes', 'Proximos 3 meses', 'So pesquisando'] },
+  { id: 'contact', question: 'Pra onde enviamos seu diagnóstico?', sub: 'Você recebe o resultado completo + squad recomendado no WhatsApp', type: 'contact' as const },
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -253,7 +253,7 @@ export default function Home() {
   const quizNext = () => {
     if (!canAdvance()) return;
     if (currentQ.type === 'contact' && !validatePhone(quizAnswers.whatsapp)) {
-      setPhoneError('Formato invalido. Ex: (62) 99999-0000');
+      setPhoneError('Formato inválido. Ex: (62) 99999-0000');
       return;
     }
     if (quizStep < totalSteps - 1) setQuizStep(s => s + 1);
@@ -271,7 +271,7 @@ export default function Home() {
   }, [quizStep, quizAnswers]);
 
   const submitQuiz = async () => {
-    if (!validatePhone(quizAnswers.whatsapp)) { setPhoneError('Formato invalido'); return; }
+    if (!validatePhone(quizAnswers.whatsapp)) { setPhoneError('Formato inválido'); return; }
     setQuizSubmitting(true);
     const score = calcScore(quizAnswers);
     const temperatura = score >= 60 ? 'HOT' : score >= 30 ? 'WARM' : 'COLD';
@@ -290,6 +290,8 @@ export default function Home() {
     setQuizResult({ squadName: squad.name, area: quizAnswers.area, teamSize: quizAnswers.teamSize, saving: squad.saving, score });
   };
 
+  const quizDone = !!quizResult;
+
   // ─── RENDER ─────────────────────────────────────────────────────────────────
 
   return (
@@ -307,54 +309,175 @@ export default function Home() {
           </a>
 
           <nav className="hidden md:flex gap-8 text-[13px] text-white/50">
-            <button onClick={() => scrollTo('cenarios')} className="hover:text-white transition-colors">Cenarios</button>
+            <button onClick={() => scrollTo('cenarios')} className="hover:text-white transition-colors">Cenários</button>
             <button onClick={() => scrollTo('como-funciona')} className="hover:text-white transition-colors">Como funciona</button>
             <button onClick={() => scrollTo('faq')} className="hover:text-white transition-colors">FAQ</button>
           </nav>
 
           <button onClick={() => scrollTo('quiz')} className="inline-flex items-center gap-2 px-4 py-2 bg-[#00C96E] rounded-lg font-semibold text-black text-sm hover:bg-[#00A85A] transition-colors">
-            Diagnostico gratuito
+            Diagnóstico gratuito
           </button>
         </div>
       </header>
 
-      {/* S1: HERO */}
-      <motion.section className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 sm:px-6 pt-24 pb-12" style={{ y: yHero, opacity: opacityHero }}>
+      {/* ═══ HERO (compact) + QUIZ right below ═══ */}
+      <section className="relative z-10 px-4 sm:px-6 pt-24 pb-8">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-[#00C96E]/5 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
-        <div className="mx-auto max-w-4xl text-center relative">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8">
+
+        <div className="mx-auto max-w-4xl text-center relative mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C96E] animate-pulse" />
             <span className="text-white/50 text-xs font-mono tracking-wide">Squads de IA para empresas</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-6">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08] text-white mb-4">
             Uma equipe de IA que <span className="text-[#00C96E]">trabalha 24h</span> por você
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-4">
-            Sem CLT. Sem erro humano. Sem ferias.
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-base md:text-lg text-white/60 max-w-xl mx-auto leading-relaxed">
+            Sem CLT. Sem erro humano. Sem férias. +67 squads prontos, resultado em 20 dias.
           </motion.p>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }} className="text-base text-white/40 max-w-xl mx-auto mb-10">
-            +67 squads prontos. Resultado em 20 dias ou menos.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button onClick={() => scrollTo('quiz')} className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C96E] text-black text-sm font-semibold rounded-lg hover:bg-[#00A85A] transition-colors">
-              Descubra quanto voce perde sem IA <ArrowRight className="w-4 h-4" />
-            </button>
-            <button onClick={() => scrollTo('cenarios')} className="text-white/40 hover:text-white text-sm flex items-center gap-2 transition-colors">
-              Ver cenarios projetados <ArrowDown className="w-3 h-3" />
-            </button>
-          </motion.div>
         </div>
-      </motion.section>
 
-      {/* S2: STORY */}
-      <Section>
+        {/* QUIZ — right below hero */}
+        <motion.div
+          id="quiz"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="mx-auto max-w-xl relative"
+        >
+          {!quizResult && !quizSubmitting && (
+            <div className="text-center mb-8">
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-white mb-2">Descubra quanto a sua empresa perde sem IA</h2>
+              <p className="text-white/50 text-sm">2 minutos. Diagnóstico + squad ideal + economia estimada — grátis no WhatsApp.</p>
+            </div>
+          )}
+
+          {quizSubmitting ? (
+            <div className="min-h-[320px] flex flex-col items-center justify-center">
+              <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center gap-4" role="status" aria-live="polite">
+                <Loader2 className="w-12 h-12 text-[#00C96E] animate-spin" />
+                <p className="text-xl text-white">Calculando seu squad ideal...</p>
+                <p className="text-sm text-white/40">Analisando {quizAnswers.area.toLowerCase()} + {quizAnswers.teamSize} pessoas</p>
+              </motion.div>
+            </div>
+          ) : quizResult ? (
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-lg mx-auto">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 rounded-full bg-[#00C96E]/10 border border-[#00C96E]/30 flex items-center justify-center mx-auto mb-4"><Check className="w-8 h-8 text-[#00C96E]" /></div>
+                <h3 className="text-2xl font-semibold text-white mb-2">Seu squad ideal</h3>
+              </div>
+              <div className="border border-[#00C96E]/30 bg-white/[0.02] rounded-xl p-6 mb-6">
+                <p className="text-[#00C96E] font-mono text-xs uppercase mb-1">Squad recomendado</p>
+                <h4 className="text-xl font-semibold text-white mb-4">{quizResult.squadName}</h4>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between"><span className="text-white/40">Area</span><span className="text-white">{quizResult.area}</span></div>
+                  <div className="flex justify-between"><span className="text-white/40">Equipe atual</span><span className="text-white">{quizResult.teamSize} pessoas</span></div>
+                  <div className="flex justify-between"><span className="text-white/40">Com squads, sua equipe foca no estratégico</span><span className="text-[#00C96E] font-semibold">+eficiencia</span></div>
+                  <div className="h-px bg-white/5" />
+                  <div className="flex justify-between"><span className="text-white/40">Economia estimada</span><span className="text-[#00C96E] font-semibold text-lg">R${quizResult.saving}/mes</span></div>
+                </div>
+              </div>
+              <div className="bg-[#00C96E]/5 border border-[#00C96E]/20 rounded-xl p-4 mb-6 flex items-start gap-3">
+                <MessageSquare className="text-[#00C96E] flex-shrink-0 mt-0.5" size={18} />
+                <p className="text-white/70 text-sm">Seu squad gratuito será enviado no WhatsApp <strong className="text-white">{quizAnswers.whatsapp}</strong>.</p>
+              </div>
+              <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Ola! Fiz o diagnostico e meu squad ideal e ${quizResult.squadName}. Quero agendar uma conversa.`)}`} className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#00C96E] text-black font-semibold rounded-lg hover:bg-[#00A85A] transition-colors">
+                Quero acelerar — Falar com especialista <ArrowRight className="w-4 h-4" />
+              </a>
+              <p className="text-white/20 text-xs text-center mt-4">45 minutos | Diagnóstico gratuito | Sem compromisso</p>
+            </motion.div>
+          ) : (
+            <div className="border border-white/5 bg-white/[0.02] rounded-2xl p-6 sm:p-8">
+              {/* Progress */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs text-white/30 font-mono">{quizStep + 1} / {totalSteps}</span>
+                </div>
+                <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+                  <motion.div className="h-full bg-[#00C96E] rounded-full" animate={{ width: `${((quizStep + 1) / totalSteps) * 100}%` }} transition={{ duration: 0.3 }} />
+                </div>
+              </div>
+
+              {/* Question */}
+              <div className="min-h-[260px] flex flex-col justify-center">
+                <AnimatePresence mode="wait">
+                  <motion.div key={quizStep} initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -60 }} transition={{ duration: 0.3 }} className="space-y-6">
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-white">{currentQ.question}</h2>
+                      {'sub' in currentQ && currentQ.sub && <p className="text-white/50 text-sm mt-2">{currentQ.sub}</p>}
+                    </div>
+
+                    {currentQ.type === 'select' && (
+                      <div className="flex flex-col gap-2.5">
+                        {currentQ.options!.map(opt => (
+                          <button key={opt} onClick={() => selectOption(opt)} className={`w-full text-left px-5 py-3.5 rounded-lg border text-sm font-medium transition-all ${getVal() === opt ? 'border-[#00C96E] bg-[#00C96E]/10 text-[#00C96E]' : 'border-white/10 bg-white/[0.02] text-white/50 hover:text-white hover:border-white/20'}`}>
+                            {opt}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {currentQ.type === 'textarea' && (
+                      <textarea ref={textareaRef} value={quizAnswers.freeText} onChange={e => updateQuiz('freeText', e.target.value)} placeholder="Descreva em poucas palavras..." rows={3} className="w-full bg-white/[0.02] border border-white/10 rounded-xl text-white placeholder:text-white/20 p-4 text-base outline-none focus:border-[#00C96E] transition-colors resize-none" />
+                    )}
+
+                    {currentQ.type === 'contact' && (
+                      <div className="space-y-4">
+                        <input ref={inputRef} type="text" value={quizAnswers.name} onChange={e => updateQuiz('name', e.target.value)} placeholder="Seu nome" autoComplete="name" className="w-full px-0 py-3 bg-transparent border-b-2 border-white/10 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-[#00C96E] transition-colors" />
+                        <input type="tel" value={quizAnswers.whatsapp} onChange={e => updateQuiz('whatsapp', e.target.value)} placeholder="(00) 00000-0000" autoComplete="tel" className={`w-full px-0 py-3 bg-transparent border-b-2 text-xl text-white placeholder:text-white/20 focus:outline-none transition-colors ${phoneError ? 'border-[#EF4444] focus:border-[#EF4444]' : 'border-white/10 focus:border-[#00C96E]'}`} />
+                        {phoneError && <p className="text-[#FF0066] text-sm" role="alert">{phoneError}</p>}
+                      </div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Nav */}
+              <div className="flex items-center justify-between mt-6">
+                <div>{quizStep > 0 && <button onClick={quizBack} className="text-sm text-white/30 hover:text-white/60 transition-colors">Voltar</button>}</div>
+                {currentQ.type !== 'select' && (
+                  <button onClick={quizNext} disabled={!canAdvance()} className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C96E] text-black text-sm font-semibold rounded-lg hover:bg-[#00A85A] transition-colors disabled:opacity-20 disabled:cursor-not-allowed">
+                    {quizStep === totalSteps - 1 ? 'Enviar' : 'Continuar'} <ArrowRight className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+        </motion.div>
+      </section>
+
+      {/* ═══ REST OF PAGE — blur transition until quiz done ═══ */}
+      <div className="relative">
+        {/* Blur overlay that fades away after quiz completion */}
+        <motion.div
+          className="absolute inset-0 z-10 pointer-events-none"
+          initial={false}
+          animate={{ opacity: quizDone ? 0 : 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          style={{ display: quizDone ? 'none' : 'block' }}
+        >
+          {/* Top gradient fade from black (seamless) */}
+          <div className="h-32 bg-gradient-to-b from-black to-transparent" />
+          {/* Blur layer */}
+          <div className="absolute inset-0 backdrop-blur-md bg-black/30" />
+          {/* "Unlock" prompt */}
+          <div className="absolute top-16 left-0 right-0 text-center z-20">
+            <p className="text-white/40 text-sm">Preencha o diagnóstico acima para desbloquear o conteúdo completo</p>
+            <button onClick={() => scrollTo('quiz')} className="mt-3 text-[#00C96E] text-sm font-medium hover:underline">
+              ↑ Voltar ao diagnóstico
+            </button>
+          </div>
+        </motion.div>
+
+        {/* S2: STORY */}
+        <Section>
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-14">
             <Triangle className="text-[#00C96E] mx-auto mb-6" size={28} />
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">Tres founders. Um sistema.</h2>
-            <p className="text-white/70 max-w-2xl mx-auto text-sm">A MaisVendas PRO nasceu quando tres especialistas com perfis opostos descobriram que juntos conseguiam algo que nenhum deles faria sozinho.</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">Três founders. Um sistema.</h2>
+            <p className="text-white/70 max-w-2xl mx-auto text-sm">A MaisVendas PRO nasceu quando três especialistas com perfis opostos descobriram que juntos conseguiam algo que nenhum deles faria sozinho.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {founders.map((f, i) => (
@@ -395,8 +518,8 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-14">
             <span className="font-mono text-[#00C96E] text-xs tracking-widest mb-3 block">/// CENARIOS PROJETADOS</span>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">Veja o que muda quando squads entram na operacao</h2>
-            <p className="text-white/40 text-sm">Cenarios projetados com base nos nossos squads. Nao sao cases reais.</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">Veja o que muda quando squads entram na operação</h2>
+            <p className="text-white/40 text-sm">Cenários projetados com base nos nossos squads. Não são cases reais.</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-6">
             {scenarios.map((s, i) => {
@@ -430,7 +553,7 @@ export default function Home() {
               );
             })}
           </div>
-          <p className="text-center text-white/20 text-xs mt-8">* Cenarios projetados com base na capacidade dos squads. Resultados reais podem variar.</p>
+          <p className="text-center text-white/20 text-xs mt-8">* Cenários projetados com base na capacidade dos squads. Resultados reais podem variar.</p>
         </div>
       </Section>
 
@@ -439,8 +562,8 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-14">
             <span className="font-mono text-[#00C96E] text-xs tracking-widest mb-3 block">/// SUA JORNADA</span>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">Cada passo prova o proximo</h2>
-            <p className="text-white/70 max-w-lg mx-auto text-sm">Voce nao precisa de tudo de uma vez. Comece entendendo. Teste com uma missao. Escale na Forja. Domine com o Arsenal.</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">Cada passo prova o próximo</h2>
+            <p className="text-white/70 max-w-lg mx-auto text-sm">Você não precisa de tudo de uma vez. Comece entendendo. Teste com uma missão. Escale na Forja. Domine com o Arsenal.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {products.map((p, i) => {
@@ -495,7 +618,7 @@ export default function Home() {
           {!quizResult && !quizSubmitting && (
             <div className="text-center mb-10">
               <span className="font-mono text-[#00C96E] text-xs tracking-widest mb-3 block">/// DIAGNOSTICO GRATUITO</span>
-              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-3">Descubra quanto sua empresa perde sem IA</h2>
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-3">Descubra quanto a sua empresa perde sem IA</h2>
               <p className="text-white/70 text-sm max-w-md mx-auto">Em 2 minutos voce recebe: o diagnostico da sua operacao, o squad ideal pro seu caso e a economia estimada por mes.</p>
             </div>
           )}
@@ -520,19 +643,19 @@ export default function Home() {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between"><span className="text-white/40">Area</span><span className="text-white">{quizResult.area}</span></div>
                   <div className="flex justify-between"><span className="text-white/40">Equipe atual</span><span className="text-white">{quizResult.teamSize} pessoas</span></div>
-                  <div className="flex justify-between"><span className="text-white/40">Com squads, sua equipe foca no estrategico</span><span className="text-[#00C96E] font-semibold">+eficiencia</span></div>
+                  <div className="flex justify-between"><span className="text-white/40">Com squads, sua equipe foca no estratégico</span><span className="text-[#00C96E] font-semibold">+eficiencia</span></div>
                   <div className="h-px bg-white/5" />
                   <div className="flex justify-between"><span className="text-white/40">Economia estimada</span><span className="text-[#00C96E] font-semibold text-lg">R${quizResult.saving}/mes</span></div>
                 </div>
               </div>
               <div className="bg-[#00C96E]/5 border border-[#00C96E]/20 rounded-xl p-4 mb-6 flex items-start gap-3">
                 <MessageSquare className="text-[#00C96E] flex-shrink-0 mt-0.5" size={18} />
-                <p className="text-white/70 text-sm">Seu squad gratuito sera enviado no WhatsApp <strong className="text-white">{quizAnswers.whatsapp}</strong>.</p>
+                <p className="text-white/70 text-sm">Seu squad gratuito será enviado no WhatsApp <strong className="text-white">{quizAnswers.whatsapp}</strong>.</p>
               </div>
               <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Ola! Fiz o diagnostico e meu squad ideal e ${quizResult.squadName}. Quero agendar uma conversa.`)}`} className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#00C96E] text-black font-semibold rounded-lg hover:bg-[#00A85A] transition-colors">
                 Quero acelerar — Falar com especialista <ArrowRight className="w-4 h-4" />
               </a>
-              <p className="text-white/20 text-xs text-center mt-4">45 minutos | Diagnostico gratuito | Sem compromisso</p>
+              <p className="text-white/20 text-xs text-center mt-4">45 minutos | Diagnóstico gratuito | Sem compromisso</p>
             </motion.div>
           ) : (
             <>
@@ -599,9 +722,9 @@ export default function Home() {
         <div className="mx-auto max-w-3xl">
           <div className="border border-[#00C96E]/20 bg-white/[0.02] rounded-2xl p-8 sm:p-12 text-center">
             <div className="w-20 h-20 rounded-full bg-[#00C96E]/10 border-2 border-[#00C96E]/30 flex items-center justify-center mx-auto mb-6"><ShieldCheck className="text-[#00C96E]" size={36} /></div>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">90 dias ou seu dinheiro de volta</h2>
-            <p className="text-white/70 text-base leading-relaxed max-w-xl mx-auto mb-4">Se em 90 dias os squads nao gerarem o resultado projetado, voce recebe 100% do investimento de volta. Sem burocracia.</p>
-            <p className="text-white/40 text-sm">A gente so ganha quando voce ganha.</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">90 dias ou o seu dinheiro de volta</h2>
+            <p className="text-white/70 text-base leading-relaxed max-w-xl mx-auto mb-4">Se em 90 dias os squads não gerarem o resultado projetado, você recebe 100% do investimento de volta. Sem burocracia.</p>
+            <p className="text-white/40 text-sm">A gente só ganha quando você ganha.</p>
           </div>
         </div>
       </Section>
@@ -622,13 +745,15 @@ export default function Home() {
       <Section className="border-t border-white/5">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white mb-4 leading-tight">Sua empresa com IA rodando <span className="text-[#00C96E]">em 20 dias</span></h2>
-          <p className="text-white/70 text-base mb-8">2 minutos. Diagnostico gratuito. Economia estimada. Tudo direto no seu WhatsApp.</p>
+          <p className="text-white/70 text-base mb-8">2 minutos. Diagnóstico gratuito. Economia estimada. Tudo direto no seu WhatsApp.</p>
           <button onClick={() => scrollTo('quiz')} className="inline-flex items-center gap-2 px-10 py-4 bg-[#00C96E] text-black text-lg font-semibold rounded-lg hover:bg-[#00A85A] transition-colors">
-            Fazer meu diagnostico gratuito
+            Fazer meu diagnóstico gratuito
           </button>
-          <p className="text-white/20 text-sm mt-6">Apenas 5 vagas simultaneas por mes</p>
+          <p className="text-white/20 text-sm mt-6">Apenas 5 vagas simultâneas por mês</p>
         </div>
       </Section>
+
+      </div>{/* end blur wrapper */}
 
       {/* FOOTER */}
       <footer className="py-8 border-t border-white/5 px-4 sm:px-6">
