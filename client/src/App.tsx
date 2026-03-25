@@ -18,6 +18,8 @@ import BunkerBrandBook from "./pages/bunker-brand-book";
 import ForjaBrandBook from "./pages/forja-brand-book";
 import MvpBrandBook from "./pages/mvp-brand-book";
 import Tools from "./pages/tools";
+import Solucoes from "./pages/solucoes";
+import BunkerLP from "./pages/bunker";
 import AuthGate from "./components/shared/AuthGate";
 
 function ProtectedDashboard() {
@@ -40,10 +42,12 @@ function Router() {
       <Route path={"/mvp-academy-v1"} component={MVPAcademyV1} />
       <Route path={"/mvp-academy-v2"} component={MVPAcademyV2} />
       <Route path={"/mvp-academy-v3"} component={MVPAcademyV3} />
+      <Route path={"/bunker"} component={BunkerLP} />
       <Route path={"/bunker-brand-book/:section?"} component={BunkerBrandBook} />
       <Route path={"/forja-brand-book/:section?"} component={ForjaBrandBook} />
       <Route path={"/mvp-brand-book/:section?"} component={MvpBrandBook} />
       <Route path={"/tools"} component={Tools} />
+      <Route path={"/solucoes"} component={Solucoes} />
       <Route path={"/dashboard"} component={ProtectedDashboard} />
       <Route path={"/dashboard/:view"} component={ProtectedDashboard} />
       <Route path={"/404"} component={NotFound} />
@@ -65,9 +69,14 @@ function App() {
         defaultTheme="dark"
         // switchable
       >
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-[#00C96E] focus:text-black focus:rounded-md focus:text-sm">
+          Pular para o conteúdo
+        </a>
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <main id="main-content">
+            <Router />
+          </main>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
