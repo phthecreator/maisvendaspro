@@ -502,11 +502,20 @@ const FORM_CONFIG = {
   rateLimitMs: 5 * 60 * 1000 // 5 minutes
 };
 
+let savedScrollY = 0;
+
 function openDiagModal() {
   const modal = document.getElementById('diagModal');
   if (!modal) return;
   modal.classList.add('active');
   modal.setAttribute('aria-hidden', 'false');
+
+  // Lock body scroll — iOS Safari requires position:fixed to fully prevent background scroll
+  savedScrollY = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
   document.body.style.overflow = 'hidden';
   if (lenis) lenis.stop();
 
@@ -521,7 +530,14 @@ function closeDiagModal() {
   if (!modal) return;
   modal.classList.remove('active');
   modal.setAttribute('aria-hidden', 'true');
+
+  // Restore body scroll
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
   document.body.style.overflow = '';
+  window.scrollTo(0, savedScrollY);
   if (lenis) lenis.start();
 }
 
