@@ -29,6 +29,7 @@ ENV NODE_ENV=production
 # Install pnpm in the final image as well if we use it to start, or stick to Node.
 # We will use Node directly to start the app exactly as it's defined in package.json start script
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/v2-home ./v2-home
 COPY --from=builder /app/package.json ./package.json
 
 # Copy node_modules from builder (or we could prune, but keeping it simple for now)

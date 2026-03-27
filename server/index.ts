@@ -17,7 +17,7 @@ function securityHeaders(_req: express.Request, res: express.Response, next: exp
   res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://forge.butterfly-effect.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://forge.butterfly-effect.dev; frame-src 'self' https://www.youtube.com https://cal.com;"
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://forge.butterfly-effect.dev https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://images.unsplash.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://forge.butterfly-effect.dev https://docs.google.com; frame-src 'self' https://www.youtube.com https://cal.com https://docs.google.com;"
   );
   next();
 }
@@ -343,7 +343,17 @@ async function startServer() {
     }
   });
 
-  // Serve static files from dist/public in production
+  // ─── V2 Home (static HTML/CSS/JS) ─────────────────────────────────────────
+  const v2HomePath =
+    process.env.NODE_ENV === "production"
+      ? path.resolve(__dirname, "..", "v2-home")
+      : path.resolve(__dirname, "..", "v2-home");
+
+  // Serve V2 home static files first (index.html, app.js, style.css)
+  // This takes priority over the React SPA for the root path
+  app.use(express.static(v2HomePath));
+
+  // ─── React SPA (other routes) ───────────────────────────────────────────────
   const staticPath =
     process.env.NODE_ENV === "production"
       ? path.resolve(__dirname, "public")
@@ -351,7 +361,7 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
-  // Handle client-side routing - serve index.html for all routes
+  // Handle client-side routing - serve React SPA for all non-root routes
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });

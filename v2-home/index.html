@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mais Vendas Pro — Squads de IA para sua empresa</title>
+  <meta name="description" content="Squads de IA que trabalham 24/7 pela sua empresa. +67 squads prontos, resultado em 20 dias.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/three@0.170.0/build/three.module.js" type="module"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════ GRAIN OVERLAY ═══════════ -->
+  <svg class="grain" aria-hidden="true">
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+  </svg>
+
+  <!-- ═══════════ GRID LINES ═══════════ -->
+  <div class="grid-lines" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ═══════════ CUSTOM CURSOR ═══════════ -->
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ═══════════ SCROLL PROGRESS ═══════════ -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ═══════════ LOADER ═══════════ -->
+  <div class="loader" id="loader">
+    <div class="loader__rain" id="loaderRain"></div>
+    <div class="loader__brand">
+      <span class="loader__mono">MVP</span>
+      <span class="loader__sep">/</span>
+      <span class="loader__full">MAIS VENDAS PRO</span>
+    </div>
+    <div class="loader__columns">
+      <div class="loader__col"></div>
+      <div class="loader__col"></div>
+      <div class="loader__col"></div>
+      <div class="loader__col"></div>
+      <div class="loader__col"></div>
+      <div class="loader__col"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">
+      <span class="nav__logo-bracket">[</span>MVP<span class="nav__logo-bracket">]</span>
+    </a>
+    <div class="nav__links">
+      <a href="#about" class="nav__link" data-hover>Sobre</a>
+      <a href="#squads" class="nav__link" data-hover>Squads</a>
+      <a href="#services" class="nav__link" data-hover>Serviços</a>
+      <a href="#cases" class="nav__link" data-hover>Cases</a>
+      <a href="#contact" class="nav__link nav__link--cta" data-hover>Diagnóstico</a>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════ MOBILE MENU ═══════════ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-menu__link">Sobre</a>
+    <a href="#squads" class="mobile-menu__link">Squads</a>
+    <a href="#services" class="mobile-menu__link">Serviços</a>
+    <a href="#cases" class="mobile-menu__link">Cases</a>
+    <a href="#contact" class="mobile-menu__link">Diagnóstico Gratuito</a>
+  </div>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroGL"></canvas>
+    <div class="hero__content">
+      <p class="hero__label">AI-POWERED BUSINESS ACCELERATION</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line char-swap" data-swap>TRANSFORME</span>
+        <span class="hero__title-line hero__title-line--light">sua empresa</span>
+      </h1>
+      <p class="hero__sub">Squads de IA que trabalham 24/7.<br>Sem CLT. Sem erro humano. Sem férias.</p>
+    </div>
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-num">67+</span>
+        <span class="hero__stat-label">squads</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">400+</span>
+        <span class="hero__stat-label">agentes</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">20</span>
+        <span class="hero__stat-label">dias p/ resultado</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ MISSION (ZOOM) ═══════════ -->
+  <section class="mission" id="mission">
+    <div class="mission__content">
+      <p class="mission__text">
+        <span class="mission__word">IA</span>
+        <span class="mission__word">não</span>
+        <span class="mission__word">é</span>
+        <span class="mission__word">ferramenta.</span>
+        <span class="mission__word">É</span>
+        <span class="mission__word">quem</span>
+        <span class="mission__word">trabalha</span>
+        <span class="mission__word">enquanto</span>
+        <span class="mission__word">você</span>
+        <span class="mission__word mission__word--accent">dorme.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section class="about" id="about">
+    <div class="about__grid">
+      <div class="about__left">
+        <p class="about__label">O LABORATÓRIO</p>
+        <h2 class="about__brand">MAIS<br>VENDAS<br>PRO</h2>
+      </div>
+      <div class="about__right">
+        <p class="about__desc">
+          Transformamos a inteligência que já existe na sua empresa em uma máquina que trabalha 24/7. Não vendemos ferramentas — instalamos equipes de IA com fidelidade cognitiva de 85-97%.
+        </p>
+        <div class="about__values">
+          <div class="about__value">
+            <span class="about__value-num">01</span>
+            <h3 class="about__value-title">Resultado em Dinheiro</h3>
+            <p class="about__value-desc">ROI medido em reais, não em features. Cada squad tem meta financeira clara.</p>
+          </div>
+          <div class="about__value">
+            <span class="about__value-num">02</span>
+            <h3 class="about__value-title">Fidelidade Cognitiva</h3>
+            <p class="about__value-desc">Seus squads pensam como sua empresa. 85-97% de precisão nos processos replicados.</p>
+          </div>
+          <div class="about__value">
+            <span class="about__value-num">03</span>
+            <h3 class="about__value-title">Garantia de 90 Dias</h3>
+            <p class="about__value-desc">Se não bater a meta, devolvemos seu investimento. Sem letras miúdas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SQUADS (HORIZONTAL SCROLL) ═══════════ -->
+  <section class="squads" id="squads">
+    <div class="squads__header">
+      <p class="squads__label">SQUADS DISPONÍVEIS</p>
+      <div class="squads__counter">
+        <span class="squads__counter-current" id="squadCounter">01</span>
+        <span class="squads__counter-sep">/</span>
+        <span class="squads__counter-total">06</span>
+      </div>
+    </div>
+    <div class="squads__track" id="squadsTrack">
+      <article class="squads__card" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1100&fit=crop&q=80">
+        <div class="squads__card-bg"></div>
+        <div class="squads__card-content">
+          <span class="squads__card-code">MKT</span>
+          <h3 class="squads__card-title">Marketing<br>Engine</h3>
+          <p class="squads__card-desc">90 posts/mês, criativos, copy e calendário editorial no piloto automático.</p>
+          <span class="squads__card-savings">R$15-30k/mês economia</span>
+        </div>
+      </article>
+      <article class="squads__card" data-img="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1100&fit=crop&q=80">
+        <div class="squads__card-bg"></div>
+        <div class="squads__card-content">
+          <span class="squads__card-code">SLS</span>
+          <h3 class="squads__card-title">Sales<br>Closer</h3>
+          <p class="squads__card-desc">Qualificação, follow-up e fechamento com IA. 1.400 prospecções/mês.</p>
+          <span class="squads__card-savings">R$20-50k/mês economia</span>
+        </div>
+      </article>
+      <article class="squads__card" data-img="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=800&h=1100&fit=crop&q=80">
+        <div class="squads__card-bg"></div>
+        <div class="squads__card-content">
+          <span class="squads__card-code">CS</span>
+          <h3 class="squads__card-title">Customer<br>Success</h3>
+          <p class="squads__card-desc">Atendimento 24/7, resposta em menos de 5 minutos, satisfação 98%.</p>
+          <span class="squads__card-savings">R$12-35k/mês economia</span>
+        </div>
+      </article>
+      <article class="squads__card" data-img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=1100&fit=crop&q=80">
+        <div class="squads__card-bg"></div>
+        <div class="squads__card-content">
+          <span class="squads__card-code">DATA</span>
+          <h3 class="squads__card-title">Data<br>Analytics</h3>
+          <p class="squads__card-desc">Dashboards em tempo real, BI automatizado, decisões baseadas em dados.</p>
+          <span class="squads__card-savings">R$8-20k/mês economia</span>
+        </div>
+      </article>
+      <article class="squads__card" data-img="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=1100&fit=crop&q=80">
+        <div class="squads__card-bg"></div>
+        <div class="squads__card-content">
+          <span class="squads__card-code">RH</span>
+          <h3 class="squads__card-title">Squad<br>RH</h3>
+          <p class="squads__card-desc">Recrutamento, onboarding e gestão de pessoas com IA. Turnover -60%.</p>
+          <span class="squads__card-savings">R$10-25k/mês economia</span>
+        </div>
+      </article>
+      <article class="squads__card" data-img="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&h=1100&fit=crop&q=80">
+        <div class="squads__card-bg"></div>
+        <div class="squads__card-content">
+          <span class="squads__card-code">OPS</span>
+          <h3 class="squads__card-title">Operations<br>Squad</h3>
+          <p class="squads__card-desc">Automação de processos, integração de sistemas, eficiência operacional.</p>
+          <span class="squads__card-savings">R$15-40k/mês economia</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICES (STACKING CARDS) ═══════════ -->
+  <section class="services" id="services">
+    <div class="services__header">
+      <p class="services__label">COMO FUNCIONA</p>
+      <h2 class="services__title">Do diagnóstico<br>ao resultado.</h2>
+    </div>
+    <div class="services__stack" id="servicesStack">
+      <article class="services__card" style="--card-accent: #00C96E">
+        <div class="services__card-inner">
+          <span class="services__card-num">01</span>
+          <h3 class="services__card-title">Diagnóstico IA</h3>
+          <p class="services__card-desc">Analisamos sua operação e mapeamos onde squads de IA geram maior impacto. Gratuito, sem compromisso.</p>
+          <span class="services__card-tag">GRATUITO</span>
+        </div>
+      </article>
+      <article class="services__card" style="--card-accent: #33D489">
+        <div class="services__card-inner">
+          <span class="services__card-num">02</span>
+          <h3 class="services__card-title">Instalação de Squads</h3>
+          <p class="services__card-desc">Configuramos os squads na sua operação. Você não precisa entender de IA — nós cuidamos de tudo.</p>
+          <span class="services__card-tag">PLUG & PLAY</span>
+        </div>
+      </article>
+      <article class="services__card" style="--card-accent: #FFD700">
+        <div class="services__card-inner">
+          <span class="services__card-num">03</span>
+          <h3 class="services__card-title">Treinamento Cognitivo</h3>
+          <p class="services__card-desc">Cada squad é treinado com a inteligência da sua empresa. Processos, tom de voz, regras de negócio.</p>
+          <span class="services__card-tag">85-97% FIDELIDADE</span>
+        </div>
+      </article>
+      <article class="services__card" style="--card-accent: #0AE57A">
+        <div class="services__card-inner">
+          <span class="services__card-num">04</span>
+          <h3 class="services__card-title">Automação WhatsApp</h3>
+          <p class="services__card-desc">Atendimento, vendas e suporte no WhatsApp 24/7. Resposta em menos de 5 minutos.</p>
+          <span class="services__card-tag">24/7</span>
+        </div>
+      </article>
+      <article class="services__card" style="--card-accent: #FF0066">
+        <div class="services__card-inner">
+          <span class="services__card-num">05</span>
+          <h3 class="services__card-title">Funil Comercial</h3>
+          <p class="services__card-desc">Tráfego pago, landing pages, qualificação e follow-up automatizado. Máquina de vendas completa.</p>
+          <span class="services__card-tag">FULL STACK</span>
+        </div>
+      </article>
+      <article class="services__card" style="--card-accent: #00C96E">
+        <div class="services__card-inner">
+          <span class="services__card-num">06</span>
+          <h3 class="services__card-title">Resultado em 20 Dias</h3>
+          <p class="services__card-desc">Em 20 dias você vê os números mudando: menos custo, mais velocidade, mais margem. Garantia de 90 dias.</p>
+          <span class="services__card-tag">GARANTIDO</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════ CASES (TESTIMONIALS) ═══════════ -->
+  <section class="cases" id="cases">
+    <p class="cases__label">CASES REAIS</p>
+    <div class="cases__grid">
+      <article class="cases__card" data-clip="ellipse">
+        <div class="cases__card-reveal"></div>
+        <div class="cases__card-content">
+          <p class="cases__card-quote">"Em 60 dias, saí de R$38k/mês em folha para R$6k com squads. ROI de R$8,90 para cada R$1 investido."</p>
+          <div class="cases__card-author">
+            <span class="cases__card-name">Dra. Renata</span>
+            <span class="cases__card-role">Clínica de Estética — R$1.2M/mês</span>
+          </div>
+          <div class="cases__card-metric">
+            <span class="cases__card-metric-value">R$384k</span>
+            <span class="cases__card-metric-label">economia/ano</span>
+          </div>
+        </div>
+      </article>
+      <article class="cases__card" data-clip="wipe-right">
+        <div class="cases__card-reveal"></div>
+        <div class="cases__card-content">
+          <p class="cases__card-quote">"Turnover caiu de 40% para 12%. 1.400 prospecções por mês no automático. Payback em 15 dias."</p>
+          <div class="cases__card-author">
+            <span class="cases__card-name">Marcos</span>
+            <span class="cases__card-role">Distribuidora — R$4M/mês</span>
+          </div>
+          <div class="cases__card-metric">
+            <span class="cases__card-metric-value">R$816k</span>
+            <span class="cases__card-metric-label">economia/ano</span>
+          </div>
+        </div>
+      </article>
+      <article class="cases__card" data-clip="circle">
+        <div class="cases__card-reveal"></div>
+        <div class="cases__card-content">
+          <p class="cases__card-quote">"De 8 clientes trabalhando 14h/dia para 20 clientes em 4h/dia. Sem contratar ninguém."</p>
+          <div class="cases__card-author">
+            <span class="cases__card-name">Thiago</span>
+            <span class="cases__card-role">Agência Digital — R$300k/mês</span>
+          </div>
+          <div class="cases__card-metric">
+            <span class="cases__card-metric-value">2.5x</span>
+            <span class="cases__card-metric-label">clientes sem crescer equipe</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════ MARQUEE ═══════════ -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee__row marquee__row--left">
+      <div class="marquee__content">
+        <span class="marquee__word marquee__word--display">AUTOMATIZAR</span>
+        <span class="marquee__word marquee__word--serif">ESCALAR</span>
+        <span class="marquee__word marquee__word--display">TRANSFORMAR</span>
+        <span class="marquee__word marquee__word--serif">VENDER</span>
+        <span class="marquee__word marquee__word--display">CRESCER</span>
+        <span class="marquee__word marquee__word--serif">DOMINAR</span>
+      </div>
+      <div class="marquee__content">
+        <span class="marquee__word marquee__word--display">AUTOMATIZAR</span>
+        <span class="marquee__word marquee__word--serif">ESCALAR</span>
+        <span class="marquee__word marquee__word--display">TRANSFORMAR</span>
+        <span class="marquee__word marquee__word--serif">VENDER</span>
+        <span class="marquee__word marquee__word--display">CRESCER</span>
+        <span class="marquee__word marquee__word--serif">DOMINAR</span>
+      </div>
+    </div>
+    <div class="marquee__row marquee__row--right">
+      <div class="marquee__content">
+        <span class="marquee__word marquee__word--serif">AUTOMATIZAR</span>
+        <span class="marquee__word marquee__word--display">ESCALAR</span>
+        <span class="marquee__word marquee__word--serif">TRANSFORMAR</span>
+        <span class="marquee__word marquee__word--display">VENDER</span>
+        <span class="marquee__word marquee__word--serif">CRESCER</span>
+        <span class="marquee__word marquee__word--display">DOMINAR</span>
+      </div>
+      <div class="marquee__content">
+        <span class="marquee__word marquee__word--serif">AUTOMATIZAR</span>
+        <span class="marquee__word marquee__word--display">ESCALAR</span>
+        <span class="marquee__word marquee__word--serif">TRANSFORMAR</span>
+        <span class="marquee__word marquee__word--display">VENDER</span>
+        <span class="marquee__word marquee__word--serif">CRESCER</span>
+        <span class="marquee__word marquee__word--display">DOMINAR</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT / CTA ═══════════ -->
+  <section class="contact" id="contact">
+    <div class="contact__content">
+      <p class="contact__label">PRONTO PARA TRANSFORMAR?</p>
+      <h2 class="contact__title char-swap" data-swap>PRONTO?</h2>
+      <p class="contact__urgency">Cada dia sem IA é dinheiro que você está deixando na mesa.<br>Seus concorrentes não vão esperar.</p>
+      <button class="contact__btn" id="ctaBtn" data-hover type="button">
+        <span class="contact__btn-bg"></span>
+        <span class="contact__btn-text">Quero Meu Diagnóstico Agora</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════ MODAL — DIAGNÓSTICO ═══════════ -->
+  <div class="modal" id="diagModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__container">
+      <button class="modal__close" id="modalClose" aria-label="Fechar">&times;</button>
+      <div class="modal__header">
+        <span class="modal__label">DIAGNÓSTICO GRATUITO</span>
+        <h3 class="modal__title">Descubra quanto sua empresa<br>está perdendo sem IA.</h3>
+      </div>
+      <form class="modal__form" id="diagForm" novalidate>
+        <div class="modal__field">
+          <label class="modal__field-label" for="leadName">Nome completo</label>
+          <input class="modal__input" type="text" id="leadName" name="nome" required placeholder="Seu nome" autocomplete="name">
+          <span class="modal__error" data-for="leadName"></span>
+        </div>
+        <div class="modal__field">
+          <label class="modal__field-label" for="leadEmail">Email</label>
+          <input class="modal__input" type="email" id="leadEmail" name="email" required placeholder="seu@email.com" autocomplete="email">
+          <span class="modal__error" data-for="leadEmail"></span>
+        </div>
+        <div class="modal__field">
+          <label class="modal__field-label" for="leadPhone">Telefone (WhatsApp)</label>
+          <input class="modal__input" type="tel" id="leadPhone" name="telefone" required placeholder="(00) 00000-0000" autocomplete="tel">
+          <span class="modal__error" data-for="leadPhone"></span>
+        </div>
+        <div class="modal__field">
+          <label class="modal__field-label" for="leadGoal">Qual o principal objetivo do seu negócio agora?</label>
+          <textarea class="modal__input modal__textarea" id="leadGoal" name="objetivo" required maxlength="140" placeholder="Ex: Reduzir custo operacional e escalar vendas sem contratar" rows="2"></textarea>
+          <span class="modal__char-count"><span id="charCount">0</span>/140</span>
+          <span class="modal__error" data-for="leadGoal"></span>
+        </div>
+        <div class="modal__field">
+          <label class="modal__field-label">Se você se qualificar, quando estaria disposto a ir para uma call?</label>
+          <div class="modal__radio-group">
+            <label class="modal__radio">
+              <input type="radio" name="disponibilidade" value="Imediatamente" required>
+              <span class="modal__radio-custom"></span>
+              <span class="modal__radio-text">Imediatamente</span>
+              <span class="modal__radio-badge">RECOMENDADO</span>
+            </label>
+            <label class="modal__radio">
+              <input type="radio" name="disponibilidade" value="Em no máximo 3 dias">
+              <span class="modal__radio-custom"></span>
+              <span class="modal__radio-text">Em no máximo 3 dias</span>
+            </label>
+            <label class="modal__radio">
+              <input type="radio" name="disponibilidade" value="Preciso ver minha agenda">
+              <span class="modal__radio-custom"></span>
+              <span class="modal__radio-text">Preciso ver minha agenda</span>
+            </label>
+          </div>
+          <span class="modal__error" data-for="disponibilidade"></span>
+        </div>
+        <button class="modal__submit" type="submit" id="diagSubmit" data-hover>
+          <span class="modal__submit-text">Quero Meu Diagnóstico Agora</span>
+          <span class="modal__submit-loading" style="display:none">Enviando...</span>
+        </button>
+        <p class="modal__disclaimer">Seus dados estão seguros. Sem spam, sem pegadinha.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hidden iframe for Google Forms submission -->
+  <iframe name="hiddenFormFrame" id="hiddenFormFrame" style="display:none" aria-hidden="true"></iframe>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__logo">[MVP]</span>
+        <p class="footer__tagline">O último aplicativo que<br>sua empresa contrata.</p>
+      </div>
+      <div class="footer__copy">
+        <p>&copy; 2026 Mais Vendas Pro. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ WHATSAPP FLOAT ═══════════ -->
+  <a href="https://wa.me/556291508399" class="whatsapp-float" target="_blank" aria-label="WhatsApp" data-hover>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
