@@ -12,6 +12,7 @@ import {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const WHATSAPP_URL = 'https://wa.me/5564981289820?text=ESTOU%20INTERESSADO%20NO%20BUNKER';
+const CHECKOUT_URL = '/api/bunker/checkout';
 
 // ─── SECTION WRAPPER ─────────────────────────────────────────────────────────
 
@@ -184,7 +185,7 @@ function Hero() {
         >
           <span className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#CD7F32]/[0.08] border border-[#CD7F32]/20 backdrop-blur-sm">
             <Crown className="w-4 h-4 text-[#CD7F32]" />
-            <span className="text-[#CD7F32] font-mono text-sm sm:text-base font-medium">R$250/ano para fundadores · R$0,68/dia</span>
+            <span className="text-[#CD7F32] font-mono text-sm sm:text-base font-medium">Lançamento: R$597/ano · 12x R$57</span>
           </span>
         </motion.div>
 
@@ -195,15 +196,13 @@ function Hero() {
           transition={{ delay: 1, duration: 0.5 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#00E5FF] text-[#0D1117] font-bold text-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] hover:scale-[1.02]"
+          <button
+            onClick={handleCheckout}
+            className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#00E5FF] text-[#0D1117] font-bold text-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] hover:scale-[1.02] cursor-pointer"
           >
             Entrar no Bunker
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
+          </button>
           <a
             href="#o-que-voce-recebe"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-[#FDF5E6]/10 text-[#FDF5E6]/80 font-medium hover:bg-[#FDF5E6]/[0.03] hover:border-[#FDF5E6]/20 transition-all duration-300 backdrop-blur-sm"
@@ -239,9 +238,9 @@ function Stats() {
   return (
     <Section className="bg-[#0D1117] border-y border-[#00E5FF]/[0.06]">
       <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
-        <Counter target={52} suffix="+" label="squads disponíveis" />
-        <Counter target={200} suffix="+" label="agentes de IA" />
-        <Counter prefix="R$" target={250} suffix="" label="por ano inteiro" />
+        <Counter target={92} suffix="+" label="squads IA operacionais" />
+        <Counter target={11} suffix="" label="agentes IA especializados" />
+        <Counter prefix="R$" target={597} suffix="" label="por ano inteiro" />
         <Counter target={30} suffix=" dias" label="de garantia" />
       </div>
     </Section>
@@ -526,21 +525,24 @@ function Pricing() {
                 <span className="text-[#00E5FF] text-xs font-mono uppercase tracking-wider">Preço fundador</span>
               </div>
 
+              <p className="text-[#FDF5E6]/30 text-xs mb-1 font-mono">Valor real: R$5.000/ano em conteúdo e ferramentas</p>
+              <p className="text-[#FDF5E6]/40 text-lg line-through mb-2">De R$1.000/ano</p>
+
               <div className="flex items-baseline justify-center gap-1 mb-2">
                 <span className="text-6xl sm:text-7xl font-bold text-[#FDF5E6]" style={{ textShadow: '0 0 40px rgba(0,229,255,0.15)' }}>
-                  R$250
+                  R$597
                 </span>
                 <span className="text-[#FDF5E6]/30 text-xl font-light">/ano</span>
               </div>
 
-              <p className="text-[#FDF5E6]/30 text-sm mb-4">
-                R$0,68 por dia · menos que um café
+              <p className="text-[#00E5FF] text-sm font-medium mb-4">
+                ou 12x de R$57 · R$1,63/dia
               </p>
 
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#CD7F32]/[0.06] border border-[#CD7F32]/15">
                 <Crown className="w-3.5 h-3.5 text-[#CD7F32]" />
                 <span className="text-[#CD7F32] text-xs font-mono">
-                  Depois dos primeiros 20 membros: R$99/mês
+                  Vagas limitadas — próximo lote: R$1.000/ano
                 </span>
               </div>
             </div>
@@ -565,17 +567,15 @@ function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block w-full text-center px-8 py-4 rounded-xl bg-[#00E5FF] text-[#0D1117] font-bold text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,229,255,0.35)] hover:scale-[1.02]"
+              <button
+                onClick={handleCheckout}
+                className="group block w-full text-center px-8 py-4 rounded-xl bg-[#00E5FF] text-[#0D1117] font-bold text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,229,255,0.35)] hover:scale-[1.02] cursor-pointer"
               >
                 <span className="flex items-center justify-center gap-2">
-                  Entrar no Bunker — R$250/ano
+                  Entrar no Bunker — R$597/ano
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
-              </a>
+              </button>
 
               <p className="text-center text-[#FDF5E6]/20 text-xs mt-5">
                 Pagamento seguro. Acesso imediato.
@@ -605,7 +605,7 @@ const faqs = [
   },
   {
     q: 'O preço vai subir?',
-    a: 'Sim. R$250/ano é preço de fundador pros 20 primeiros. Depois sobe pra R$99/mês (R$900/ano).',
+    a: 'Sim. R$597/ano é preço de lançamento. Próximo lote será R$1.000/ano. Quem entra agora trava o preço.',
   },
   {
     q: 'Tem garantia?',
@@ -674,19 +674,17 @@ function FinalCTA() {
         </h2>
 
         <p className="text-[#FDF5E6]/50 mb-10 text-lg">
-          R$250/ano. Acesso direto a quem faz. Sem enrolação.
+          R$597/ano (ou 12x R$57). Acesso direto a quem faz. Sem enrolação.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl bg-[#00E5FF] text-[#0D1117] font-bold text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,229,255,0.4)] hover:scale-[1.02]"
+          <button
+            onClick={handleCheckout}
+            className="group relative inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl bg-[#00E5FF] text-[#0D1117] font-bold text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,229,255,0.4)] hover:scale-[1.02] cursor-pointer"
           >
-            Entrar no Bunker — R$250/ano
+            Entrar no Bunker — R$597/ano
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
+          </button>
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -699,7 +697,7 @@ function FinalCTA() {
         </div>
 
         <p className="text-[#FDF5E6]/20 text-xs mt-8">
-          Preço de fundador pros 20 primeiros. Depois sobe pra R$99/mês.
+          Vagas limitadas — próximo lote: R$1.000/ano.
         </p>
       </motion.div>
     </section>
@@ -727,6 +725,22 @@ function Footer() {
       </div>
     </footer>
   );
+}
+
+// ─── CHECKOUT HANDLER ────────────────────────────────────────────────────────
+
+async function handleCheckout() {
+  try {
+    const res = await fetch(CHECKOUT_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' } });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      window.open(WHATSAPP_URL, '_blank');
+    }
+  } catch {
+    window.open(WHATSAPP_URL, '_blank');
+  }
 }
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────

@@ -3,6 +3,7 @@ import { createServer } from "http";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import Stripe from "stripe";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,7 +18,7 @@ function securityHeaders(_req: express.Request, res: express.Response, next: exp
   res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://forge.butterfly-effect.dev https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://images.unsplash.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://forge.butterfly-effect.dev https://docs.google.com; frame-src 'self' https://www.youtube.com https://cal.com https://docs.google.com; form-action 'self' https://docs.google.com;"
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://forge.butterfly-effect.dev https://unpkg.com https://cdn.jsdelivr.net https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://images.unsplash.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://forge.butterfly-effect.dev https://docs.google.com https://api.stripe.com; frame-src 'self' https://www.youtube.com https://cal.com https://docs.google.com https://js.stripe.com; form-action 'self' https://docs.google.com https://checkout.stripe.com;"
   );
   next();
 }
@@ -215,6 +216,45 @@ async function startServer() {
   app.use(securityHeaders);
   app.use(rateLimit);
   app.use(express.json({ limit: "10kb" }));
+
+  // ─── Stripe Checkout (Bunker da IA) ──────────────────────────────────────
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  const stripe = stripeKey ? new Stripe(stripeKey) : null;
+
+  app.post("/api/bunker/checkout", async (req, res) => {
+    if (!stripe) {
+      return res.status(503).json({ error: "Pagamento indisponível. Entre em contato via WhatsApp." });
+    }
+
+    try {
+      const baseUrl = `${req.protocol}://${req.get("host")}`;
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        mode: "payment",
+        locale: "pt-BR",
+        line_items: [
+          {
+            price_data: {
+              currency: "brl",
+              product_data: {
+                name: "Bunker da IA — Acesso Anual",
+                description: "1 ano de acesso: calls semanais ao vivo, squads IA, grupo exclusivo, acesso direto aos mentores.",
+              },
+              unit_amount: 59700, // R$597,00 in centavos
+            },
+            quantity: 1,
+          },
+        ],
+        success_url: `${baseUrl}/bunker/sucesso?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${baseUrl}/bunker`,
+      });
+
+      res.json({ url: session.url });
+    } catch (e) {
+      console.error("Stripe checkout error:", e);
+      res.status(500).json({ error: "Erro ao criar sessão de pagamento." });
+    }
+  });
 
   // ─── Quiz API (new home form) ────────────────────────────────────────────
   app.post("/api/quiz", (req, res) => {
